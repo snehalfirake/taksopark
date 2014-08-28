@@ -1,1 +1,1 @@
-DataBasе Model
+ Model
