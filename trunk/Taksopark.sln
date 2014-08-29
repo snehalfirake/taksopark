@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taksopark.MVC", "Taksopark.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taksopark.WebForms", "Taksopark.WebForms\Taksopark.WebForms.csproj", "{CC8EFAF3-44AA-48ED-91D4-6B7466E11C3E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taksopark.DAL", "Taksopark.DAL\Taksopark.DAL.csproj", "{090412FD-0881-43D3-875D-35E6EDD00485}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taksopark.BL", "Taksopark.BL\Taksopark.BL.csproj", "{E539054C-B886-4D6C-9C06-D0BB1202777F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{CC8EFAF3-44AA-48ED-91D4-6B7466E11C3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CC8EFAF3-44AA-48ED-91D4-6B7466E11C3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CC8EFAF3-44AA-48ED-91D4-6B7466E11C3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{090412FD-0881-43D3-875D-35E6EDD00485}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{090412FD-0881-43D3-875D-35E6EDD00485}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{090412FD-0881-43D3-875D-35E6EDD00485}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{090412FD-0881-43D3-875D-35E6EDD00485}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E539054C-B886-4D6C-9C06-D0BB1202777F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E539054C-B886-4D6C-9C06-D0BB1202777F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E539054C-B886-4D6C-9C06-D0BB1202777F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E539054C-B886-4D6C-9C06-D0BB1202777F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

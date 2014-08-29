@@ -1,0 +1,60 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>RegisterView</title>
+</head>
+<body>
+    <form enctype="multipart/form-data" method="post">
+        <div id="register" style="border:groove 5px #0066FF; -moz-border-radius: 17px;
+-webkit-border-radius: 17px; border-radius: 17px; width:450px; background-color:#b5c4c8">
+            <h1 style="text-align:center">Register</h1>
+            <table id="tableRegister" style="margin:auto;">
+                <tr>
+                    <td><b>Name:</b></td>
+                    <td><input type="text" id="userName" name="userName" style="background-color:#3ebebe" /></td>
+                </tr>
+                <tr>
+                    <td><b>Last Name:</b></td>
+                    <td><input type="text" id="userLastName" name="userLastName" style="background-color:#3ebebe" /></td>
+                </tr>
+                <tr>
+                    <td><b>Login:</b></td>
+                    <td><input type="text" id="userLogin" name="userLogin" style="background-color:#3ebebe" /></td>
+                </tr>
+                <tr>
+                    <td><b>E-mail:</b></td>
+                    <td><input type="text" id="userEmail" name="userEmail" style="background-color:#3ebebe" /></td>
+                </tr>
+                <tr>
+                    <td><b>Password:</b></td>
+                    <td><input type="text" id="userPassword" name="userPassword" style="background-color:#3ebebe" /></td>
+                </tr>
+                <tr>
+                    <td><b>Confirm password:</b></td>
+                    <td><input type="text" id="userConfirmPassword" name="userConfirmPassword" style="background-color:#3ebebe" /></td>
+                </tr>
+                <tr>
+                    <td><b>Photo:</b></td>
+                    <td>
+                        @using (Html.BeginForm("", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                        {
+                            <input type="file" id="fileUpload" name="fileUpload" value="Choose file..." /><br />
+                            <input type="submit" name="submitUpload" id="submitUpload" value="Upload photo" />
+                        }
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2"><p style="text-align:center"><input type="submit" style="width:150px;" value="Register" /></p></td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</body>
+</html>

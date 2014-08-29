@@ -1,0 +1,64 @@
+﻿@using System.Web.Optimization
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/Layout/my-css")
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+</head>
+    <body style="background-color: white">
+        @RenderBody()
+        <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+        <script src="~/Scripts/bootstrap.min.js"></script>
+        <header>
+            <div class="login-div">
+                <div class="login-st">
+                    Login:<input type="text" />
+                    Password:
+                    <input type="password" />
+                    <input type="button" value="Login" class="button" />
+                    <input type="button" value="Join Us" class="button" />
+                </div>
+            </div>
+            <div class="menu_block ">
+                <div class="container_12">
+                    <div class="grid_12">
+                        <nav class="horizontal-nav full-width horizontalNav-notprocessed">
+                            <ul class="sf-menu">
+                                <li class="current"><a href="index.html">Home</a></li>
+                                <li><a href="#">About</a></li>
+                                <li><a href="#">Cars</a></li>
+                                <li><a href="#">Services</a></li>
+                                <li><a href="#">Contacts</a></li>
+                            </ul>
+                        </nav>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+              @{ Html.RenderPartial("PartialView");}
+             @*@Html.Partial("PartialBody")*@
+        </header>
+        <footer>
+            <div class="container_12">
+                <div class="grid_12">
+                    <div class="f_phone"><span>Call Us:</span> + 380631709471</div>
+                    <div class="copy">
+                        <div class="st1">
+                            <div class="brand">Lviv<span class="color1">T</span>axi </div>
+                            &copy; 2014	|
+                        </div>
+                        Website designed by A-Team<br>
+                        Epam IT Lab 2014.
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </footer>
+    </body>
+</html>
