@@ -13,7 +13,7 @@
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
 </head>
 <body style="background-color: white">
-    @RenderBody()
+    <!--@RenderBody()-->
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
     <header>
@@ -41,7 +41,7 @@
         <div>
             <div class="login-st" style="margin-right: 5px;">
                 <a type="button" href="#login-form" data-toggle="modal"><button class="abutton pulse width1">Login</button></a>
-                <a type="button" href="#login-form" data-toggle="modal"><button class="abutton pulse width2">Registration</button></a>
+                <a type="button" href="#" data-toggle="modal"><button class="abutton pulse width2">Registration</button></a>
             </div>
         </div>
         
@@ -52,7 +52,8 @@
                     <nav class="horizontal-nav full-width horizontalNav-notprocessed">
                         <ul class="sf-menu">
                             <li class="current"><a href="index.html">Home</a></li>
-                            <li><a href="#">About</a></li>
+
+                            <li> @Html.ActionLink("About ", "About", "Home")</li>
                             <li><a href="#">Cars</a></li>
                             <li><a href="#">Services</a></li>
                             <li><a href="#">Contacts</a></li>
@@ -64,7 +65,6 @@
             </div>
         </div>
         @{ Html.RenderPartial("PartialView");}
-        @*@Html.Partial("PartialBody")*@
     </header>
     <footer>
         <div>
