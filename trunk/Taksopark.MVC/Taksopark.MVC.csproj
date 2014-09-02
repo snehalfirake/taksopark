@@ -95,9 +95,19 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Image\arrow_l.gif" />
+    <Content Include="Content\Image\arrow_r.gif" />
+    <Content Include="Content\Image\camera-loader.gif" />
     <Content Include="Content\Image\logo.bmp" />
+    <Content Include="Content\Image\Pause.png" />
+    <Content Include="Content\Image\prevnext.png" />
     <Content Include="Content\Image\slide.jpg" />
+    <Content Include="Content\Image\slide1.jpg" />
+    <Content Include="Content\Image\slide2.jpg" />
+    <Content Include="Content\Image\totop.png" />
     <Content Include="Content\Layout\About.css" />
+    <Content Include="Content\Layout\adipoli.css" />
+    <Content Include="Content\Layout\camera.css" />
     <Content Include="Content\Layout\error-style.css" />
     <Content Include="Content\Layout\font-awesome.css" />
     <Content Include="Content\Layout\grid.css" />
@@ -108,12 +118,15 @@
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\app-scripts\camera.js" />
+    <Content Include="Scripts\app-scripts\ready.js" />
     <Content Include="Scripts\app-scripts\userinfo-script.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\jquery-1.7.1.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Web.config" />
   </ItemGroup>

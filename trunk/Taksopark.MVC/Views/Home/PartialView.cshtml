@@ -2,7 +2,10 @@
 @using System.Web.Optimization
 
 @Styles.Render("~/Content/Layout/my-css")
-
+@Scripts.Render("~/bundles/ready-script")
+<script>
+    auto();
+</script>
 <div class="container_12">
     <div class="grid_12">
         <h1>
@@ -14,11 +17,30 @@
 </div>
 <div class="clear"></div>
 <div>
-    <div>
-        <div style="padding-top: 15px">
-            <img src="~/Content/Image/slide.jpg" />">
+    <!--div class="slider_wrapper">
+        <div id="camera_wrap">
+            <div data-src="~/content/image/slide.jpg"></div>
+            <div data-src="~/content/image/slide1.jpg"></div>
+            <div data-src="~/content/image/slide2.jpg"></div>
         </div>
+</div>-->
+    <div align="center">
+        <table border="0">
+            <tr align="center">
+                <td colspan="3"><img src="/Content/Image/slide.jpg" name="slide_show"></td>
+            </tr>
+            <tr align="center">
+                <td align="right"><a href="javascript:chgImg(-1)"><img src="~/Content/Image/arrow_l.gif" style="margin-top: 2px;" /></a></td>
+                <td align="center"><a href="javascript:auto()"><img src="~/Content/Image/pause.png" style="margin-top: 2px; background-color: transparent;" /></a></td>
+                <td align="left"><a href="javascript:chgImg(1)"><img src="~/Content/Image/arrow_r.gif" style="margin-top: 2px;" /></a></td>
+            </tr>
+        </table>
     </div>
+    <!--<div>
+            <div style="padding-top: 15px">
+                <img src="~/Content/Image/slide1.jpg" />
+            </div>
+        </div>-->
 </div>
 <div style="width: 100%; height: 150px; border: 2px solid; border-color: black;">
     <h1>Location on map</h1>
