@@ -157,9 +157,9 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\UserInfo.cshtml" />
     <Content Include="Views\Home\RegisterUser.cshtml" />
-    <Content Include="Views\Home\ErrorView.cshtml" />
-    <Content Include="Views\Home\Error404.cshtml" />
-    <Content Include="Views\Home\Error500.cshtml" />
+    <Content Include="Views\Shared\ErrorView.cshtml" />
+    <Content Include="Views\Shared\Error404.cshtml" />
+    <Content Include="Views\Shared\Error500.cshtml" />
     <Content Include="Views\Home\BingMapPartial.cshtml" />
     <Content Include="Views\Home\OrderTaxi.cshtml" />
     <None Include="Web.Debug.config">

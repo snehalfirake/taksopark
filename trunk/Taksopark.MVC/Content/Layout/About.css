@@ -4,9 +4,8 @@
 	font-weight: 700;
 	padding: .15em .3em;
 	outline: none;
-	border: 1px solid rgb(131, 139, 131);
-	border-radius: 7px;
-	/*background: rgb(240, 255, 240) linear-gradient(rgb(255, 255, 0), rgb(255, 165, 0));*/
+	border: 1px solid #fdc903;
+    clear: both;
    }
    
 .block1 p{
@@ -27,15 +26,14 @@
 
 
  .ContactlUs {
-     float: left;
+    float: left;
     margin:10% 10% 65% 10%;
     width: 15%;
 	height: 350px;
 	font-weight: 700;
 	padding: .25em .5em;
 	outline: none;
-	border: 1px solid rgb(131, 139, 131);
-	border-radius: 7px;
+	border: 1px solid #fdc903;
 	/*background: rgb(240, 255, 240) linear-gradient(rgb(255, 255, 0), rgb(255, 165, 0));*/
     position:absolute;
     top:7%;
@@ -43,12 +41,10 @@
 
 }
 
-  .ContactlUs h2 {
-
+.ContactlUs h2{
     margin-top:7%;
 	text-transform:uppercase;
 	text-align: center;
-
 	/*color:rgb (104, 131, 139);*/
 	color:rgb(139, 129, 76);
 }
@@ -56,25 +52,23 @@
 
 
 .ContactlUs .emailUsButton {
-    background-color:rgb(76, 255, 0);
     display: block;
-	border: 1px solid rgb(131, 139, 131);
-	border-radius: 7px;
+	border: 1px solid #fdc903;
     height: 45px;
     width: 150px;
     cursor: pointer;
 }
 .ContactlUs a {
 
-    font: 25px/27px helvetica,arial,sans-serif;   
+    font: 15px helvetica,arial,sans-serif;   
     text-align:center;
 	text-decoration:none;
-	color:rgb(0, 139, 139);
+    color: white;
 }
 .ContactlUs p {
     text-align: right;
     /*font: 16px/20px helvetica,arial,sans-serif;*/   
 	text-decoration:none;
-    	color:rgb(139, 129, 76);
+    color:rgb(139, 129, 76);
 
 }

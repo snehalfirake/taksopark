@@ -13,7 +13,6 @@
     @Scripts.Render("~/bundles/jquery")
 </head>
 <body style="background-color: white">
-    <!--@RenderBody()-->
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
     <header>
@@ -41,7 +40,7 @@
         <div>
             <div class="login-st" style="margin-right: 5px;">
                 <a type="button" href="#login-form" data-toggle="modal"><button class="pulse width1 abutton">Login</button></a>
-                <a type="button" href="#" data-toggle="modal"><button class="abutton pulse width2">Registration</button></a>
+                <button class="abutton pulse width2" style="text-decoration: none;">@Html.ActionLink("Registrate", "RegisterUser", "Home")</button>
             </div>
         </div>
         
@@ -52,10 +51,8 @@
                     <nav class="horizontal-nav full-width horizontalNav-notprocessed">
                         <ul class="sf-menu">
                             <li class="current"><a href="index.html">Home</a></li>
-
                             <li> @Html.ActionLink("About ", "About", "Home")</li>
                             <li><a href="#">Cars</a></li>
-                            <li><a href="#">Services</a></li>
                             <li><a href="#">Contacts</a></li>
                         </ul>
                     </nav>
@@ -64,10 +61,11 @@
                 <div class="clear"></div>
             </div>
         </div>
-        @{
-        Html.RenderPartial("ConPartialView");
-        }
+ 
     </header>
+    <div class="container body-content">
+        @RenderBody()
+    </div>
     <footer style="bottom: 0">
         <div>
             <a href="#" id="toTop" style="margin-right: -580px; right: 50%; display: block;">
