@@ -1,5 +1,6 @@
 ﻿
 using System.Web.Mvc;
+using Taksopark.MVC.Models;
 
 namespace Taksopark.MVC.Controllers.Home
 {
@@ -39,6 +40,28 @@ namespace Taksopark.MVC.Controllers.Home
         public ActionResult Error500()
         {
             return View();
+        }
+
+        public ActionResult BingMap()
+        {
+            return PartialView();
+        }
+
+        public ActionResult ConPartialView()
+        {
+            return View();
+        }
+
+
+        public ActionResult OrderTaxi()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult OrderTaxi(FormCollection form)
+        {
+            var direction = new TaxiOrdering {PlaceFrom = form["txtFrom"], PlaceTo = form["txtTo"]};
+            return View("OrderTaxi", direction);
         }
     }
 }

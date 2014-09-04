@@ -5,12 +5,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/Layout/my-css")
-    @Styles.Render("~/Content/Layout/css")
-    @Scripts.Render("~/bundles/jquery")
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    @Styles.Render("~/Content/Layout/my-css")
+    @Styles.Render("~/Content/Layout/css")
+    @Scripts.Render("~/bundles/jquery")
 </head>
 <body style="background-color: white">
     <!--@RenderBody()-->
@@ -34,13 +34,13 @@
             </div>
             <div class="modal-footer">
 
-                <a href="#" class="btn" data-dismiss="modal">Login</a>
-                <a href="#" class="btn btn-primary">Cancel</a>
+                <a href="#"data-dismiss="modal"><button class="width1 abutton">Login</button></a>
+                <a href="#"><button class="width1 abutton">Cancel</button></a>
             </div>
         </div>
         <div>
             <div class="login-st" style="margin-right: 5px;">
-                <a type="button" href="#login-form" data-toggle="modal"><button class="abutton pulse width1">Login</button></a>
+                <a type="button" href="#login-form" data-toggle="modal"><button class="pulse width1 abutton">Login</button></a>
                 <a type="button" href="#" data-toggle="modal"><button class="abutton pulse width2">Registration</button></a>
             </div>
         </div>
@@ -64,9 +64,11 @@
                 <div class="clear"></div>
             </div>
         </div>
-        @{ Html.RenderPartial("PartialView");}
+        @{
+        Html.RenderPartial("ConPartialView");
+        }
     </header>
-    <footer>
+    <footer style="bottom: 0">
         <div>
             <a href="#" id="toTop" style="margin-right: -580px; right: 50%; display: block;">
                 <span id="toTopHover" style="opacity: 0;"></span>
@@ -77,8 +79,7 @@
                 <div class="f_phone"><span>Call Us:</span> + 380631709471</div>
                 <div class="copy">
                     <div class="st1">
-                        <div class="brand">Lviv<span class="color1">T</span>axi </div>
-                        &copy; 2014	|
+                        <div>Lviv<span class="color1">T</span>axi &copy; 2014 |</div>
                     </div>
                     Website designed by A-Team<br>
                     Epam IT Lab 2014.

@@ -1,15 +1,15 @@
 ﻿$(document).ready(function () {
-    jQuery('#camera_wrap').camera({
+    jquery('#camera_wrap').camera({
         loader: false,
         pagination: false,
-        minHeight: '444',
+        minheight: '444',
         thumbnails: false,
         height: '28.28125%',
         caption: true,
         navigation: true,
         fx: 'mosaic'
     });
-    $().UItoTop({ easingType: 'easeOutQuart' });
+    $().uitotop({ easingtype: 'easeoutquart' });
 });
 
 

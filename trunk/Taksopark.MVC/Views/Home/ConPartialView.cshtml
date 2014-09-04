@@ -1,0 +1,38 @@
+﻿@using System.Web.Optimization
+@using Taksopark.MVC.Controllers.Home
+
+@Styles.Render("~/Content/Layout/my-css")
+@Scripts.Render("~/bundles/ready-script")
+@Styles.Render("~/Content/Layout/slider-style")
+@Scripts.Render("~/bundles/slider-js")
+<script>
+    auto();
+</script>
+<div class="container_12">
+    <div class="grid_12">
+        <h1>
+            <a href="#">
+                <img src="~/Content/Image/logo.bmp" alt="Your Happy Family" />
+            </a>
+        </h1>
+    </div>
+</div>
+<div class="clear"></div>
+<div id="sliderFrame" style=" margin-bottom: 25px; margin-top: 3px;">
+    <div id="slider">
+        <img src="~/Content/Image/slide.jpg" />
+        <b data-src="/Content/Image/slide1.jpg" >Data</b>
+        <b data-src="/Content/Image/slide2.jpg" >Video</b>
+    </div>
+</div>
+<div class="inner-map-div" style="margin-bottom: 200px;">
+    @Html.Partial("BingMapPartial")
+    @using (Html.BeginForm("OrderTaxi", "Home", FormMethod.Post))
+    {
+        <input type="text" id="Order" name="txtFrom" />
+        <input type="text" id="Order" name="txtTo" />   
+        <button type="submit" class="abutton">Order Taxi</button>
+    }     
+</div>
+
+

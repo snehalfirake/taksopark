@@ -111,6 +111,7 @@
     <Content Include="Content\Layout\error-style.css" />
     <Content Include="Content\Layout\font-awesome.css" />
     <Content Include="Content\Layout\grid.css" />
+    <Content Include="Content\Layout\js-image-slider.css" />
     <Content Include="Content\Layout\login-style.css" />
     <Content Include="Content\Layout\reset.css" />
     <Content Include="Content\Layout\style.css" />
@@ -119,6 +120,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\app-scripts\camera.js" />
+    <Content Include="Scripts\app-scripts\js-image-slider.js" />
+    <Content Include="Scripts\app-scripts\map-script.js" />
     <Content Include="Scripts\app-scripts\ready.js" />
     <Content Include="Scripts\app-scripts\userinfo-script.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -137,6 +140,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\TaxiOrdering.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -149,13 +153,15 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\PartialView.cshtml" />
+    <Content Include="Views\Home\ConPartialView.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\UserInfo.cshtml" />
     <Content Include="Views\Home\RegisterUser.cshtml" />
     <Content Include="Views\Home\ErrorView.cshtml" />
     <Content Include="Views\Home\Error404.cshtml" />
     <Content Include="Views\Home\Error500.cshtml" />
+    <Content Include="Views\Home\BingMapPartial.cshtml" />
+    <Content Include="Views\Home\OrderTaxi.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -165,7 +171,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
