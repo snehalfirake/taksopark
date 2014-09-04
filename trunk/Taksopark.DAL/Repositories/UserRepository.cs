@@ -6,7 +6,7 @@ using Taksopark.DAL.Repositories.Mappers;
 
 namespace Taksopark.DAL.Repositories
 {
-    class UserRepository: IUserRepository
+    public class UserRepository: IUserRepository
     {
         private readonly SqlConnection _connection;
 
