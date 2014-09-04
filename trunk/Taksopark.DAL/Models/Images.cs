@@ -1,6 +1,4 @@
-﻿using  System.Drawing;
-
-namespace Taksopark.DAL.Models
+﻿namespace Taksopark.DAL.Models
 {
     public class Images
     {

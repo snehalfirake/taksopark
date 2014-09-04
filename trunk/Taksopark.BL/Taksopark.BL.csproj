@@ -39,7 +39,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminBl.cs" />
+    <Compile Include="Interfaces\IAdminBl.cs" />
+    <Compile Include="Interfaces\IOperatorBl.cs" />
+    <Compile Include="Interfaces\IUserBL.cs" />
+    <Compile Include="OperatorBl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserBl.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Taksopark.DAL\Taksopark.DAL.csproj">
+      <Project>{090412fd-0881-43d3-875d-35e6edd00485}</Project>
+      <Name>Taksopark.DAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -10,5 +10,7 @@ namespace Taksopark.DAL.Models
         public int OperatorId { get; set; }
         public string PhoneNumber { get; set; }
         public string Status { get; set; }
+        public string StartPoint { get; set; }
+        public string FinishPoint { get; set; }
     }
 }

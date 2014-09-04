@@ -1,23 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Taksopark.DAL.Models;
+using Taksopark.DAL.Repositories.Interfases;
+using Taksopark.DAL.Repositories.Mappers;
 
 namespace Taksopark.DAL.Repositories
 {
     class UserRepository: IUserRepository
     {
-        private SqlConnection _connection;
+        private readonly SqlConnection _connection;
 
         public UserRepository(SqlConnection connection)
         {
             _connection = connection;
         }
 
-        public void Update(Models.User user)
+        /// <summary>
+        /// Update User record
+        /// </summary>
+        /// <param name="user">User model</param>
+        public void Update(User user)
         {
             using (var command = _connection.CreateCommand())
             {
@@ -34,11 +36,15 @@ namespace Taksopark.DAL.Repositories
                 command.Parameters.AddWithValue("role", user.Role);
                 command.Parameters.AddWithValue("status", user.Status);
                 command.Parameters.AddWithValue("userId", user.Id);
-
+                command.ExecuteNonQuery();
             }
         }
 
-        public void Create(Models.User user)
+        /// <summary>
+        /// Create new user record
+        /// </summary>
+        /// <param name="user">User model</param>
+        public void Create(User user)
         {
             using (var command = _connection.CreateCommand())
             {
@@ -50,15 +56,43 @@ namespace Taksopark.DAL.Repositories
                 command.Parameters.AddWithValue("role", user.Role);
                 command.Parameters.AddWithValue("status", user.Status);
                 command.Parameters.AddWithValue("userId", user.Id);
+                command.ExecuteNonQuery();
             }
         }
-
-        public IEnumerable<Models.User> FindAllUsers()
+        
+        /// <summary>
+        /// Get all user records
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<User> GetAllUsers()
         {
             using (var command = _connection.CreateCommand() )
             {
                 command.CommandText = "SELECT * FROM Users";
-                //return ToList()
+                var userList = new List<User>();
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        var user = UserMapper.Map(reader);
+                        userList.Add(user);
+                    }
+                }
+                return userList;
+            }
+        }
+
+        /// <summary>
+        /// Delete user record from DB
+        /// </summary>
+        /// <param name="userId">User id in DB</param>
+        public void DeleteUser(int userId)
+        {
+            using (var command = _connection.CreateCommand())
+            {
+                command.CommandText = "DELETE FROM Users WHERE ID = @userId";
+                command.Parameters.AddWithValue("userId", userId);
+                command.ExecuteNonQuery();
             }
         }
     }
