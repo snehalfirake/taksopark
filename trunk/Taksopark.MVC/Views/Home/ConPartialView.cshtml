@@ -18,13 +18,13 @@
     </div>
 </div>
 <div class="clear"></div>
-<div id="sliderFrame" style=" margin-bottom: 25px; margin-top: 3px;">
-    <div id="slider">
-        <img src="~/Content/Image/slide.jpg" />
-        <b data-src="/Content/Image/slide1.jpg" >Data</b>
-        <b data-src="/Content/Image/slide2.jpg" >Video</b>
+    <div id="sliderFrame" style=" margin-bottom: 25px; margin-top: 3px;">
+        <div id="slider">
+            <img src="~/Content/Image/slide.jpg" />
+            <b data-src="/Content/Image/slide1.jpg">Data</b>
+            <b data-src="/Content/Image/slide2.jpg">Video</b>
+        </div>
     </div>
-</div>
 <div class="inner-map-div" style="margin-bottom: 200px;">
     @Html.Partial("BingMapPartial")
     @using (Html.BeginForm("OrderTaxi", "Home", FormMethod.Post))
