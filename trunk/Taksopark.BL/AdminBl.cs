@@ -8,41 +8,25 @@ namespace Taksopark.BL
 {
     class AdminBl : IAdminBl
     {
-        private const string ConnectionString = "conn";
-        
-        public List<User> GetAllOperators()
+        private readonly string _connectionString;
+
+        public AdminBl(string connnectionString)
         {
-            using (var uow = new UnitOfWork(ConnectionString))
-            {
-                return (from user in uow.UserRepository.GetAllUsers()
-                    where user.Role == "Operator"
-                    select user).ToList();
-            }
+            _connectionString = connnectionString;
         }
 
-        public List<User> GetAllClients()
+        public List<User> GetUserByRole(string role)
         {
-            using (var uow = new UnitOfWork(ConnectionString))
+            using (var uow = new UnitOfWork(_connectionString))
             {
-                return (from user in uow.UserRepository.GetAllUsers()
-                        where user.Role == "Client"
-                        select user).ToList();
-            }
-        }
-
-        public List<User> GetAllDrivers()
-        {
-            using (var uow = new UnitOfWork(ConnectionString))
-            {
-                return (from user in uow.UserRepository.GetAllUsers()
-                        where user.Role == "Driver"
-                        select user).ToList();
+                var users = uow.UserRepository.GetUsersByRole(role);
+                return users.ToList();
             }
         }
 
         public void UpdateUser(User user)
         {
-            using (var uow = new UnitOfWork(ConnectionString))
+            using (var uow = new UnitOfWork(_connectionString))
             {
                 uow.UserRepository.Update(user);
             }
@@ -50,7 +34,7 @@ namespace Taksopark.BL
 
         public void CreateUser(User user)
         {
-            using (var uow = new UnitOfWork(ConnectionString))
+            using (var uow = new UnitOfWork(_connectionString))
             {
                 uow.UserRepository.Create(user);
             }
@@ -58,7 +42,7 @@ namespace Taksopark.BL
 
         public void CreateCar(Car car)
         {
-            using (var uow = new UnitOfWork(ConnectionString))
+            using (var uow = new UnitOfWork(_connectionString))
             {
                 uow.CarRepository.Create(car);
             }

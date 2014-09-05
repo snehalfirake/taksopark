@@ -40,6 +40,8 @@ namespace Taksopark.DAL.Repositories
             }
         }
 
+
+
         /// <summary>
         /// Create new user record
         /// </summary>
@@ -83,6 +85,30 @@ namespace Taksopark.DAL.Repositories
         }
 
         /// <summary>
+        /// Get users by role
+        /// </summary>
+        /// <param name="role"></param>
+        /// <returns></returns>
+        public IEnumerable<User> GetUsersByRole(string role)
+        {
+            using (var command = _connection.CreateCommand())
+            {
+                command.CommandText = "SELECT * FROM Users WHERE Role = @role";
+                command.Parameters.AddWithValue("role", role);
+                var userList = new List<User>();
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        var user = UserMapper.Map(reader);
+                        userList.Add(user);
+                    }
+                }
+                return userList;
+            }
+        }
+
+        /// <summary>
         /// Delete user record from DB
         /// </summary>
         /// <param name="userId">User id in DB</param>
@@ -94,6 +120,21 @@ namespace Taksopark.DAL.Repositories
                 command.Parameters.AddWithValue("userId", userId);
                 command.ExecuteNonQuery();
             }
+        }
+
+        /// <summary>
+        /// Check is already user with the same login
+        /// </summary>
+        /// <param name="login">String login value</param>
+        /// <returns></returns>
+        public bool LoginExists(string login)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public User GetUserByLogIn(string login, string password)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

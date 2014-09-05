@@ -5,12 +5,9 @@ namespace Taksopark.BL.Interfaces
 {
     interface IAdminBl
     {
-        List<User> GetAllOperators();
-        List<User> GetAllClients();
-        List<User> GetAllDrivers();
+        List<User> GetUserByRole(string role);
         void UpdateUser(User user);
         void CreateCar(Car car);
         void CreateUser(User user);
-
     }
 }

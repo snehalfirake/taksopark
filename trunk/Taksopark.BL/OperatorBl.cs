@@ -8,11 +8,16 @@ namespace Taksopark.BL
 {
     class OperatorBl : IOperatorBl
     {
-        private const string ConnectionString = "conn";
+        private readonly string _connectionString;
+
+        public OperatorBl(string connectionString)
+        {
+            _connectionString = connectionString;
+        }
 
         public List<Request> GetAllRequests()
         {
-            using (var uow = new UnitOfWork(ConnectionString))
+            using (var uow = new UnitOfWork(_connectionString))
             {
                 return uow.RequestRepository.GetAllRequests().ToList();
             }
@@ -20,7 +25,7 @@ namespace Taksopark.BL
 
         public List<Request> GetActiveRequests()
         {
-            using (var uow = new UnitOfWork(ConnectionString))
+            using (var uow = new UnitOfWork(_connectionString))
             {
                 return (from request in uow.RequestRepository.GetAllRequests()
                     where request.Status == "Active"
@@ -30,7 +35,7 @@ namespace Taksopark.BL
 
         public List<Request> GetProgressRequests()
         {
-            using (var uow = new UnitOfWork(ConnectionString))
+            using (var uow = new UnitOfWork(_connectionString))
             {
                 return (from request in uow.RequestRepository.GetAllRequests()
                         where request.Status == "InProgress"
@@ -40,7 +45,7 @@ namespace Taksopark.BL
 
         public List<Request> GetClosedRequests()
         {
-            using (var uow = new UnitOfWork(ConnectionString))
+            using (var uow = new UnitOfWork(_connectionString))
             {
                 return (from request in uow.RequestRepository.GetAllRequests()
                         where request.Status == "Closed"
@@ -50,7 +55,7 @@ namespace Taksopark.BL
 
         public void UpdateRequest(Request request)
         {
-            using (var uow = new UnitOfWork(ConnectionString))
+            using (var uow = new UnitOfWork(_connectionString))
             {
                 uow.RequestRepository.Update(request);
             }
@@ -58,7 +63,7 @@ namespace Taksopark.BL
 
         public List<User> GetAllDrivers()
         {
-            using (var uow = new UnitOfWork(ConnectionString))
+            using (var uow = new UnitOfWork(_connectionString))
             {
                 var userList = from user in uow.UserRepository.GetAllUsers()
                                where user.Role == "Driver"

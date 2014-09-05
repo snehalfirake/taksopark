@@ -6,11 +6,16 @@ namespace Taksopark.BL
 {
     class UserBl : IUserBl
     {
-        private const string ConnectionString = "conn";
+        private readonly string _connectionString;
+
+        public UserBl(string connectionString)
+        {
+            _connectionString = connectionString;
+        }
 
         public void CreateRequest(DAL.Models.Request request)
         {
-            using (var uow = new UnitOfWork(ConnectionString))
+            using (var uow = new UnitOfWork(_connectionString))
             {
                 uow.RequestRepository.Create(request);
             }
@@ -18,7 +23,7 @@ namespace Taksopark.BL
 
         public void CreateComment(DAL.Models.Comment comment)
         {
-            using (var uow = new UnitOfWork(ConnectionString))
+            using (var uow = new UnitOfWork(_connectionString))
             {
                 uow.CommentRepository.Create(comment);
             }
@@ -26,7 +31,7 @@ namespace Taksopark.BL
 
         public void CreateUser(DAL.Models.User user)
         {
-            using (var uow = new UnitOfWork(ConnectionString))
+            using (var uow = new UnitOfWork(_connectionString))
             {
                 uow.UserRepository.Create(user);
             }
@@ -34,10 +39,12 @@ namespace Taksopark.BL
 
         public System.Collections.Generic.List<DAL.Models.Car> GetAllCars()
         {
-            using (var uow = new UnitOfWork(ConnectionString))
+            using (var uow = new UnitOfWork(_connectionString))
             {
                 return uow.CarRepository.GetAllCars().ToList();
             }
         }
+
+       
     }
 }

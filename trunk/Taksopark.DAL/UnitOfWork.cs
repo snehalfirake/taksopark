@@ -23,11 +23,24 @@ namespace Taksopark.DAL
 
         public void Dispose()
         {
-            if (_connection == null) return;
+            if (_connection == null)
+            {
+                return;
+            }
+            _connection.Close();
+            _connection = null;
+            GC.SuppressFinalize(this);
+        }
+        
+        ~UnitOfWork()
+        {
+            if (_connection == null)
+            {
+                return;
+            }
             _connection.Close();
             _connection = null;
         }
-
         public UserRepository UserRepository
         {
             get
