@@ -26,6 +26,11 @@ namespace Taksopark.MVC
             bundles.Add(new ScriptBundle("~/bundles/map").Include("~/Scripts/app-scripts/map-script.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/slider-js").Include("~/Scripts/app-scripts/js-image-slider.js"));
+
+            bundles.Add(new StyleBundle("~/ContactStyles").Include(
+                "~/Content/Contacts/ContactStyles.css"
+                
+                ));
         }
     }
 }

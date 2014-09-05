@@ -11,6 +11,7 @@
     @Styles.Render("~/Content/Layout/my-css")
     @Styles.Render("~/Content/Layout/css")
     @Scripts.Render("~/bundles/jquery")
+    @Styles.Render("~/ContactStyles")
 </head>
 <body style="background-color: white">
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
@@ -53,7 +54,7 @@
                             <li class="current"><a href="index.html">Home</a></li>
                             <li> @Html.ActionLink("About ", "About", "Home")</li>
                             <li><a href="#">Cars</a></li>
-                            <li><a href="#">Contacts</a></li>
+                            <li>@Html.ActionLink("Contacts ", "SendMail", "Contacts")</li>
                         </ul>
                     </nav>
                     <div class="clear"></div>
