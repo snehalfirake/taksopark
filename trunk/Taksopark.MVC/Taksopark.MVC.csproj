@@ -95,6 +95,7 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Contacts\ContactStyles.css" />
     <Content Include="Content\Image\arrow_l.gif" />
     <Content Include="Content\Image\arrow_r.gif" />
     <Content Include="Content\Image\camera-loader.gif" />
@@ -136,10 +137,12 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ContactsController.cs" />
     <Compile Include="Controllers\Home\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\TaxiOrdering.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -162,6 +165,7 @@
     <Content Include="Views\Shared\Error500.cshtml" />
     <Content Include="Views\Home\BingMapPartial.cshtml" />
     <Content Include="Views\Home\OrderTaxi.cshtml" />
+    <Content Include="Views\Contacts\SendMail.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

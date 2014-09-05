@@ -15,36 +15,36 @@ namespace Taksopark.MVC
             
         }
 
-        protected void Application_Error(object sender, EventArgs e)
-        {
-            HttpContext oHttpContext;
-            Exception oException;
+        //protected void Application_Error(object sender, EventArgs e)
+        //{
+        //    HttpContext oHttpContext;
+        //    Exception oException;
 
-            oHttpContext = HttpContext.Current;
+        //    oHttpContext = HttpContext.Current;
 
-            oException = oHttpContext.Server.GetLastError();
+        //    oException = oHttpContext.Server.GetLastError();
 
-            if (oException is HttpException)
-            {
-                switch ((oException as HttpException).GetHttpCode())
-                {
-                    case 404:
-                        oHttpContext.Response.StatusCode = 404;
-                        oHttpContext.Response.StatusDescription = "Not Found";
-                        oHttpContext.Response.Charset = "windows-1251";
-                        oHttpContext.Server.Execute("~/Views/Home/Error404");
-                        oHttpContext.Server.ClearError();
-                        break;
+        //    if (oException is HttpException)
+        //    {
+        //        switch ((oException as HttpException).GetHttpCode())
+        //        {
+        //            //case 404:
+        //            //    oHttpContext.Response.StatusCode = 404;
+        //            //    oHttpContext.Response.StatusDescription = "Not Found";
+        //            //    oHttpContext.Response.Charset = "windows-1251";
+        //            //    oHttpContext.Server.Execute("~/Views/Home/Error404");
+        //            //    oHttpContext.Server.ClearError();
+        //            //    break;
 
-                    case 500:
-                        oHttpContext.Response.StatusCode = 500;
-                        oHttpContext.Response.StatusDescription = "Internet server error";
-                        oHttpContext.Response.Charset = "windows-1251";
-                        oHttpContext.Server.Execute("~/Views/Home/Error500");
-                        oHttpContext.Server.ClearError();
-                        break;
-                }
-            }
-        }
+        //            //case 500:
+        //            //    oHttpContext.Response.StatusCode = 500;
+        //            //    oHttpContext.Response.StatusDescription = "Internet server error";
+        //            //    oHttpContext.Response.Charset = "windows-1251";
+        //            //    oHttpContext.Server.Execute("~/Views/Home/Error500");
+        //            //    oHttpContext.Server.ClearError();
+        //            //    break;
+        //        }
+        //    }
+        //}
     }
 }
