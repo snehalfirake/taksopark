@@ -1,60 +1,74 @@
-﻿
-@{
-    Layout = "~/Views/Shared/_Layout.cshtml";
+﻿@model Taksopark.MVC.Models.RegistrationModel
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Login, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Login, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Login, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ConfirmPassword, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ConfirmPassword, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PhoneNumber, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Submit" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
 }
 
-<!DOCTYPE html>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>RegisterView</title>
-</head>
-<body>
-    <form enctype="multipart/form-data" method="post">
-        <div id="register" style="border: solid 2px #fdc903; width: 600px; height: 400px; background-color: white; margin-top: 15px; margin-bottom: 15px; margin-left: auto; margin-right: auto;">
-            <h1 style="text-align:center">Register</h1>
-            <br />
-            <table id="tableRegister" style="margin: auto;">
-                <tr style="padding-bottom: 15px;">
-                    <td><b>Name:</b></td>
-                    <td><input type="text" id="userName" name="userName" style="background-color:white" /></td>
-                </tr>
-                <tr>
-                    <td><b>Last Name:</b></td>
-                    <td><input type="text" id="userLastName" name="userLastName" style="background-color:white" /></td>
-                </tr>
-                <tr>
-                    <td><b>Login:</b></td>
-                    <td><input type="text" id="userLogin" name="userLogin" style="background-color:white" /></td>
-                </tr>
-                <tr>
-                    <td><b>E-mail:</b></td>
-                    <td><input type="text" id="userEmail" name="userEmail" style="background-color:white" /></td>
-                </tr>
-                <tr>
-                    <td><b>Password:</b></td>
-                    <td><input type="text" id="userPassword" name="userPassword" style="background-color:white" /></td>
-                </tr>
-                <tr>
-                    <td><b>Confirm password:</b></td>
-                    <td><input type="text" id="userConfirmPassword" name="userConfirmPassword" style="background-color:white" /></td>
-                </tr>
-                <tr>
-                    <td><b>Photo:</b></td>
-                    <td>
-                        @using (Html.BeginForm("", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
-                        {
-                        <input type="file" id="fileUpload" name="fileUpload" value="Choose file..." /><br />
-                            <input type="submit" name="submitUpload" id="submitUpload" value="Upload photo" class="abutton" />
-                        }
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2"><p style="text-align:center"><input type="submit" style="width:150px;" value="Register" class="abutton" /></p></td>
-                </tr>
-            </table>
-        </div>
-    </form>
-</body>
-</html>
