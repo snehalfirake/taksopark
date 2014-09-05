@@ -9,7 +9,7 @@
     auto();
 </script>
 <div class="container_12">
-    <div class="grid_12" style="margin-left: auto; margin-right: auto;">
+    <div class="grid_12" style="text-align: center">
         <h1>
             <a href="#">
                 <img src="~/Content/Image/logo.bmp" alt="Your Happy Family" />
@@ -26,13 +26,18 @@
         </div>
     </div>
 <div class="inner-map-div" style="margin-bottom: 200px;">
-    @Html.Partial("BingMapPartial")
     @using (Html.BeginForm("OrderTaxi", "Home", FormMethod.Post))
     {
-        <input type="text" id="Order" name="txtFrom" />
-        <input type="text" id="Order" name="txtTo" />   
-        <button type="submit" class="abutton">Order Taxi</button>
-    }     
+    <div style="text-align: center">
+        <input type="text" id="Order" name="txtFrom" placeholder="From:" style="height: 40px; font-size: 18px;" />
+        <input type="text" id="Order" name="txtTo" placeholder="To:" style="height: 40px; font-size: 18px;" />
+        <input type="text" id="Order" name="txtPhone" placeholder="Phone:" style="height: 40px; font-size: 18px;" />
+        <button type="submit" class="abutton" style="height: 40px; font-size: 18px;">Order Taxi</button>
+        <button type="submit" class="abutton" style="height: 40px; font-size: 18px;">More</button>
+    </div>
+    } 
+    <br />
+    @Html.Partial("BingMapPartial")    
 </div>
 
 
