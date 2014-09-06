@@ -1,0 +1,27 @@
+﻿@using System.Web.Optimization
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Про проект</title>
+    @Styles.Render("~/Content/Layout/about")
+
+</head>
+<body>
+    <div class="block1" style="border: 1px solid #fdc903">
+        <h1><span class="color1">П</span>ро проект</h1>
+        <p>
+            <span class="color1">Т</span>аксоПарк- веб-проект створений креативною командою студентів EpamITLab, був запущений у вересні 2014.
+            <br />
+            <br />
+            Основне завдання проекту - допомога в налагодженні контакту між таксопарками та клієнтами.
+            Ми спрощуєм оформлення замовлень, пошук "надійних" таксистів та надаємо широкий спектр
+            послуг пов'язаних із транспортним перевезенням.
+        </p>
+    </div>
+</body>
+</html>

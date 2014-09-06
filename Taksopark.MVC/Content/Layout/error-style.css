@@ -1,0 +1,38 @@
+﻿.block1 { 
+	margin: 140px auto;
+	font-family: Arial, "MS Trebuchet", sans-serif;
+	width: 610px;
+	height: 350px;
+	font-weight: 700;
+	padding: .25em .5em;
+	outline: none;
+	border: 1px solid rgb(131, 139, 131);
+	border-radius: 7px;
+	background: rgb(240, 255, 240) linear-gradient(rgb(240, 255, 240), rgb(193, 205, 193));
+   }
+   
+.block1 p{
+	margin: 10%;
+	/*color:rgb(122, 139, 139);*/
+	text-decoration: none;
+	color:rgb (104, 131, 139);
+}
+   
+.block1 a{
+	text-decoration:none;
+	color:rgb(122, 197, 205);
+}
+
+.block1 a:hover{
+	color:rgb(0, 139, 139);
+}
+
+.block1 h1{
+	/*text-transform:uppercase;*/
+	text-align: center;
+	font-size: 50px;
+	/*color:rgb (104, 131, 139);*/
+	color:rgb(122, 139, 139);
+
+
+}
