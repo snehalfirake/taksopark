@@ -121,6 +121,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\app-scripts\camera.js" />
+    <Content Include="Scripts\app-scripts\date-time-picker.js" />
     <Content Include="Scripts\app-scripts\js-image-slider.js" />
     <Content Include="Scripts\app-scripts\map-script.js" />
     <Content Include="Scripts\app-scripts\ready.js" />

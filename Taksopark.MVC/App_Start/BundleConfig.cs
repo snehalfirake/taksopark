@@ -18,7 +18,7 @@ namespace Taksopark.MVC
 
             bundles.Add(new ScriptBundle("~/bundles/userinfo").Include(
                       "~/Scripts/app-scripts/userinfo-script.js"));
-            bundles.Add(new ScriptBundle("~/bundles/ready-script").Include("~/Scripts/app-scripts/ready.js", "~/Scripts/app-scripts/camera.js"));
+            bundles.Add(new ScriptBundle("~/bundles/ready-script").Include("~/Scripts/app-scripts/ready.js", "~/Scripts/app-scripts/camera.js", "~/Scripts/app-scripts/date-time-picker.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-1.10.2.min.js", "~/Scripts/bootstrap.min.js"));

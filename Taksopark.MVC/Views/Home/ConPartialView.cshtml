@@ -8,36 +8,39 @@
 <script>
     auto();
 </script>
-<div class="container_12">
-    <div class="grid_12" style="text-align: center">
-        <h1>
-            <a href="#">
-                <img src="~/Content/Image/logo.bmp" alt="Your Happy Family" />
-            </a>
-        </h1>
-    </div>
-</div>
-<div class="clear"></div>
-    <div id="sliderFrame" style=" margin-bottom: 25px; margin-top: 3px;">
-        <div id="slider">
-            <img src="~/Content/Image/slide.jpg" />
-            <b data-src="/Content/Image/slide1.jpg">Data</b>
-            <b data-src="/Content/Image/slide2.jpg">Video</b>
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+    <div class="container_12">
+        <div class="grid_12" style="text-align: center">
+            <h1>
+                <a href="#">
+                    <img src="~/Content/Image/logo.bmp" alt="Your Happy Family" />
+                </a>
+            </h1>
         </div>
     </div>
+    <div class="clear"></div>
+        <div id="sliderFrame" style=" margin-bottom: 25px; margin-top: 3px;">
+            <div id="slider">
+                <img src="~/Content/Image/slide.jpg" />
+                <b data-src="/Content/Image/slide1.jpg">Data</b>
+                <b data-src="/Content/Image/slide2.jpg">Video</b>
+            </div>
+        </div>
 <div class="inner-map-div" style="margin-bottom: 200px;">
-    @using (Html.BeginForm("OrderTaxi", "Home", FormMethod.Post))
-    {
+    <div id="toggle" style="text-align: center">
+        <input type="text" id="datetimepicker" name="txtTime" placeholder="Time:" style="height: 40px; font-size: 18px;" />
+     
+    </div>
     <div style="text-align: center">
         <input type="text" id="Order" name="txtFrom" placeholder="From:" style="height: 40px; font-size: 18px;" />
         <input type="text" id="Order" name="txtTo" placeholder="To:" style="height: 40px; font-size: 18px;" />
         <input type="text" id="Order" name="txtPhone" placeholder="Phone:" style="height: 40px; font-size: 18px;" />
         <button type="submit" class="abutton" style="height: 40px; font-size: 18px;">Order Taxi</button>
-        <button type="submit" class="abutton" style="height: 40px; font-size: 18px;">More</button>
+        <button id="show" class="abutton" style="height: 40px; font-size: 18px;">More</button>
     </div>
-    } 
     <br />
-    @Html.Partial("BingMapPartial")    
+    @Html.Partial("BingMapPartial")
 </div>
 
 

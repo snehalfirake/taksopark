@@ -1,15 +1,20 @@
-﻿$(document).ready(function () {
-    jquery('#camera_wrap').camera({
-        loader: false,
-        pagination: false,
-        minheight: '444',
-        thumbnails: false,
-        height: '28.28125%',
-        caption: true,
-        navigation: true,
-        fx: 'mosaic'
+﻿var flag = false;
+
+$(document).ready(function () {
+
+    $("#toggle").hide();
+    
+    $("#show").click(function () {
+        if (!flag) {
+            flag = true;
+            $("#toggle").show("clip", { direction: "vertical" }, 500);
+        }
+        else {
+            flag = false;
+            $("#toggle").hide("clip", { direction: "vertical" }, 500);
+        }
+
     });
-    $().uitotop({ easingtype: 'easeoutquart' });
 });
 
 

@@ -57,11 +57,11 @@ namespace Taksopark.MVC.Controllers.Home
         {
             return View();
         }
-        [HttpPost]
+        /*[HttpPost]
         public ActionResult OrderTaxi(FormCollection form)
         {
             var direction = new TaxiOrdering {PlaceFrom = form["txtFrom"], PlaceTo = form["txtTo"]};
             return View("OrderTaxi", direction);
-        }
+        }*/
     }
 }
