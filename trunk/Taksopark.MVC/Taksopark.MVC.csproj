@@ -109,6 +109,7 @@
     <Content Include="Content\Layout\About.css" />
     <Content Include="Content\Layout\adipoli.css" />
     <Content Include="Content\Layout\camera.css" />
+    <Content Include="Content\Layout\DateTimePicker.css" />
     <Content Include="Content\Layout\error-style.css" />
     <Content Include="Content\Layout\font-awesome.css" />
     <Content Include="Content\Layout\grid.css" />
@@ -122,6 +123,7 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\app-scripts\camera.js" />
     <Content Include="Scripts\app-scripts\date-time-picker.js" />
+    <Content Include="Scripts\app-scripts\DateTimePicker.js" />
     <Content Include="Scripts\app-scripts\js-image-slider.js" />
     <Content Include="Scripts\app-scripts\map-script.js" />
     <Content Include="Scripts\app-scripts\ready.js" />

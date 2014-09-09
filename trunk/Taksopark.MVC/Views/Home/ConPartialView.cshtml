@@ -10,6 +10,8 @@
 </script>
 <script src="//code.jquery.com/jquery-1.10.2.js"></script>
 <script src="//code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+<link rel="stylesheet" type="text/css" href="/Content/Layout/DateTimePicker.css" />
+<script type="text/javascript" src="/Scripts/app-scripts/DateTimePicker.js"></script>
     <div class="container_12">
         <div class="grid_12" style="text-align: center">
             <h1>
@@ -30,7 +32,16 @@
 <div class="inner-map-div" style="margin-bottom: 200px;">
     <div id="toggle" style="text-align: center">
         <input type="text" id="datetimepicker" name="txtTime" placeholder="Time:" style="height: 40px; font-size: 18px;" />
-     
+<script>
+    $(document).ready(function()
+    {
+   
+        $("#dtBox").DateTimePicker();
+   
+    });
+    </script>
+        <input type="text" data-field="datetime" placeholder="Date and time:" style="height: 40px; font-size: 18px;">
+        <div id="dtBox"></div>
     </div>
     <div style="text-align: center">
         <input type="text" id="Order" name="txtFrom" placeholder="From:" style="height: 40px; font-size: 18px;" />
