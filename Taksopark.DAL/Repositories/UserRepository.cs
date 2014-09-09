@@ -32,6 +32,7 @@ namespace Taksopark.DAL.Repositories
                                       WHERE Id = @userId";
                 command.Parameters.AddWithValue("userName", user.UserName);
                 command.Parameters.AddWithValue("lastName", user.LastName);
+                command.Parameters.AddWithValue("login", user.Login);
                 command.Parameters.AddWithValue("password", user.Password);
                 command.Parameters.AddWithValue("role", user.Role);
                 command.Parameters.AddWithValue("status", user.Status);
@@ -54,10 +55,11 @@ namespace Taksopark.DAL.Repositories
                                       "VALUES(@userName, @lastName, @login, @password, @role, @status)";
                 command.Parameters.AddWithValue("userName", user.UserName);
                 command.Parameters.AddWithValue("lastName", user.LastName);
+                command.Parameters.AddWithValue("login", user.Login);
                 command.Parameters.AddWithValue("password", user.Password);
                 command.Parameters.AddWithValue("role", user.Role);
                 command.Parameters.AddWithValue("status", user.Status);
-                command.Parameters.AddWithValue("userId", user.Id);
+                //command.Parameters.AddWithValue("userId", user.Id);
                 command.ExecuteNonQuery();
             }
         }
@@ -91,6 +93,7 @@ namespace Taksopark.DAL.Repositories
         /// <returns></returns>
         public IEnumerable<User> GetUsersByRole(string role)
         {
+            //_connection.Open();
             using (var command = _connection.CreateCommand())
             {
                 command.CommandText = "SELECT * FROM Users WHERE Role = @role";
@@ -104,6 +107,7 @@ namespace Taksopark.DAL.Repositories
                         userList.Add(user);
                     }
                 }
+                //_connection.Close();
                 return userList;
             }
         }
@@ -135,6 +139,30 @@ namespace Taksopark.DAL.Repositories
         public User GetUserByLogIn(string login, string password)
         {
             throw new System.NotImplementedException();
+        }
+
+        /// <summary>
+        /// Get user by id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public User GetUserById(int id)
+        {
+            using (var command = _connection.CreateCommand())
+            {
+                command.CommandText = "SELECT * FROM Users WHERE Id = @id";
+                command.Parameters.AddWithValue("id", id);
+                User findUser = new User();
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        var user = UserMapper.Map(reader);
+                        findUser = user;
+                    }
+                }
+                return findUser;
+            }
         }
     }
 }
