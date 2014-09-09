@@ -1,0 +1,47 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="Taksopark.WebForms.WebForms.Admin" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Admin panel</title>
+    <%--<link href="Styles/Admin/AdminStyles.css" rel="stylesheet" />--%>
+    <link href="Styles/Admin/simple_menu.css" rel="stylesheet" />
+    <link href="Styles/Admin/style.css" rel="stylesheet" />
+    <script src="Scripts/jquery.min.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="header">
+            <h1 class="center" style="text-align:center">Lviv Taxi: admin-panel</h1>
+            <div id="site_title">
+                <a href="Users.aspx">
+                    <img src="/Images/Admin/logo.png" />
+                </a>
+            </div>
+            <ol id="menu">
+                <li class="active_menu_item"><a href="Users.aspx">Users info</a>
+                   <%-- <ol>
+                        <li><a href="#">Menu Item 1</a></li>
+                        <li><a href="#">Menu Item 2</a></li>
+                    </ol>--%>
+                </li>
+                <li><a href="Operators.aspx">Operators info</a></li>
+                <li><a href="TaxiDrivers.aspx">taxi drivers info</a></li>
+            </ol>
+        </div>
+        
+        <div id="container">
+            <div>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+        <div id="footer">
+            <small>© Copyright 2014, A-Team</small>
+        </div>
+    </form>
+</body>
+</html>
