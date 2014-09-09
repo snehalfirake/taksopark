@@ -8,48 +8,53 @@
 <script>
     auto();
 </script>
+<script>
+    $(document).ready(function () {
+        $("#dtBox").DateTimePicker();
+    });
+</script>
+
 <script src="//code.jquery.com/jquery-1.10.2.js"></script>
 <script src="//code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
 <link rel="stylesheet" type="text/css" href="/Content/Layout/DateTimePicker.css" />
 <script type="text/javascript" src="/Scripts/app-scripts/DateTimePicker.js"></script>
-    <div class="container_12">
-        <div class="grid_12" style="text-align: center">
-            <h1>
-                <a href="#">
-                    <img src="~/Content/Image/logo.bmp" alt="Your Happy Family" />
-                </a>
-            </h1>
-        </div>
+<div class="container_12">
+    <div class="grid_12" style="text-align: center">
+        <h1>
+            <a href="#">
+                <img src="~/Content/Image/logo.bmp" alt="Your Happy Family" />
+            </a>
+        </h1>
     </div>
-    <div class="clear"></div>
-        <div id="sliderFrame" style=" margin-bottom: 25px; margin-top: 3px;">
-            <div id="slider">
-                <img src="~/Content/Image/slide.jpg" />
-                <b data-src="/Content/Image/slide1.jpg">Data</b>
-                <b data-src="/Content/Image/slide2.jpg">Video</b>
-            </div>
-        </div>
+</div>
+<div class="clear"></div>
+<div id="sliderFrame" style=" margin-bottom: 25px; margin-top: 3px;">
+    <div id="slider">
+        <img src="~/Content/Image/slide.jpeg" />
+        <b data-src="/Content/Image/slide1.jpeg">Data</b>
+        <b data-src="/Content/Image/slide2.jpeg">Video</b>
+    </div>
+</div>
 <div class="inner-map-div" style="margin-bottom: 200px;">
-    <div id="toggle" style="text-align: center">
-        <input type="text" id="datetimepicker" name="txtTime" placeholder="Time:" style="height: 40px; font-size: 18px;" />
-<script>
-    $(document).ready(function()
+    @using (Ajax.BeginForm("ConPartialView", "Home", new AjaxOptions{InsertionMode = InsertionMode.Replace,
+        HttpMethod = "POST",
+        UpdateTargetId = "holder"}))
     {
-   
-        $("#dtBox").DateTimePicker();
-   
-    });
-    </script>
-        <input type="text" data-field="datetime" placeholder="Date and time:" style="height: 40px; font-size: 18px;">
-        <div id="dtBox"></div>
+    <div id="holder">
+        <div id="toggle" style="text-align: center">
+            <input type="text" data-field="datetime" name="date-time" placeholder="Date and time:" style="height: 40px; font-size: 18px;">
+            <div id="dtBox"></div>
+        </div>
+        <div style="text-align: center">
+            <input type="text" id="Order" name="txtFrom" placeholder="From:" style="height: 40px; font-size: 18px;" />
+            <input type="text" id="Order" name="txtTo" placeholder="To:" style="height: 40px; font-size: 18px;" />
+            <input type="text" id="Order" name="txtPhone" placeholder="Phone:" style="height: 40px; font-size: 18px;" />
+            <button type="submit" class="abutton" style="height: 40px; font-size: 18px;">Order Taxi</button>
+            
+        </div>
     </div>
-    <div style="text-align: center">
-        <input type="text" id="Order" name="txtFrom" placeholder="From:" style="height: 40px; font-size: 18px;" />
-        <input type="text" id="Order" name="txtTo" placeholder="To:" style="height: 40px; font-size: 18px;" />
-        <input type="text" id="Order" name="txtPhone" placeholder="Phone:" style="height: 40px; font-size: 18px;" />
-        <button type="submit" class="abutton" style="height: 40px; font-size: 18px;">Order Taxi</button>
-        <button id="show" class="abutton" style="height: 40px; font-size: 18px;">More</button>
-    </div>
+    } 
+    <button id="show" class="abutton" style="height: 40px; font-size: 18px;">More</button>
     <br />
     @Html.Partial("BingMapPartial")
 </div>
