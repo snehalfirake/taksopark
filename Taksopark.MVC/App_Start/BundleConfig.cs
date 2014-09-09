@@ -6,7 +6,7 @@ namespace Taksopark.MVC
     {
         public static void RegisterBundles(BundleCollection bundles)
         {
-            bundles.Add(new StyleBundle("~/Content/Layout/my-css").Include("~/Content/Layout/style.css","~/Content/Layout/login-style.css"));
+            bundles.Add(new StyleBundle("~/Content/Layout/my-css").Include("~/Content/Layout/style.css", "~/Content/Layout/login-style.css", "~/Content/Layout/DateTimePicker.css"));
 
             bundles.Add(new StyleBundle("~/Content/Layout/slider-style").Include("~/Content/Layout/js-image-slider.css"));
 
@@ -18,7 +18,7 @@ namespace Taksopark.MVC
 
             bundles.Add(new ScriptBundle("~/bundles/userinfo").Include(
                       "~/Scripts/app-scripts/userinfo-script.js"));
-            bundles.Add(new ScriptBundle("~/bundles/ready-script").Include("~/Scripts/app-scripts/ready.js", "~/Scripts/app-scripts/camera.js", "~/Scripts/app-scripts/date-time-picker.js"));
+            bundles.Add(new ScriptBundle("~/bundles/ready-script").Include("~/Scripts/app-scripts/ready.js", "~/Scripts/app-scripts/camera.js", "~/Scripts/app-scripts/DateTimePicker.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-1.10.2.min.js", "~/Scripts/bootstrap.min.js"));
@@ -27,10 +27,7 @@ namespace Taksopark.MVC
 
             bundles.Add(new ScriptBundle("~/bundles/slider-js").Include("~/Scripts/app-scripts/js-image-slider.js"));
 
-            bundles.Add(new StyleBundle("~/ContactStyles").Include(
-                "~/Content/Contacts/ContactStyles.css"
-                
-                ));
+            bundles.Add(new StyleBundle("~/ContactStyles").Include("~/Content/Contacts/ContactStyles.css"));
         }
     }
 }
