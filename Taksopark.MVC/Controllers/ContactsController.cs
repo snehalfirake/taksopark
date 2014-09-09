@@ -29,15 +29,14 @@ namespace Taksopark.MVC.Controllers
                     Host = "smtp.gmail.com",
                     Port = 587,
                     EnableSsl = true,
-                    //Credentials = new NetworkCredential("komaniakvitalik@gmail.com", "3411902474"),
-                    Credentials = CredentialCache.DefaultNetworkCredentials,
+                    Credentials = new NetworkCredential("lvivtaxopark@gmail.com", "kmdsdnfrcjgfhr"),
                     DeliveryMethod = SmtpDeliveryMethod.Network
                 })
                 {
                     var mail = new MailMessage();
-                    mail.To.Add("komaniakvitalik@ukr.net");
+                    mail.To.Add("lvivtaxopark@gmail.com");
                     mail.From = new MailAddress(form.Email, form.Name);
-                    mail.Subject = String.Format("Request to Contact from {0}", form.Name);
+                    mail.Subject = String.Format(form.Email);
                     mail.Body = form.Message;
 
                     try
