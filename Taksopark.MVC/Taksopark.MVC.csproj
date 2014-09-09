@@ -93,6 +93,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\TaxiServiceDB.mdf" />
+    <Content Include="App_Data\TaxiServiceDB_log.ldf">
+      <DependentUpon>TaxiServiceDB.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Contacts\ContactStyles.css" />
@@ -102,9 +106,9 @@
     <Content Include="Content\Image\logo.bmp" />
     <Content Include="Content\Image\Pause.png" />
     <Content Include="Content\Image\prevnext.png" />
-    <Content Include="Content\Image\slide.jpg" />
-    <Content Include="Content\Image\slide1.jpg" />
-    <Content Include="Content\Image\slide2.jpg" />
+    <Content Include="Content\Image\slide.jpeg" />
+    <Content Include="Content\Image\slide1.jpeg" />
+    <Content Include="Content\Image\slide2.jpeg" />
     <Content Include="Content\Image\totop.png" />
     <Content Include="Content\Layout\About.css" />
     <Content Include="Content\Layout\adipoli.css" />
@@ -178,7 +182,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <ProjectReference Include="..\Taksopark.DAL\Taksopark.DAL.csproj">
+      <Project>{090412FD-0881-43D3-875D-35E6EDD00485}</Project>
+      <Name>Taksopark.DAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

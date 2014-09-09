@@ -1,5 +1,12 @@
 ﻿
+using System;
+using System.Data.SqlClient;
+using System.Runtime.Remoting.Messaging;
+using System.Web.Configuration;
 using System.Web.Mvc;
+using Taksopark.DAL.Models;
+using Taksopark.DAL.Repositories;
+using Taksopark.DAL.Repositories.Interfases;
 using Taksopark.MVC.Models;
 
 namespace Taksopark.MVC.Controllers.Home
@@ -7,6 +14,7 @@ namespace Taksopark.MVC.Controllers.Home
     public class HomeController : Controller
     {
         // GET: Home
+        private readonly string _connection = WebConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
         public ActionResult Index()
         {
             return View();
@@ -52,16 +60,28 @@ namespace Taksopark.MVC.Controllers.Home
             return View();
         }
 
-
+        [HttpGet]
         public ActionResult OrderTaxi()
         {
             return View();
         }
-        /*[HttpPost]
+        [HttpPost]
         public ActionResult OrderTaxi(FormCollection form)
         {
-            var direction = new TaxiOrdering {PlaceFrom = form["txtFrom"], PlaceTo = form["txtTo"]};
-            return View("OrderTaxi", direction);
-        }*/
+            var sqlConnection = new SqlConnection(_connection);
+            var request = new RequestRepository(sqlConnection);
+            request.Create(new Request
+            {
+                CreatorId = 1,
+                FinishPoint = form["txtFrom"],
+                OperatorId = 1,
+                PhoneNumber = form["txtPhone"],
+                StartPoint = form["txtTo"],
+                RequesTime = DateTime.Parse(form["date-time"]),
+                Status = "Active"
+            });
+
+            return View();
+        }
     }
 }
