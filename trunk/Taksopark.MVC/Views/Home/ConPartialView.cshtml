@@ -1,4 +1,5 @@
-﻿@using System.Web.Optimization
+﻿﻿@using System.Web.Optimization
+@using System.Web.Optimization
 @using Taksopark.MVC.Controllers.Home
 
 @Styles.Render("~/Content/Layout/my-css")
@@ -36,27 +37,28 @@
     </div>
 </div>
 <div class="inner-map-div" style="margin-bottom: 200px;">
-    @using (Ajax.BeginForm("ConPartialView", "Home", new AjaxOptions{InsertionMode = InsertionMode.Replace,
-        HttpMethod = "POST",
-        UpdateTargetId = "holder"}))
+    @using (Ajax.BeginForm("OrderTaxi", "Home", new AjaxOptions
     {
-    <div id="holder">
-        <div id="toggle" style="text-align: center">
-            <input type="text" data-field="datetime" name="date-time" placeholder="Date and time:" style="height: 40px; font-size: 18px;">
-            <div id="dtBox"></div>
+        InsertionMode = InsertionMode.Replace,
+        HttpMethod = "POST",
+        UpdateTargetId = "holder"
+    }))
+    {
+        <div id="holder">
+            <div id="toggle" style="text-align: center">
+                <input type="text" data-field="datetime" name="date-time" placeholder="Date and time:" style="height: 40px; font-size: 18px;">
+                <div id="dtBox"></div>
+            </div>
+            <div style="text-align: center">
+                <input type="text" id="Order" name="txtFrom" placeholder="From:" style="height: 40px; font-size: 18px;" />
+                <input type="text" id="Order" name="txtTo" placeholder="To:" style="height: 40px; font-size: 18px;" />
+                <input type="text" id="Order" name="txtPhone" placeholder="Phone:" style="height: 40px; font-size: 18px;" />
+                <button type="submit" class="abutton" style="height: 40px; font-size: 18px;">OrderTaxi</button>
+
+            </div>
         </div>
-        <div style="text-align: center">
-            <input type="text" id="Order" name="txtFrom" placeholder="From:" style="height: 40px; font-size: 18px;" />
-            <input type="text" id="Order" name="txtTo" placeholder="To:" style="height: 40px; font-size: 18px;" />
-            <input type="text" id="Order" name="txtPhone" placeholder="Phone:" style="height: 40px; font-size: 18px;" />
-            <button type="submit" class="abutton" style="height: 40px; font-size: 18px;">Order Taxi</button>
-            
-        </div>
-    </div>
-    } 
+    }
     <button id="show" class="abutton" style="height: 40px; font-size: 18px;">More</button>
     <br />
     @Html.Partial("BingMapPartial")
 </div>
-
-
