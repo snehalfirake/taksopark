@@ -45,6 +45,12 @@ namespace Taksopark.BL
             }
         }
 
-       
+        public bool IsLoginBooked(string login)
+        {
+            using (var uow = new UnitOfWork(_connectionString))
+            {
+                return uow.UserRepository.IsLoginBooked(login);
+            }
+        }
     }
 }
