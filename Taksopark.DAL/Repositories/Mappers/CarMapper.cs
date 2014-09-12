@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Data;
+using System.Data.SqlClient;
 using Taksopark.DAL.Models;
 
 namespace Taksopark.DAL.Repositories.Mappers
 {
     static class CarMapper
     {
-        public static Car Map(IDataRecord record)
+        public static Car Map(SqlDataReader record)
         {
+            if (record == null) throw new ArgumentNullException("record");
             var car = new Car
             {
                 Id = (int)record["Id"],

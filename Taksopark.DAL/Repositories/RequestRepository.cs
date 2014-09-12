@@ -24,7 +24,7 @@ namespace Taksopark.DAL.Repositories
             using (var command = _connection.CreateCommand())
             {
                 command.CommandText = "UPDATE Request SET "
-                                      + "RequestTime = @requestTime, "
+                                      + "RequetTime = @requestTime, "
                                       + "CreatorId = @creatorId, "
                                       + "PhoneNumber = @phoneNumber, "
                                       + "Status = @status, "
@@ -52,7 +52,7 @@ namespace Taksopark.DAL.Repositories
         {
             using (var command = _connection.CreateCommand())
             {
-                command.CommandText = "INSERT INTO REQUEST(RequestTime = @requestTime, "
+                command.CommandText = "INSERT INTO REQUEST(RequetTime = @requestTime, "
                                       + "CreatorId = @creatorId, "
                                       + "PhoneNumber = @phoneNumber, "
                                       + "Status = @status, "
@@ -77,6 +77,8 @@ namespace Taksopark.DAL.Repositories
                 {
                     while (reader.Read())
                     {
+                        int id = (int) reader["Id"];
+                        string PhoneNumber = (string) reader["PhoneNumber"];
                         var request = RequestMapper.Map(reader);
                         requestList.Add(request);
                     }
