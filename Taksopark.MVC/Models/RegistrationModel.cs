@@ -44,7 +44,6 @@ namespace Taksopark.MVC.Models
         public string ConfirmPassword { get; set; }
 
         [Required(ErrorMessage = "Phone Number Required:")]
-        [RegularExpression(@"^[a-zA-Z'.\s]{1,40}$", ErrorMessage = "Special Characters not allowed")]
         [DisplayName("Phone Number:")]
         [StringLength(13, ErrorMessage = "13 Characters allowed")]
         public string PhoneNumber { get; set; } 
