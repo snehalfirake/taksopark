@@ -9,7 +9,7 @@ namespace Taksopark.DAL.Repositories.Interfases
         void Create(User user);
         IEnumerable<User> GetAllUsers();
         void DeleteUser(int userId);
-        bool LoginExists(string login);
+        bool IsLoginBooked(string login);
         User GetUserByLogIn(string login, string password);
     }
 }

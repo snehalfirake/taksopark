@@ -52,13 +52,22 @@ namespace Taksopark.DAL.Repositories
         {
             using (var command = _connection.CreateCommand())
             {
-                command.CommandText = "INSERT INTO REQUEST(RequetTime = @requestTime, "
-                                      + "CreatorId = @creatorId, "
-                                      + "PhoneNumber = @phoneNumber, "
-                                      + "Status = @status, "
-                                      + "StartPoint = @startPoint, "
-                                      + "FinishPoint = @finishPoint, "
-                                      + "OperatorId)";
+                command.CommandText = "INSERT INTO Request(RequetTime, CreatorId, PhoneNumber, Status, StartPoint, FinishPoint, OperatorId) "
+                                      + "VALUES(@requestTime, @creatorId, @phoneNumber, @status, @startPoint, @finishPoint, @operatorId)";
+                command.Parameters.AddWithValue("requestTime", request.RequesTime);
+                if (request.CreatorId == 0)
+                {
+                    command.Parameters.AddWithValue("creatorId", null);
+                }
+                else
+                {
+                    command.Parameters.AddWithValue("creatorId", request.CreatorId);
+                }
+                command.Parameters.AddWithValue("phoneNumber", request.PhoneNumber);
+                command.Parameters.AddWithValue("status", request.Status);
+                command.Parameters.AddWithValue("startPoint", request.StartPoint);
+                command.Parameters.AddWithValue("finishPoint", request.FinishPoint);
+                command.Parameters.AddWithValue("operatorId", request.OperatorId);
                 command.ExecuteNonQuery();
             }
         }
@@ -77,8 +86,8 @@ namespace Taksopark.DAL.Repositories
                 {
                     while (reader.Read())
                     {
-                        int id = (int) reader["Id"];
-                        string PhoneNumber = (string) reader["PhoneNumber"];
+                        int id = (int)reader["Id"];
+                        string PhoneNumber = (string)reader["PhoneNumber"];
                         var request = RequestMapper.Map(reader);
                         requestList.Add(request);
                     }

@@ -131,10 +131,27 @@ namespace Taksopark.DAL.Repositories
         /// </summary>
         /// <param name="login">String login value</param>
         /// <returns></returns>
-        public bool LoginExists(string login)
+        public bool IsLoginBooked(string login)
         {
-            throw new System.NotImplementedException();
+            using (var command = _connection.CreateCommand())
+            {
+                command.CommandText = "SELECT * FROM Users";
+                var user = new User();
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        user = UserMapper.Map(reader);
+                    }
+                }
+                if (user.Login == login)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
+
 
         public User GetUserByLogIn(string login, string password)
         {
