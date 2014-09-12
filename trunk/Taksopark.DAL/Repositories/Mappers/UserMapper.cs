@@ -1,11 +1,12 @@
 ﻿using System.Data;
+using System.Data.SqlClient;
 using Taksopark.DAL.Models;
 
 namespace Taksopark.DAL.Repositories.Mappers
 {
     static class UserMapper
     {
-        public static User Map(IDataRecord record)
+        public static User Map(SqlDataReader record)
         {
             var user = new User
             {
