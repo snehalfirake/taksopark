@@ -148,6 +148,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ContactsController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\Home\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -178,6 +179,7 @@
     <Content Include="Views\Home\OrderTaxi.cshtml" />
     <Content Include="Views\Contacts\SendMail.cshtml" />
     <Content Include="Views\Home\RegisterUser.cshtml" />
+    <Content Include="Views\Shared\Error403.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -194,6 +196,9 @@
       <Project>{090412FD-0881-43D3-875D-35E6EDD00485}</Project>
       <Name>Taksopark.DAL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\Error\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

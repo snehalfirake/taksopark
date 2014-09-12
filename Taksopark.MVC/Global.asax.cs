@@ -1,6 +1,8 @@
-﻿using System.Web.Mvc;
+﻿using System.Web;
+using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using Taksopark.MVC.Controllers;
 
 namespace Taksopark.MVC
 {
@@ -11,40 +13,37 @@ namespace Taksopark.MVC
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-
             
         }
-
-        //protected void Application_Error(object sender, EventArgs e)
-        //{
-        //    HttpContext oHttpContext;
-        //    Exception oException;
-
-        //    oHttpContext = HttpContext.Current;
-
-        //    oException = oHttpContext.Server.GetLastError();
-
-        //    if (oException is HttpException)
-        //    {
-        //        switch ((oException as HttpException).GetHttpCode())
-        //        {
-        //            //case 404:
-        //            //    oHttpContext.Response.StatusCode = 404;
-        //            //    oHttpContext.Response.StatusDescription = "Not Found";
-        //            //    oHttpContext.Response.Charset = "windows-1251";
-        //            //    oHttpContext.Server.Execute("~/Views/Home/Error404");
-        //            //    oHttpContext.Server.ClearError();
-        //            //    break;
-
-        //            //case 500:
-        //            //    oHttpContext.Response.StatusCode = 500;
-        //            //    oHttpContext.Response.StatusDescription = "Internet server error";
-        //            //    oHttpContext.Response.Charset = "windows-1251";
-        //            //    oHttpContext.Server.Execute("~/Views/Home/Error500");
-        //            //    oHttpContext.Server.ClearError();
-        //            //    break;
-        //        }
-        //    }
-        //}
+        protected void Application_Error()
+        {
+            var exception = Server.GetLastError();
+            var httpException = exception as HttpException;
+            Response.Clear();
+            Server.ClearError();
+            var routeData = new RouteData();
+            routeData.Values["controller"] = "Errors";
+            routeData.Values["action"] = "General";
+            routeData.Values["exception"] = exception;
+            Response.StatusCode = 500;
+            if (httpException != null)
+            {
+                Response.StatusCode = httpException.GetHttpCode();
+                switch (Response.StatusCode)
+                {
+                    case 403:
+                        routeData.Values["action"] = "Http403";
+                        break;
+                    case 404:
+                        routeData.Values["action"] = "Http404";
+                        break;
+                }
+            }
+            Response.TrySkipIisCustomErrors = true;
+            IController errorController = new ErrorController();
+            var wrapper = new HttpContextWrapper(Context);
+            var rc = new RequestContext(wrapper, routeData);
+            errorController.Execute(rc);
+        }
     }
 }
