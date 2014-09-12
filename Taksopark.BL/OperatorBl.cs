@@ -6,7 +6,7 @@ using Taksopark.DAL.Models;
 
 namespace Taksopark.BL
 {
-    class OperatorBl : IOperatorBl
+    public class OperatorBl : IOperatorBl
     {
         private readonly string _connectionString;
 
