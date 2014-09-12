@@ -4,7 +4,7 @@ using Taksopark.DAL;
 
 namespace Taksopark.BL
 {
-    class UserBl : IUserBl
+    public class UserBl : IUserBl
     {
         private readonly string _connectionString;
 
