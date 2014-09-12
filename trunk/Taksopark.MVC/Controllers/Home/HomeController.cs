@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Runtime.Remoting.Messaging;
 using System.Web.Configuration;
 using System.Web.Mvc;
+using Taksopark.BL;
 using Taksopark.DAL.Models;
 using Taksopark.DAL.Repositories;
 using Taksopark.DAL.Repositories.Interfases;
@@ -33,6 +34,23 @@ namespace Taksopark.MVC.Controllers.Home
         public ActionResult RegisterUser()
         {
             return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult RegisterUser(RegistrationModel registrationModel)
+        {
+            if (ModelState.IsValid)
+            {
+                var userBl = new UserBl(_connection);
+                var user = new User {LastName = registrationModel.LastName, 
+                    Login = registrationModel.Login, 
+                    Password = registrationModel.Password, 
+                    Role = "Client", Status = "Active",
+                    UserName = registrationModel.FirstName};
+                userBl.CreateUser(user);
+            }
+            return View(registrationModel);
         }
 
         public ActionResult ErrorView()
@@ -83,5 +101,6 @@ namespace Taksopark.MVC.Controllers.Home
 
             return View();
         }
+
     }
 }
