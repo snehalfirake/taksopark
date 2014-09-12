@@ -48,12 +48,11 @@ var directionDisplay;
 <body style="margin: 10px; padding: 0px;" onload="initialize()">
     <span style="font-size: 19px;"><span class="color1">Location</span> on map</span>
     <br>
-    <br>
-    <div id="TaxiMap1" style="width: 95%; height:88%">
-    </div>
     <input type="text" id="adr1" />
     <input type="text" id="adr2" />
     <label for="distance">Distance (km): </label>
     <input type="text" name="distance" id="distance" readonly="true" />
-    <button onclick="calcRoute()">Моя адреса</button>
+    <button onclick="calcRoute()" class="abutton">Show the way</button>
+    <br>
+    <div id="TaxiMap1" style="width: 95%; height:88%"></div>
 </body>

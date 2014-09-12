@@ -61,20 +61,6 @@ namespace Taksopark.MVC.Controllers.Home
             return View(registrationModel);
         }
 
-        public ActionResult ErrorView()
-        {
-            return View();
-        }
-
-        public ActionResult Error404()
-        {
-            return View();
-        }
-
-        public ActionResult Error500()
-        {
-            return View();
-        }
 
         public ActionResult BingMap()
         {
