@@ -9,5 +9,6 @@ namespace Taksopark.BL.Interfaces
         void CreateComment(Comment comment);
         void CreateUser(User user);
         List<Car> GetAllCars();
+        bool IsLoginBooked(string login);
     }
 }
