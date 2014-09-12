@@ -1,48 +1,87 @@
-﻿//var map = null;
+﻿var stockholm = new google.maps.LatLng(49.8382112, 24.0294017);
+var marker;
+var map1;
+var myCity;
+geocoder = new google.maps.Geocoder();
 
-//function GetMap() {
-//    map = new VEMap('myMap');
-//    map.AttachEvent("ondoubleclick", AddPushpin);
-//    map.LoadMap(new VELatLong(59.43655681809183, 24.75275516510011), 15, VEMapStyle.Road, false);
-//}
 
-//onload = GetMap;
+function initialize() {
+    var mapOptions = {
+        zoom: 12,
+        center: stockholm
+    };
+    var info = new google.maps.InfoWindow({ content: "" });
 
-function GetMap() {
-    var map = new Microsoft.Maps.Map(document.getElementById("myMap"), {
-        credentials: "AgqM0fOmSlYtmmbRFiuc01WRlU4_1-SsVPG5X4N0phbXF88SDDx_7pyisFB_MJWa",
-        center: new Microsoft.Maps.Location(49.8382600, 24.0232400),
-        mapTypeId: Microsoft.Maps.MapTypeId.road,
-        zoom: 15
+
+    var app;
+    map1 = new google.maps.Map(document.getElementById('TaxiMap1'),
+            mapOptions);
+    //Populate arrayOfValues 
+    $.ajax({
+        url: 'tolist',
+        dataType: 'json',
+        success: function (data) {
+            for (var i = 0; i < data.length ; i++) {
+                app = new google.maps.Marker({
+                    position: new google.maps.LatLng(data[i].Latitude, data[i].Longitude),
+                    map: map1,
+                    title: data[i].Name
+                });
+                google.maps.event.addListener(app, 'click', function () {
+                    alert("Інформація про таксиста")
+                });
+            }
+        }
     });
 }
 
 
-function AddPushpin(e) {
-    var pixel = new VEPixel(e.mapX, e.mapY);
-    var point = map.PixelToLatLong(pixel);
+google.maps.event.addDomListener(window, 'load', initialize);
 
-    var pin = new VEShape(VEShapeType.Pushpin, point);
-    pin.SetTitle("Double Click");
-    pin.SetDescription("DoubleClick Event");
-    map.AddShape(pin);
 
-    AddPointToRoute(point);
+function codeAddress() {
 
-    return true;
+
+
+    marker = new google.maps.Marker({ // маркер
+        visible: false,
+        map: map1,
+        animation: google.maps.Animation.BOUNCE,
+        icon: {
+            path: google.maps.SymbolPath.BACKWARD_CLOSED_ARROW,
+            strokeColor: "Green",
+            scale: 7,
+            strokeWeight: 3
+        },
+
+    })
+    var address = document.getElementById('adr').value;
+    geocoder.geocode({ 'address': 'Львів,' + address }, function (results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+
+
+
+            map1.setCenter(results[0].geometry.location);
+            marker.setOptions({
+                visible: true,
+                title: address,
+                position: results[0].geometry.location
+            });
+
+
+            myCity = new google.maps.Circle({
+
+                center: results[0].geometry.location,
+                radius: 1000,
+                strokeColor: "#0000FF",
+                strokeOpacity: 0.8,
+                strokeWeight: 0.6,
+                fillColor: "#0000FF",
+                fillOpacity: 0.2
+            });
+            myCity.setMap(map1);
+        } else {
+            alert('Не правельно введені дані');
+        }
+    });
 }
-
-function AddPointToRoute(point) {
-    var tr = document.createElement("tr");
-    var td = document.createElement("td");
-    td.innerText = point.Latitude;
-    tr.appendChild(td);
-
-    td = document.createElement("td");
-    td.innerText = point.Longitude;
-    tr.appendChild(td);
-
-    var table = document.getElementById('routeTable');
-    table.appendChild(tr);
-}
-
