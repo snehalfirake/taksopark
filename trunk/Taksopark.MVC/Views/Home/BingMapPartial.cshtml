@@ -1,18 +1,59 @@
 ﻿@using System.Web.Optimization
+@model List<Taksopark.MVC.Models.Driver>
 @Scripts.Render("~/bundles/map")
 @Styles.Render("~/Content/Layout/my-css")
-<script type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0"></script>
-<body onload="GetMap()">
-    <span style="font-size: 19px;"><span class="color1">Location</span> on map</span>
-    <div id="myMap" class="map2"></div>
-    <!--<div id="routeLayer">
-            <table id="routeTable">
-                <tr>
-                    <th>LAT</th>
-                    <th>LON</th>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<script src="https://maps.googleapis.com/maps/api/js?sensor=false&region=ua-UA" type="text/javascript"></script>
+    
+    <script>
+var directionDisplay;
+  var map;
 
-                </tr>
-            </table>
-        </div>-->
-    <!--<div style="clear:both;"></div>-->
+  function initialize() {
+    directionsDisplay = new google.maps.DirectionsRenderer();
+    var lviv = new google.maps.LatLng(49.8382112, 24.0294017);
+    var myOptions = {
+      zoom:12,
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      center: lviv
+    }
+
+    map = new google.maps.Map(document.getElementById("TaxiMap1"), myOptions);
+    directionsDisplay.setMap(map);
+  }
+  var directionsService = new google.maps.DirectionsService();
+
+  function calcRoute() {
+      var distanceInput = document.getElementById("distance");
+
+      var start = "Львів, " + document.getElementById("adr1").value;
+      var end = "Львів, " + document.getElementById("adr2").value;
+      var request = {
+          origin: start,
+          destination: end,
+          travelMode: google.maps.DirectionsTravelMode.DRIVING
+      };
+      directionsService.route(request, function (response, status) {
+          if (status == google.maps.DirectionsStatus.OK) {
+              directionsDisplay.setDirections(response);
+              distanceInput.value = response.routes[0].legs[0].distance.value / 1000;
+
+          }
+      });
+  }
+    </script>
+    
+
+
+<body style="margin: 10px; padding: 0px;" onload="initialize()">
+    <span style="font-size: 19px;"><span class="color1">Location</span> on map</span>
+    <br>
+    <br>
+    <div id="TaxiMap1" style="width: 95%; height:88%">
+    </div>
+    <input type="text" id="adr1" />
+    <input type="text" id="adr2" />
+    <label for="distance">Distance (km): </label>
+    <input type="text" name="distance" id="distance" readonly="true" />
+    <button onclick="calcRoute()">Моя адреса</button>
 </body>

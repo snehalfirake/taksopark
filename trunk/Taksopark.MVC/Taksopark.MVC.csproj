@@ -128,12 +128,15 @@
     <Content Include="Scripts\app-scripts\camera.js" />
     <Content Include="Scripts\app-scripts\date-time-picker.js" />
     <Content Include="Scripts\app-scripts\DateTimePicker.js" />
+    <Content Include="Scripts\app-scripts\jquery-2.1.1.js" />
+    <Content Include="Scripts\app-scripts\jquery-2.1.1.min.js" />
     <Content Include="Scripts\app-scripts\js-image-slider.js" />
     <Content Include="Scripts\app-scripts\map-script.js" />
     <Content Include="Scripts\app-scripts\ready.js" />
     <Content Include="Scripts\app-scripts\userinfo-script.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\app-scripts\jquery-2.1.1.min.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -150,6 +153,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Contact.cs" />
+    <Compile Include="Models\Driver.cs" />
     <Compile Include="Models\RegistrationModel.cs" />
     <Compile Include="Models\TaxiOrdering.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -182,6 +186,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Taksopark.BL\Taksopark.BL.csproj">
+      <Project>{E539054C-B886-4D6C-9C06-D0BB1202777F}</Project>
+      <Name>Taksopark.BL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Taksopark.DAL\Taksopark.DAL.csproj">
       <Project>{090412FD-0881-43D3-875D-35E6EDD00485}</Project>
       <Name>Taksopark.DAL</Name>
