@@ -15,7 +15,7 @@
     border: 1px solid;
     padding: 5px 28px 5px;
     min-height: 250px;
-    height:250px;
+    height: 250px;
     min-width: 400px;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -38,11 +38,199 @@
     cursor: text !important;
     display: block;
 }
-#emptySpaceId {
-    height:21px;
-    width: 400px;
-}
+
 #buttonsHolderId {
-    height:25px;
-    width: 400px;
+    height: 30px;
+    width: 100%;
+}
+
+.textBoxValidationClass {
+    position:absolute;
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.428571429;
+    color: #555555;
+    vertical-align: middle;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+
+    .textBoxValidationClass:focus {
+        border-color: #fdc903;
+        outline: 0;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #fdc903;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #fdc903;
+    }
+
+.error-textBoxValidationClass {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.428571429;
+    color: #555555;
+    vertical-align: middle;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    border-color: #FF0000;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #FF0000;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #FF0000;
+}
+
+    .error-textBoxValidationClass:focus {
+        border-color: #fdc903;
+        outline: 0;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #fdc903;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #fdc903;
+    }
+
+.error-textAreaValidationClass {
+    resize: none;
+    display: block;
+    max-width: 580px;
+    width: 100%;
+    height: 230px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.428571429;
+    color: #555555;
+    vertical-align: middle;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border-color: #FF0000;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #FF0000;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #FF0000;
+    -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+
+    .error-textAreaValidationClass:focus {
+        border-color: #fdc903;
+        outline: 0;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #fdc903;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #fdc903;
+    }
+
+.textAreaValidationClass {
+    resize: none;
+    display: block;
+    max-width: 580px;
+    width: 100%;
+    height: 230px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.428571429;
+    color: #555555;
+    vertical-align: middle;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+
+    .textAreaValidationClass:focus {
+        border-color: #fdc903;
+        outline: 0;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #fdc903;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #fdc903;
+    }
+
+#contactFormId {
+    min-width: 580px;
+    width: 580px;
+    min-height: 420px;
+    height: 420px;
+}
+
+.validationMessageHolderClass {
+    width: 580px;
+    height: 34px;
+}
+
+#errorMessageSpanId {
+    width: 580px;
+    height: 34px;
+    padding: 7px;
+    padding-left: 0px;
+    color: rgb(208,0,0);
+    position: absolute;
+}
+
+#nameErrorValidationSpanId {
+    padding: 7px;
+    height: 34px;
+    width: 300px;
+    color: rgb(208,0,0);
+    float:right;
+    position: absolute;
+    top:0;
+    right:0;
+}
+
+#emailErrorValidationSpanId {
+    padding: 7px;
+    height: 34px;
+    width: 300px;
+    color: rgb(208,0,0);
+    float:right;
+    position: absolute;
+    top:0;
+    right:0;
+}
+/*.errorValidationMessageSpanClass {
+    padding: 7px;
+    height: 34px;
+    width: 300px;
+    color: rgb(208,0,0);
+    float:right;
+}*/
+.textBoxValidationMessageHolderClass {
+    max-width:580px;
+    max-height: 34px;
+    width:580px;
+    height:34px;
+    position:relative;
+}
+
+#successMessageSpanId {
+    width: 580px;
+    height: 34px;
+    padding: 7px;
+    padding-left: 0px;
+    color: #009900;
+    position: absolute;
+}
+#messageErrorValidationSpanId {
+    width: 580px;
+    height: 34px;
+    padding: 7px;
+    padding-left: 0px;
+    color: rgb(208,0,0);
+    position: absolute;
+}
+#formContentId {
+    min-width: 580px;
+    width: 580px;
+    min-height: 437px;
+    height: 437px;
+}
+
+#sendMessageButtonId {
+    margin-left: 0px;
 }

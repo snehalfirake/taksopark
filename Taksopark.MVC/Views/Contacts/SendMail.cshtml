@@ -1,45 +1,50 @@
 ﻿@model Taksopark.MVC.Models.Contact
-
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <!DOCTYPE html>
-
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>SendMail</title>
 </head>
 <body>
-    @using (Ajax.BeginForm("SendMail", "Contacts", new AjaxOptions
-    {
-        HttpMethod = "POST",
-        InsertionMode = InsertionMode.Replace,
-        UpdateTargetId = "target",
-        OnFailure = "ShowError()",
-        OnSuccess = "ShowSuccess()"
-    }))
-    {
-    <div style="margin-left: 35%">
-        <form>
-            @Html.LabelFor(model => model.Name, new {@class = "labelForClass" })
-            @Html.EditorFor(model => model.Name, new { @class = "editorForClass" }) @Html.ValidationMessageFor(model => model.Name)
-
-            @Html.LabelFor(model => model.Email, new { @class = "labelForClass" })
-            @Html.EditorFor(model => model.Email, new { @class = "editorForClass" }) @Html.ValidationMessageFor(model => model.Email)
-
-            @Html.LabelFor(model => model.Message, new { @class = "labelForClass" })
-            @Html.TextAreaFor(model => model.Message, new { @id = "textAreaId" }) @Html.ValidationMessageFor(model => model.Message)<br />
-            <div>
-                <div id="emptySpaceId"></div>
-                <div id="buttonsHolderId">
-                    <input type="submit" class="abutton" value="Send Message">
-                    <input type="reset" class="abutton" value="Clear" />
-                </div>
-            </div>
-        </form>
+    <div>
+        @using (Ajax.BeginForm("SendMail", "Contacts", new AjaxOptions
+            {
+                HttpMethod = "POST",
+                InsertionMode = InsertionMode.Replace,
+                UpdateTargetId = "valodationMessageHolderId",
+            }))
+            {           
+                <form id="contactFormId">
+                    <div id="formContentId">
+                        <div class="validationMessageHolderClass">
+                            <span id="errorMessageSpanId">@ViewBag.ErrorMessage</span>
+                            <span id="successMessageSpanId">@ViewBag.SuccessMessage</span>
+                        </div>
+                        <div id="nameValidationMessageHolderId" class="textBoxValidationMessageHolderClass">
+                            <input type="text" id="nameTextBoxId" class="textBoxValidationClass" name="Name" placeholder="Name" />
+                            <span id="nameErrorValidationSpanId"></span>
+                        </div>
+                        <br />
+                        <div id="emailValidationMessageHolderId" class="textBoxValidationMessageHolderClass">
+                            <input type="text" id="emailTextBoxId" class="textBoxValidationClass" name="Email" placeholder="Email" />
+                            <span id="emailErrorValidationSpanId"></span>
+                        </div>
+                        <div id="messageValidationMessageHolderClass" class="validationMessageHolderClass">
+                            <span id="messageErrorValidationSpanId"></span>
+                        </div>
+                        <textarea id="messageTextAreaId" class="textAreaValidationClass" name="Message" placeholder="Message"></textarea>
+                        <br />
+                        <div id="buttonsHolderId">
+                            <input type="submit" id="sendMessageButtonId" class="abutton" value="Send Message">
+                            <input type="reset" id="clearContentButtonId" class="abutton" value="Clear" />
+                        </div>
+                    </div>
+                </form>
+        }
     </div>
-    }
 </body>
 </html>

@@ -12,6 +12,7 @@
     @Styles.Render("~/Content/Layout/css")
     @Scripts.Render("~/bundles/jquery")
     @Styles.Render("~/ContactStyles")
+    @Scripts.Render("~/Validation")
 </head>
 <body style="background-color: white">
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
@@ -34,17 +35,21 @@
             </div>
             <div class="modal-footer">
 
-                <a href="#"data-dismiss="modal"><button class="width1 abutton">Login</button></a>
-                <a href="#"><button class="width1 abutton">Cancel</button></a>
+                <a href="#" data-dismiss="modal">
+                    <button class="width1 abutton">Login</button></a>
+                <a href="#">
+                    <button class="width1 abutton">Cancel</button></a>
             </div>
         </div>
         <div>
             <div class="login-st" style="margin-right: 5px;">
-                <a type="button" href="#login-form" data-toggle="modal"><button class="pulse width1 abutton">Login</button></a>
-                <a href="/Views/Home/"><button class="abutton pulse width2" style="text-decoration: none;">@Html.ActionLink("Registrate", "RegisterUser", "Home")</button></a>
+                <a type="button" href="#login-form" data-toggle="modal">
+                    <button class="pulse width1 abutton">Login</button></a>
+                <a href="/Views/Home/">
+                    <button class="abutton pulse width2" style="text-decoration: none;">@Html.ActionLink("Registrate", "RegisterUser", "Home")</button></a>
             </div>
         </div>
-        
+
 
         <div class="menu_block">
             <div class="container_12">
@@ -52,7 +57,7 @@
                     <nav class="horizontal-nav full-width horizontalNav-notprocessed">
                         <ul class="sf-menu">
                             <li class="current">@Html.ActionLink("Home", "Index", "Home")</li>
-                            <li> @Html.ActionLink("About", "About", "Home")</li>
+                            <li>@Html.ActionLink("About", "About", "Home")</li>
                             <li><a href="#">Cars</a></li>
                             <li>@Html.ActionLink("Contacts ", "SendMail", "Contacts")</li>
                         </ul>
@@ -62,7 +67,7 @@
                 <div class="clear"></div>
             </div>
         </div>
- 
+
     </header>
     <div class="container body-content">
         @RenderBody()
