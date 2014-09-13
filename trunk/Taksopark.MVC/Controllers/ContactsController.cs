@@ -16,10 +16,10 @@ namespace Taksopark.MVC.Controllers
         [HttpPost]
         public ActionResult SendMail(Contact form)
         {
-            string retValue = "There was an error submitting the form, please try again later.";
             if (!ModelState.IsValid)
             {
-                return Content(retValue);
+                ViewBag.ErrorMessage = "There was an error submitting the form, please try again later.";
+                return View();
             }
 
             if (ModelState.IsValid)
@@ -42,7 +42,7 @@ namespace Taksopark.MVC.Controllers
                     try
                     {
                         client.Send(mail);
-                        retValue = "Your Request for Contact was submitted successfully. We will contact you shortly.";
+                        ViewBag.SuccessMessage = "Your Request for Contact was submitted successfully. We will contact you shortly.";
                     }
                     catch (ArgumentNullException) { throw; }
                     catch (ObjectDisposedException) { throw; }
@@ -53,7 +53,7 @@ namespace Taksopark.MVC.Controllers
                 }
 
             }
-            return Content(retValue);
+            return View();
         }
     }
 }
