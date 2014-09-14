@@ -31,37 +31,6 @@ namespace Taksopark.MVC.Controllers.Home
             return View();
         }
 
-        public ActionResult RegisterUser()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult RegisterUser(RegistrationModel registrationModel)
-        {
-            if (ModelState.IsValid)
-            {
-                var userBl = new UserBl(_connectionString);
-                if (!userBl.IsLoginBooked(registrationModel.Login))
-                {
-                    var user = new User
-                    {
-                        LastName = registrationModel.LastName,
-                        Login = registrationModel.Login,
-                        Password = registrationModel.Password,
-                        Role = "Client",
-                        Status = "Active",
-                        UserName = registrationModel.FirstName
-                    };
-                    userBl.CreateUser(user);
-                    return RedirectToAction("Index", "Home");
-                }
-            }
-            return View(registrationModel);
-        }
-
-
         public ActionResult BingMap()
         {
             return PartialView();
