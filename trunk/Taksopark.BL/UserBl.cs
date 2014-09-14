@@ -52,5 +52,14 @@ namespace Taksopark.BL
                 return uow.UserRepository.IsLoginBooked(login);
             }
         }
+
+
+        public DAL.Models.User GetUserByLoginAndPassword(string login, string password)
+        {
+            using (var uow = new UnitOfWork(_connectionString))
+            {
+                return uow.UserRepository.GetUserByLogIn(login, password);
+            }
+        }
     }
 }
