@@ -5,20 +5,17 @@ namespace Taksopark.MVC.Models
 {
     public class RegistrationModel
     {
-        [Required(ErrorMessage = "FirstName Required:")]
-        [RegularExpression(@"^[a-zA-Z'.\s]{1,40}$", ErrorMessage="Special Characters not allowed")]
+        [Required(ErrorMessage = "First Name Required:")]
         [StringLength(50, ErrorMessage = "Less than 50 characters")]
         [DisplayName("First Name")]
         public string FirstName { get; set; }
 
-        [Required(ErrorMessage="LastName Required:")]
-        [RegularExpression(@"^[a-zA-Z'.\s]{1,40}$", ErrorMessage = "Special Characters not allowed")]
+        [Required(ErrorMessage="Last Name Required:")]
         [DisplayName("Last Name:")]
         [StringLength(50, ErrorMessage = "Less than 50 characters")]
         public string LastName { get; set; }
 
         [Required(ErrorMessage = "Login Required:")]
-        [RegularExpression(@"^[a-zA-Z'.\s]{1,40}$", ErrorMessage = "Special Characters not allowed")]
         [DisplayName("Login:")]
         [StringLength(50, ErrorMessage = "Less than 50 characters")]
         public string Login { get; set; }
