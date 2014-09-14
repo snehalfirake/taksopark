@@ -18,7 +18,7 @@
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
     <header>
-        <div class="login-form-st modal fade" id="login-form">
+        @*<div class="login-form-st modal fade" id="login-form">
             <div class="modal-header">
                 <a class="close" data-dismiss="modal">&times;</a>
                 <h3>Login</h3>
@@ -40,13 +40,14 @@
                 <a href="#">
                     <button class="width1 abutton">Cancel</button></a>
             </div>
-        </div>
+        </div>*@
         <div>
             <div class="login-st" style="margin-right: 5px;">
-                <a type="button" href="#login-form" data-toggle="modal">
+                @Html.Partial("~/Views/Account/_LoginPartial.cshtml")
+                @*<a type="button" href="#login-form" data-toggle="modal">
                     <button class="pulse width1 abutton">Login</button></a>
                 <a href="/Views/Home/">
-                    <button class="abutton pulse width2" style="text-decoration: none;">@Html.ActionLink("Registrate", "RegisterUser", "Home")</button></a>
+                    <button class="abutton pulse width2" style="text-decoration: none;">@Html.ActionLink("Registrate", "RegisterUser", "Account")</button></a>*@
             </div>
         </div>
 
