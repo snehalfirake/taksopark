@@ -135,7 +135,8 @@ namespace Taksopark.DAL.Repositories
         {
             using (var command = _connection.CreateCommand())
             {
-                command.CommandText = "SELECT * FROM Users";
+                command.CommandText = "SELECT * FROM Users WHERE Login = @login";
+                command.Parameters.AddWithValue("login", login);
                 var user = new User();
                 using (var reader = command.ExecuteReader())
                 {
@@ -155,7 +156,23 @@ namespace Taksopark.DAL.Repositories
 
         public User GetUserByLogIn(string login, string password)
         {
-            throw new System.NotImplementedException();
+            using (var command = _connection.CreateCommand())
+            {
+                command.CommandText = "SELECT * FROM Users WHERE Login = @login AND Password = @password AND Role = @client";
+                command.Parameters.AddWithValue("login", login);
+                command.Parameters.AddWithValue("password", password);
+                command.Parameters.AddWithValue("client", "Client");
+                var user = new User();
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        user = UserMapper.Map(reader);
+                    }
+                }
+                return user;
+                
+            }
         }
 
         /// <summary>
