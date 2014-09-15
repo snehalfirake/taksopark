@@ -148,15 +148,20 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ContactsController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\Home\HomeController.cs" />
+    <Compile Include="Controllers\UserProfileController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\Driver.cs" />
+    <Compile Include="Models\EditProfileModel.cs" />
+    <Compile Include="Models\LogInModel.cs" />
     <Compile Include="Models\RegistrationModel.cs" />
+    <Compile Include="Models\RequestModel.cs" />
     <Compile Include="Models\TaxiOrdering.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -179,8 +184,12 @@
     <Content Include="Views\Home\BingMapPartial.cshtml" />
     <Content Include="Views\Home\OrderTaxi.cshtml" />
     <Content Include="Views\Contacts\SendMail.cshtml" />
-    <Content Include="Views\Home\RegisterUser.cshtml" />
     <Content Include="Views\Shared\Error403.cshtml" />
+    <Content Include="Views\Account\RegisterUser.cshtml" />
+    <Content Include="Views\Account\_LoginPartial.cshtml" />
+    <Content Include="Views\Account\LogIn.cshtml" />
+    <Content Include="Views\UserProfile\GetUserProfile.cshtml" />
+    <Content Include="Views\UserProfile\GetUserHistory.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
