@@ -4,10 +4,7 @@
 <div class="centerDiv">
     <asp:GridView runat="server" ID="UsersGV" AllowPaging="true" PageSize="10"
         OnPageIndexChanging="UsersGV_PageIndexChanging" DataSourceID="allUsersDS"
-        AutoGenerateColumns="true" OnRowCommand="UsersGV_RowCommand" CssClass="gvMain">
-        <%--<Columns>
-            <asp:ButtonField HeaderText="Edit User" Text="Edit" CommandName="Select" />
-        </Columns>--%>
+        AutoGenerateColumns="true" CssClass="gvMain">
         <HeaderStyle CssClass="gvHeader" />
         <SelectedRowStyle CssClass="gvSelectedRow" />
     </asp:GridView>
