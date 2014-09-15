@@ -2,7 +2,7 @@
 <link href="../Styles/AdminStyles.css" rel="stylesheet" />
 <%--<link href="../Styles/Admin.css" rel="stylesheet" />--%>
 <div class="centerDiv">
-    <asp:GridView runat="server" ID="TaxiDriversGV" AllowPaging="true" PageSize="10"
+    <asp:GridView runat="server" ID="TaxiDriversGV" AllowPaging="true" PageSize="20"
         OnPageIndexChanging="TaxiDriversGV_PageIndexChanging" DataSourceID="allTaxiDriversDS"
         AutoGenerateColumns="true" CssClass="gvMain">
         <HeaderStyle CssClass="gvHeader" />
