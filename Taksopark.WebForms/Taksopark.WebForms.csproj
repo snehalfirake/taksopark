@@ -59,6 +59,7 @@
   <ItemGroup>
     <Content Include="Admin.Master" />
     <Content Include="style.css" />
+    <Content Include="UserControls\Dispatcher\OrdersTable.ascx" />
     <Content Include="WebForms\Confirmation.aspx" />
     <Content Include="WebForms\Home.aspx" />
     <Content Include="js\fancybox\Thumbs.db" />
@@ -223,6 +224,13 @@
     </Compile>
     <Compile Include="Admin.Master.designer.cs">
       <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Dispatcher\OrdersTable.ascx.cs">
+      <DependentUpon>OrdersTable.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Dispatcher\OrdersTable.ascx.designer.cs">
+      <DependentUpon>OrdersTable.ascx</DependentUpon>
     </Compile>
     <Compile Include="WebForms\Confirmation.aspx.cs">
       <DependentUpon>Confirmation.aspx</DependentUpon>
