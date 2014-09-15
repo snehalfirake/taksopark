@@ -5,9 +5,6 @@
     <asp:GridView runat="server" ID="OperatorsGV" AllowPaging="true" PageSize="10"
         OnPageIndexChanging="OperatorsGV_PageIndexChanging" DataSourceID="allOperatorsDS"
         AutoGenerateColumns="true" CssClass="gvMain">
-        <%--<Columns>
-            <asp:ButtonField HeaderText="Edit User" Text="Edit" CommandName="Select" />
-        </Columns>--%>
         <HeaderStyle CssClass="gvHeader" />
         <SelectedRowStyle CssClass="gvSelectedRow" />
     </asp:GridView>
