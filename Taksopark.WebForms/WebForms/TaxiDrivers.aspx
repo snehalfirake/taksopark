@@ -2,7 +2,6 @@
 
 <%@ Register Src="~/UserControls/TaxiDriversTable.ascx" TagPrefix="uc" TagName="TaxiDriversTable" %>
 <%@ Register Src="~/UserControls/AddNewTaxiDriver.ascx" TagPrefix="uc" TagName="AddNewTaxiDriver" %>
-<%@ Register Src="~/UserControls/DeleteTaxiDriver.ascx" TagPrefix="uc" TagName="DeleteTaxiDriver" %>
 
 
 
@@ -22,11 +21,6 @@
             <h2>Add New Taxi Driver</h2>
         </div>
         <uc:AddNewTaxiDriver runat="server" id="AddNewTaxiDriver" />
-
-        <div class="heading_bg">
-            <h2>Delete Taxi Driver</h2>
-        </div>
-        <uc:DeleteTaxiDriver runat="server" id="DeleteTaxiDriver" />
     </div>
 
     <div class="one-half last">
