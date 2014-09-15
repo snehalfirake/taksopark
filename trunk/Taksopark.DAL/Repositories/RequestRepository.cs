@@ -55,7 +55,7 @@ namespace Taksopark.DAL.Repositories
                 command.CommandText = "INSERT INTO Request(RequetTime, CreatorId, PhoneNumber, Status, StartPoint, FinishPoint, OperatorId) "
                                       + "VALUES(@requestTime, @creatorId, @phoneNumber, @status, @startPoint, @finishPoint, @operatorId)";
                 command.Parameters.AddWithValue("requestTime", request.RequesTime);
-                if (request.CreatorId == 0)
+                if (request.CreatorId == null)
                 {
                     command.Parameters.AddWithValue("creatorId", null);
                 }
@@ -63,11 +63,19 @@ namespace Taksopark.DAL.Repositories
                 {
                     command.Parameters.AddWithValue("creatorId", request.CreatorId);
                 }
+                if (request.OperatorId == null)
+                {
+                    command.Parameters.AddWithValue("operatorId", -3);
+                }
+                else
+                {
+                    command.Parameters.AddWithValue("operatorId", request.OperatorId);
+                }
                 command.Parameters.AddWithValue("phoneNumber", request.PhoneNumber);
                 command.Parameters.AddWithValue("status", request.Status);
                 command.Parameters.AddWithValue("startPoint", request.StartPoint);
                 command.Parameters.AddWithValue("finishPoint", request.FinishPoint);
-                command.Parameters.AddWithValue("operatorId", request.OperatorId);
+                
                 command.ExecuteNonQuery();
             }
         }
@@ -86,8 +94,6 @@ namespace Taksopark.DAL.Repositories
                 {
                     while (reader.Read())
                     {
-                        int id = (int)reader["Id"];
-                        string PhoneNumber = (string)reader["PhoneNumber"];
                         var request = RequestMapper.Map(reader);
                         requestList.Add(request);
                     }
@@ -107,6 +113,26 @@ namespace Taksopark.DAL.Repositories
                 command.CommandText = "DELETE FROM Coments WHERE ID = @requestId";
                 command.Parameters.AddWithValue("requestId", requestId);
                 command.ExecuteNonQuery();
+            }
+        }
+
+
+        public IEnumerable<Request> GetAllRequestsByCreatorId(int id)
+        {
+            using (var command = _connection.CreateCommand())
+            {
+                command.CommandText = "SELECT * FROM Request WHERE CreatorId = @creatorId";
+                command.Parameters.AddWithValue("creatorId", id);
+                var requestList = new List<Request>();
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        var request = RequestMapper.Map(reader);
+                        requestList.Add(request);
+                    }
+                }
+                return requestList;
             }
         }
     }

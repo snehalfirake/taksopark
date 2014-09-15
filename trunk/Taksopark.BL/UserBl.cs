@@ -1,6 +1,8 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using Taksopark.BL.Interfaces;
 using Taksopark.DAL;
+using Taksopark.DAL.Models;
 
 namespace Taksopark.BL
 {
@@ -45,6 +47,14 @@ namespace Taksopark.BL
             }
         }
 
+        public List<Request> GetAllRequestsByCreatorID(int creatorId)
+        {
+            using (var uow = new UnitOfWork(_connectionString))
+            {
+                return uow.RequestRepository.GetAllRequestsByCreatorId(creatorId).ToList();
+            }
+        }
+
         public bool IsLoginBooked(string login)
         {
             using (var uow = new UnitOfWork(_connectionString))
@@ -77,6 +87,15 @@ namespace Taksopark.BL
             using (var uow = new UnitOfWork(_connectionString))
             {
                 uow.UserRepository.Update(user);
+            }
+        }
+
+
+        public List<Request> GetAllRequests()
+        {
+            using (var uow = new UnitOfWork(_connectionString))
+            {
+                return uow.RequestRepository.GetAllRequests().ToList();
             }
         }
     }
