@@ -24,6 +24,15 @@ namespace Taksopark.BL
             }
         }
 
+        public User GetUserById(int id)
+        {
+            using(var uow = new UnitOfWork(_connectionString))
+            {
+                var user = uow.UserRepository.GetUserById(id);
+                return user;
+            }
+        }
+
         public void UpdateUser(User user)
         {
             using (var uow = new UnitOfWork(_connectionString))
