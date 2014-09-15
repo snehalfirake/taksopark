@@ -2,11 +2,11 @@
 
 <%@ Register Src="~/UserControls/Dispatcher/OrdersTable.ascx" TagPrefix="uc" TagName="OrdersTable" %>
 
-
 <asp:Content ID="Content2" ContentPlaceHolderID="Content" runat="server">
     <div id="container">
         <uc:OrdersTable runat="server" ID="OrdersTable" DataSourceID="ordersDataSource" />
     </div>
-    <asp:ObjectDataSource runat="server" ID="ordersDataSource" TypeName="Taksopark.WebForms.WebForms.Users"
-        SelectMethod="GetAllUsersFromRepository"></asp:ObjectDataSource>
+    <asp:ObjectDataSource runat="server" ID="ordersDataSource" TypeName="Taksopark.WebForms.Dispatcher.Order"
+        SelectMethod="GetAllRequests">
+    </asp:ObjectDataSource>
 </asp:Content>

@@ -1,9 +1,13 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Taksopark.BL;
+using Taksopark.DAL.Models;
 
 namespace Taksopark.WebForms.Dispatcher
 {
@@ -11,27 +15,19 @@ namespace Taksopark.WebForms.Dispatcher
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
 
-        protected void statusList_SelectedIndexChanged(object sender, EventArgs e)
+        public static Request GetRequest(object id)
         {
-
+            OperatorBl operatoerBl = new OperatorBl(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+            var orders = operatoerBl.GetActiveRequests();
+            return orders.Where(e => e.Id == Convert.ToInt32(id)).FirstOrDefault();
         }
-
-        protected void submitButton_Click(object sender, EventArgs e)
+  
+        protected void dropDownList_SelectedIndexChanged1(object sender, EventArgs e)
         {
-
-        }
-
-        protected void cancelButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void dropDownList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+            
         }
     }
 }

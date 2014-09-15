@@ -17,11 +17,11 @@ namespace Taksopark.WebForms.Dispatcher
 
         }
 
-        public static IEnumerable<User> GetAllUsersFromRepository()
+        public static IEnumerable<Request> GetAllRequests()
         {
-            AdminBl adminBl = new AdminBl(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
-            var AllClients = adminBl.GetUserByRole("Client");
-            return AllClients;
+            OperatorBl operatoerBl = new OperatorBl(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+            var orders = operatoerBl.GetActiveRequests();
+            return orders;
         }
     }
 }

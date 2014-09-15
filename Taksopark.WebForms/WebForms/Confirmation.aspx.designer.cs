@@ -13,13 +13,13 @@ namespace Taksopark.WebForms.Dispatcher {
     public partial class Confirmation {
         
         /// <summary>
-        /// formView элемент управления.
+        /// detailsView1 элемент управления.
         /// </summary>
         /// <remarks>
         /// Автоматически создаваемое поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FormView formView;
+        protected global::System.Web.UI.WebControls.DetailsView detailsView1;
         
         /// <summary>
         /// dropDownList элемент управления.
@@ -29,5 +29,14 @@ namespace Taksopark.WebForms.Dispatcher {
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList dropDownList;
+        
+        /// <summary>
+        /// ordersDataSource элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ObjectDataSource ordersDataSource;
     }
 }
