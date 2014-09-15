@@ -57,28 +57,286 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin.Master" />
+    <Content Include="style.css" />
+    <Content Include="WebForms\Confirmation.aspx" />
+    <Content Include="WebForms\Home.aspx" />
+    <Content Include="js\fancybox\Thumbs.db" />
+    <Content Include="Dispatcher.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="Content\Admin.css" />
+    <Content Include="Images\Admin\article_bg.png" />
+    <Content Include="Images\Admin\body_bg.png" />
+    <Content Include="Images\Admin\heading_bg.png" />
+    <Content Include="Images\Admin\logo.png" />
+    <Content Include="Images\Admin\menu_bg.jpg" />
+    <Content Include="img\adv_text.png" />
+    <Content Include="img\article_bg.png" />
+    <Content Include="img\back.png" />
+    <Content Include="img\bg-hover.png" />
+    <Content Include="img\body_bg.png" />
+    <Content Include="img\button-tray-down.png" />
+    <Content Include="img\button-tray-up.png" />
+    <Content Include="img\demo\1.jpg" />
+    <Content Include="img\demo_ad.png" />
+    <Content Include="img\dot.png" />
+    <Content Include="img\dropmenu_bg.png" />
+    <Content Include="img\footer_bg.png" />
+    <Content Include="img\forward.png" />
+    <Content Include="img\grad-black-hover.svg" />
+    <Content Include="img\grad-black.svg" />
+    <Content Include="img\heading_bg.png" />
+    <Content Include="img\icon_home.png" />
+    <Content Include="img\loader.gif" />
+    <Content Include="img\logo.png" />
+    <Content Include="img\nav-bg.png" />
+    <Content Include="img\nav-dot.png" />
+    <Content Include="img\next.png" />
+    <Content Include="img\nivo-pag.png" />
+    <Content Include="img\pattern.png" />
+    <Content Include="img\pause.png" />
+    <Content Include="img\play.png" />
+    <Content Include="img\portfolio\portfolio-img-01.jpg" />
+    <Content Include="img\prettyPhoto\dark_rounded\btnNext.png" />
+    <Content Include="img\prettyPhoto\dark_rounded\btnPrevious.png" />
+    <Content Include="img\prettyPhoto\dark_rounded\contentPattern.png" />
+    <Content Include="img\prettyPhoto\dark_rounded\default_thumbnail.gif" />
+    <Content Include="img\prettyPhoto\dark_rounded\loader.gif" />
+    <Content Include="img\prettyPhoto\dark_rounded\sprite.png" />
+    <Content Include="img\prettyPhoto\dark_square\btnNext.png" />
+    <Content Include="img\prettyPhoto\dark_square\btnPrevious.png" />
+    <Content Include="img\prettyPhoto\dark_square\contentPattern.png" />
+    <Content Include="img\prettyPhoto\dark_square\default_thumbnail.gif" />
+    <Content Include="img\prettyPhoto\dark_square\loader.gif" />
+    <Content Include="img\prettyPhoto\dark_square\sprite.png" />
+    <Content Include="img\prettyPhoto\default\default_thumb.png" />
+    <Content Include="img\prettyPhoto\default\loader.gif" />
+    <Content Include="img\prettyPhoto\default\sprite.png" />
+    <Content Include="img\prettyPhoto\default\sprite_next.png" />
+    <Content Include="img\prettyPhoto\default\sprite_prev.png" />
+    <Content Include="img\prettyPhoto\default\sprite_x.png" />
+    <Content Include="img\prettyPhoto\default\sprite_y.png" />
+    <Content Include="img\prettyPhoto\facebook\btnNext.png" />
+    <Content Include="img\prettyPhoto\facebook\btnPrevious.png" />
+    <Content Include="img\prettyPhoto\facebook\contentPatternBottom.png" />
+    <Content Include="img\prettyPhoto\facebook\contentPatternLeft.png" />
+    <Content Include="img\prettyPhoto\facebook\contentPatternRight.png" />
+    <Content Include="img\prettyPhoto\facebook\contentPatternTop.png" />
+    <Content Include="img\prettyPhoto\facebook\default_thumbnail.gif" />
+    <Content Include="img\prettyPhoto\facebook\loader.gif" />
+    <Content Include="img\prettyPhoto\facebook\sprite.png" />
+    <Content Include="img\prettyPhoto\light_rounded\btnNext.png" />
+    <Content Include="img\prettyPhoto\light_rounded\btnPrevious.png" />
+    <Content Include="img\prettyPhoto\light_rounded\default_thumbnail.gif" />
+    <Content Include="img\prettyPhoto\light_rounded\loader.gif" />
+    <Content Include="img\prettyPhoto\light_rounded\sprite.png" />
+    <Content Include="img\prettyPhoto\light_square\btnNext.png" />
+    <Content Include="img\prettyPhoto\light_square\btnPrevious.png" />
+    <Content Include="img\prettyPhoto\light_square\default_thumbnail.gif" />
+    <Content Include="img\prettyPhoto\light_square\loader.gif" />
+    <Content Include="img\prettyPhoto\light_square\sprite.png" />
+    <Content Include="img\prev.png" />
+    <Content Include="img\progress-back.png" />
+    <Content Include="img\progress-bar.png" />
+    <Content Include="img\progress.gif" />
+    <Content Include="img\slide-next-prev.png" />
+    <Content Include="img\slideshow-nav.png" />
+    <Content Include="img\sprite.png" />
+    <Content Include="img\supersized-logo.png" />
+    <Content Include="img\thumb-back.png" />
+    <Content Include="img\thumb-forward.png" />
+    <Content Include="img\top.png" />
+    <Content Include="js\accordion\jquery.accordion.js" />
+    <Content Include="js\custom.js" />
+    <Content Include="js\cycle-slider\cycle.js" />
+    <Content Include="js\easing\jquery.easing.1.3.js" />
+    <Content Include="js\fancybox\fancy_closebox.png" />
+    <Content Include="js\fancybox\fancy_left.png" />
+    <Content Include="js\fancybox\fancy_progress.png" />
+    <Content Include="js\fancybox\fancy_right.png" />
+    <Content Include="js\fancybox\fancy_shadow_e.png" />
+    <Content Include="js\fancybox\fancy_shadow_n.png" />
+    <Content Include="js\fancybox\fancy_shadow_ne.png" />
+    <Content Include="js\fancybox\fancy_shadow_nw.png" />
+    <Content Include="js\fancybox\fancy_shadow_s.png" />
+    <Content Include="js\fancybox\fancy_shadow_se.png" />
+    <Content Include="js\fancybox\fancy_shadow_sw.png" />
+    <Content Include="js\fancybox\fancy_shadow_w.png" />
+    <Content Include="js\fancybox\fancy_title_left.png" />
+    <Content Include="js\fancybox\fancy_title_main.png" />
+    <Content Include="js\fancybox\fancy_title_right.png" />
+    <Content Include="js\fancybox\jquery-1.3.2.min.js" />
+    <Content Include="js\fancybox\jquery.easing.1.3.js" />
+    <Content Include="js\fancybox\jquery.fancybox-1.2.1.js" />
+    <Content Include="js\fancybox\jquery.fancybox-1.2.1.pack.js" />
+    <Content Include="js\fancybox\jquery.fancybox.css" />
+    <Content Include="js\jquery.easing.1.3.js" />
+    <Content Include="js\jquery.eislideshow.js" />
+    <Content Include="js\jquery.gridnav.js" />
+    <Content Include="js\jquery.min.js" />
+    <Content Include="js\jquery.mousewheel.js" />
+    <Content Include="js\jquery.tools.min.js" />
+    <Content Include="js\kwicks\jquery.kwicks-1.5.1.pack.js" />
+    <Content Include="js\modernizr\modernizr-2.0.3.js" />
+    <Content Include="js\nivo-slider\jquery.nivo.slider.js" />
+    <Content Include="js\nivo-slider\nivo-slider.css" />
+    <Content Include="js\portfolio\filterable.js" />
+    <Content Include="js\prettyPhoto\jquery.prettyPhoto.js" />
+    <Content Include="js\scrolltop\scrolltopcontrol.js" />
+    <Content Include="js\scrolltop\top.png" />
+    <Content Include="js\slides\slides.min.jquery.js" />
+    <Content Include="js\supersized.3.2.6.min.js" />
+    <Content Include="js\swfobject\expressinstall.swf" />
+    <Content Include="js\swfobject\swfobject.js" />
+    <Content Include="js\tabify\jquery.tabify.js" />
+    <Content Include="js\twitter\jquery.tweet.js" />
+    <Content Include="menu\css\simple_menu.css" />
+    <Content Include="menu\img\menu_bg.jpg" />
+    <Content Include="WebForms\Order.aspx" />
+    <Content Include="Scripts\jquery.min.js" />
+    <Content Include="Styles\Admin\AdminStyles.css" />
+    <Content Include="Styles\Admin\simple_menu.css" />
+    <Content Include="Styles\Admin\style.css" />
+    <Content Include="UserControls\AddNewOperator.ascx" />
+    <Content Include="UserControls\AddNewTaxiDriver.ascx" />
+    <Content Include="UserControls\AddNewUser.ascx" />
+    <Content Include="UserControls\OperatorsTable.ascx" />
+    <Content Include="UserControls\TaxiDriversTable.ascx" />
+    <Content Include="UserControls\UsersTable.ascx" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
+    <Content Include="WebForms\Operators.aspx" />
+    <Content Include="WebForms\TaxiDrivers.aspx" />
+    <Content Include="WebForms\Users.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin.Master.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin.Master.designer.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Confirmation.aspx.cs">
+      <DependentUpon>Confirmation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Confirmation.aspx.designer.cs">
+      <DependentUpon>Confirmation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dispatcher.Master.cs">
+      <DependentUpon>Dispatcher.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dispatcher.Master.designer.cs">
+      <DependentUpon>Dispatcher.Master</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="WebForms\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Order.aspx.cs">
+      <DependentUpon>Order.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Order.aspx.designer.cs">
+      <DependentUpon>Order.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControls\AddNewOperator.ascx.cs">
+      <DependentUpon>AddNewOperator.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AddNewOperator.ascx.designer.cs">
+      <DependentUpon>AddNewOperator.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AddNewTaxiDriver.ascx.cs">
+      <DependentUpon>AddNewTaxiDriver.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AddNewTaxiDriver.ascx.designer.cs">
+      <DependentUpon>AddNewTaxiDriver.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AddNewUser.ascx.cs">
+      <DependentUpon>AddNewUser.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AddNewUser.ascx.designer.cs">
+      <DependentUpon>AddNewUser.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\OperatorsTable.ascx.cs">
+      <DependentUpon>OperatorsTable.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\OperatorsTable.ascx.designer.cs">
+      <DependentUpon>OperatorsTable.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TaxiDriversTable.ascx.cs">
+      <DependentUpon>TaxiDriversTable.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\TaxiDriversTable.ascx.designer.cs">
+      <DependentUpon>TaxiDriversTable.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UsersTable.ascx.cs">
+      <DependentUpon>UsersTable.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\UsersTable.ascx.designer.cs">
+      <DependentUpon>UsersTable.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Operators.aspx.cs">
+      <DependentUpon>Operators.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Operators.aspx.designer.cs">
+      <DependentUpon>Operators.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\TaxiDrivers.aspx.cs">
+      <DependentUpon>TaxiDrivers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\TaxiDrivers.aspx.designer.cs">
+      <DependentUpon>TaxiDrivers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Users.aspx.cs">
+      <DependentUpon>Users.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Users.aspx.designer.cs">
+      <DependentUpon>Users.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Scripts\" />
-    <Folder Include="WebForms\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Taksopark.BL\Taksopark.BL.csproj">
+      <Project>{e539054c-b886-4d6c-9c06-d0bb1202777f}</Project>
+      <Name>Taksopark.BL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Taksopark.DAL\Taksopark.DAL.csproj">
+      <Project>{090412fd-0881-43d3-875d-35e6edd00485}</Project>
+      <Name>Taksopark.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Taksopark.MVC\Taksopark.MVC.csproj">
+      <Project>{a0a7b34c-3bf8-4730-a512-63e7d3ae054b}</Project>
+      <Name>Taksopark.MVC</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
