@@ -19,7 +19,7 @@ namespace Taksopark.WebForms.UserControls
 
         protected void btnAddNewTaxiDriver_Click(object sender, EventArgs e)
         {
-            UnitOfWork uow = new UnitOfWork(ConfigurationManager.ConnectionStrings["TaksoparkDB"].ConnectionString);
+            UnitOfWork uow = new UnitOfWork(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
             uow.UserRepository.Create(new User()
             {
                 UserName = tbxTaxiDriverName.Text,
@@ -29,7 +29,7 @@ namespace Taksopark.WebForms.UserControls
                 Role = "Driver",
                 Status = tbxStatus.Text
             });
-            Response.Redirect("TaxiDrivers.aspx");
+            Response.Redirect("~/WebForms/TaxiDrivers.aspx");
         }
     }
 }
