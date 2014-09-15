@@ -13,7 +13,7 @@ namespace Taksopark.MVC.Controllers
         public ActionResult LogOff()
         {
             Session["UserFullName"] = null;
-            Session["UserId"] = null;
+            Session["UserLogin"] = null;
             return RedirectToAction("Index", "Home");
         }
 
@@ -64,6 +64,8 @@ namespace Taksopark.MVC.Controllers
                     {
                         LastName = registrationModel.LastName,
                         Login = registrationModel.Login,
+                        PhoneNumber = registrationModel.PhoneNumber,
+                        Email = registrationModel.Email,
                         Password = registrationModel.Password,
                         Role = "Client",
                         Status = "Active",
