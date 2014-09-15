@@ -1,4 +1,4 @@
-﻿﻿@using System.Web.Optimization
+﻿@using System.Web.Optimization
 @using System.Web.Optimization
 @using Taksopark.MVC.Controllers.Home
 @Styles.Render("~/Content/Layout/my-css")
@@ -19,44 +19,97 @@
 <link rel="stylesheet" type="text/css" href="/Content/Layout/DateTimePicker.css" />
 <script type="text/javascript" src="/Scripts/app-scripts/DateTimePicker.js"></script>
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-<script src="https://maps.googleapis.com/maps/api/js?sensor=false&region=ua-UA" type="text/javascript"></script>
-<script src="/Scripts/app-scripts/map-script.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?sensor=false.." type="text/javascript"></script>
+<script>
+    var directionDisplay;
+    var map;
+
+    function initialize() {
+        directionsDisplay = new google.maps.DirectionsRenderer();
+        var lviv = new google.maps.LatLng(49.8382112, 24.0294017);
+        var myOptions = {
+            zoom: 12,
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            center: lviv
+        };
+
+        map = new google.maps.Map(document.getElementById("TaxiMap1"), myOptions);
+        directionsDisplay.setMap(map);
+    }
+    var directionsService = new google.maps.DirectionsService();
+
+    function calcRoute() {
+        var distanceInput = document.getElementById("distance");
+
+        var start = "Львів, " + document.getElementById("placeFromTextBoxId").value;
+        var end = "Львів, " + document.getElementById("placeToTextBoxId").value;
+        var request = {
+            origin: start,
+            destination: end,
+            travelMode: google.maps.DirectionsTravelMode.DRIVING
+        };
+        directionsService.route(request, function (response, status) {
+            if (status == google.maps.DirectionsStatus.OK) {
+                directionsDisplay.setDirections(response);
+                distanceInput.value = response.routes[0].legs[0].distance.value / 1000;
+            }
+        });
+    }
+
+    $(function () {
+        initialize();
+    });
+</script>
 <div class="container_12">
-    <div class="grid_12" style="text-align: center">
-        <h1>
-            <a href="#">
-                <img src="~/Content/Image/logo.bmp" alt="Your Happy Family" />
-            </a>
-        </h1>
-    </div>
 </div>
 <div class="clear"></div>
 <div class="inner-map-div" style="margin-bottom: 200px;">
     @using (Ajax.BeginForm("OrderTaxi", "Home", new AjaxOptions
-    {
-        InsertionMode = InsertionMode.Replace,
-        HttpMethod = "POST",
-        UpdateTargetId = "holder"
-    }))
-    {
-    <div id="holder">
+{
+InsertionMode = InsertionMode.Replace,
+HttpMethod = "POST",
+UpdateTargetId = "holder"
+}))
+{
+    <div id="orderTaxiFormHolderId">
         <div id="toggle" style="text-align: center">
             <input type="text" data-field="datetime" name="date-time" placeholder="Date and time:" style="height: 40px; font-size: 18px;">
             <div id="dtBox"></div>
         </div>
-        <div style="text-align: center">
-            <input type="text" id="placeFrom" name="txtFrom" placeholder="From:" style="height: 40px; font-size: 18px;" />
-            <input type="text" id="placeTo" name="txtTo" placeholder="To:" style="height: 40px; font-size: 18px;" />
-            <input type="text" id="txtphone" name="txtPhone" placeholder="Phone:" style="height: 40px; font-size: 18px;" />
-            <button type="submit" class="abutton" style="height: 40px; font-size: 18px;">OrderTaxi</button>
-            <button id="show" class="abutton" style="height: 40px; font-size: 18px;">More</button>
+
+        <div id="placeFronContettHolderId">
+            <span id="paceFromErrorSpanId"></span>
+
+            <input type="text" id="placeFromTextBoxId" class="textBoxValidationClass" name="txtFrom" placeholder="From:" />
+        </div>
+
+        <div id="placeToContettHolderId">
+            <span id="paceToErrorSpanId"></span>
+
+            <input type="text" id="placeToTextBoxId" class="textBoxValidationClass" name="txtTo" placeholder="To:" />
+        </div>
+
+        <div id="phoneContettHolderId">
+            <span id="phoneErrorSpanId"></span>
+
+            <input type="text" id="phoneTextBoxId" class="textBoxValidationClass" name="txtPhone" placeholder="Phone:" />
+        </div>
+
+        <div id="orderTaxiButtonHolderId">
+            <button type="submit" id="orderTaxiButtonId" class="abutton">OrderTaxi</button>
+            @*<button id="show" class="abutton">More</button>*@
         </div>
         <br />
-        <span style="font-size: 19px; margin-left: 40%"><span class="color1">Location</span> on map</span>
     </div>
     }
-    <label for="distance">Distance (km): </label>
-    <input type="text" name="distance" id="distance" readonly="true" />
-    <button onclick="calcRoute()" class="abutton">Show the way</button>
-    <div id="TaxiMap1" style="width: 95%; height:88%"></div>
+    <br />
+    <div id="showTheWayHolderId">
+        <span style="font-size: 19px;"><span class="color1">Location</span> on map</span>
+        <div style="float:right">
+            <label for="distance">Distance (km): </label>
+            <input type="text" name="distance" id="distance" readonly="true" />
+            <button onclick="calcRoute()" class="abutton">Show the way</button>
+        </div>
+    </div>
+    <div id="TaxiMap1" style="width: 95%; height: 88%"></div>
 </div>
