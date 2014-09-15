@@ -19,7 +19,7 @@ namespace Taksopark.WebForms.UserControls
 
         protected void btnAddNewOperator_Click(object sender, EventArgs e)
         {
-            UnitOfWork uow = new UnitOfWork(ConfigurationManager.ConnectionStrings["TaksoparkDB"].ConnectionString);
+            UnitOfWork uow = new UnitOfWork(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
             uow.UserRepository.Create(new User()
             {
                 UserName = tbxOperatorName.Text,
@@ -29,7 +29,7 @@ namespace Taksopark.WebForms.UserControls
                 Role = "Operator",
                 Status = tbxStatus.Text
             });
-            Response.Redirect("Operators.aspx");
+            Response.Redirect("~/WebForms/Operators.aspx");
         }
     }
 }

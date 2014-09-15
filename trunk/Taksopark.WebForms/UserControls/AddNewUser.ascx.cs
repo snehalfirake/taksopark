@@ -31,7 +31,7 @@ namespace Taksopark.WebForms.UserControls
             //    Role = "Client",
             //    Status = tbxStatus.Text
             //});
-            UnitOfWork uow = new UnitOfWork(ConfigurationManager.ConnectionStrings["TaksoparkDB"].ConnectionString);
+            UnitOfWork uow = new UnitOfWork(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
             uow.UserRepository.Create(new User()
             {
                 UserName = tbxUserName.Text,
@@ -41,7 +41,7 @@ namespace Taksopark.WebForms.UserControls
                 Role = "Client",
                 Status = tbxStatus.Text
             });
-            Response.Redirect("Users.aspx");
+            Response.Redirect("~/WebForms/Users.aspx");
         }
     }
 }
