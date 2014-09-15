@@ -123,6 +123,7 @@
     <Content Include="Content\Layout\reset.css" />
     <Content Include="Content\Layout\style.css" />
     <Content Include="Content\Layout\superfish.css" />
+    <Content Include="Content\OrderTaxi\OrdetTaxiStyles.css" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -145,6 +146,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\Validation\ContactsValidation.js" />
     <Content Include="Scripts\Validation\LoginValidation.js" />
+    <Content Include="Scripts\Validation\OrderTaxiValidation.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

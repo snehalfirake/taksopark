@@ -1,0 +1,116 @@
+﻿#orderTaxiFormHolderId {
+    max-width: 1140px;
+    width: 1140px;
+    max-height: 68px;
+    height: 68px;
+    position: relative;
+}
+
+#placeFronContettHolderId {
+    max-height: 68px;
+    height: 68px;
+    max-width: 280px;
+    width: 280px;
+    position: absolute;
+    bottom: 0;
+}
+
+#placeToContettHolderId {
+    max-height: 68px;
+    height: 68px;
+    max-width: 280px;
+    width: 280px;
+    position: absolute;
+    bottom: 0;
+    left: 335px;
+}
+
+#phoneContettHolderId {
+    max-height: 68px;
+    height: 68px;
+    max-width: 280px;
+    width: 280px;
+    position: absolute;
+    bottom: 0;
+    left: 670px;
+}
+
+#paceFromErrorSpanId {
+    width: 280px;
+    height: 34px;
+    padding: 7px;
+    padding-left: 0px;
+    color: rgb(208,0,0);
+}
+
+#paceToErrorSpanId {
+    width: 280px;
+    height: 34px;
+    padding: 7px;
+    padding-left: 0px;
+    color: rgb(208,0,0);
+}
+
+#phoneErrorSpanId {
+    width: 280px;
+    height: 34px;
+    padding: 7px;
+    padding-left: 0px;
+    color: rgb(208,0,0);
+}
+
+#placeFromTextBoxId {
+    bottom: 0;
+}
+
+#placeToTextBoxId {
+    bottom: 0;
+}
+
+#phoneTextBoxId {
+    bottom: 0;
+}
+
+#paceFromErrorSpanId {
+    padding: 7px;
+    height: 34px;
+    width: 280px;
+    color: rgb(208,0,0);
+    float: right;
+    padding-left:0px;
+}
+
+#paceToErrorSpanId {
+    padding: 7px;
+    height: 34px;
+    width: 280px;
+    color: rgb(208,0,0);
+    float: right;
+    padding-left:0px;
+}
+
+#phoneErrorSpanId {
+    padding: 7px;
+    height: 34px;
+    width: 280px;
+    color: rgb(208,0,0);
+    float: right;
+    padding-left:0px;
+}
+
+#orderTaxiButtonHolderId {
+    max-height:34px;
+    height:34px;
+    max-width:84px;
+    width:84px;
+    position:relative;
+    float:right;
+    top: 34px;
+}
+
+#showTheWayHolderId {
+    max-height:34px;
+    height:34px;
+    max-width:1140px;
+    width:1140px;
+}
