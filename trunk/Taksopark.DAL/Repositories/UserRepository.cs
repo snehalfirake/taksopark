@@ -26,6 +26,8 @@ namespace Taksopark.DAL.Repositories
                 command.CommandText = @"UPDATE Users SET Name = @userName, 
                                       LastName = @lastName,
                                       Login = @login,
+                                      PhoneNumber = @phoneNumber,
+                                      Email = @email,
                                       Password = @password,
                                       Role = @role,
                                       Status = @status
@@ -33,6 +35,8 @@ namespace Taksopark.DAL.Repositories
                 command.Parameters.AddWithValue("userName", user.UserName);
                 command.Parameters.AddWithValue("lastName", user.LastName);
                 command.Parameters.AddWithValue("login", user.Login);
+                command.Parameters.AddWithValue("phoneNumber", user.PhoneNumber);
+                command.Parameters.AddWithValue("email", user.Email);
                 command.Parameters.AddWithValue("password", user.Password);
                 command.Parameters.AddWithValue("role", user.Role);
                 command.Parameters.AddWithValue("status", user.Status);
@@ -51,15 +55,16 @@ namespace Taksopark.DAL.Repositories
         {
             using (var command = _connection.CreateCommand())
             {
-                command.CommandText = "INSERT INTO Users (Name, LastName, Login, Password, Role, Status) " +
-                                      "VALUES(@userName, @lastName, @login, @password, @role, @status)";
+                command.CommandText = "INSERT INTO Users (Name, LastName, Login, PhoneNumber, Email, Password, Role, Status) " +
+                                      "VALUES(@userName, @lastName, @login, @phoneNumber, @email, @password, @role, @status)";
                 command.Parameters.AddWithValue("userName", user.UserName);
                 command.Parameters.AddWithValue("lastName", user.LastName);
                 command.Parameters.AddWithValue("login", user.Login);
+                command.Parameters.AddWithValue("phoneNumber", user.PhoneNumber);
+                command.Parameters.AddWithValue("email", user.Email);
                 command.Parameters.AddWithValue("password", user.Password);
                 command.Parameters.AddWithValue("role", user.Role);
                 command.Parameters.AddWithValue("status", user.Status);
-                //command.Parameters.AddWithValue("userId", user.Id);
                 command.ExecuteNonQuery();
             }
         }
@@ -153,28 +158,6 @@ namespace Taksopark.DAL.Repositories
             return false;
         }
 
-
-        public User GetUserByLogIn(string login, string password)
-        {
-            using (var command = _connection.CreateCommand())
-            {
-                command.CommandText = "SELECT * FROM Users WHERE Login = @login AND Password = @password AND Role = @client";
-                command.Parameters.AddWithValue("login", login);
-                command.Parameters.AddWithValue("password", password);
-                command.Parameters.AddWithValue("client", "Client");
-                var user = new User();
-                using (var reader = command.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                        user = UserMapper.Map(reader);
-                    }
-                }
-                return user;
-                
-            }
-        }
-
         /// <summary>
         /// Get user by id
         /// </summary>
@@ -196,6 +179,45 @@ namespace Taksopark.DAL.Repositories
                     }
                 }
                 return findUser;
+            }
+        }
+
+
+        public User GetUserByLogInAndPassword(string login, string password)
+        {
+            using (var command = _connection.CreateCommand())
+            {
+                command.CommandText = "SELECT * FROM Users WHERE Login = @login AND Password = @password AND Role = @client";
+                command.Parameters.AddWithValue("login", login);
+                command.Parameters.AddWithValue("password", password);
+                command.Parameters.AddWithValue("client", "Client");
+                var user = new User();
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        user = UserMapper.Map(reader);
+                    }
+                }
+                return user;
+            }
+        }
+
+        public User GetUserByLogIn(string login)
+        {
+            using (var command = _connection.CreateCommand())
+            {
+                command.CommandText = "SELECT * FROM Users WHERE Login = @login";
+                command.Parameters.AddWithValue("login", login);
+                var user = new User();
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        user = UserMapper.Map(reader);
+                    }
+                }
+                return user;
             }
         }
     }

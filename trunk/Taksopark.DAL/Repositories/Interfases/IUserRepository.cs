@@ -10,6 +10,7 @@ namespace Taksopark.DAL.Repositories.Interfases
         IEnumerable<User> GetAllUsers();
         void DeleteUser(int userId);
         bool IsLoginBooked(string login);
-        User GetUserByLogIn(string login, string password);
+        User GetUserByLogInAndPassword(string login, string password);
+        User GetUserByLogIn(string login);
     }
 }
