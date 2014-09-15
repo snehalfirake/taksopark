@@ -100,6 +100,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Contacts\ContactStyles.css" />
+    <Content Include="Content\Account\LoginStyle.css" />
     <Content Include="Content\Image\arrow_l.gif" />
     <Content Include="Content\Image\arrow_r.gif" />
     <Content Include="Content\Image\camera-loader.gif" />
@@ -143,6 +144,7 @@
     <Content Include="Scripts\jquery-1.7.1.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\Validation\ContactsValidation.js" />
+    <Content Include="Scripts\Validation\LoginValidation.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -161,7 +163,6 @@
     <Compile Include="Models\EditProfileModel.cs" />
     <Compile Include="Models\LogInModel.cs" />
     <Compile Include="Models\RegistrationModel.cs" />
-    <Compile Include="Models\RequestModel.cs" />
     <Compile Include="Models\TaxiOrdering.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
