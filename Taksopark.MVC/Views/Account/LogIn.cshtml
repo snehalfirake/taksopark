@@ -8,22 +8,22 @@
 @using (Html.BeginForm()) 
 {   
 @Html.AntiForgeryToken()
-    <div class="loginFormContentHolderClass">
+    <div class="loginFormContentHolderClass" style="margin-bottom: 130px; margin-top: 30px; margin-left: 30%">
         <hr />
-        <div>
+        <div style=" margin-left: 35%">
             <span id="errorMessageId">@Html.ValidationSummary(true, "", new { @class = "text-danger" })</span>
         </div>
-        <div class="loginContentHolderClass">
+        <div class="loginContentHolderClass" style=" margin-left: 15%">
             <input type="text" id="loginTextBoxId" class="textBoxValidationClass" name="Login" placeholder="Login" />
             <span id="loginValidationErrorSpanId"></span>
         </div>
         <br />
-        <div class="loginContentHolderClass">
+        <div class="loginContentHolderClass" style=" margin-left: 15%">
             <input type="password" id="passwordTextBoxId" class="textBoxValidationClass" name="Password" placeholder="Password" />
             <span id="passwordValidationErrorSpanId"></span>
         </div>
         <br />
-        <div id="loginButtonHolderId" class="loginButtonHolderClass">
+        <div id="loginButtonHolderId" class="loginButtonHolderClass" style=" margin-left: 15%">
             <input type="submit" id="loginButtonId" value="Log In" class="abutton" />
         </div>
     </div>

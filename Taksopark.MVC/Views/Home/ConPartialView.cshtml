@@ -1,7 +1,6 @@
 ﻿﻿@using System.Web.Optimization
 @using System.Web.Optimization
 @using Taksopark.MVC.Controllers.Home
-
 @Styles.Render("~/Content/Layout/my-css")
 @Scripts.Render("~/bundles/ready-script")
 @Styles.Render("~/Content/Layout/slider-style")
@@ -19,6 +18,9 @@
 <script src="//code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
 <link rel="stylesheet" type="text/css" href="/Content/Layout/DateTimePicker.css" />
 <script type="text/javascript" src="/Scripts/app-scripts/DateTimePicker.js"></script>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<script src="https://maps.googleapis.com/maps/api/js?sensor=false&region=ua-UA" type="text/javascript"></script>
+<script src="/Scripts/app-scripts/map-script.js"></script>
 <div class="container_12">
     <div class="grid_12" style="text-align: center">
         <h1>
@@ -29,13 +31,6 @@
     </div>
 </div>
 <div class="clear"></div>
-<div id="sliderFrame" style=" margin-bottom: 25px; margin-top: 3px;">
-    <div id="slider">
-        <img src="~/Content/Image/slide.jpeg" />
-        <b data-src="/Content/Image/slide1.jpeg">Data</b>
-        <b data-src="/Content/Image/slide2.jpeg">Video</b>
-    </div>
-</div>
 <div class="inner-map-div" style="margin-bottom: 200px;">
     @using (Ajax.BeginForm("OrderTaxi", "Home", new AjaxOptions
     {
@@ -44,20 +39,24 @@
         UpdateTargetId = "holder"
     }))
     {
-        <div id="holder">
-            <div id="toggle" style="text-align: center">
-                <input type="text" data-field="datetime" name="date-time" placeholder="Date and time:" style="height: 40px; font-size: 18px;">
-                <div id="dtBox"></div>
-            </div>
-            <div style="text-align: center">
-                <input type="text" id="Order" name="txtFrom" placeholder="From:" style="height: 40px; font-size: 18px;" />
-                <input type="text" id="Order" name="txtTo" placeholder="To:" style="height: 40px; font-size: 18px;" />
-                <input type="text" id="Order" name="txtPhone" placeholder="Phone:" style="height: 40px; font-size: 18px;" />
-                <button type="submit" class="abutton" style="height: 40px; font-size: 18px;">OrderTaxi</button>
-                <button id="show" class="abutton" style="height: 40px; font-size: 18px;">More</button>
-            </div>
+    <div id="holder">
+        <div id="toggle" style="text-align: center">
+            <input type="text" data-field="datetime" name="date-time" placeholder="Date and time:" style="height: 40px; font-size: 18px;">
+            <div id="dtBox"></div>
         </div>
+        <div style="text-align: center">
+            <input type="text" id="placeFrom" name="txtFrom" placeholder="From:" style="height: 40px; font-size: 18px;" />
+            <input type="text" id="placeTo" name="txtTo" placeholder="To:" style="height: 40px; font-size: 18px;" />
+            <input type="text" id="txtphone" name="txtPhone" placeholder="Phone:" style="height: 40px; font-size: 18px;" />
+            <button type="submit" class="abutton" style="height: 40px; font-size: 18px;">OrderTaxi</button>
+            <button id="show" class="abutton" style="height: 40px; font-size: 18px;">More</button>
+        </div>
+        <br />
+        <span style="font-size: 19px; margin-left: 40%"><span class="color1">Location</span> on map</span>
+    </div>
     }
-    <br />
-    @Html.Partial("BingMapPartial")
+    <label for="distance">Distance (km): </label>
+    <input type="text" name="distance" id="distance" readonly="true" />
+    <button onclick="calcRoute()" class="abutton">Show the way</button>
+    <div id="TaxiMap1" style="width: 95%; height:88%"></div>
 </div>

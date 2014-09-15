@@ -5,6 +5,7 @@
 
 a:hover {
 color: #fdc903;
+    text-decoration: none;
 }
 
 html {
@@ -14,6 +15,10 @@ html {
 a[href^="tel:"] {
  color: inherit;
  text-decoration: none;
+}
+
+.text {
+    text-decoration: none;
 }
 
 * {

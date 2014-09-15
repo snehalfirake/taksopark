@@ -22,5 +22,9 @@ namespace Taksopark.MVC.Controllers
         {
             return View("Error403");
         }
+        public ActionResult Http500()
+        {
+            return View("Error500");
+        }
 	}
 }
