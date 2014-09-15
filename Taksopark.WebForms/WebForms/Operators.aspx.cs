@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Taksopark.BL;
 using Taksopark.DAL;
 using Taksopark.DAL.Models;
 
@@ -18,16 +19,15 @@ namespace Taksopark.WebForms.WebForms
         }
         public static IEnumerable<User> GetAllOperatorsFromRepository()
         {
-            //UserRepository repo = new UserRepository(new System.Data.SqlClient.SqlConnection(ConfigurationManager.ConnectionStrings["TaksoparkDB"].ConnectionString));
-            //return repo.GetUsersByRole("Client");
-            UnitOfWork uow = new UnitOfWork(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
-            return uow.UserRepository.GetUsersByRole("Operator");
+            AdminBl adminBl = new AdminBl(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+            var AllOperators = adminBl.GetUserByRole("Operator");
+            return AllOperators;
         }
 
         protected void btnFindOperatorById_Click(object sender, EventArgs e)
         {
-            UnitOfWork uow = new UnitOfWork(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
-            var user = uow.UserRepository.GetUserById(Convert.ToInt32(tbxFindOperatorById.Text));
+            AdminBl adminBl = new AdminBl(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+            var user = adminBl.GetUserById(Convert.ToInt32(tbxFindOperatorById.Text));
             if (user != null)
             {
                 tbxEditOperatorName.ReadOnly = false;
@@ -39,6 +39,12 @@ namespace Taksopark.WebForms.WebForms
                 tbxEditLogin.ReadOnly = false;
                 tbxEditLogin.Text = user.Login;
 
+                tbxEditPhoneNumber.ReadOnly = false;
+                tbxEditPhoneNumber.Text = user.PhoneNumber;
+
+                tbxEditEmail.ReadOnly = false;
+                tbxEditEmail.Text = user.Email;
+
                 tbxEditPassword.ReadOnly = false;
                 tbxEditPassword.Text = user.Password;
 
@@ -49,19 +55,21 @@ namespace Taksopark.WebForms.WebForms
 
         protected void btnSaveEdit_Click(object sender, EventArgs e)
         {
-            UnitOfWork uow = new UnitOfWork(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+            AdminBl adminBl = new AdminBl(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
             var updatedUser = new User()
             {
                 Id = Convert.ToInt32(tbxFindOperatorById.Text),
                 UserName = tbxEditOperatorName.Text,
                 LastName = tbxEditLastName.Text,
                 Login = tbxEditLogin.Text,
+                PhoneNumber = tbxEditPhoneNumber.Text,
+                Email = tbxEditEmail.Text,
                 Password = tbxEditPassword.Text,
                 Role = "Operator",
                 Status = tbxEditStatus.Text
             };
-            uow.UserRepository.Update(updatedUser);
-            Response.Redirect("Operator.aspx");
+            adminBl.UpdateUser(updatedUser);
+            Response.Redirect("~/WebForms/Operator.aspx");
         }
 
         protected void btnCancelEdit_Click(object sender, EventArgs e)
@@ -74,6 +82,12 @@ namespace Taksopark.WebForms.WebForms
 
             tbxEditLogin.Text = "";
             tbxEditLogin.ReadOnly = true;
+
+            tbxEditPhoneNumber.Text = "";
+            tbxEditPhoneNumber.ReadOnly = true;
+
+            tbxEditEmail.Text = "";
+            tbxEditEmail.ReadOnly = true;
 
             tbxEditPassword.Text = "";
             tbxEditPassword.ReadOnly = true;

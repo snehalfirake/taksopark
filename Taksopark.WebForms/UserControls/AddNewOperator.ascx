@@ -37,6 +37,29 @@
         </tr>
         <tr>
             <td>
+                <asp:Label runat="server" Text="Phone Number: "></asp:Label></td>
+            <td>
+                <asp:TextBox runat="server" ID="tbxPhoneNumber"></asp:TextBox></td>
+            <td>
+                <asp:RegularExpressionValidator ID="regExprValPhoneNumber" runat="server"
+                    ErrorMessage="Only 13 chahacters allowed!" ControlToValidate="tbxPhoneNumber"
+                    CssClass="validatorsMessage" ValidationExpression="^[\d]{1,13}$"
+                    Display="Dynamic" ValidationGroup="groupAdd"></asp:RegularExpressionValidator></td>
+        </tr>
+        <tr>
+            <td>
+                <asp:Label runat="server" Text="Email: "></asp:Label></td>
+            <td>
+                <asp:TextBox runat="server" ID="tbxEmail"></asp:TextBox></td>
+            <td>
+                <asp:RegularExpressionValidator ID="regExprValEmail" runat="server"
+                    ErrorMessage="Please, enter correct Email!" ControlToValidate="tbxEmail"
+                    CssClass="validatorsMessage" 
+                    ValidationExpression="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+                    Display="Dynamic" ValidationGroup="groupAdd"></asp:RegularExpressionValidator></td>
+        </tr>
+        <tr>
+            <td>
                 <asp:Label runat="server" Text="Password: "></asp:Label></td>
             <td>
                 <asp:TextBox runat="server" ID="tbxPassword"></asp:TextBox></td>

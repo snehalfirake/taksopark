@@ -10,7 +10,6 @@ using Taksopark.DAL;
 using Taksopark.DAL.Models;
 using Taksopark.DAL.Repositories;
 using Taksopark.MVC;
-//using Taksopark.Da.Models;
 
 namespace Taksopark.WebForms.WebForms
 {
@@ -30,8 +29,8 @@ namespace Taksopark.WebForms.WebForms
 
         protected void btnFindUserById_Click(object sender, EventArgs e)
         {
-            UnitOfWork uow = new UnitOfWork(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
-            var user = uow.UserRepository.GetUserById(Convert.ToInt32(tbxFindUserById.Text));
+            AdminBl adminBl = new AdminBl(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+            var user = adminBl.GetUserById(Convert.ToInt32(tbxFindUserById.Text));
             if (user != null)
             {
                 tbxEditUserName.ReadOnly = false;
@@ -43,36 +42,36 @@ namespace Taksopark.WebForms.WebForms
                 tbxEditLogin.ReadOnly = false;
                 tbxEditLogin.Text = user.Login;
 
+                tbxEditPhoneNumber.ReadOnly = false;
+                tbxEditPhoneNumber.Text = user.PhoneNumber;
+
+                tbxEditEmail.ReadOnly = false;
+                tbxEditEmail.Text = user.Email;
+
                 tbxEditPassword.ReadOnly = false;
                 tbxEditPassword.Text = user.Password;
 
                 tbxEditStatus.ReadOnly = false;
                 tbxEditStatus.Text = user.Status;
             }
-            //if(tbxEditUserName.Text=="")
-            //{
-            //    tbxEditUserName.ReadOnly = true;
-            //    tbxEditLastName.ReadOnly = true;
-            //    tbxEditLogin.ReadOnly = true;
-            //    tbxEditPassword.ReadOnly = true;
-            //    tbxEditStatus.ReadOnly = true;
-            //}
         }
 
         protected void btnSaveEdit_Click(object sender, EventArgs e)
         {
-            UnitOfWork uow = new UnitOfWork(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+            AdminBl adminBl = new AdminBl(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
             var updatedUser = new User()
             {
                 Id = Convert.ToInt32(tbxFindUserById.Text),
                 UserName = tbxEditUserName.Text,
                 LastName = tbxEditLastName.Text,
                 Login = tbxEditLogin.Text,
+                PhoneNumber = tbxEditPhoneNumber.Text,
+                Email = tbxEditEmail.Text,
                 Password = tbxEditPassword.Text,
                 Role = "Client",
                 Status = tbxEditStatus.Text
             };
-            uow.UserRepository.Update(updatedUser);
+            adminBl.UpdateUser(updatedUser);
             Response.Redirect("~/WebForms/Users.aspx");
         }
 
@@ -86,6 +85,12 @@ namespace Taksopark.WebForms.WebForms
 
             tbxEditLogin.Text = "";
             tbxEditLogin.ReadOnly = true;
+
+            tbxEditPhoneNumber.Text = "";
+            tbxEditPhoneNumber.ReadOnly = true;
+
+            tbxEditEmail.Text = "";
+            tbxEditEmail.ReadOnly = true;
 
             tbxEditPassword.Text = "";
             tbxEditPassword.ReadOnly = true;

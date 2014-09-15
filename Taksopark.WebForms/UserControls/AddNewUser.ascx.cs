@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Taksopark.BL;
 using Taksopark.DAL;
 using Taksopark.DAL.Models;
 using Taksopark.DAL.Repositories;
@@ -20,27 +21,18 @@ namespace Taksopark.WebForms.UserControls
 
         protected void btnAddNewUser_Click(object sender, EventArgs e)
         {
-            //UserRepository repository = new UserRepository
-            //    (new System.Data.SqlClient.SqlConnection(ConfigurationManager.ConnectionStrings["TaksoparkDB"].ConnectionString));
-            //repository.Create(new User()
-            //{
-            //    UserName = tbxUserName.Text,
-            //    LastName = tbxLastName.Text,
-            //    Login = tbxLogin.Text,
-            //    Password = tbxPassword.Text,
-            //    Role = "Client",
-            //    Status = tbxStatus.Text
-            //});
-            UnitOfWork uow = new UnitOfWork(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
-            uow.UserRepository.Create(new User()
-            {
-                UserName = tbxUserName.Text,
-                LastName = tbxLastName.Text,
-                Login = tbxLogin.Text,
-                Password = tbxPassword.Text,
-                Role = "Client",
-                Status = tbxStatus.Text
-            });
+            AdminBl adminBl = new AdminBl(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+            adminBl.CreateUser(new User()
+                {
+                    UserName = tbxUserName.Text,
+                    LastName = tbxLastName.Text,
+                    Login = tbxLogin.Text,
+                    PhoneNumber = tbxPhoneNumber.Text,
+                    Email = tbxEmail.Text,
+                    Password = tbxPassword.Text,
+                    Role = "Client",
+                    Status = tbxStatus.Text
+                });
             Response.Redirect("~/WebForms/Users.aspx");
         }
     }
