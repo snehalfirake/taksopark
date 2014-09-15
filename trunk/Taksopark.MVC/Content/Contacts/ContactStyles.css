@@ -193,13 +193,7 @@
     top:0;
     right:0;
 }
-/*.errorValidationMessageSpanClass {
-    padding: 7px;
-    height: 34px;
-    width: 300px;
-    color: rgb(208,0,0);
-    float:right;
-}*/
+
 .textBoxValidationMessageHolderClass {
     max-width:580px;
     max-height: 34px;
