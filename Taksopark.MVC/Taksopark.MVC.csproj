@@ -191,6 +191,7 @@
     <Content Include="Views\Account\LogIn.cshtml" />
     <Content Include="Views\UserProfile\GetUserProfile.cshtml" />
     <Content Include="Views\UserProfile\GetUserHistory.cshtml" />
+    <Content Include="Views\UserProfile\GetRequestDetails.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

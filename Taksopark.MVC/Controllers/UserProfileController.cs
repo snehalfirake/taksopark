@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 using System.Web.Configuration;
 using System.Web.Mvc;
 using Taksopark.BL;
@@ -65,7 +62,30 @@ namespace Taksopark.MVC.Controllers
 
         public ActionResult GetUserHistory()
         {
-            return View();
+            var userBl = new UserBl(_connectionString);
+            var user = userBl.GetUserByLogin((string) Session["UserLogin"]);
+            var requestList = userBl.GetAllRequestsByCreatorID(user.Id);
+            var requestModelList = new List<RequestModel>();
+            foreach (var request in requestList)
+            {
+                var requestModel = new RequestModel
+                {
+                    PhoneNumber = request.PhoneNumber,
+                    FinishPoint = request.FinishPoint,
+                    StartPoint = request.StartPoint,
+                    RequesTime = request.RequesTime,
+                    Status = request.Status
+                };
+                requestModelList.Add(requestModel);
+            }
+            return View(requestModelList);
         }
+
+        public ActionResult GetRequestDetails(RequestModel model)
+        {
+            return View(model);
+        }
+
+
     }
 }

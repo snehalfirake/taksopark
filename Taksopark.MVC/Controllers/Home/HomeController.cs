@@ -45,16 +45,25 @@ namespace Taksopark.MVC.Controllers.Home
         public ActionResult OrderTaxi()
         {
             var userBl = new UserBl(_connectionString);
-            var request = new Request
+            var request = new Request();
+            if (Session["UserLogin"] != null)
             {
-                CreatorId = 5,
-                FinishPoint = Request["txtFrom"],
-                OperatorId = 3,
-                PhoneNumber = Request["txtPhone"],
-                StartPoint = Request["txtTo"],
-                Status = "Active",
-                RequesTime = Request["date-time"] == string.Empty ? DateTime.Now : DateTime.Parse(Request["date-time"])
-            };
+                var user = userBl.GetUserByLogin((string) Session["UserLogin"]);
+                request.CreatorId = user.Id;
+            }
+            else
+            {
+                request.CreatorId = null;
+            }
+            request.OperatorId = null;
+            request.FinishPoint = Request["txtFrom"];
+            request.PhoneNumber = Request["txtPhone"];
+            request.StartPoint = Request["txtTo"];
+            request.Status = "Active";
+            request.RequesTime = Request["date-time"] == string.Empty
+                ? DateTime.Now
+                : DateTime.Parse(Request["date-time"]);
+
             userBl.CreateRequest(request);
             return RedirectToAction("Index", "Home");
         }

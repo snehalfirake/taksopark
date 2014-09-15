@@ -10,6 +10,8 @@ namespace Taksopark.BL.Interfaces
         void CreateUser(User user);
         void UpdateUser(User user);
         List<Car> GetAllCars();
+        List<Request> GetAllRequests();
+        List<Request> GetAllRequestsByCreatorID(int creatorId);
         bool IsLoginBooked(string login);
         User GetUserByLoginAndPassword(string login, string password);
         User GetUserByLogin(string login);
