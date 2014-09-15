@@ -7,27 +7,18 @@
 // </автоматически создаваемое>
 //------------------------------------------------------------------------------
 
-namespace Taksopark.WebForms.Dispatcher {
+namespace Taksopark.WebForms.UserControls.Dispatcher {
     
     
-    public partial class Order {
+    public partial class OrdersTable {
         
         /// <summary>
-        /// OrdersTable элемент управления.
+        /// gridViewOrders элемент управления.
         /// </summary>
         /// <remarks>
         /// Автоматически создаваемое поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::Taksopark.WebForms.UserControls.Dispatcher.OrdersTable OrdersTable;
-        
-        /// <summary>
-        /// ordersDataSource элемент управления.
-        /// </summary>
-        /// <remarks>
-        /// Автоматически создаваемое поле.
-        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource ordersDataSource;
+        protected global::System.Web.UI.WebControls.GridView gridViewOrders;
     }
 }

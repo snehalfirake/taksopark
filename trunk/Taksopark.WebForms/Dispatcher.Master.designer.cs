@@ -10,24 +10,24 @@
 namespace Taksopark.WebForms.Dispatcher {
     
     
-    public partial class Order {
+    public partial class Dispatcher {
         
         /// <summary>
-        /// OrdersTable элемент управления.
+        /// form1 элемент управления.
         /// </summary>
         /// <remarks>
         /// Автоматически создаваемое поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::Taksopark.WebForms.UserControls.Dispatcher.OrdersTable OrdersTable;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// ordersDataSource элемент управления.
+        /// Content элемент управления.
         /// </summary>
         /// <remarks>
         /// Автоматически создаваемое поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource ordersDataSource;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder Content;
     }
 }

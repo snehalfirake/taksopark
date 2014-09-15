@@ -1,0 +1,64 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Dispatcher.master.cs" Inherits="Taksopark.WebForms.Dispatcher.Dispatcher" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Dispatcher</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href='http://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="menu/css/simple_menu.css" />
+    <link href="contact_form/css/style.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="contact_form/css/uniform.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="contact_form/css/style.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="contact_form/css/uniform.css" media="screen" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+    <script type="text/javascript" src="contact_form/js/jquery.tools.js"></script>
+    <script type="text/javascript" src="contact_form/js/jquery.uniform.min.js"></script>
+    <script type="text/javascript" src="contact_form/js/main.js"></script>
+    <script src="js/jquery.tools.min.js" type="text/javascript"></script>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <%--Header--%>
+
+        <div class="header">
+            <div id="site_title">
+                <a href="Home.aspx">
+                    <img src="/Images/Admin/logo.png" />
+                </a>
+            </div>
+            <ol id="menu">
+                <li class="active_menu_item">
+                    <a href="Home.aspx">Home</a>
+                </li>
+                <li><a>Orders</a>
+                    <ol>
+                        <li><a href="Order.aspx">View order list</a></li>
+                    </ol>
+                </li>
+
+                <li><a href="#">Contact admin</a></li>
+            </ol>
+        </div>
+
+        <%--End Header--%>
+
+        <div>
+            <asp:ContentPlaceHolder ID="Content" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <%--Footer--%>
+
+        <div id="footer">
+            <small>© Copyright 2014, A-Team</small>
+        </div>
+
+        <%--End Footer--%>
+    </form>
+</body>
+</html>
