@@ -14,6 +14,8 @@ namespace Taksopark.DAL.Repositories.Mappers
                 UserName = (string)record["Name"],
                 LastName = (string)record["LastName"],
                 Login = (string)record["Login"],
+                PhoneNumber = (string)record["PhoneNumber"],
+                Email = (string)record["Email"],
                 Password = (string)record["Password"],
                 Role = (string)record["Role"],
                 Status = (string)record["Status"]

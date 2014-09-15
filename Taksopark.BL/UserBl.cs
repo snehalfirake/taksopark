@@ -58,7 +58,25 @@ namespace Taksopark.BL
         {
             using (var uow = new UnitOfWork(_connectionString))
             {
-                return uow.UserRepository.GetUserByLogIn(login, password);
+                return uow.UserRepository.GetUserByLogInAndPassword(login, password);
+            }
+        }
+
+
+        public DAL.Models.User GetUserByLogin(string login)
+        {
+            using (var uow = new UnitOfWork(_connectionString))
+            {
+                return uow.UserRepository.GetUserByLogIn(login);
+            }
+        }
+
+
+        public void UpdateUser(DAL.Models.User user)
+        {
+            using (var uow = new UnitOfWork(_connectionString))
+            {
+                uow.UserRepository.Update(user);
             }
         }
     }
