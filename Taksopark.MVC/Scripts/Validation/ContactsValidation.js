@@ -34,6 +34,26 @@ function ContactsValidation() {
             _this.EnableSendMessageButton();
         });
 
+        $("#nameTextBoxId").keypress(function (e) {
+            var keycode = (e.keyCode ? e.keyCode : e.which);
+            if (keycode == '13') {
+                e.preventDefault();
+                $("#sendMessageButtonId").focus();
+                if ($('#sendMessageButtonId').is(":enabled"))
+                    $("#sendMessageButtonId").click();
+            }
+        });
+
+        $("#emailTextBoxId").keypress(function (e) {
+            var keycode = (e.keyCode ? e.keyCode : e.which);
+            if (keycode == '13') {
+                e.preventDefault();
+                $("#sendMessageButtonId").focus();
+                if ($('#sendMessageButtonId').is(":enabled"))
+                    $("#sendMessageButtonId").click();
+            }
+        });
+
         $("#sendMessageButtonId").click(function () {
             _this.NameTextBoxValidation();
             _this.EmailTextBoxValidation();
