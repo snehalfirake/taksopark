@@ -20,13 +20,13 @@ namespace Taksopark.WebForms.WebForms
         {
             //UserRepository repo = new UserRepository(new System.Data.SqlClient.SqlConnection(ConfigurationManager.ConnectionStrings["TaksoparkDB"].ConnectionString));
             //return repo.GetUsersByRole("Client");
-            UnitOfWork uow = new UnitOfWork(ConfigurationManager.ConnectionStrings["TaksoparkDB"].ConnectionString);
+            UnitOfWork uow = new UnitOfWork(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
             return uow.UserRepository.GetUsersByRole("Driver");
         }
 
         protected void btnFindTaxiDriverById_Click(object sender, EventArgs e)
         {
-            UnitOfWork uow = new UnitOfWork(ConfigurationManager.ConnectionStrings["TaksoparkDB"].ConnectionString);
+            UnitOfWork uow = new UnitOfWork(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
             var user = uow.UserRepository.GetUserById(Convert.ToInt32(tbxFindTaxiDriverById.Text));
             if (user != null)
             {
@@ -49,7 +49,7 @@ namespace Taksopark.WebForms.WebForms
 
         protected void btnSaveEdit_Click(object sender, EventArgs e)
         {
-            UnitOfWork uow = new UnitOfWork(ConfigurationManager.ConnectionStrings["TaksoparkDB"].ConnectionString);
+            UnitOfWork uow = new UnitOfWork(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
             var updatedUser = new User()
             {
                 Id = Convert.ToInt32(tbxFindTaxiDriverById.Text),
@@ -61,7 +61,7 @@ namespace Taksopark.WebForms.WebForms
                 Status = tbxEditStatus.Text
             };
             uow.UserRepository.Update(updatedUser);
-            Response.Redirect("TaxiDrivers.aspx");
+            Response.Redirect("~/WebForms/TaxiDrivers.aspx");
         }
 
         protected void btnCancelEdit_Click(object sender, EventArgs e)

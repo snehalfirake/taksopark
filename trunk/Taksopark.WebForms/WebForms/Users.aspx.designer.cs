@@ -40,15 +40,6 @@ namespace Taksopark.WebForms.WebForms {
         protected global::Taksopark.WebForms.UserControls.AddNewUser AddNewUser;
         
         /// <summary>
-        /// DeleteUser control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Taksopark.WebForms.UserControls.DeleteUser DeleteUser;
-        
-        /// <summary>
         /// UpdatePanel1 control.
         /// </summary>
         /// <remarks>

@@ -2,7 +2,6 @@
 
 <%@ Register Src="~/UserControls/OperatorsTable.ascx" TagPrefix="uc" TagName="OperatorsTable" %>
 <%@ Register Src="~/UserControls/AddNewOperator.ascx" TagPrefix="uc" TagName="AddNewOperator" %>
-<%@ Register Src="~/UserControls/DeleteOperator.ascx" TagPrefix="uc" TagName="DeleteOperator" %>
 
 
 
@@ -22,11 +21,6 @@
             <h2>Add New Operator</h2>
         </div>
         <uc:AddNewOperator runat="server" id="AddNewOperator" />
-
-        <div class="heading_bg">
-            <h2>Delete User</h2>
-        </div>
-        <uc:DeleteOperator runat="server" id="DeleteOperator" />
     </div>
 
     <div class="one-half last">

@@ -2,7 +2,6 @@
 
 <%@ Register Src="~/UserControls/UsersTable.ascx" TagPrefix="uc" TagName="UsersTable" %>
 <%@ Register Src="~/UserControls/AddNewUser.ascx" TagPrefix="uc" TagName="AddNewUser" %>
-<%@ Register Src="~/UserControls/DeleteUser.ascx" TagPrefix="uc" TagName="DeleteUser" %>
 
 
 
@@ -22,11 +21,6 @@
             <h2>Add New User</h2>
         </div>
         <uc:AddNewUser runat="server" id="AddNewUser" />
-
-        <div class="heading_bg">
-            <h2>Delete User</h2>
-        </div>
-        <uc:DeleteUser runat="server" id="DeleteUser" />
     </div>
         
     <div class="one-half last">

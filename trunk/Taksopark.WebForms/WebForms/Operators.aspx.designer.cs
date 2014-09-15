@@ -40,15 +40,6 @@ namespace Taksopark.WebForms.WebForms {
         protected global::Taksopark.WebForms.UserControls.AddNewOperator AddNewOperator;
         
         /// <summary>
-        /// DeleteOperator control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Taksopark.WebForms.UserControls.DeleteOperator DeleteOperator;
-        
-        /// <summary>
         /// UpdatePanel1 control.
         /// </summary>
         /// <remarks>

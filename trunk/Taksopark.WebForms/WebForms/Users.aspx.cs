@@ -10,7 +10,7 @@ using Taksopark.DAL;
 using Taksopark.DAL.Models;
 using Taksopark.DAL.Repositories;
 using Taksopark.MVC;
-using Taksopark.WebForms.Models;
+//using Taksopark.Da.Models;
 
 namespace Taksopark.WebForms.WebForms
 {
@@ -23,15 +23,14 @@ namespace Taksopark.WebForms.WebForms
 
         public static IEnumerable<User> GetAllUsersFromRepository()
         {
-            //UserRepository repo = new UserRepository(new System.Data.SqlClient.SqlConnection(ConfigurationManager.ConnectionStrings["TaksoparkDB"].ConnectionString));
-            //return repo.GetUsersByRole("Client");
-            UnitOfWork uow = new UnitOfWork(ConfigurationManager.ConnectionStrings["TaksoparkDB"].ConnectionString);
-            return uow.UserRepository.GetUsersByRole("Client");
+            AdminBl adminBl = new AdminBl(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+            var AllClients = adminBl.GetUserByRole("Client");
+            return AllClients;
         }
 
         protected void btnFindUserById_Click(object sender, EventArgs e)
         {
-            UnitOfWork uow = new UnitOfWork(ConfigurationManager.ConnectionStrings["TaksoparkDB"].ConnectionString);
+            UnitOfWork uow = new UnitOfWork(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
             var user = uow.UserRepository.GetUserById(Convert.ToInt32(tbxFindUserById.Text));
             if (user != null)
             {
@@ -62,7 +61,7 @@ namespace Taksopark.WebForms.WebForms
 
         protected void btnSaveEdit_Click(object sender, EventArgs e)
         {
-            UnitOfWork uow = new UnitOfWork(ConfigurationManager.ConnectionStrings["TaksoparkDB"].ConnectionString);
+            UnitOfWork uow = new UnitOfWork(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
             var updatedUser = new User()
             {
                 Id = Convert.ToInt32(tbxFindUserById.Text),
@@ -74,7 +73,7 @@ namespace Taksopark.WebForms.WebForms
                 Status = tbxEditStatus.Text
             };
             uow.UserRepository.Update(updatedUser);
-            Response.Redirect("Users.aspx");
+            Response.Redirect("~/WebForms/Users.aspx");
         }
 
         protected void btnCancelEdit_Click(object sender, EventArgs e)
