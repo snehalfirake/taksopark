@@ -3,7 +3,7 @@ create table [Request]
 	[Id] int identity(1 ,1) not null primary key,
 	[RequetTime] datetime,
 	[CreatorId] int,
-	[PhoneNumber] varchar(max),
+	[PhoneNumber] varchar(15),
 	[Status] varchar(15),
 	[StartPoint] varchar(max),
 	[FinishPoint] varchar(max),
@@ -16,6 +16,8 @@ create table [Users]
 	[Name] varchar(max) not null,
 	[LastName] varchar(max) not null,
 	[Login] varchar(max),
+	[PhoneNumber] varchar(15),
+	[Email] varchar(70),
 	[Password] varchar(60),
 	[Role] varchar(15),
 	[Status] varchar(15)
@@ -69,12 +71,12 @@ alter table [Image]
 	add constraint fk_User_Image foreign key(OwnerId) references [Users](Id)
 
 
-insert into Users (Name, LastName, Login, Password, Role, Status) values ('Vitalik', 'Komaniak', 'Vitalik_93', '341190', 'Driver', 'Active')
-insert into Users (Name, LastName, Login, Password, Role, Status) values ('Roman', 'Gusak', 'Gusak_93', '341190asd', 'Driver', 'Active')
-insert into Users (Name, LastName, Login, Password, Role, Status) values ('Volodya', 'Komaniak', 'Volodya_93', 'asd341190', 'Operator', 'Active')
-insert into Users (Name, LastName, Login, Password, Role, Status) values ('Ihor', 'Shpak', 'Shpak_93', 'asd123341190', 'Operator', 'Active')
-insert into Users (Name, LastName, Login, Password, Role, Status) values ('Ivan', 'SFedak', 'Ivan_93', 'asd12334', 'Client', 'Active')
-insert into Users (Name, LastName, Login, Password, Role, Status) values ('Roman', 'Novak', 'Novar_93', 'asd12334', 'Client', 'Active')
+insert into Users (Name, LastName, Login, PhoneNumber, Email, Password, Role, Status) values ('Vitalik', 'Komaniak', 'Vitalik_93', '380969535748', 'vit@gmail.com.ua', '341190', 'Driver', 'Active')
+insert into Users (Name, LastName, Login, PhoneNumber, Email, Password, Role, Status) values ('Roman', 'Gusak', 'Gusak_93', '380969534548', 'rom@gmail.com.ua', '341190asd', 'Driver', 'Active')
+insert into Users (Name, LastName, Login, PhoneNumber, Email, Password, Role, Status) values ('Volodya', 'Komaniak', 'Volodya_93', '380967895748', 'vol@gmail.com.ua', 'asd341190', 'Operator', 'Active')
+insert into Users (Name, LastName, Login, PhoneNumber, Email, Password, Role, Status) values ('Ihor', 'Shpak', 'Shpak_93', '380969535345', 'igor@gmail.com.ua', 'asd123341190', 'Operator', 'Active')
+insert into Users (Name, LastName, Login, PhoneNumber, Email, Password, Role, Status) values ('Ivan', 'SFedak', 'Ivan_93', '380969534566', 'iva@gmail.com.ua', 'asd12334', 'Client', 'Active')
+insert into Users (Name, LastName, Login, PhoneNumber, Email, Password, Role, Status) values ('Roman', 'Novak', 'Novar_93', '380969556789', 'romnov@gmail.com.ua', 'asd12334', 'Client', 'Active')
 
 INSERT INTO [Image] (Photo, OwnerId, CarId) 
 SELECT  BulkColumn, null, 4
