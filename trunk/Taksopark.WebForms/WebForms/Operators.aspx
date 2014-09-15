@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="true" CodeBehind="Operators.aspx.cs" Inherits="Taksopark.WebForms.WebForms.Operators" %>
+﻿<%@ Page Title="Admin panel: Operators info" Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="true" CodeBehind="Operators.aspx.cs" Inherits="Taksopark.WebForms.WebForms.Operators" %>
 
 <%@ Register Src="~/UserControls/OperatorsTable.ascx" TagPrefix="uc" TagName="OperatorsTable" %>
 <%@ Register Src="~/UserControls/AddNewOperator.ascx" TagPrefix="uc" TagName="AddNewOperator" %>
@@ -9,12 +9,6 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-    <div class="one">
-        <div class="heading_bg">
-            <h2>All operators</h2>
-            <uc:OperatorsTable runat="server" id="OperatorsTable" DataSourceID="allOperatorsDS" />
-        </div>
-    </div>
 
     <div class="one-half">
         <div class="heading_bg">
@@ -76,6 +70,29 @@
                     </tr>
                     <tr>
                         <td>
+                            <asp:Label runat="server" Text="Phone Number: "></asp:Label></td>
+                        <td>
+                            <asp:TextBox runat="server" ID="tbxEditPhoneNumber" ReadOnly="true"></asp:TextBox></td>
+                        <td>
+                            <asp:RegularExpressionValidator ID="regExprValEditPhoneNumber" runat="server"
+                                ErrorMessage="Only 13 chahacters allowed!" ControlToValidate="tbxEditPhoneNumber"
+                                CssClass="validatorsMessage" ValidationExpression="^[\d]{1,13}$"
+                                Display="Dynamic" ValidationGroup="groupEdit"></asp:RegularExpressionValidator></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:Label runat="server" Text="Email: "></asp:Label></td>
+                        <td>
+                            <asp:TextBox runat="server" ID="tbxEditEmail" ReadOnly="true"></asp:TextBox></td>
+                        <td>
+                            <asp:RegularExpressionValidator ID="regExprValEditEmail" runat="server"
+                                ErrorMessage="Please, enter correct Email!" ControlToValidate="tbxEditEmail"
+                                CssClass="validatorsMessage"
+                                ValidationExpression="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+                                Display="Dynamic" ValidationGroup="groupEdit"></asp:RegularExpressionValidator></td>
+                    </tr>
+                    <tr>
+                        <td>
                             <asp:Label runat="server" Text="Password: "></asp:Label></td>
                         <td>
                             <asp:TextBox runat="server" ID="tbxEditPassword" ReadOnly="true"></asp:TextBox></td>
@@ -106,6 +123,15 @@
         <asp:Button runat="server" ID="btnSaveEdit" Text="Save" Width="100%" OnClick="btnSaveEdit_Click" 
             ValidationGroup="groupEdit" />
         <asp:Button runat="server" ID="btnCancelEdit" Text="Cancel" Width="100%" OnClick="btnCancelEdit_Click" />
+    </div>
+
+    <div class="one">
+        <div class="heading_bg">
+            <h2>All operators</h2>
+            <uc:OperatorsTable runat="server" id="OperatorsTable" DataSourceID="allOperatorsDS" />
+        </div>
+        <br />
+        <br />
     </div>
 
     <asp:ObjectDataSource runat="server" ID="allOperatorsDS" TypeName="Taksopark.WebForms.WebForms.Operators" 

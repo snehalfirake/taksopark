@@ -22,15 +22,6 @@ namespace Taksopark.WebForms.WebForms {
         protected global::System.Web.UI.ScriptManager ScriptManager1;
         
         /// <summary>
-        /// UsersTable control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Taksopark.WebForms.UserControls.UsersTable UsersTable;
-        
-        /// <summary>
         /// AddNewUser control.
         /// </summary>
         /// <remarks>
@@ -121,6 +112,42 @@ namespace Taksopark.WebForms.WebForms {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator requiredEditLogin;
         
         /// <summary>
+        /// tbxEditPhoneNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbxEditPhoneNumber;
+        
+        /// <summary>
+        /// regExprValEditPhoneNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator regExprValEditPhoneNumber;
+        
+        /// <summary>
+        /// tbxEditEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbxEditEmail;
+        
+        /// <summary>
+        /// regExprValEditEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator regExprValEditEmail;
+        
+        /// <summary>
         /// tbxEditPassword control.
         /// </summary>
         /// <remarks>
@@ -173,6 +200,15 @@ namespace Taksopark.WebForms.WebForms {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnCancelEdit;
+        
+        /// <summary>
+        /// UsersTable control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Taksopark.WebForms.UserControls.UsersTable UsersTable;
         
         /// <summary>
         /// allUsersDS control.

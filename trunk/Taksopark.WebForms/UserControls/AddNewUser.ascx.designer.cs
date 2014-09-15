@@ -67,6 +67,42 @@ namespace Taksopark.WebForms.UserControls {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator requiredLogin;
         
         /// <summary>
+        /// tbxPhoneNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbxPhoneNumber;
+        
+        /// <summary>
+        /// regExprValPhoneNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator regExprValPhoneNumber;
+        
+        /// <summary>
+        /// tbxEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbxEmail;
+        
+        /// <summary>
+        /// regExprValEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator regExprValEmail;
+        
+        /// <summary>
         /// tbxPassword control.
         /// </summary>
         /// <remarks>
