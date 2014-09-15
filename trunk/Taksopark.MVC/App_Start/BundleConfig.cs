@@ -27,10 +27,14 @@ namespace Taksopark.MVC
 
             bundles.Add(new ScriptBundle("~/bundles/slider-js").Include("~/Scripts/app-scripts/js-image-slider.js"));
 
-            bundles.Add(new StyleBundle("~/ContactStyles").Include("~/Content/Contacts/ContactStyles.css"));
+            bundles.Add(new StyleBundle("~/ContactStyles").Include(
+                "~/Content/Contacts/ContactStyles.css",
+                "~/Content/Account/LoginStyle.css"
+                ));
 
             bundles.Add(new ScriptBundle("~/Validation").Include(
-                "~/Scripts/Validation/ContactsValidation.js"
+                "~/Scripts/Validation/ContactsValidation.js",
+                "~/Scripts/Validation/LoginValidation.js"
                 ));
         }
     }

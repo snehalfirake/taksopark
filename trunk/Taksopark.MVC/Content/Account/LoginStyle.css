@@ -1,0 +1,48 @@
+﻿.loginFormContentHolderClass {
+    max-height:210px;
+    height:210px;
+    max-width:580px;
+    width: 580px;
+}
+
+.loginContentHolderClass {
+    max-height:34px;
+    height:34px;
+    max-width:580px;
+    width: 580px;
+    position: relative;
+}
+#loginValidationErrorSpanId {
+    color: rgb(208,0,0);
+    max-height:34px;
+    height:34px;
+    max-width:300px;
+    width: 300px;
+    padding:7px;
+    position:absolute;
+    float:right;
+    top:0;
+    right:0;
+}
+
+#passwordValidationErrorSpanId {
+    color: rgb(208,0,0);
+    max-height:34px;
+    height:34px;
+    max-width:300px;
+    width: 300px;
+    padding:7px;
+    position:absolute;
+    float:right;
+    top:0;
+    right:0;
+}
+
+#loginButtonId {
+    max-height:34px;
+    height:34px;
+    max-width:65px;
+    width:65px;
+    margin-left: 0px;
+}
+
