@@ -37,6 +37,9 @@ namespace Taksopark.MVC
                     case 404:
                         routeData.Values["action"] = "Http404";
                         break;
+                    case 500:
+                        routeData.Values["action"] = "Http500";
+                        break;
                 }
             }
             Response.TrySkipIisCustomErrors = true;

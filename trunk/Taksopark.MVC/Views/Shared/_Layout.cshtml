@@ -47,7 +47,7 @@
                 @*<a type="button" href="#login-form" data-toggle="modal">
                     <button class="pulse width1 abutton">Login</button></a>
                 <a href="/Views/Home/">
-                    <button class="abutton pulse width2" style="text-decoration: none;">@Html.ActionLink("Registrate", "RegisterUser", "Account")</button></a>*@
+                    <button class="abutton pulse width2" style="text-decoration: none;">@Html.ActionLink("Registrate", "RegisterUser", "Account", null, new { style = "text-decoration:none" })</button></a>*@
             </div>
         </div>
 
@@ -56,11 +56,10 @@
             <div class="container_12">
                 <div class="grid_12">
                     <nav class="horizontal-nav full-width horizontalNav-notprocessed">
-                        <ul class="sf-menu">
-                            <li class="current">@Html.ActionLink("Home", "Index", "Home")</li>
-                            <li>@Html.ActionLink("About", "About", "Home")</li>
-                            <li><a href="#">Cars</a></li>
-                            <li>@Html.ActionLink("Contacts ", "SendMail", "Contacts")</li>
+                        <ul class="sf-menu" style="text-decoration: none;">
+                            <li class="current" style="text-decoration: none;">@Html.ActionLink("Home", "Index", "Home" , null, new { style = "text-decoration:none" })</li>
+                            <li style="text-decoration: none;">@Html.ActionLink("About", "About", "Home", null, new { style = "text-decoration:none" })</li>
+                            <li style="text-decoration: none;">@Html.ActionLink("Contacts ", "SendMail", "Contacts", null, new { style = "text-decoration:none" })</li>
                         </ul>
                     </nav>
                     <div class="clear"></div>

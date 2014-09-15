@@ -1,87 +1,38 @@
-﻿var stockholm = new google.maps.LatLng(49.8382112, 24.0294017);
-var marker;
-var map1;
-var myCity;
-geocoder = new google.maps.Geocoder();
-
+﻿var directionDisplay;
+var map;
 
 function initialize() {
-    var mapOptions = {
+    directionsDisplay = new google.maps.DirectionsRenderer();
+    var lviv = new google.maps.LatLng(49.8382112, 24.0294017);
+    var myOptions = {
         zoom: 12,
-        center: stockholm
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        center: lviv
     };
-    var info = new google.maps.InfoWindow({ content: "" });
 
+    map = new google.maps.Map(document.getElementById("TaxiMap1"), myOptions);
+    directionsDisplay.setMap(map);
+}
+var directionsService = new google.maps.DirectionsService();
 
-    var app;
-    map1 = new google.maps.Map(document.getElementById('TaxiMap1'),
-            mapOptions);
-    //Populate arrayOfValues 
-    $.ajax({
-        url: 'tolist',
-        dataType: 'json',
-        success: function (data) {
-            for (var i = 0; i < data.length ; i++) {
-                app = new google.maps.Marker({
-                    position: new google.maps.LatLng(data[i].Latitude, data[i].Longitude),
-                    map: map1,
-                    title: data[i].Name
-                });
-                google.maps.event.addListener(app, 'click', function () {
-                    alert("Інформація про таксиста")
-                });
-            }
+function calcRoute() {
+    var distanceInput = document.getElementById("distance");
+
+    var start = "Львів, " + document.getElementById("adr1").value;
+    var end = "Львів, " + document.getElementById("adr2").value;
+    var request = {
+        origin: start,
+        destination: end,
+        travelMode: google.maps.DirectionsTravelMode.DRIVING
+    };
+    directionsService.route(request, function (response, status) {
+        if (status == google.maps.DirectionsStatus.OK) {
+            directionsDisplay.setDirections(response);
+            distanceInput.value = response.routes[0].legs[0].distance.value / 1000;
         }
     });
 }
 
-
-google.maps.event.addDomListener(window, 'load', initialize);
-
-
-function codeAddress() {
-
-
-
-    marker = new google.maps.Marker({ // маркер
-        visible: false,
-        map: map1,
-        animation: google.maps.Animation.BOUNCE,
-        icon: {
-            path: google.maps.SymbolPath.BACKWARD_CLOSED_ARROW,
-            strokeColor: "Green",
-            scale: 7,
-            strokeWeight: 3
-        },
-
-    })
-    var address = document.getElementById('adr').value;
-    geocoder.geocode({ 'address': 'Львів,' + address }, function (results, status) {
-        if (status == google.maps.GeocoderStatus.OK) {
-
-
-
-            map1.setCenter(results[0].geometry.location);
-            marker.setOptions({
-                visible: true,
-                title: address,
-                position: results[0].geometry.location
-            });
-
-
-            myCity = new google.maps.Circle({
-
-                center: results[0].geometry.location,
-                radius: 1000,
-                strokeColor: "#0000FF",
-                strokeOpacity: 0.8,
-                strokeWeight: 0.6,
-                fillColor: "#0000FF",
-                fillOpacity: 0.2
-            });
-            myCity.setMap(map1);
-        } else {
-            alert('Не правельно введені дані');
-        }
-    });
-}
+$(function () {
+    initialize();
+});

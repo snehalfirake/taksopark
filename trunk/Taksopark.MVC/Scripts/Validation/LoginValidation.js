@@ -51,22 +51,6 @@ function LoginValidation() {
             _this.PasswordTextBoxValidation();
         });
 
-        //$("#clearContentButtonId").click(function () {
-        //    if ($("#nameTextBoxId").hasClass("error-textBoxValidationClass")) {
-        //        $("#nameTextBoxId").removeClass("error-textBoxValidationClass").addClass("textBoxValidationClass");
-        //    }
-        //    if ($("#emailTextBoxId").hasClass("error-textBoxValidationClass")) {
-        //        $("#emailTextBoxId").removeClass("error-textBoxValidationClass").addClass("textBoxValidationClass");
-        //    }
-        //    if ($("#messageTextAreaId").hasClass("error-textAreaValidationClass")) {
-        //        $("#messageTextAreaId").removeClass("error-textAreaValidationClass").addClass("textAreaValidationClass");
-        //    }
-        //    $("#nameErrorValidationSpanId").hide();
-        //    $("#emailErrorValidationSpanId").hide();
-        //    $("#messageErrorValidationSpanId").hide();
-        //    _this.EnableSendMessageButton();
-        //});
-
     };
 
     _this.LoginTextBoxValidation = function () {
@@ -113,20 +97,6 @@ function LoginValidation() {
         }
     };
 
-    //_this.NameRegularExpression = function (testString) {
-    //    var exp = new RegExp("^([A-Za-zА-ЯЄІа-яєі0-9 ]){2,50}$");
-    //    return exp.test(testString);
-    //};
-
-    //_this.EmailRegularExpression = function (testString) {
-    //    var exp = new RegExp("^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+.[A-Za-z]{2,4}$");
-    //    return exp.test(testString);
-    //};
-
-    //_this.MessageRegularExpression = function (testString) {
-    //    var exp = new RegExp("^[A-Za-zА-ЯЄІа-яєі0-9!@#$%^&*()_+{},.<>:;?= ]{2,3500}$");
-    //    return exp.test(testString);
-    //};
 
     _this.DisableSendMessageButton = function () {
         document.getElementById("loginButtonId").disabled = true;

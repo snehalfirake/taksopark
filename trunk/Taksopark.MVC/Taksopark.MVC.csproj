@@ -163,6 +163,7 @@
     <Compile Include="Models\EditProfileModel.cs" />
     <Compile Include="Models\LogInModel.cs" />
     <Compile Include="Models\RegistrationModel.cs" />
+    <Compile Include="Models\RequestModel.cs" />
     <Compile Include="Models\TaxiOrdering.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
