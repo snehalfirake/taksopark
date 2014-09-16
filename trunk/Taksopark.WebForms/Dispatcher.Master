@@ -9,11 +9,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link href='http://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css' />
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="mainstyle.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="menu/css/simple_menu.css" />
-    <link href="contact_form/css/style.css" media="screen" rel="stylesheet" type="text/css" />
-    <link href="contact_form/css/uniform.css" media="screen" rel="stylesheet" type="text/css" />
-    <link href="contact_form/css/style.css" media="screen" rel="stylesheet" type="text/css" />
-    <link href="contact_form/css/uniform.css" media="screen" rel="stylesheet" type="text/css" />
 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
     <script type="text/javascript" src="contact_form/js/jquery.tools.js"></script>

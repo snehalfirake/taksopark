@@ -68,6 +68,11 @@ body {
     clear: both;
 }
 
+#inner {
+    width:80%;
+    margin: 0 auto;
+}
+
 .header {
     width: 1000px;
     margin: auto;

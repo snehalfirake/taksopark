@@ -1,8 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Dispatcher.Master" AutoEventWireup="true" CodeBehind="Confirmation.aspx.cs" Inherits="Taksopark.WebForms.Dispatcher.Confirmation" %>
 
-<%@ Register Src="~/UserControls/Dispatcher/OrderInfo.ascx" TagPrefix="uc1" TagName="OrderInfo" %>
-
-
 <asp:Content ID="Content1" ContentPlaceHolderID="Content" runat="server">
     <div id="container">
         <div class="one-half">
