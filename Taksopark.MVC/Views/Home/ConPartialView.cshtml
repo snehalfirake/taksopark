@@ -64,7 +64,7 @@
 </div>
 <div class="clear"></div>
 <div class="inner-map-div" style="margin-bottom: 200px;">
-    @using (Ajax.BeginForm("OrderTaxi", "Home", new AjaxOptions
+@using (Ajax.BeginForm("OrderTaxi", "Home", new AjaxOptions
 {
 InsertionMode = InsertionMode.Replace,
 HttpMethod = "POST",
@@ -79,19 +79,16 @@ UpdateTargetId = "holder"
 
         <div id="placeFronContettHolderId">
             <span id="paceFromErrorSpanId"></span>
-
             <input type="text" id="placeFromTextBoxId" class="textBoxValidationClass" name="txtFrom" placeholder="From:" />
         </div>
 
         <div id="placeToContettHolderId">
             <span id="paceToErrorSpanId"></span>
-
             <input type="text" id="placeToTextBoxId" class="textBoxValidationClass" name="txtTo" placeholder="To:" />
         </div>
 
         <div id="phoneContettHolderId">
             <span id="phoneErrorSpanId"></span>
-
             <input type="text" id="phoneTextBoxId" class="textBoxValidationClass" name="txtPhone" placeholder="Phone:" />
         </div>
 

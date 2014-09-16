@@ -9,14 +9,14 @@ namespace Taksopark.MVC.Models
 {
     public class LogInModel
     {
-        [Required(ErrorMessage = "Login Required:")]
-        [StringLength(50, ErrorMessage = "Less than 50 characters")]
+        [Required(ErrorMessage = "Login can not be empty")]
+        [StringLength(50, ErrorMessage = "Name must be less than 50 characters")]
         public string Login { get; set; }
 
-        [Required(ErrorMessage = "Password Required:")]
+        [Required(ErrorMessage = "Password can not be empty")]
         [DataType(DataType.Password)]
         [DisplayName("Password:")]
-        [StringLength(30, ErrorMessage = "Less than 30 characters")]
+        [StringLength(30, ErrorMessage = "Password must be less than 30 characters")]
         public string Password { get; set; }
     }
 }
