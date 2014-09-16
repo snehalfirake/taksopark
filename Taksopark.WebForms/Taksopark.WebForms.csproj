@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin.Master" />
+    <Content Include="mainstyle.css" />
     <Content Include="style.css" />
     <Content Include="UserControls\Dispatcher\OrdersTable.ascx" />
     <Content Include="WebForms\Confirmation.aspx" />

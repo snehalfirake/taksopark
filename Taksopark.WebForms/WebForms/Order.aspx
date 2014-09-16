@@ -4,9 +4,10 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="Content" runat="server">
     <div id="container">
-        <uc:OrdersTable runat="server" ID="OrdersTable" DataSourceID="ordersDataSource" />
+        <div align="center">
+            <uc:OrdersTable runat="server" ID="OrdersTable" DataSourceID="ordersDataSource" />
+        </div>
     </div>
     <asp:ObjectDataSource runat="server" ID="ordersDataSource" TypeName="Taksopark.WebForms.Dispatcher.Order"
-        SelectMethod="GetAllRequests">
-    </asp:ObjectDataSource>
+        SelectMethod="GetAllRequests"></asp:ObjectDataSource>
 </asp:Content>
