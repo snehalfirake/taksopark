@@ -7,6 +7,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+    <script src="~/Scripts/Validation/ContactsValidation.js"></script>
     <title>SendMail</title>
 </head>
 <body>
@@ -27,14 +28,17 @@
                         <div id="nameValidationMessageHolderId" class="textBoxValidationMessageHolderClass">
                             <input type="text" id="nameTextBoxId" class="textBoxValidationClass" name="Name" placeholder="Name" />
                             <span id="nameErrorValidationSpanId"></span>
+                            @Html.ValidationMessageFor(model => model.Name, "", new { @id = "nameErrorValidationSpanId" })
                         </div>
                         <br />
                         <div id="emailValidationMessageHolderId" class="textBoxValidationMessageHolderClass">
                             <input type="text" id="emailTextBoxId" class="textBoxValidationClass" name="Email" placeholder="Email" />
                             <span id="emailErrorValidationSpanId"></span>
+                            @Html.ValidationMessageFor(model => model.Email, "", new { @id = "emailErrorValidationSpanId" })
                         </div>
                         <div id="messageValidationMessageHolderClass" class="validationMessageHolderClass">
                             <span id="messageErrorValidationSpanId"></span>
+                            @Html.ValidationMessageFor(model => model.Message, "", new { @id = "messageErrorValidationSpanId" })
                         </div>
                         <textarea id="messageTextAreaId" class="textAreaValidationClass" name="Message" placeholder="Message"></textarea>
                         <br />
