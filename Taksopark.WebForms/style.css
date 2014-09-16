@@ -68,6 +68,26 @@ body {
     clear: both;
 }
 
+#welcome {
+    width:950px;
+    display:block
+}
+
+#picturebox {
+    width:50%;
+    float:left
+}
+
+#infobox {
+    width:50%;
+    float:right
+}
+
+#centerbox {
+    float:inherit;
+    width:75%
+}
+
 #inner {
     width:80%;
     margin: 0 auto;
