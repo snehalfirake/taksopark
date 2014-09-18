@@ -1,14 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="OrdersTable.ascx.cs" Inherits="Taksopark.WebForms.UserControls.Dispatcher.OrdersTable" %>
 <link href="../style.css" rel="stylesheet" />
 
-<div class="centerDiv">
-    <%--<asp:GridView runat="server" ID="gridViewOrders" AllowPaging="true" PageSize="20"
-        OnPageIndexChanging="gridViewOrders_PageIndexChanging" DataSourceID="ordersDataSource"
-        AutoGenerateColumns="true" CssClass="gvMain">
-        <HeaderStyle CssClass="gvHeader" />
-        <SelectedRowStyle CssClass="gvSelectedRow" />
-    </asp:GridView>--%>
-   
+<div class="centerDiv">   
     <asp:GridView runat="server" 
         ID="gridViewOrders"
         AllowPaging="true"
@@ -27,7 +20,6 @@
                     <asp:LinkButton runat="server" CssClass="button" Text="Edit" PostBackUrl='<%# "~/WebForms/Confirmation.aspx?id=" + Eval("id")  %>' />              
                 </ItemTemplate>
             </asp:TemplateField>
-            <%--<asp:HyperLinkField ControlStyle-CssClass="button" Text="Edit" NavigateUrl="~/WebForms/Confirmation.aspx"  HeaderText="Action"/>--%>
         </Columns>
     </asp:GridView>
 

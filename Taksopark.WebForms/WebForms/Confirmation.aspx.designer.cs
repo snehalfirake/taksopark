@@ -13,13 +13,31 @@ namespace Taksopark.WebForms.Dispatcher {
     public partial class Confirmation {
         
         /// <summary>
-        /// detailsView1 элемент управления.
+        /// OrderInfo элемент управления.
         /// </summary>
         /// <remarks>
         /// Автоматически создаваемое поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DetailsView detailsView1;
+        protected global::Taksopark.WebForms.UserControls.Dispatcher.OrderInfo OrderInfo;
+        
+        /// <summary>
+        /// labelStatus элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label labelStatus;
+        
+        /// <summary>
+        /// statusDropdownList элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList statusDropdownList;
         
         /// <summary>
         /// dropDownList элемент управления.
@@ -29,6 +47,15 @@ namespace Taksopark.WebForms.Dispatcher {
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList dropDownList;
+        
+        /// <summary>
+        /// ComfirmButton элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ComfirmButton;
         
         /// <summary>
         /// ordersDataSource элемент управления.

@@ -60,6 +60,7 @@
     <Content Include="Admin.Master" />
     <Content Include="Fonts\Quicksand.css" />
     <Content Include="style.css" />
+    <Content Include="UserControls\Dispatcher\OrderInfo.ascx" />
     <Content Include="UserControls\Dispatcher\OrdersTable.ascx" />
     <Content Include="WebForms\Confirmation.aspx" />
     <Content Include="WebForms\Home.aspx" />
@@ -226,6 +227,13 @@
     </Compile>
     <Compile Include="Admin.Master.designer.cs">
       <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Dispatcher\OrderInfo.ascx.cs">
+      <DependentUpon>OrderInfo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Dispatcher\OrderInfo.ascx.designer.cs">
+      <DependentUpon>OrderInfo.ascx</DependentUpon>
     </Compile>
     <Compile Include="UserControls\Dispatcher\OrdersTable.ascx.cs">
       <DependentUpon>OrdersTable.ascx</DependentUpon>

@@ -11,12 +11,25 @@ namespace Taksopark.WebForms.UserControls.Dispatcher
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+        }
 
+        public string DataSourceID
+        {
+            get
+            {
+                return gridViewOrders.DataSourceID;
+            }
+            set
+            {
+                gridViewOrders.DataSourceID = value;
+            }
         }
 
         protected void gridViewOrders_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-
+            gridViewOrders.PageIndex = e.NewPageIndex;
+            gridViewOrders.DataBind();
         }
     }
 }
