@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Admin panel: Taxi Drivers info" Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="true" CodeBehind="TaxiDrivers.aspx.cs" Inherits="Taksopark.WebForms.WebForms.TaxiDrivers" %>
+﻿<%@ Page Title="Admin panel: Taxi Drivers info" Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="true" CodeBehind="TaxiDrivers.aspx.cs" Inherits="Taksopark.WebForms.WebForms.TaxiDrivers" Theme="Main" %>
 
 <%@ Register Src="~/UserControls/TaxiDriversTable.ascx" TagPrefix="uc" TagName="TaxiDriversTable" %>
 <%@ Register Src="~/UserControls/AddNewTaxiDriver.ascx" TagPrefix="uc" TagName="AddNewTaxiDriver" %>
@@ -8,9 +8,21 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
 
-    <div class="one-half">
+    <div class="one">
+        <div class="heading_bg">
+            <h2>All Taxi Drivers</h2>
+            <div class="one-fourth" style="float: right;">
+                <asp:Button runat="server" ID="btnAdd" Text="Add New Taxi Driver" Width="100%" OnClick="btnAdd_Click" />
+            </div>
+            <uc:TaxiDriversTable runat="server" id="TaxiDriversTable1" DataSourceID="allTaxiDriversDS" 
+                OnGridViewClicked="TaxiDriversTable1_GridViewClicked" />
+        </div>
+        <br />
+        <br />
+    </div>
+
+    <%--<div class="one-half">
         <div class="heading_bg">
             <h2>Add New Taxi Driver</h2>
         </div>
@@ -34,9 +46,9 @@
                             <asp:Button runat="server" ID="btnFindTaxiDriverById" Text="Find" Width="100px"
                                 OnClick="btnFindTaxiDriverById_Click" /></td>
                     </tr>
-                </table>
+                </table>--%>
 
-                <table>
+                <%--<table>
                     <tr>
                         <td>
                             <asp:Label runat="server" Text="Taxi Driver Name: "></asp:Label></td>
@@ -116,9 +128,9 @@
                             <asp:Button runat="server" ID="btnSaveEdit" Text="Save" Width="100%" OnClick="btnSaveEdit_Click" /></td>
                         <td>
                             <asp:Button runat="server" ID="btnCancelEdit" Text="Cancel" Width="100%" /></td>
-                    </tr>--%>
-                </table>
-            </ContentTemplate>
+                    </tr>--%
+                </table>--%>
+            <%--</ContentTemplate>
         </asp:UpdatePanel>
         <asp:Button runat="server" ID="btnSaveEdit" Text="Save" Width="100%" OnClick="btnSaveEdit_Click" 
             ValidationGroup="groupEdit" />
@@ -132,7 +144,7 @@
         </div>
         <br />
         <br />
-    </div>
+    </div>--%>
 
     <asp:ObjectDataSource runat="server" ID="allTaxiDriversDS" TypeName="Taksopark.WebForms.WebForms.TaxiDrivers" 
         SelectMethod="GetAllTaxiDriversFromRepository">

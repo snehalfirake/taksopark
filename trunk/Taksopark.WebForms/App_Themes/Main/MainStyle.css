@@ -1,0 +1,70 @@
+﻿.lblText{
+    font-size:16px;
+    font-weight:bold;
+}
+
+.tbxInput{
+    text-align:center;
+    font-size:18px;
+    font-weight:bold;
+
+    border:solid 1px orange;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    border-radius: 7px;
+
+    height:20px;
+}
+
+.btnAny {
+    text-align:center;
+    font-size:16px;
+    font-weight:bold;
+    background-color:silver;
+
+    border-width:2px;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    border-radius: 7px;
+    border-color:orange;
+
+    padding:10px;
+    margin:5px;
+}
+
+.btnAny:hover{
+    border-color:white;
+    background-color:orange;
+    color:white;
+}
+
+.gvData{
+    border:initial 4px black;
+    font-size:14px;
+}
+
+.gvData th{
+    text-align:center;
+    background-color:orange;
+    color:white;
+}
+
+.gvData th:hover{
+    background-color:silver;
+    color:black;
+}
+
+.gvData td{
+    text-align:center;
+    color:black;
+}
+
+.centerDiv {
+    margin:0 19% 0 19%;
+    width:62%;
+}
+
+.centerDivLonger{
+    margin:0 11% 0 11%;
+    width:78%;
+}

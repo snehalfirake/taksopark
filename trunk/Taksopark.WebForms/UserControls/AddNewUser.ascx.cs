@@ -35,5 +35,10 @@ namespace Taksopark.WebForms.UserControls
                 });
             Response.Redirect("~/WebForms/Users.aspx");
         }
+
+        protected void btnCancel_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/WebForms/Users.aspx");
+        }
     }
 }
