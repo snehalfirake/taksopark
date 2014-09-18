@@ -103,3 +103,9 @@ table th, table td {
 .validatorsMessage{
     color:red;
 }
+
+.centerTable{
+    width:46%;
+    margin-left:27%;
+    margin-right:27%;
+}

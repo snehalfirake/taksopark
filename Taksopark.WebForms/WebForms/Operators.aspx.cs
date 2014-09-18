@@ -8,6 +8,7 @@ using System.Web.UI.WebControls;
 using Taksopark.BL;
 using Taksopark.DAL;
 using Taksopark.DAL.Models;
+using Taksopark.WebForms.Classes;
 
 namespace Taksopark.WebForms.WebForms
 {
@@ -24,76 +25,14 @@ namespace Taksopark.WebForms.WebForms
             return AllOperators;
         }
 
-        protected void btnFindOperatorById_Click(object sender, EventArgs e)
+        protected void OperatorsTable_GridViewClicked(object sender, GridViewEventArgs e)
         {
-            AdminBl adminBl = new AdminBl(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
-            var user = adminBl.GetUserById(Convert.ToInt32(tbxFindOperatorById.Text));
-            if (user != null)
-            {
-                tbxEditOperatorName.ReadOnly = false;
-                tbxEditOperatorName.Text = user.UserName;
-
-                tbxEditLastName.ReadOnly = false;
-                tbxEditLastName.Text = user.LastName;
-
-                tbxEditLogin.ReadOnly = false;
-                tbxEditLogin.Text = user.Login;
-
-                tbxEditPhoneNumber.ReadOnly = false;
-                tbxEditPhoneNumber.Text = user.PhoneNumber;
-
-                tbxEditEmail.ReadOnly = false;
-                tbxEditEmail.Text = user.Email;
-
-                tbxEditPassword.ReadOnly = false;
-                tbxEditPassword.Text = user.Password;
-
-                tbxEditStatus.ReadOnly = false;
-                tbxEditStatus.Text = user.Status;
-            }
+            Response.Redirect(String.Format("~/WebForms/EditOperator.aspx?id={0}", e.UserId));
         }
 
-        protected void btnSaveEdit_Click(object sender, EventArgs e)
+        protected void btnAdd_Click(object sender, EventArgs e)
         {
-            AdminBl adminBl = new AdminBl(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
-            var updatedUser = new User()
-            {
-                Id = Convert.ToInt32(tbxFindOperatorById.Text),
-                UserName = tbxEditOperatorName.Text,
-                LastName = tbxEditLastName.Text,
-                Login = tbxEditLogin.Text,
-                PhoneNumber = tbxEditPhoneNumber.Text,
-                Email = tbxEditEmail.Text,
-                Password = tbxEditPassword.Text,
-                Role = "Operator",
-                Status = tbxEditStatus.Text
-            };
-            adminBl.UpdateUser(updatedUser);
-            Response.Redirect("~/WebForms/Operator.aspx");
-        }
-
-        protected void btnCancelEdit_Click(object sender, EventArgs e)
-        {
-            tbxEditOperatorName.Text = "";
-            tbxEditOperatorName.ReadOnly = true;
-
-            tbxEditLastName.Text = "";
-            tbxEditLastName.ReadOnly = true;
-
-            tbxEditLogin.Text = "";
-            tbxEditLogin.ReadOnly = true;
-
-            tbxEditPhoneNumber.Text = "";
-            tbxEditPhoneNumber.ReadOnly = true;
-
-            tbxEditEmail.Text = "";
-            tbxEditEmail.ReadOnly = true;
-
-            tbxEditPassword.Text = "";
-            tbxEditPassword.ReadOnly = true;
-
-            tbxEditStatus.Text = "";
-            tbxEditStatus.ReadOnly = true;
+            Response.Redirect("~/WebForms/AddOperator.aspx");
         }
     }
 }
