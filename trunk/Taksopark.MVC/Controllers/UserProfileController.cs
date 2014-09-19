@@ -70,6 +70,7 @@ namespace Taksopark.MVC.Controllers
             {
                 var requestModel = new RequestModel
                 {
+                    RequestId = request.Id,
                     PhoneNumber = request.PhoneNumber,
                     FinishPoint = request.FinishPoint,
                     StartPoint = request.StartPoint,
@@ -81,11 +82,73 @@ namespace Taksopark.MVC.Controllers
             return View(requestModelList);
         }
 
-        public ActionResult GetRequestDetails(RequestModel model)
+
+        public ActionResult GetRequestDetails(int id)
         {
-            return View(model);
+            var userBl = new UserBl(_connectionString);
+            var request = userBl.GetRequestById(id);
+            var requestModel = new RequestModel
+            {
+                RequestId = request.Id,
+                FinishPoint = request.FinishPoint,
+                StartPoint = request.StartPoint,
+                PhoneNumber = request.PhoneNumber,
+                RequesTime = request.RequesTime,
+                Status = request.Status
+            };
+
+            return View(requestModel);
         }
 
+        public ActionResult EditRequest(int id)
+        {
+            var userBl = new UserBl(_connectionString);
+            var request = userBl.GetRequestById(id);
+            var requestModel = new RequestModel
+            {
+                RequestId = request.Id,
+                FinishPoint = request.FinishPoint,
+                StartPoint = request.StartPoint,
+                PhoneNumber = request.PhoneNumber,
+                RequesTime = request.RequesTime,
+                Status = request.Status
+            };
+            return View(requestModel);
+        }
+
+        public ActionResult DiscardRequest(int id)
+        {
+            var userBl = new UserBl(_connectionString);
+            var request = userBl.GetRequestById(id);
+            request.Status = "Discard";
+            userBl.UpdateRequest(request);
+            return RedirectToAction("GetUserHistory", "UserProfile");
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditRequest(RequestModel requestModel)
+        {
+            if (ModelState.IsValid)
+            {
+                var userBl = new UserBl(_connectionString);
+                var request = new Request
+                {
+                    FinishPoint = requestModel.FinishPoint,
+                    StartPoint = requestModel.StartPoint,
+                    PhoneNumber = requestModel.PhoneNumber,
+                    RequesTime = requestModel.RequesTime,
+                    Status = requestModel.Status,
+                    Id = requestModel.RequestId
+                };
+                userBl.UpdateRequest(request);
+                return RedirectToAction("GetUserHistory", "UserProfile");
+            }
+            else
+            {
+                return View(requestModel);
+            }
+        }
 
     }
 }
