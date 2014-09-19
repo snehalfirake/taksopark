@@ -13,16 +13,19 @@ namespace Taksopark.WebForms.WebForms
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            AdminBl adminBl = new AdminBl(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
-            var user = adminBl.GetUserById(Convert.ToInt32(Request.QueryString["id"]));
-            EditUsers.UserIdText = user.Id.ToString();
-            EditUsers.UserNameText = user.UserName;
-            EditUsers.LastNameText = user.LastName;
-            EditUsers.LoginText = user.Login;
-            EditUsers.PhoneNumberText = user.PhoneNumber;
-            EditUsers.EmailText = user.Email;
-            EditUsers.PasswordText = user.Password;
-            EditUsers.StatusText = user.Status;
+            if (!IsPostBack)
+            {
+                AdminBl adminBl = new AdminBl(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+                var user = adminBl.GetUserById(Convert.ToInt32(Request.QueryString["id"]));
+                EditUsers.UserIdText = user.Id.ToString();
+                EditUsers.UserNameText = user.UserName;
+                EditUsers.LastNameText = user.LastName;
+                EditUsers.LoginText = user.Login;
+                EditUsers.PhoneNumberText = user.PhoneNumber;
+                EditUsers.EmailText = user.Email;
+                EditUsers.PasswordText = user.Password;
+                EditUsers.StatusText = user.Status;
+            }
         }
     }
 }
