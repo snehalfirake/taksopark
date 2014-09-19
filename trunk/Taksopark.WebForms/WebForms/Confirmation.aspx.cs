@@ -46,8 +46,7 @@ namespace Taksopark.WebForms.Dispatcher
 
         protected void dropDownList_SelectedIndexChanged1(object sender, EventArgs e)
         {
-            string f = string.Empty;
-            UserBl userBI = new UserBl(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+            //UserBl userBI = new UserBl(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
             //userBI.CreateRequest
             //userBI.UpdateUser();
         }
