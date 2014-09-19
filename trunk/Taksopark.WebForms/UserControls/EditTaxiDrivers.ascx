@@ -26,12 +26,7 @@
                             <td>
                                 <asp:Label runat="server" Text="Taxi Driver Name: "></asp:Label></td>
                             <td>
-                                <asp:TextBox runat="server" ID="tbxEditTaxiDriverName" ReadOnly="true"></asp:TextBox></td>
-                            <%--<td>
-                            <asp:RequiredFieldValidator ID="requiredEditUserName" runat="server"
-                                ErrorMessage="Please, enter Taxi Driver Name!" ControlToValidate="tbxEditTaxiDriverName"
-                                CssClass="validatorsMessage" Display="Dynamic" ValidationGroup="groupEdit">
-                            </asp:RequiredFieldValidator></td>--%>
+                                <asp:TextBox runat="server" ID="tbxEditTaxiDriverName"></asp:TextBox></td>
                         </tr>
                         <tr>
                             <td colspan="2">
@@ -45,11 +40,7 @@
                             <td>
                                 <asp:Label runat="server" Text="Last Name: "></asp:Label></td>
                             <td>
-                                <asp:TextBox runat="server" ID="tbxEditLastName" ReadOnly="true"></asp:TextBox></td>
-                            <%--<td><asp:RequiredFieldValidator ID="requiredEditLastName" runat="server"
-                                ErrorMessage="Please, enter Last Name!" ControlToValidate="tbxEditLastName"
-                                CssClass="validatorsMessage" Display="Dynamic" ValidationGroup="groupEdit">
-                            </asp:RequiredFieldValidator></td>--%>
+                                <asp:TextBox runat="server" ID="tbxEditLastName"></asp:TextBox></td>
                         </tr>
                         <tr>
                             <td colspan="2">
@@ -63,11 +54,7 @@
                             <td>
                                 <asp:Label runat="server" Text="Login: "></asp:Label></td>
                             <td>
-                                <asp:TextBox runat="server" ID="tbxEditLogin" ReadOnly="true"></asp:TextBox></td>
-                            <%--<td><asp:RequiredFieldValidator ID="requiredEditLogin" runat="server"
-                                ErrorMessage="Please, enter Login!" ControlToValidate="tbxEditLogin"
-                                CssClass="validatorsMessage" Display="Dynamic" ValidationGroup="groupEdit">
-                            </asp:RequiredFieldValidator></td>--%>
+                                <asp:TextBox runat="server" ID="tbxEditLogin"></asp:TextBox></td>
                         </tr>
                         <tr>
                             <td colspan="2">
@@ -81,12 +68,7 @@
                             <td>
                                 <asp:Label runat="server" Text="Phone Number: "></asp:Label></td>
                             <td>
-                                <asp:TextBox runat="server" ID="tbxEditPhoneNumber" ReadOnly="true"></asp:TextBox></td>
-                            <%--<td>
-                            <asp:RegularExpressionValidator ID="regExprValEditPhoneNumber" runat="server"
-                                ErrorMessage="Only 13 chahacters allowed!" ControlToValidate="tbxEditPhoneNumber"
-                                CssClass="validatorsMessage" ValidationExpression="^[\d]{1,13}$"
-                                Display="Dynamic" ValidationGroup="groupEdit"></asp:RegularExpressionValidator></td>--%>
+                                <asp:TextBox runat="server" ID="tbxEditPhoneNumber"></asp:TextBox></td>
                         </tr>
                         <tr>
                             <td colspan="2">
@@ -100,13 +82,7 @@
                             <td>
                                 <asp:Label runat="server" Text="Email: "></asp:Label></td>
                             <td>
-                                <asp:TextBox runat="server" ID="tbxEditEmail" ReadOnly="true"></asp:TextBox></td>
-                            <%--<td>
-                            <asp:RegularExpressionValidator ID="regExprValEditEmail" runat="server"
-                                ErrorMessage="Please, enter correct Email!" ControlToValidate="tbxEditEmail"
-                                CssClass="validatorsMessage"
-                                ValidationExpression="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
-                                Display="Dynamic" ValidationGroup="groupEdit"></asp:RegularExpressionValidator></td>--%>
+                                <asp:TextBox runat="server" ID="tbxEditEmail"></asp:TextBox></td>
                         </tr>
                         <tr>
                             <td colspan="2">
@@ -121,11 +97,7 @@
                             <td>
                                 <asp:Label runat="server" Text="Password: "></asp:Label></td>
                             <td>
-                                <asp:TextBox runat="server" ID="tbxEditPassword" ReadOnly="true"></asp:TextBox></td>
-                            <%--<td><asp:RequiredFieldValidator ID="requiredEditPassword" runat="server"
-                                ErrorMessage="Please, enter Password!" ControlToValidate="tbxEditPassword"
-                                CssClass="validatorsMessage" Display="Dynamic" ValidationGroup="groupEdit">
-                            </asp:RequiredFieldValidator></td>--%>
+                                <asp:TextBox runat="server" ID="tbxEditPassword"></asp:TextBox></td>
                         </tr>
                         <tr>
                             <td colspan="2">
@@ -139,11 +111,7 @@
                             <td>
                                 <asp:Label runat="server" Text="Status: "></asp:Label></td>
                             <td>
-                                <asp:TextBox runat="server" ID="tbxEditStatus" ReadOnly="true"></asp:TextBox></td>
-                            <%--<td><asp:RequiredFieldValidator ID="requiredEditStatus" runat="server"
-                                ErrorMessage="Please, enter Status!" ControlToValidate="tbxEditStatus"
-                                CssClass="validatorsMessage" Display="Dynamic" ValidationGroup="groupEdit">
-                            </asp:RequiredFieldValidator></td>--%>
+                                <asp:TextBox runat="server" ID="tbxEditStatus"></asp:TextBox></td>
                         </tr>
                         <tr>
                             <td colspan="2">

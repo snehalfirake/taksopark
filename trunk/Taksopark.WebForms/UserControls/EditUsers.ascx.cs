@@ -117,25 +117,12 @@ namespace Taksopark.WebForms.UserControls
             var user = adminBl.GetUserById(Convert.ToInt32(tbxFindUserById.Text));
             if (user != null)
             {
-                tbxEditUserName.ReadOnly = false;
                 tbxEditUserName.Text = user.UserName;
-
-                tbxEditLastName.ReadOnly = false;
                 tbxEditLastName.Text = user.LastName;
-
-                tbxEditLogin.ReadOnly = false;
                 tbxEditLogin.Text = user.Login;
-
-                tbxEditPhoneNumber.ReadOnly = false;
                 tbxEditPhoneNumber.Text = user.PhoneNumber;
-
-                tbxEditEmail.ReadOnly = false;
                 tbxEditEmail.Text = user.Email;
-
-                tbxEditPassword.ReadOnly = false;
                 tbxEditPassword.Text = user.Password;
-
-                tbxEditStatus.ReadOnly = false;
                 tbxEditStatus.Text = user.Status;
             }
         }
@@ -161,26 +148,6 @@ namespace Taksopark.WebForms.UserControls
 
         protected void btnCancelEdit_Click(object sender, EventArgs e)
         {
-            //tbxEditUserName.Text = "";
-            //tbxEditUserName.ReadOnly = true;
-
-            //tbxEditLastName.Text = "";
-            //tbxEditLastName.ReadOnly = true;
-
-            //tbxEditLogin.Text = "";
-            //tbxEditLogin.ReadOnly = true;
-
-            //tbxEditPhoneNumber.Text = "";
-            //tbxEditPhoneNumber.ReadOnly = true;
-
-            //tbxEditEmail.Text = "";
-            //tbxEditEmail.ReadOnly = true;
-
-            //tbxEditPassword.Text = "";
-            //tbxEditPassword.ReadOnly = true;
-
-            //tbxEditStatus.Text = "";
-            //tbxEditStatus.ReadOnly = true;
             Response.Redirect("~/WebForms/Users.aspx");
         }
     }
