@@ -6,6 +6,7 @@ namespace Taksopark.BL.Interfaces
     interface IUserBl
     {
         void CreateRequest(Request request);
+        void UpdateRequest(Request request);
         void CreateComment(Comment comment);
         void CreateUser(User user);
         void UpdateUser(User user);
@@ -15,5 +16,6 @@ namespace Taksopark.BL.Interfaces
         bool IsLoginBooked(string login);
         User GetUserByLoginAndPassword(string login, string password);
         User GetUserByLogin(string login);
+        Request GetRequestById(int id);
     }
 }

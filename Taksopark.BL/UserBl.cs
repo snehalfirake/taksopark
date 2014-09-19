@@ -23,6 +23,14 @@ namespace Taksopark.BL
             }
         }
 
+        public void UpdateRequest(Request request)
+        {
+            using (var uow = new UnitOfWork(_connectionString))
+            {
+                uow.RequestRepository.Update(request);
+            }
+        }
+
         public void CreateComment(DAL.Models.Comment comment)
         {
             using (var uow = new UnitOfWork(_connectionString))
@@ -78,6 +86,14 @@ namespace Taksopark.BL
             using (var uow = new UnitOfWork(_connectionString))
             {
                 return uow.UserRepository.GetUserByLogIn(login);
+            }
+        }
+
+        public Request GetRequestById(int id)
+        {
+            using (var uow = new UnitOfWork(_connectionString))
+            {
+                return uow.RequestRepository.GetRequestById(id);
             }
         }
 

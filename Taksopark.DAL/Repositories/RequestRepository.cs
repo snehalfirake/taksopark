@@ -25,20 +25,16 @@ namespace Taksopark.DAL.Repositories
             {
                 command.CommandText = "UPDATE Request SET "
                                       + "RequetTime = @requestTime, "
-                                      + "CreatorId = @creatorId, "
                                       + "PhoneNumber = @phoneNumber, "
                                       + "Status = @status, "
                                       + "StartPoint = @startPoint, "
-                                      + "FinishPoint = @finishPoint, "
-                                      + "OperatorId = @operatorId "
+                                      + "FinishPoint = @finishPoint "
                                       + "WHERE Id = @requestId";
                 command.Parameters.AddWithValue("requestTime", request.RequesTime);
-                command.Parameters.AddWithValue("creatorId", request.CreatorId);
                 command.Parameters.AddWithValue("phoneNumber", request.PhoneNumber);
                 command.Parameters.AddWithValue("status", request.Status);
                 command.Parameters.AddWithValue("startPoint", request.StartPoint);
                 command.Parameters.AddWithValue("finishPoint", request.FinishPoint);
-                command.Parameters.AddWithValue("operatorId", request.OperatorId);
                 command.Parameters.AddWithValue("requestId", request.Id);
                 command.ExecuteNonQuery();
             }
@@ -113,6 +109,24 @@ namespace Taksopark.DAL.Repositories
                 command.CommandText = "DELETE FROM Coments WHERE ID = @requestId";
                 command.Parameters.AddWithValue("requestId", requestId);
                 command.ExecuteNonQuery();
+            }
+        }
+
+        public Request GetRequestById(int id)
+        {
+            using (var command = _connection.CreateCommand())
+            {
+                command.CommandText = "SELECT * FROM Request WHERE Id = @id";
+                command.Parameters.AddWithValue("id", id);
+                var request = new Request();
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        request = RequestMapper.Map(reader);
+                    }
+                }
+                return request;
             }
         }
 
