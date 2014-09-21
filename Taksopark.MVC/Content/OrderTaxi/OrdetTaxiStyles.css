@@ -114,3 +114,8 @@
     max-width:1140px;
     width:1140px;
 }
+
+#logoHolderId {
+    margin-top: 2px;
+    padding-top: 0px;
+}
