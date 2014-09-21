@@ -9,7 +9,7 @@
                     <table>
                         <tr>
                             <td>
-                                <asp:Label runat="server" Text="Find Taxi Driver by Id: "></asp:Label></td>
+                                <asp:Label runat="server" Text="Find Taxi Driver by: " Width="110"></asp:Label></td>
                             <td>
                                 <asp:DropDownList runat="server" ID="ddlFindingCategory" CssClass="ddlFindingCategory" 
                                     Width="220">
@@ -132,6 +132,94 @@
                                     CssClass="validatorsMessage" Display="Dynamic" ValidationGroup="groupEdit">
                                 </asp:RequiredFieldValidator></td>
                         </tr>
+                    </table>
+
+                    <h3 runat="server">Car info:</h3>
+                    <table>
+                        <tr>
+                            <td>
+                                <asp:Label runat="server" Text="Brand: "></asp:Label></td>
+                            <td>
+                                <asp:TextBox runat="server" ID="tbxCarBrand"></asp:TextBox></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="centerErrorMesssage">
+                                <asp:RequiredFieldValidator ID="requiredCarBrand" runat="server"
+                                    ErrorMessage="Please, enter Brand!" ControlToValidate="tbxCarBrand"
+                                    CssClass="validatorsMessage" Display="Dynamic" ValidationGroup="groupAdd">
+                                </asp:RequiredFieldValidator></td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <asp:Label runat="server" Text="Year: "></asp:Label></td>
+                            <td>
+                                <asp:TextBox runat="server" ID="tbxCarYear"></asp:TextBox></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="centerErrorMesssage">
+                                <asp:RequiredFieldValidator ID="requiredCarYear" runat="server"
+                                    ErrorMessage="Please, enter Year!" ControlToValidate="tbxCarYear"
+                                    CssClass="validatorsMessage" Display="Dynamic" ValidationGroup="groupAdd">
+                                </asp:RequiredFieldValidator></td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <asp:Label runat="server" Text="Start Work Time: "></asp:Label></td>
+                            <td>
+                                <asp:TextBox runat="server" ID="tbxCarStartWorkTime"></asp:TextBox></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="centerErrorMesssage">
+                                <asp:RequiredFieldValidator ID="requiredCarStartWorkTime" runat="server"
+                                    ErrorMessage="Please, enter Start Work Time!" ControlToValidate="tbxCarStartWorkTime"
+                                    CssClass="validatorsMessage" Display="Dynamic" ValidationGroup="groupAdd">
+                                </asp:RequiredFieldValidator></td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <asp:Label runat="server" Text="Finish Work Time: "></asp:Label></td>
+                            <td>
+                                <asp:TextBox runat="server" ID="tbxCarFinishWorkTime"></asp:TextBox></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="centerErrorMesssage">
+                                <asp:RequiredFieldValidator ID="requiredCarFinishWorkTime" runat="server"
+                                    ErrorMessage="Please, enter Finish Work Time!" ControlToValidate="tbxCarFinishWorkTime"
+                                    CssClass="validatorsMessage" Display="Dynamic" ValidationGroup="groupAdd">
+                                </asp:RequiredFieldValidator></td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <asp:Label runat="server" Text="Latitude: "></asp:Label></td>
+                            <td>
+                                <asp:TextBox runat="server" ID="tbxCarLatitude"></asp:TextBox></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="centerErrorMesssage">
+                                <asp:RequiredFieldValidator ID="requiredCarLatitude" runat="server"
+                                    ErrorMessage="Please, enter Latitude!" ControlToValidate="tbxCarLatitude"
+                                    CssClass="validatorsMessage" Display="Dynamic" ValidationGroup="groupAdd">
+                                </asp:RequiredFieldValidator></td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <asp:Label runat="server" Text="Longitude: "></asp:Label></td>
+                            <td>
+                                <asp:TextBox runat="server" ID="tbxCarLongitude"></asp:TextBox></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="centerErrorMesssage">
+                                <asp:RequiredFieldValidator ID="requiredCarLongitude" runat="server"
+                                    ErrorMessage="Please, enter Longitude!" ControlToValidate="tbxCarLongitude"
+                                    CssClass="validatorsMessage" Display="Dynamic" ValidationGroup="groupAdd">
+                                </asp:RequiredFieldValidator></td>
+                        </tr>
+
                     </table>
                     <table>
                         <tr>

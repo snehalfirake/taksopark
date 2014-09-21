@@ -111,6 +111,72 @@ namespace Taksopark.WebForms.UserControls
                 ddlEditStatus.Text = value;
             }
         }
+        public string CarBrand
+        {
+            get
+            {
+                return tbxCarBrand.Text;
+            }
+            set
+            {
+                tbxCarBrand.Text = value;
+            }
+        }
+        public string CarYear
+        {
+            get
+            {
+                return tbxCarYear.Text;
+            }
+            set
+            {
+                tbxCarYear.Text = value;
+            }
+        }
+        public string CarStartWorkTime
+        {
+            get
+            {
+                return tbxCarStartWorkTime.Text;
+            }
+            set
+            {
+                tbxCarStartWorkTime.Text = value;
+            }
+        }
+        public string CarFinishWorkTime
+        {
+            get
+            {
+                return tbxCarFinishWorkTime.Text;
+            }
+            set
+            {
+                tbxCarFinishWorkTime.Text = value;
+            }
+        }
+        public string CarLatitude
+        {
+            get
+            {
+                return tbxCarLatitude.Text;
+            }
+            set
+            {
+                tbxCarLatitude.Text = value;
+            }
+        }
+        public string CarLongitude
+        {
+            get
+            {
+                return tbxCarLongitude.Text;
+            }
+            set
+            {
+                tbxCarLongitude.Text = value;
+            }
+        }
 
         protected void btnFindTaxiDriverById_Click(object sender, EventArgs e)
         {
@@ -134,6 +200,26 @@ namespace Taksopark.WebForms.UserControls
                 tbxEditEmail.Text = user.Email;
                 tbxEditPassword.Text = user.Password;
                 ddlEditStatus.Text = user.Status;
+
+                var car = adminBl.GetCarById(user.Id);
+                if (car.CarYear != car.CarBrand)
+                {
+                    tbxCarBrand.Text = car.CarBrand;
+                    tbxCarYear.Text = car.CarYear;
+                    tbxCarStartWorkTime.Text = car.StartWorkTime.ToString();
+                    tbxCarFinishWorkTime.Text = car.FinishWorkTime.ToString();
+                    tbxCarLatitude.Text = car.Latitude;
+                    tbxCarLongitude.Text = car.Longitude;
+                }
+                else
+                {
+                    tbxCarBrand.Text = "";
+                    tbxCarYear.Text = "";
+                    tbxCarStartWorkTime.Text = "";
+                    tbxCarFinishWorkTime.Text = "";
+                    tbxCarLatitude.Text = "";
+                    tbxCarLongitude.Text = "";
+                }
             }
             else
             {
@@ -175,6 +261,26 @@ namespace Taksopark.WebForms.UserControls
                 Status = ddlEditStatus.Text
             };
             adminBl.UpdateUser(updatedUser);
+
+            var updatedCar = new Car()
+            {
+                Id = updatedUser.Id,
+                CarBrand = tbxCarBrand.Text,
+                CarYear = tbxCarYear.Text,
+                StartWorkTime = DateTime.Parse(tbxCarStartWorkTime.Text),
+                FinishWorkTime = DateTime.Parse(tbxCarFinishWorkTime.Text),
+                Latitude = tbxCarLatitude.Text,
+                Longitude = tbxCarLongitude.Text
+            };
+            if(adminBl.IsCarIdBooked(updatedCar.Id))
+            {
+                adminBl.UpdateCar(updatedCar);
+            }
+            else
+            {
+                adminBl.CreateCar(updatedCar);
+            }
+
             Response.Redirect("~/WebForms/TaxiDrivers.aspx");
         }
 

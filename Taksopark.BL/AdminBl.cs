@@ -66,5 +66,31 @@ namespace Taksopark.BL
                 uow.CarRepository.Create(car);
             }
         }
+
+        public Car GetCarById(int id)
+        {
+            using (var uow = new UnitOfWork(new AppConfigConnectionFactory()))
+            {
+                var car = uow.CarRepository.GetCarById(id);
+                return car;
+            }
+        }
+
+        public void UpdateCar(Car car)
+        {
+            using (var uow = new UnitOfWork(new AppConfigConnectionFactory()))
+            {
+                uow.CarRepository.Update(car);
+            }
+        }
+
+        public bool IsCarIdBooked(int id)
+        {
+            using (var uow = new UnitOfWork(new AppConfigConnectionFactory()))
+            {
+                var isBooked = uow.CarRepository.IsCarIdBooked(id);
+                return isBooked;
+            }
+        }
     }
 }

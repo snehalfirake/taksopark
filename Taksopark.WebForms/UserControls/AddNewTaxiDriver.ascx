@@ -106,11 +106,6 @@
     </table>
     <h3 runat="server">Car info:</h3>
     <table>
-        <thead>
-            <tr>
-                <td colspan="2">Car info:</td>
-            </tr>
-        </thead>
         <tr>
             <td><asp:Label runat="server" Text="Brand: "></asp:Label></td>
             <td><asp:TextBox runat="server" ID="tbxCarBrand"></asp:TextBox></td>
