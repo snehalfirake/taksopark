@@ -1,11 +1,11 @@
-﻿var loginValidation;
+﻿var orderTaxiValidation;
 
 $(function () {
-    loginValidation = new LoginValidation();
-    loginValidation.initialize();
+    orderTaxiValidation = new OrderTaxiValidation();
+    orderTaxiValidation.initialize();
 });
 
-function LoginValidation() {
+function OrderTaxiValidation() {
     var _this = this;
 
     _this.initialize = function () {
@@ -16,6 +16,7 @@ function LoginValidation() {
             }
             $("#paceFromErrorSpanId").hide();
             _this.EnableSendMessageButton();
+            _this.EnableShowTheWayButton();
         });
 
         $("#placeToTextBoxId").focus(function () {
@@ -24,6 +25,7 @@ function LoginValidation() {
             }
             $("#paceToErrorSpanId").hide();
             _this.EnableSendMessageButton();
+            _this.EnableShowTheWayButton();
         });
 
         $("#phoneTextBoxId").focus(function () {
@@ -70,12 +72,21 @@ function LoginValidation() {
             _this.PlaceToTextBoxValidation();
             _this.PhoneTextBoxValidation();
         });
+
+        $("#showTheWayButtonId").click(function () {
+            _this.PlaceFromTextBoxValidation();
+            _this.PlaceToTextBoxValidation();
+            if ($("#phoneTextBoxId").hasClass("error-textBoxValidationClass")) {
+                $("#phoneTextBoxId").removeClass("error-textBoxValidationClass").addClass("textBoxValidationClass");
+            }
+            $("#phoneErrorSpanId").hide();
+        });
     };
 
     _this.PlaceFromTextBoxValidation = function () {
         var textBoxId = '#placeFromTextBoxId';
         var placeFromTextBoxValue = $(textBoxId).val();
-        if (placeFromTextBoxValue == "") {
+        if (!(_this.PlaceFromOrPlaceToRegularExpression(placeFromTextBoxValue))) {
             if (textBoxId != 'undefined') {
                 $("#paceFromErrorSpanId").show();
                 $(textBoxId).removeClass("textBoxValidationClass").addClass("error-textBoxValidationClass");
@@ -83,6 +94,7 @@ function LoginValidation() {
                     "Please enter a valid Place From" + '</span>');
             }
             _this.DisableSendMessageButton();
+            _this.DisableShowTheWayButton();
             return false;
         }
         else {
@@ -97,7 +109,7 @@ function LoginValidation() {
     _this.PlaceToTextBoxValidation = function () {
         var textBoxId = '#placeToTextBoxId';
         var placeToTextBoxValue = $(textBoxId).val();
-        if (placeToTextBoxValue == "") {
+        if (!(_this.PlaceFromOrPlaceToRegularExpression(placeToTextBoxValue))) {
             if (textBoxId != 'undefined') {
                 $("#paceToErrorSpanId").show();
                 $(textBoxId).removeClass("textBoxValidationClass").addClass("error-textBoxValidationClass");
@@ -105,6 +117,7 @@ function LoginValidation() {
                     "Please enter a valid Place To" + '</span>');
             }
             _this.DisableSendMessageButton();
+            _this.DisableShowTheWayButton();
             return false;
         }
         else {
@@ -119,12 +132,12 @@ function LoginValidation() {
     _this.PhoneTextBoxValidation = function () {
         var textBoxId = '#phoneTextBoxId';
         var phoneTextBoxValue = $(textBoxId).val();
-        if (phoneTextBoxValue == "") {
+        if (!(_this.PhoneRegularExpression(phoneTextBoxValue))) {
             if (textBoxId != 'undefined') {
                 $("#phoneErrorSpanId").show();
                 $(textBoxId).removeClass("textBoxValidationClass").addClass("error-textBoxValidationClass");
                 $('#phoneErrorSpanId').replaceWith('<span id="phoneErrorSpanId">' +
-                    "Please enter a valid Phone" + '</span>');
+                    "Please enter a valid Phone Number" + '</span>');
             }
             _this.DisableSendMessageButton();
             return false;
@@ -138,12 +151,15 @@ function LoginValidation() {
         }
     };
 
-    //_this.NameRegularExpression = function (testString) {
-    //    var exp = new RegExp("^([A-Za-zА-ЯЄІа-яєі0-9 ]){2,50}$");
-    //    return exp.test(testString);
-    //};
+    _this.PlaceFromOrPlaceToRegularExpression = function (testString) {
+        var exp = new RegExp("^[А-ЯЄІа-яєі]{3,30}[\ \]{0,1}[А-ЯЄІа-яєі]{0,30}[\ \]{0,1}[А-ЯЄІа-яєі]{0,30}[\ \]{0,1}[0-9]{0,4}[\ \]{0,1}[А-ЯЄІа-яєі]{0,1}$");
+        return exp.test(testString);
+    };
 
-    
+    _this.PhoneRegularExpression = function (testString) {
+        var exp = new RegExp("^[(]{0,1}[0-9]{3}[)]{0,1}[-\ \.]{0,1}[0-9]{3}[-\ \.]{0,1}[0-9]{4}$");
+        return exp.test(testString);
+    };
 
     _this.DisableSendMessageButton = function () {
         document.getElementById("orderTaxiButtonId").disabled = true;
@@ -151,5 +167,13 @@ function LoginValidation() {
 
     _this.EnableSendMessageButton = function () {
         document.getElementById("orderTaxiButtonId").disabled = false;
+    };
+
+    _this.DisableShowTheWayButton = function () {
+        document.getElementById("showTheWayButtonId").disabled = true;
+    };
+
+    _this.EnableShowTheWayButton = function () {
+        document.getElementById("showTheWayButtonId").disabled = false;
     };
 };

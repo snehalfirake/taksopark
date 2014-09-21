@@ -48,14 +48,19 @@
     function calcRoute() {
         var distanceInput = document.getElementById("distance");
         var priceInput = document.getElementById("price");
+        var placeFrom = $("#placeFromTextBoxId").val();
+        var placeTo = $("#placeToTextBoxId").val();
+        var start = "Львів, " + placeFrom;
+        var end = "Львів, " + placeTo;
 
-        var start = "Львів, " + document.getElementById("placeFromTextBoxId").value;
-        var end = "Львів, " + document.getElementById("placeToTextBoxId").value;
-        var request = {
-            origin: start,
-            destination: end,
-            travelMode: google.maps.DirectionsTravelMode.DRIVING
-        };
+        if ((orderTaxiValidation.PlaceFromOrPlaceToRegularExpression(placeFrom)) &&
+            (orderTaxiValidation.PlaceFromOrPlaceToRegularExpression(placeTo))) {
+            var request = {
+                origin: start,
+                destination: end,
+                travelMode: google.maps.DirectionsTravelMode.DRIVING
+            };
+        }
         directionsService.route(request, function (response, status) {
             if (status == google.maps.DirectionsStatus.OK) {
                 directionsDisplay.setDirections(response);
@@ -87,42 +92,43 @@
     <div id="dialog" title="Dialog" class="ui-dialog-title">
         <p>Thank you for order. We will contact with you.</p>
     </div>
-        <div id="orderTaxiFormHolderId">
-            <div id="toggle" style="text-align: center">
-                <input type="text" data-field="datetime" name="date-time" placeholder="Date and time:" style="height: 40px; font-size: 18px;">
-                <div id="dtBox"></div>
-            </div>
-
-            <div id="placeFronContettHolderId">
-                <span id="paceFromErrorSpanId"></span>
-                <input type="text" id="placeFromTextBoxId" class="textBoxValidationClass" name="txtFrom" placeholder="From:" />
-            </div>
-
-            <div id="placeToContettHolderId">
-                <span id="paceToErrorSpanId"></span>
-                <input type="text" id="placeToTextBoxId" class="textBoxValidationClass" name="txtTo" placeholder="To:" />
-            </div>
-
-            <div id="phoneContettHolderId">
-                <span id="phoneErrorSpanId"></span>
-                <input type="text" id="phoneTextBoxId" class="textBoxValidationClass" name="txtPhone" placeholder="Phone:" />
-            </div>
-            <div id="orderTaxiButtonHolderId">
-                <button type="submit" id="orderTaxiButtonId" class="abutton" style="height: 34px;">OrderTaxi</button>
-                @*<button id="show" class="abutton">More</button>*@
-            </div>
-            <br />
+    <div id="orderTaxiFormHolderId">
+        <div id="toggle" style="text-align: center">
+            <input type="text" data-field="datetime" name="date-time" placeholder="Date and time:" style="height: 40px; font-size: 18px;">
+            <div id="dtBox"></div>
         </div>
+
+        <div id="placeFronContettHolderId">
+            <span id="paceFromErrorSpanId"></span>
+            <input type="text" id="placeFromTextBoxId" class="textBoxValidationClass" name="txtFrom" placeholder="From:" />
+        </div>
+
+        <div id="placeToContettHolderId">
+            <span id="paceToErrorSpanId"></span>
+            <input type="text" id="placeToTextBoxId" class="textBoxValidationClass" name="txtTo" placeholder="To:" />
+        </div>
+
+        <div id="phoneContettHolderId">
+            <span id="phoneErrorSpanId"></span>
+            <input type="text" id="phoneTextBoxId" class="textBoxValidationClass" name="txtPhone" placeholder="Phone:" />
+        </div>
+        <div id="orderTaxiButtonHolderId">
+            <button type="submit" id="orderTaxiButtonId" class="abutton" style="height: 34px;">OrderTaxi</button>
+            @*
+            <button id="show" class="abutton">More</button>*@
+        </div>
+        <br />
+    </div>
     }
     <br />
     <div id="showTheWayHolderId">
         <span style="font-size: 19px;"><span class="color1">Location</span> on map</span>
-        <div style="float:right">
+        <div style="float: right">
             <label for="distance"><span class="color1">D</span>istance (km): </label>
             <input type="text" name="distance" id="distance" readonly="true" />
             <label for="distance"><span class="color1">A</span>pproximate price (uah): </label>
             <input type="text" name="price" id="price" readonly="true" />
-            <button onclick="calcRoute()" class="abutton">Show the way</button>
+            <button onclick="calcRoute()" id="showTheWayButtonId" class="abutton">Show the way</button>
         </div>
     </div>
     <div id="TaxiMap1" style="width: 95%; height: 88%"></div>
