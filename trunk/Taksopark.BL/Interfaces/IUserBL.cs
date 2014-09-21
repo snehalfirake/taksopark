@@ -3,7 +3,7 @@ using Taksopark.DAL.Models;
 
 namespace Taksopark.BL.Interfaces
 {
-    interface IUserBl
+    public interface IUserBl
     {
         void CreateRequest(Request request);
         void UpdateRequest(Request request);

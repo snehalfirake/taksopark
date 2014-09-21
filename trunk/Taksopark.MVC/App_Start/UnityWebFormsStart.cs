@@ -22,7 +22,6 @@ namespace Taksopark.MVC.App_Start
 		{
 			IUnityContainer container = new UnityContainer();
 			HttpContext.Current.Application.SetContainer( container );
-
 			RegisterDependencies( container );
 		}
 
