@@ -2,6 +2,7 @@
 using System.Web.Mvc;
 using Microsoft.Ajax.Utilities;
 using Taksopark.BL;
+using Taksopark.BL.Interfaces;
 using Taksopark.DAL.Models;
 using Taksopark.MVC.Models;
 
@@ -9,6 +10,12 @@ namespace Taksopark.MVC.Controllers
 {
     public class AccountController : Controller
     {
+        private readonly IUserBl _userBl;
+
+        public AccountController(IUserBl userBl)
+        {
+            _userBl = userBl;
+        }
         public ActionResult LogOff()
         {
             Session["UserFullName"] = null;
@@ -32,8 +39,7 @@ namespace Taksopark.MVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                var userBl = new UserBl();
-                var user = userBl.GetUserByLoginAndPassword(logInModel.Login, logInModel.Password);
+                var user = _userBl.GetUserByLoginAndPassword(logInModel.Login, logInModel.Password);
                 if (user.UserName != null)
                 {
                     Session["UserFullName"] = user.UserName + " " + user.LastName;
@@ -56,8 +62,7 @@ namespace Taksopark.MVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                var userBl = new UserBl();
-                if (!userBl.IsLoginBooked(registrationModel.Login))
+                if (!_userBl.IsLoginBooked(registrationModel.Login))
                 {
                     var user = new User
                     {
@@ -70,7 +75,7 @@ namespace Taksopark.MVC.Controllers
                         Status = "Active",
                         UserName = registrationModel.FirstName
                     };
-                    userBl.CreateUser(user);
+                    _userBl.CreateUser(user);
                     Session["UserFullName"] = user.UserName + " " + user.LastName;
                     Session["UserLogin"] = user.Login;
                     return RedirectToAction("Index", "Home");

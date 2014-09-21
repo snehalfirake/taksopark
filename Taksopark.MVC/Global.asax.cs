@@ -3,7 +3,9 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 using Taksopark.DAL;
+using Taksopark.MVC.App_Start;
 using Taksopark.MVC.Controllers;
+using Taksopark.MVC.Support;
 
 namespace Taksopark.MVC
 {
@@ -14,6 +16,7 @@ namespace Taksopark.MVC
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            DependencyResolver.SetResolver(new UnityDependencyResolver(UnityConfig.GetConfiguredContainer()));
         }
         protected void Application_Error()
         {

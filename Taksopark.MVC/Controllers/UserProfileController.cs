@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using System.Web.Mvc;
 using Taksopark.BL;
+using Taksopark.BL.Interfaces;
 using Taksopark.DAL.Models;
 using Taksopark.MVC.Models;
 
@@ -8,6 +9,12 @@ namespace Taksopark.MVC.Controllers
 {
     public class UserProfileController : Controller
     {
+        private readonly IUserBl _userBl;
+
+        public UserProfileController(IUserBl userBl)
+        {
+            _userBl = userBl;
+        }
 
         [HttpGet]
         public ActionResult GetUserProfile()
@@ -16,8 +23,7 @@ namespace Taksopark.MVC.Controllers
             {
                 return RedirectToAction("Index", "Home");
             }
-            var userBl = new UserBl();
-            var user = userBl.GetUserByLogin((string) Session["UserLogin"]);
+            var user = _userBl.GetUserByLogin((string)Session["UserLogin"]);
             var editProfileModel = new EditProfileModel
             {
                 Id = user.Id,
@@ -38,7 +44,6 @@ namespace Taksopark.MVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                var userBl = new UserBl();
                 var user = new User
                 {
                     LastName = editProfileModel.LastName,
@@ -51,7 +56,7 @@ namespace Taksopark.MVC.Controllers
                     Status = "Active",
                     Password = editProfileModel.Password
                 };
-                userBl.UpdateUser(user);
+                _userBl.UpdateUser(user);
                 Session["UserFullName"] = user.UserName + " " + user.LastName;
                 return RedirectToAction("Index", "Home");   
             }
@@ -73,8 +78,7 @@ namespace Taksopark.MVC.Controllers
 
         public ActionResult GetRequestDetails(int id)
         {
-            var userBl = new UserBl();
-            var request = userBl.GetRequestById(id);
+            var request = _userBl.GetRequestById(id);
             var requestModel = new RequestModel
             {
                 RequestId = request.Id,
@@ -90,8 +94,7 @@ namespace Taksopark.MVC.Controllers
 
         public ActionResult EditRequest(int id)
         {
-            var userBl = new UserBl();
-            var request = userBl.GetRequestById(id);
+            var request = _userBl.GetRequestById(id);
             var requestModel = new RequestModel
             {
                 RequestId = request.Id,
@@ -119,7 +122,6 @@ namespace Taksopark.MVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                var userBl = new UserBl();
                 var request = new Request
                 {
                     FinishPoint = requestModel.FinishPoint,
@@ -129,7 +131,7 @@ namespace Taksopark.MVC.Controllers
                     Status = requestModel.Status,
                     Id = requestModel.RequestId
                 };
-                userBl.UpdateRequest(request);
+                _userBl.UpdateRequest(request);
                 return RedirectToAction("GetUserHistory", "UserProfile");
             }
             return View(requestModel);

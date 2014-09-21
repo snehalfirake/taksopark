@@ -3,7 +3,7 @@ using Taksopark.DAL.Models;
 
 namespace Taksopark.BL.Interfaces
 {
-    interface IOperatorBl
+    public interface IOperatorBl
     {
         List<Request> GetAllRequests();
         List<Request> GetActiveRequests();

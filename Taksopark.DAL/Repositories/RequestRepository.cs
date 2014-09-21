@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using Taksopark.DAL.Models;
@@ -46,7 +47,7 @@ namespace Taksopark.DAL.Repositories
                 command.Parameters.AddWithValue("@RequestTime", request.RequesTime);
                 if (request.CreatorId == null)
                 {
-                    command.Parameters.AddWithValue("@CreatorId", null);
+                    command.Parameters.AddWithValue("@CreatorId", DBNull.Value);
                 }
                 else
                 {
@@ -54,7 +55,7 @@ namespace Taksopark.DAL.Repositories
                 }
                 if (request.OperatorId == null)
                 {
-                    command.Parameters.AddWithValue("@OperatorId", -3);
+                    command.Parameters.AddWithValue("@OperatorId", DBNull.Value);
                 }
                 else
                 {

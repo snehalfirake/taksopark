@@ -3,7 +3,7 @@ using Taksopark.DAL.Models;
 
 namespace Taksopark.BL.Interfaces
 {
-    interface IAdminBl
+    public interface IAdminBl
     {
         List<User> GetUserByRole(string role);
         void UpdateUser(User user);

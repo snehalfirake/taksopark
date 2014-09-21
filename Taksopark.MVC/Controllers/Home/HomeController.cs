@@ -2,12 +2,19 @@
 using System;
 using System.Web.Mvc;
 using Taksopark.BL;
+using Taksopark.BL.Interfaces;
 using Taksopark.DAL.Models;
 
 namespace Taksopark.MVC.Controllers.Home
 {
     public class HomeController : Controller
     {
+        private readonly IUserBl _userBl;
+
+        public HomeController(IUserBl userBl)
+        {
+            _userBl = userBl;
+        }
         // GET: Home
        public ActionResult Index()
         {
@@ -37,11 +44,10 @@ namespace Taksopark.MVC.Controllers.Home
         [HttpPost]
         public ActionResult OrderTaxi()
         {
-            var userBl = new UserBl();
             var request = new Request();
             if (Session["UserLogin"] != null)
             {
-                var user = userBl.GetUserByLogin((string) Session["UserLogin"]);
+                var user = _userBl.GetUserByLogin((string)Session["UserLogin"]);
                 request.CreatorId = user.Id;
             }
             else
@@ -53,11 +59,12 @@ namespace Taksopark.MVC.Controllers.Home
             request.PhoneNumber = Request["txtPhone"];
             request.StartPoint = Request["txtTo"];
             request.Status = "Active";
-            request.RequesTime = Request["date-time"] == string.Empty
-                ? DateTime.Now
-                : DateTime.Parse(Request["date-time"]);
+            //request.RequesTime = Request["date-time"] == string.Empty
+            //    ? DateTime.Now
+            //    : DateTime.Parse(Request["date-time"]);
+            request.RequesTime = DateTime.Now;
 
-            userBl.CreateRequest(request);
+            _userBl.CreateRequest(request);
             return RedirectToAction("Index", "Home");
         }
 
