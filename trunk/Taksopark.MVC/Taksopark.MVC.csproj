@@ -149,6 +149,7 @@
     <Content Include="Scripts\jquery-ui-1.8.20.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\OrderTaxi\OrderTaxi.js" />
     <Content Include="Scripts\Validation\ContactsValidation.js" />
     <Content Include="Scripts\Validation\LoginValidation.js" />
     <Content Include="Scripts\Validation\OrderTaxiValidation.js" />
