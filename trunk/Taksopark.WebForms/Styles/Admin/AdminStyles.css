@@ -109,3 +109,7 @@ table th, table td {
     margin-left:27%;
     margin-right:27%;
 }
+
+.centerErrorMesssage{
+    text-align:center;
+}

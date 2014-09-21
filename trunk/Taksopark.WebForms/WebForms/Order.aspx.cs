@@ -19,7 +19,7 @@ namespace Taksopark.WebForms.Dispatcher
 
         public static IEnumerable<Request> GetAllRequests()
         {
-            OperatorBl operatoerBl = new OperatorBl(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+            OperatorBl operatoerBl = new OperatorBl();
             //var orders = operatoerBl.GetActiveRequests();
             var orders = operatoerBl.GetAllRequests();
             return orders;

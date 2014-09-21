@@ -20,7 +20,7 @@ namespace Taksopark.WebForms.WebForms
         }
         public static IEnumerable<User> GetAllOperatorsFromRepository()
         {
-            AdminBl adminBl = new AdminBl(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+            AdminBl adminBl = new AdminBl();
             var AllOperators = adminBl.GetUserByRole("Operator");
             return AllOperators;
         }

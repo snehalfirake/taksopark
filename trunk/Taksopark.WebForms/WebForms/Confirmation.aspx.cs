@@ -23,7 +23,7 @@ namespace Taksopark.WebForms.Dispatcher
 
         private void GetDrivers()
         {
-            OperatorBl operatorBI = new OperatorBl(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+            OperatorBl operatorBI = new OperatorBl();
             drivers = operatorBI.GetAllDrivers();
             
             dropDownList.DataSource = drivers;
@@ -34,7 +34,7 @@ namespace Taksopark.WebForms.Dispatcher
 
         public Request GetRequest(object id)
         {
-            OperatorBl operatorBI = new OperatorBl(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+            OperatorBl operatorBI = new OperatorBl();
             var orders = operatorBI.GetAllRequests();
             request = orders.Where(e => e.Id == Convert.ToInt32(id)).FirstOrDefault();
             
@@ -58,7 +58,7 @@ namespace Taksopark.WebForms.Dispatcher
 
         private void UpdateRequestStatus(string status)
         {
-            OperatorBl operatorBI = new OperatorBl(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+            OperatorBl operatorBI = new OperatorBl();
 
             request.Status = status;            
             operatorBI.UpdateRequest(request);

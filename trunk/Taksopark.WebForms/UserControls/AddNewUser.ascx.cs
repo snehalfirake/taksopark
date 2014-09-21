@@ -21,8 +21,10 @@ namespace Taksopark.WebForms.UserControls
 
         protected void btnAddNewUser_Click(object sender, EventArgs e)
         {
-            AdminBl adminBl = new AdminBl(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
-            adminBl.CreateUser(new User()
+            AdminBl adminBl = new AdminBl();
+            if (!adminBl.IsLoginBooked(tbxLogin.Text))
+            {
+                adminBl.CreateUser(new User()
                 {
                     UserName = tbxUserName.Text,
                     LastName = tbxLastName.Text,
@@ -31,9 +33,14 @@ namespace Taksopark.WebForms.UserControls
                     Email = tbxEmail.Text,
                     Password = tbxPassword.Text,
                     Role = "Client",
-                    Status = tbxStatus.Text
+                    Status = ddlStatus.Text
                 });
-            Response.Redirect("~/WebForms/Users.aspx");
+                Response.Redirect("~/WebForms/Users.aspx");
+            }
+            else
+            {
+                loginBooked.InnerText = "Login is booked!";
+            }
         }
 
         protected void btnCancel_Click(object sender, EventArgs e)

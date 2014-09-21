@@ -21,11 +21,11 @@ namespace Taksopark.WebForms.UserControls
         {
             get
             {
-                return tbxFindTaxiDriverById.Text;
+                return tbxFindTaxiDriverByCategory.Text;
             }
             set
             {
-                tbxFindTaxiDriverById.Text = value;
+                tbxFindTaxiDriverByCategory.Text = value;
             }
         }
         public string TaxiDriverNameText
@@ -104,19 +104,28 @@ namespace Taksopark.WebForms.UserControls
         {
             get
             {
-                return tbxEditStatus.Text;
+                return ddlEditStatus.Text;
             }
             set
             {
-                tbxEditStatus.Text = value;
+                ddlEditStatus.Text = value;
             }
         }
 
         protected void btnFindTaxiDriverById_Click(object sender, EventArgs e)
         {
-            AdminBl adminBl = new AdminBl(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
-            var user = adminBl.GetUserById(Convert.ToInt32(tbxFindTaxiDriverById.Text));
-            if (user != null)
+            AdminBl adminBl = new AdminBl();
+            User user;
+            if (ddlFindingCategory.SelectedValue == "Id")
+            {
+                user = adminBl.GetUserById(Convert.ToInt32(tbxFindTaxiDriverByCategory.Text));
+            }
+            else
+            {
+                user = adminBl.GetUserByLogin(tbxFindTaxiDriverByCategory.Text);
+                hiddenId.Value = user.Id.ToString();
+            }
+            if ((user != null) && (user.Role == "Driver"))
             {
                 tbxEditTaxiDriverName.Text = user.UserName;
                 tbxEditLastName.Text = user.LastName;
@@ -124,16 +133,38 @@ namespace Taksopark.WebForms.UserControls
                 tbxEditPhoneNumber.Text = user.PhoneNumber;
                 tbxEditEmail.Text = user.Email;
                 tbxEditPassword.Text = user.Password;
-                tbxEditStatus.Text = user.Status;
+                ddlEditStatus.Text = user.Status;
+            }
+            else
+            {
+                tbxEditTaxiDriverName.Text = "";
+                tbxEditLastName.Text = "";
+                tbxEditLogin.Text = "";
+                tbxEditPhoneNumber.Text = "";
+                tbxEditEmail.Text = "";
+                tbxEditPassword.Text = "";
+                ddlEditStatus.Text = "";
             }
         }
 
         protected void btnSaveEdit_Click(object sender, EventArgs e)
         {
-            AdminBl adminBl = new AdminBl(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+            AdminBl adminBl = new AdminBl();
+
+            string UserId;
+            if (hiddenId.Value != "")
+            {
+                UserId = hiddenId.Value;
+                hiddenId.Value = "";
+            }
+            else
+            {
+                UserId = tbxFindTaxiDriverByCategory.Text;
+            }
+
             var updatedUser = new User()
             {
-                Id = Convert.ToInt32(tbxFindTaxiDriverById.Text),
+                Id = Convert.ToInt32(UserId),
                 UserName = tbxEditTaxiDriverName.Text,
                 LastName = tbxEditLastName.Text,
                 Login = tbxEditLogin.Text,
@@ -141,7 +172,7 @@ namespace Taksopark.WebForms.UserControls
                 Email = tbxEditEmail.Text,
                 Password = tbxEditPassword.Text,
                 Role = "Driver",
-                Status = tbxEditStatus.Text
+                Status = ddlEditStatus.Text
             };
             adminBl.UpdateUser(updatedUser);
             Response.Redirect("~/WebForms/TaxiDrivers.aspx");

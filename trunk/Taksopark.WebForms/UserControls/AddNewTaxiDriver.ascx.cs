@@ -20,36 +20,39 @@ namespace Taksopark.WebForms.UserControls
 
         protected void btnAddNewTaxiDriver_Click(object sender, EventArgs e)
         {
-            AdminBl adminBl = new AdminBl(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
-            adminBl.CreateUser(new User()
+            AdminBl adminBl = new AdminBl();
+            if (!adminBl.IsLoginBooked(tbxLogin.Text))
             {
-                UserName = tbxTaxiDriverName.Text,
-                LastName = tbxLastName.Text,
-                Login = tbxLogin.Text,
-                PhoneNumber = tbxPhoneNumber.Text,
-                Email = tbxEmail.Text,
-                Password = tbxPassword.Text,
-                Role = "Driver",
-                Status = tbxStatus.Text
-            });
-            Response.Redirect("~/WebForms/TaxiDrivers.aspx");
-        }
+                adminBl.CreateUser(new User()
+                {
+                    UserName = tbxTaxiDriverName.Text,
+                    LastName = tbxLastName.Text,
+                    Login = tbxLogin.Text,
+                    PhoneNumber = tbxPhoneNumber.Text,
+                    Email = tbxEmail.Text,
+                    Password = tbxPassword.Text,
+                    Role = "Driver",
+                    Status = ddlStatus.Text
+                });
 
-        protected void btnAddNewTaxiDriver_Click1(object sender, EventArgs e)
-        {
-            AdminBl adminBl = new AdminBl(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
-            adminBl.CreateUser(new User()
+                int CarId = adminBl.GetUserByLogin(tbxLogin.Text).Id;
+                adminBl.CreateCar(new Car()
+                {
+                    Id = CarId,
+                    CarBrand = tbxCarBrand.Text,
+                    CarYear = tbxCarYear.Text,
+                    StartWorkTime = /*(DateTime)tbxCarStartWorkTime.Text*/DateTime.Now,
+                    FinishWorkTime = /*(DateTime)tbxCarFinishWorkTime.Text*/DateTime.Now,
+                    Latitude = tbxCarLatitude.Text,
+                    Longitude = tbxCarLongitude.Text
+                });
+
+                Response.Redirect("~/WebForms/TaxiDrivers.aspx");
+            }
+            else
             {
-                UserName = tbxTaxiDriverName.Text,
-                LastName = tbxLastName.Text,
-                Login = tbxLogin.Text,
-                PhoneNumber = tbxPhoneNumber.Text,
-                Email = tbxEmail.Text,
-                Password = tbxPassword.Text,
-                Role = "Driver",
-                Status = tbxStatus.Text
-            });
-            Response.Redirect("~/WebForms/TaxiDrivers.aspx");
+                loginBooked.InnerText = "Login is booked!";
+            }
         }
 
         protected void btnCancel_Click(object sender, EventArgs e)
