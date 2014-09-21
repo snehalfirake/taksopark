@@ -1,6 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" EnableTheming="true" CodeBehind="UsersTable.ascx.cs" Inherits="Taksopark.WebForms.UserControls.UsersTable" %>
 <link href="../Styles/AdminStyles.css" rel="stylesheet" />
-<%--<link href="../Styles/Admin.css" rel="stylesheet" />--%>
 <div>
     <asp:GridView runat="server" ID="UsersGV" AllowPaging="true" PageSize="20"
         OnPageIndexChanging="UsersGV_PageIndexChanging" DataSourceID="allUsersDS"

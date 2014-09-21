@@ -15,5 +15,6 @@ namespace Taksopark.BL.Interfaces
         Car GetCarById(int id);
         bool IsCarIdBooked(int id);
         void UpdateCar(Car car);
+        List<Car> GetAllCars();
     }
 }

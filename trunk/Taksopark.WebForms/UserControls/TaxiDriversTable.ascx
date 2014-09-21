@@ -1,6 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" EnableTheming="true" CodeBehind="TaxiDriversTable.ascx.cs" Inherits="Taksopark.WebForms.UserControls.TaxiDriversTable" %>
 <link href="../Styles/AdminStyles.css" rel="stylesheet" />
-<%--<link href="../Styles/Admin.css" rel="stylesheet" />--%>
 <div>
     <asp:GridView runat="server" ID="TaxiDriversGV" AllowPaging="true" PageSize="20"
         OnPageIndexChanging="TaxiDriversGV_PageIndexChanging" DataSourceID="allTaxiDriversDS"

@@ -44,8 +44,8 @@ namespace Taksopark.WebForms.UserControls
                     Id = CarId,
                     CarBrand = tbxCarBrand.Text,
                     CarYear = tbxCarYear.Text,
-                    StartWorkTime = /*(DateTime)tbxCarStartWorkTime.Text*/DateTime.Now,
-                    FinishWorkTime = /*(DateTime)tbxCarFinishWorkTime.Text*/DateTime.Now,
+                    StartWorkTime = DateTime.Parse(tbxCarStartWorkTime.Text),
+                    FinishWorkTime = DateTime.Parse(tbxCarFinishWorkTime.Text),
                     Latitude = tbxCarLatitude.Text,
                     Longitude = tbxCarLongitude.Text
                 });

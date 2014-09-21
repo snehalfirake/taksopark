@@ -2,6 +2,8 @@
 
 <%@ Register Src="~/UserControls/TaxiDriversTable.ascx" TagPrefix="uc" TagName="TaxiDriversTable" %>
 <%@ Register Src="~/UserControls/AddNewTaxiDriver.ascx" TagPrefix="uc" TagName="AddNewTaxiDriver" %>
+<%@ Register Src="~/UserControls/CarsTable.ascx" TagPrefix="uc" TagName="CarsTable" %>
+
 
 
 
@@ -22,20 +24,19 @@
         <br />
     </div>
 
-    <%--<div class="one">
+    <div class="one">
         <div class="heading_bg">
             <h2>All Cars</h2>
-            <%--<div class="one-fourth buttonAdd">
-                <asp:Button runat="server" ID="Button1" Text="Add New Taxi Driver" Width="100%" OnClick="btnAdd_Click" />
-            </div>--%
-            <uc:TaxiDriversTable runat="server" id="TaxiDriversTable2" DataSourceID="allTaxiDriversDS" 
-                OnGridViewClicked="TaxiDriversTable1_GridViewClicked" />
+            <uc:CarsTable runat="server" id="CarsTable" DataSourceID="allCarsDS" OnGridViewClicked="CarsTable_GridViewClicked" />
         </div>
         <br />
         <br />
-    </div>--%>
+    </div>
 
     <asp:ObjectDataSource runat="server" ID="allTaxiDriversDS" TypeName="Taksopark.WebForms.WebForms.TaxiDrivers" 
         SelectMethod="GetAllTaxiDriversFromRepository">
+    </asp:ObjectDataSource>
+    <asp:ObjectDataSource runat="server" ID="allCarsDS" TypeName="Taksopark.WebForms.WebForms.TaxiDrivers" 
+        SelectMethod="GetAllCarsFromRepository">
     </asp:ObjectDataSource>
 </asp:Content>
