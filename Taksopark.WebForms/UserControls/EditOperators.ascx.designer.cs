@@ -22,13 +22,31 @@ namespace Taksopark.WebForms.UserControls {
         protected global::System.Web.UI.UpdatePanel UpdatePanel1;
         
         /// <summary>
-        /// tbxFindOperatorById control.
+        /// ddlFindingCategory control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbxFindOperatorById;
+        protected global::System.Web.UI.WebControls.DropDownList ddlFindingCategory;
+        
+        /// <summary>
+        /// hiddenId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hiddenId;
+        
+        /// <summary>
+        /// tbxFindOperatorByCategory control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbxFindOperatorByCategory;
         
         /// <summary>
         /// btnFindOperatorById control.
@@ -148,13 +166,13 @@ namespace Taksopark.WebForms.UserControls {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator requiredEditPassword;
         
         /// <summary>
-        /// tbxEditStatus control.
+        /// ddlEditStatus control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbxEditStatus;
+        protected global::System.Web.UI.WebControls.DropDownList ddlEditStatus;
         
         /// <summary>
         /// requiredEditStatus control.

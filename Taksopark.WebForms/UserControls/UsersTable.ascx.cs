@@ -10,7 +10,7 @@ using Taksopark.WebForms.UserControls;
 
 namespace Taksopark.WebForms.UserControls
 {
-    
+
     public partial class UsersTable : System.Web.UI.UserControl
     {
         public delegate void GridViewClickedEventHandler(object sender, GridViewEventArgs e);

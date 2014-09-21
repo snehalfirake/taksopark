@@ -12,7 +12,7 @@
     <div class="one">
         <div class="heading_bg">
             <h2>All Operators</h2>
-            <div class="one-fourth" style="float: right;">
+            <div class="one-fourth buttonAdd">
                 <asp:Button runat="server" ID="btnAdd" Text="Add New Operator" Width="100%" OnClick="btnAdd_Click" />
             </div>
             

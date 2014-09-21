@@ -20,7 +20,7 @@ namespace Taksopark.WebForms.WebForms
         }
         public static IEnumerable<User> GetAllTaxiDriversFromRepository()
         {
-            AdminBl adminBl = new AdminBl(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+            AdminBl adminBl = new AdminBl();
             var AllDrivers = adminBl.GetUserByRole("Driver");
             return AllDrivers;
         }

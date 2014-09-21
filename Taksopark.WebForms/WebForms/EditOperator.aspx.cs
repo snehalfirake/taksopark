@@ -15,7 +15,7 @@ namespace Taksopark.WebForms.WebForms
         {
             if (!IsPostBack)
             {
-                AdminBl adminBl = new AdminBl(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+                AdminBl adminBl = new AdminBl();
                 var user = adminBl.GetUserById(Convert.ToInt32(Request.QueryString["id"]));
                 EditOperators.OperatorIdText = user.Id.ToString();
                 EditOperators.OperatorNameText = user.UserName;

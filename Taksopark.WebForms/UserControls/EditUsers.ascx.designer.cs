@@ -22,22 +22,40 @@ namespace Taksopark.WebForms.UserControls {
         protected global::System.Web.UI.UpdatePanel UpdatePanel1;
         
         /// <summary>
-        /// tbxFindUserById control.
+        /// ddlFindingCategory control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbxFindUserById;
+        protected global::System.Web.UI.WebControls.DropDownList ddlFindingCategory;
         
         /// <summary>
-        /// btnFindUserById control.
+        /// hiddenId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnFindUserById;
+        protected global::System.Web.UI.WebControls.HiddenField hiddenId;
+        
+        /// <summary>
+        /// tbxFindUserByCategory control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbxFindUserByCategory;
+        
+        /// <summary>
+        /// btnFindUserByCategory control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnFindUserByCategory;
         
         /// <summary>
         /// tbxEditUserName control.
@@ -148,13 +166,13 @@ namespace Taksopark.WebForms.UserControls {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator requiredEditPassword;
         
         /// <summary>
-        /// tbxEditStatus control.
+        /// ddlEditStatus control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbxEditStatus;
+        protected global::System.Web.UI.WebControls.DropDownList ddlEditStatus;
         
         /// <summary>
         /// requiredEditStatus control.

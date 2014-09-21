@@ -13,7 +13,7 @@
     <div class="one">
         <div class="heading_bg">
             <h2>All Users</h2>
-            <div class="one-fourth" style="float: right;">
+            <div class="one-fourth buttonAdd">
                 <asp:Button runat="server" ID="btnAdd" Text="Add New User" Width="100%" OnClick="btnAdd_Click" />
             </div>
             <uc:UsersTable runat="server" ID="UsersTable" DataSourceID="allUsersDS" OnGridViewClicked="UsersTable_GridViewClicked" />

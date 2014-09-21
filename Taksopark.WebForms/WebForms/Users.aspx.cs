@@ -19,12 +19,12 @@ namespace Taksopark.WebForms.WebForms
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         public static IEnumerable<User> GetAllUsersFromRepository()
         {
-            AdminBl adminBl = new AdminBl(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+            AdminBl adminBl = new AdminBl();
             var AllClients = adminBl.GetUserByRole("Client");
             return AllClients;
         }
