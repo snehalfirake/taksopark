@@ -18,8 +18,8 @@ var directionsService = new google.maps.DirectionsService();
 function calcRoute() {
     var distanceInput = document.getElementById("distance");
 
-    var start = "Львів, " + document.getElementById("adr1").value;
-    var end = "Львів, " + document.getElementById("adr2").value;
+    var start = "Львів, " + document.getElementById("placeFromTextBoxId").value;
+    var end = "Львів, " + document.getElementById("placeToTextBoxId").value;
     var request = {
         origin: start,
         destination: end,
