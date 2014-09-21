@@ -8,16 +8,9 @@ namespace Taksopark.BL
 {
     public class AdminBl : IAdminBl
     {
-        private readonly string _connectionString;
-
-        public AdminBl(string connnectionString)
-        {
-            _connectionString = connnectionString;
-        }
-
         public List<User> GetUserByRole(string role)
         {
-            using (var uow = new UnitOfWork(_connectionString))
+            using (var uow = new UnitOfWork(new AppConfigConnectionFactory()))
             {
                 var users = uow.UserRepository.GetUsersByRole(role);
                 return users.ToList();
@@ -26,7 +19,7 @@ namespace Taksopark.BL
 
         public User GetUserById(int id)
         {
-            using(var uow = new UnitOfWork(_connectionString))
+            using (var uow = new UnitOfWork(new AppConfigConnectionFactory()))
             {
                 var user = uow.UserRepository.GetUserById(id);
                 return user;
@@ -35,7 +28,7 @@ namespace Taksopark.BL
 
         public void UpdateUser(User user)
         {
-            using (var uow = new UnitOfWork(_connectionString))
+            using (var uow = new UnitOfWork(new AppConfigConnectionFactory()))
             {
                 uow.UserRepository.Update(user);
             }
@@ -43,7 +36,7 @@ namespace Taksopark.BL
 
         public void CreateUser(User user)
         {
-            using (var uow = new UnitOfWork(_connectionString))
+            using (var uow = new UnitOfWork(new AppConfigConnectionFactory()))
             {
                 uow.UserRepository.Create(user);
             }
@@ -51,7 +44,7 @@ namespace Taksopark.BL
 
         public void CreateCar(Car car)
         {
-            using (var uow = new UnitOfWork(_connectionString))
+            using (var uow = new UnitOfWork(new AppConfigConnectionFactory()))
             {
                 uow.CarRepository.Create(car);
             }

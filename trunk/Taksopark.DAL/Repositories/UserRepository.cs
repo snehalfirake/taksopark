@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using Taksopark.DAL.Models;
 using Taksopark.DAL.Repositories.Interfases;
@@ -21,26 +22,18 @@ namespace Taksopark.DAL.Repositories
         /// <param name="user">User model</param>
         public void Update(User user)
         {
-            using (var command = _connection.CreateCommand())
+            using (var command = new SqlCommand("UpdateUser", _connection))
             {
-                command.CommandText = @"UPDATE Users SET Name = @userName, 
-                                      LastName = @lastName,
-                                      Login = @login,
-                                      PhoneNumber = @phoneNumber,
-                                      Email = @email,
-                                      Password = @password,
-                                      Role = @role,
-                                      Status = @status
-                                      WHERE Id = @userId";
-                command.Parameters.AddWithValue("userName", user.UserName);
-                command.Parameters.AddWithValue("lastName", user.LastName);
-                command.Parameters.AddWithValue("login", user.Login);
-                command.Parameters.AddWithValue("phoneNumber", user.PhoneNumber);
-                command.Parameters.AddWithValue("email", user.Email);
-                command.Parameters.AddWithValue("password", user.Password);
-                command.Parameters.AddWithValue("role", user.Role);
-                command.Parameters.AddWithValue("status", user.Status);
-                command.Parameters.AddWithValue("userId", user.Id);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@UserName", user.UserName);
+                command.Parameters.AddWithValue("@LastName", user.LastName);
+                command.Parameters.AddWithValue("@Login", user.Login);
+                command.Parameters.AddWithValue("@PhoneNumber", user.PhoneNumber);
+                command.Parameters.AddWithValue("@Email", user.Email);
+                command.Parameters.AddWithValue("@Password", user.Password);
+                command.Parameters.AddWithValue("@Role", user.Role);
+                command.Parameters.AddWithValue("@Status", user.Status);
+                command.Parameters.AddWithValue("@UserId", user.Id);
                 command.ExecuteNonQuery();
             }
         }
@@ -53,18 +46,17 @@ namespace Taksopark.DAL.Repositories
         /// <param name="user">User model</param>
         public void Create(User user)
         {
-            using (var command = _connection.CreateCommand())
+            using (var command = new SqlCommand("CreateUser", _connection))
             {
-                command.CommandText = "INSERT INTO Users (Name, LastName, Login, PhoneNumber, Email, Password, Role, Status) " +
-                                      "VALUES(@userName, @lastName, @login, @phoneNumber, @email, @password, @role, @status)";
-                command.Parameters.AddWithValue("userName", user.UserName);
-                command.Parameters.AddWithValue("lastName", user.LastName);
-                command.Parameters.AddWithValue("login", user.Login);
-                command.Parameters.AddWithValue("phoneNumber", user.PhoneNumber);
-                command.Parameters.AddWithValue("email", user.Email);
-                command.Parameters.AddWithValue("password", user.Password);
-                command.Parameters.AddWithValue("role", user.Role);
-                command.Parameters.AddWithValue("status", user.Status);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@UserName", user.UserName);
+                command.Parameters.AddWithValue("@LastName", user.LastName);
+                command.Parameters.AddWithValue("@Login", user.Login);
+                command.Parameters.AddWithValue("@PhoneNumber", user.PhoneNumber);
+                command.Parameters.AddWithValue("@Email", user.Email);
+                command.Parameters.AddWithValue("@Password", user.Password);
+                command.Parameters.AddWithValue("@Role", user.Role);
+                command.Parameters.AddWithValue("@Status", user.Status);
                 command.ExecuteNonQuery();
             }
         }
@@ -75,10 +67,10 @@ namespace Taksopark.DAL.Repositories
         /// <returns></returns>
         public IEnumerable<User> GetAllUsers()
         {
-            using (var command = _connection.CreateCommand() )
+            var userList = new List<User>();
+            using (var command = new SqlCommand("GetAllUsers", _connection))
             {
-                command.CommandText = "SELECT * FROM Users";
-                var userList = new List<User>();
+                command.CommandType = CommandType.StoredProcedure;
                 using (var reader = command.ExecuteReader())
                 {
                     while (reader.Read())
@@ -87,8 +79,8 @@ namespace Taksopark.DAL.Repositories
                         userList.Add(user);
                     }
                 }
-                return userList;
             }
+            return userList;
         }
 
         /// <summary>
@@ -98,12 +90,11 @@ namespace Taksopark.DAL.Repositories
         /// <returns></returns>
         public IEnumerable<User> GetUsersByRole(string role)
         {
-            //_connection.Open();
-            using (var command = _connection.CreateCommand())
+            var userList = new List<User>();
+            using (var command = new SqlCommand("GetUsersByRole", _connection))
             {
-                command.CommandText = "SELECT * FROM Users WHERE Role = @role";
-                command.Parameters.AddWithValue("role", role);
-                var userList = new List<User>();
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@Role", role);
                 using (var reader = command.ExecuteReader())
                 {
                     while (reader.Read())
@@ -112,9 +103,8 @@ namespace Taksopark.DAL.Repositories
                         userList.Add(user);
                     }
                 }
-                //_connection.Close();
-                return userList;
             }
+            return userList;
         }
 
         /// <summary>
@@ -123,10 +113,10 @@ namespace Taksopark.DAL.Repositories
         /// <param name="userId">User id in DB</param>
         public void DeleteUser(int userId)
         {
-            using (var command = _connection.CreateCommand())
+            using (var command = new SqlCommand("DeleteUser", _connection))
             {
-                command.CommandText = "DELETE FROM Users WHERE ID = @userId";
-                command.Parameters.AddWithValue("userId", userId);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@UserId", userId);
                 command.ExecuteNonQuery();
             }
         }
@@ -138,10 +128,10 @@ namespace Taksopark.DAL.Repositories
         /// <returns></returns>
         public bool IsLoginBooked(string login)
         {
-            using (var command = _connection.CreateCommand())
+            using (var command = new SqlCommand("IsLoginBooked", _connection))
             {
-                command.CommandText = "SELECT * FROM Users WHERE Login = @login";
-                command.Parameters.AddWithValue("login", login);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@Login", login);
                 var user = new User();
                 using (var reader = command.ExecuteReader())
                 {
@@ -165,11 +155,11 @@ namespace Taksopark.DAL.Repositories
         /// <returns></returns>
         public User GetUserById(int id)
         {
-            using (var command = _connection.CreateCommand())
+            using (var command = new SqlCommand("GetUserById", _connection))
             {
-                command.CommandText = "SELECT * FROM Users WHERE Id = @id";
-                command.Parameters.AddWithValue("id", id);
-                User findUser = new User();
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@Id", id);
+                var findUser = new User();
                 using (var reader = command.ExecuteReader())
                 {
                     while (reader.Read())
@@ -185,12 +175,11 @@ namespace Taksopark.DAL.Repositories
 
         public User GetUserByLogInAndPassword(string login, string password)
         {
-            using (var command = _connection.CreateCommand())
+            using (var command = new SqlCommand("GetUserByLogInAndPassword", _connection))
             {
-                command.CommandText = "SELECT * FROM Users WHERE Login = @login AND Password = @password AND Role = @client";
-                command.Parameters.AddWithValue("login", login);
-                command.Parameters.AddWithValue("password", password);
-                command.Parameters.AddWithValue("client", "Client");
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@Login", login);
+                command.Parameters.AddWithValue("@Password", password);
                 var user = new User();
                 using (var reader = command.ExecuteReader())
                 {
@@ -205,10 +194,10 @@ namespace Taksopark.DAL.Repositories
 
         public User GetUserByLogIn(string login)
         {
-            using (var command = _connection.CreateCommand())
+            using (var command = new SqlCommand("GetUserByLogIn", _connection))
             {
-                command.CommandText = "SELECT * FROM Users WHERE Login = @login";
-                command.Parameters.AddWithValue("login", login);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@Login", login);
                 var user = new User();
                 using (var reader = command.ExecuteReader())
                 {

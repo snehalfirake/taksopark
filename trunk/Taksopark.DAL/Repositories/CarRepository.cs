@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using Taksopark.DAL.Models;
 using Taksopark.DAL.Repositories.Interfases;
@@ -9,7 +10,6 @@ namespace Taksopark.DAL.Repositories
     public class CarRepository : ICarRepository
     {
         private readonly SqlConnection _connection;
-
         public CarRepository(SqlConnection connection)
         {
             _connection = connection;
@@ -21,20 +21,16 @@ namespace Taksopark.DAL.Repositories
         /// <param name="car">Car model</param>
         public void Update(Car car)
         {
-            using (var command = _connection.CreateCommand())
+            using (var command = new SqlCommand("UpdateCar", _connection))
             {
-                command.CommandText = "UPDATE Cars SET Brand = @brand, "
-                                      + "Year = @year, "
-                                      + "StartWorkTime = @startWorkTime, "
-                                      + "FinishWorkTime = @finishWorkTime, "
-                                      + "Location = @location "
-                                      + "WHERE Id = @userId";
-                command.Parameters.AddWithValue("brand", car.CarBrand);
-                command.Parameters.AddWithValue("year", car.CarYear);
-                command.Parameters.AddWithValue("startWorkTime", car.StartWorkTime);
-                command.Parameters.AddWithValue("finishWorkTime", car.FinishWorkTime);
-                command.Parameters.AddWithValue("location", car.Location);
-                command.Parameters.AddWithValue("userId", car.Id);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@Brand", car.CarBrand);
+                command.Parameters.AddWithValue("@Year", car.CarYear);
+                command.Parameters.AddWithValue("@StartWorkTime", car.StartWorkTime);
+                command.Parameters.AddWithValue("@FinishWorkTime", car.FinishWorkTime);
+                command.Parameters.AddWithValue("@Latitude", car.Latitude);
+                command.Parameters.AddWithValue("@Longitude", car.Longitude);
+                command.Parameters.AddWithValue("@CarId", car.Id);
                 command.ExecuteNonQuery();
             }
         }
@@ -45,15 +41,16 @@ namespace Taksopark.DAL.Repositories
         /// <param name="car">Car model</param>
         public void Create(Car car)
         {
-            using (var command = _connection.CreateCommand())
+            using (var command = new SqlCommand("CreateCar", _connection))
             {
-                command.CommandText = "INSERT INTO Cars (Brand, Year, StartWorkTime, FinishWorkTime, Location) "
-                                      + "VALUES(@brand, @year, @startWorkTime, @finishWorkTime, @location)";
-                command.Parameters.AddWithValue("brand", car.CarBrand);
-                command.Parameters.AddWithValue("year", car.CarYear);
-                command.Parameters.AddWithValue("startWorkTime", car.StartWorkTime);
-                command.Parameters.AddWithValue("finishWorkTime", car.FinishWorkTime);
-                command.Parameters.AddWithValue("location", car.Location);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@Brand", car.CarBrand);
+                command.Parameters.AddWithValue("@Year", car.CarYear);
+                command.Parameters.AddWithValue("@StartWorkTime", car.StartWorkTime);
+                command.Parameters.AddWithValue("@FinishWorkTime", car.FinishWorkTime);
+                command.Parameters.AddWithValue("@Latitude", car.Latitude);
+                command.Parameters.AddWithValue("@Longitude", car.Longitude);
+                command.Parameters.AddWithValue("@CarId", car.Id);
                 command.ExecuteNonQuery();
             }
         }
@@ -64,11 +61,10 @@ namespace Taksopark.DAL.Repositories
         /// <returns></returns>
         public IEnumerable<Car> GetAllCars()
         {
-            using (var command = _connection.CreateCommand())
+            using (var command = new SqlCommand("GetAllCars", _connection))
             {
                 var carsList = new List<Car>();
-                command.CommandText = "SELECT * FROM Cars";
-               
+                command.CommandType = CommandType.StoredProcedure;
                 using (var reader = command.ExecuteReader())
                 {
                     while (reader.Read())
@@ -87,11 +83,10 @@ namespace Taksopark.DAL.Repositories
         /// <param name="carId">Car id in DB</param>
         public void DeleteCar(int carId)
         {
-
-            using (var command = _connection.CreateCommand())
+            using (var command = new SqlCommand("DeleteCar", _connection))
             {
-                command.CommandText = "DELETE FROM Cars WHERE ID = @carId";
-                command.Parameters.AddWithValue("carId", carId);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@CarId", carId);
                 command.ExecuteNonQuery();
             }
         }

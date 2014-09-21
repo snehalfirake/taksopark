@@ -6,50 +6,18 @@ namespace Taksopark.DAL
 {
     public class UnitOfWork : IDisposable
     {
-        private SqlConnection _connection;
-        private readonly string _connectionString;
+        private readonly SqlConnection _connection;
 
-        public UnitOfWork(string connectionString)
+        public UnitOfWork(IAppConfigConnectionFactory configConnection)
         {
-            _connectionString = connectionString;
-        }
-
-        private void CreateConnection()
-        {
-            if (_connectionString == null) return;
-            _connection = new SqlConnection(_connectionString);
-            _connection.Open();
+            _connection = configConnection.Create();
         }
 
-        public void Dispose()
-        {
-            if (_connection == null)
-            {
-                return;
-            }
-            _connection.Dispose();
-            _connection = null;
-            GC.SuppressFinalize(this);
-        }
-        
-        ~UnitOfWork()
-        {
-            if (_connection == null)
-            {
-                return;
-            }
-            _connection.Close();
-            _connection = null;
-        }
         public UserRepository UserRepository
         {
             get
             {
-                if (_connection == null)
-                {
-                    CreateConnection();                    
-                }
-                return  new UserRepository(_connection);
+                return new UserRepository(_connection);
             }
         }
 
@@ -57,10 +25,6 @@ namespace Taksopark.DAL
         {
             get
             {
-                if (_connection == null)
-                {
-                    CreateConnection();
-                }
                 return new CarRepository(_connection);
             }
         }
@@ -69,10 +33,6 @@ namespace Taksopark.DAL
         {
             get
             {
-                if (_connection == null)
-                {
-                    CreateConnection();
-                }
                 return new CommentRepository(_connection);
             }
         }
@@ -81,10 +41,6 @@ namespace Taksopark.DAL
         {
             get
             {
-                if (_connection == null)
-                {
-                    CreateConnection();
-                }
                 return new ImageRepository(_connection);
             }
         }
@@ -93,13 +49,14 @@ namespace Taksopark.DAL
         {
             get
             {
-                if (_connection == null)
-                {
-                    CreateConnection();
-                }
                 return new RequestRepository(_connection);
             }
         }
 
+        public void Dispose()
+        {
+            _connection.Dispose();
+            GC.SuppressFinalize(this);
+        }
     }
 }

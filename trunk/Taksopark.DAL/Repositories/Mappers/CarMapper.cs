@@ -17,7 +17,8 @@ namespace Taksopark.DAL.Repositories.Mappers
                 CarYear = (string)record["Year"],
                 StartWorkTime = (DateTime)record["StartWorkTime"],
                 FinishWorkTime = (DateTime)record["FinishWorkTime"],
-                Location = (string)record["Location"]
+                Latitude = (string)record["Latitude"],
+                Longitude = (string)record["Longitude"]
             };
             return car;
         }
