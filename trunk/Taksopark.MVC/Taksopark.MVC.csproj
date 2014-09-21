@@ -127,6 +127,8 @@
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\app-scripts\ajax-form-submit.js" />
+    <Content Include="Scripts\app-scripts\auto-complite.js" />
     <Content Include="Scripts\app-scripts\camera.js" />
     <Content Include="Scripts\app-scripts\date-time-picker.js" />
     <Content Include="Scripts\app-scripts\DateTimePicker.js" />
@@ -134,6 +136,7 @@
     <Content Include="Scripts\app-scripts\jquery-2.1.1.min.js" />
     <Content Include="Scripts\app-scripts\js-image-slider.js" />
     <Content Include="Scripts\app-scripts\map-script.js" />
+    <Content Include="Scripts\app-scripts\order-dialog.js" />
     <Content Include="Scripts\app-scripts\ready.js" />
     <Content Include="Scripts\app-scripts\userinfo-script.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -143,6 +146,8 @@
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\Validation\ContactsValidation.js" />
     <Content Include="Scripts\Validation\LoginValidation.js" />
@@ -187,7 +192,6 @@
     <Content Include="Views\Shared\Error404.cshtml" />
     <Content Include="Views\Shared\Error500.cshtml" />
     <Content Include="Views\Home\BingMapPartial.cshtml" />
-    <Content Include="Views\Home\OrderTaxi.cshtml" />
     <Content Include="Views\Contacts\SendMail.cshtml" />
     <Content Include="Views\Shared\Error403.cshtml" />
     <Content Include="Views\Account\RegisterUser.cshtml" />
