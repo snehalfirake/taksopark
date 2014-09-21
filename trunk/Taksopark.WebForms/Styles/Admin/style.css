@@ -15,7 +15,7 @@ body {	font-family: Arial, Helvetica, sans-serif;
  
 #container {
 	font-size: 1em;
-	width:1024px;
+	width:1124px;
 	border-radius: 5px;
 	/* 
 	border-top-left-radius: 5px;
@@ -553,7 +553,7 @@ a.nivo-prevNav {background:url(Images/Admin/slide-next-prev.png) left no-repeat;
 	margin-right: 30px;
 }
 .one {
-	width:960px;
+	width:1124px;
 }
 .one-half {
 	width:465px;
@@ -1138,3 +1138,11 @@ div.dark_rounded #pp_full_res .pp_inline,div.dark_square #pp_full_res .pp_inline
 * html .pp_top .pp_middle,* html .pp_bottom .pp_middle{left:0;position:static}
 .pp_top .pp_right,.pp_bottom .pp_right{height:20px;left:auto;position:absolute;right:0;top:0;width:20px}
 .pp_fade,.pp_gallery li.default a img{display:none}
+
+
+.buttonAdd{
+    float: right;
+    background: #eaeaea url(../../Images/Admin/body_bg.png); 
+    padding:10px; 
+    padding-right:15px;
+}
