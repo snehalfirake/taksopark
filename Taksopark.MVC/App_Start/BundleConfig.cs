@@ -36,7 +36,8 @@ namespace Taksopark.MVC
             bundles.Add(new ScriptBundle("~/Validation").Include(
                 "~/Scripts/Validation/ContactsValidation.js",
                 "~/Scripts/Validation/LoginValidation.js",
-                "~/Scripts/Validation/OrderTaxiValidation.js"
+                "~/Scripts/Validation/OrderTaxiValidation.js",
+                "~/Scripts/OrderTaxi/OrderTaxi.js"
                 ));
         }
     }
