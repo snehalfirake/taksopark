@@ -108,7 +108,7 @@ function ContactsValidation() {
                 $("#emailErrorValidationSpanId").show();
                 $(textBoxId).removeClass("textBoxValidationClass").addClass("error-textBoxValidationClass");
                 $('#emailErrorValidationSpanId').replaceWith('<span id="emailErrorValidationSpanId">' +
-                    "Please provide a valid email address" + '</span>');
+                    "Please provide a valid Email Address" + '</span>');
             }
             _this.DisableSendMessageButton();
             return false;
@@ -130,7 +130,7 @@ function ContactsValidation() {
                 $("#messageErrorValidationSpanId").show();
                 $(textBoxId).removeClass("textAreaValidationClass").addClass("error-textAreaValidationClass");
                 $('#messageErrorValidationSpanId').replaceWith('<span id="messageErrorValidationSpanId">' +
-                    "Message field can't be empty, please fill it." + '</span>');
+                    "Please provide a valid Message" + '</span>');
             }
             _this.DisableSendMessageButton();
             return false;
@@ -145,7 +145,7 @@ function ContactsValidation() {
     };
 
     _this.NameRegularExpression = function (testString) {
-        var exp = new RegExp("^([A-Za-zА-ЯЄІа-яєі0-9 ]){2,50}$");
+        var exp = new RegExp("^[A-Za-zА-ЯЄІа-яєі]{2,30}[\ \]{0,1}[A-Za-zА-ЯЄІа-яєі]{2,30}[\ \]{0,1}[A-Za-zА-ЯЄІа-яєі]{2,30}[\ \]{0,1}$");
         return exp.test(testString);
     };
 
