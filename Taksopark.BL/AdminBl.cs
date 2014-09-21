@@ -8,9 +8,16 @@ namespace Taksopark.BL
 {
     public class AdminBl : IAdminBl
     {
+        private readonly ISqlConnectionFactory _appConfigConnection;
+
+        public AdminBl(ISqlConnectionFactory appConfigConnection)
+        {
+            _appConfigConnection = appConfigConnection;
+        }
+
         public List<User> GetUserByRole(string role)
         {
-            using (var uow = new UnitOfWork(new AppConfigConnectionFactory()))
+            using (var uow = new UnitOfWork(_appConfigConnection))
             {
                 var users = uow.UserRepository.GetUsersByRole(role);
                 return users.ToList();
@@ -19,7 +26,7 @@ namespace Taksopark.BL
 
         public User GetUserById(int id)
         {
-            using (var uow = new UnitOfWork(new AppConfigConnectionFactory()))
+            using (var uow = new UnitOfWork(_appConfigConnection))
             {
                 var user = uow.UserRepository.GetUserById(id);
                 return user;
@@ -27,7 +34,7 @@ namespace Taksopark.BL
         }
         public User GetUserByLogin(string login)
         {
-            using (var uow = new UnitOfWork(new AppConfigConnectionFactory()))
+            using (var uow = new UnitOfWork(_appConfigConnection))
             {
                 var user = uow.UserRepository.GetUserByLogIn(login);
                 return user;
@@ -36,7 +43,7 @@ namespace Taksopark.BL
 
         public bool IsLoginBooked(string login)
         {
-            using (var uow = new UnitOfWork(new AppConfigConnectionFactory()))
+            using (var uow = new UnitOfWork(_appConfigConnection))
             {
                 var isBooked = uow.UserRepository.IsLoginBooked(login);
                 return isBooked;
@@ -45,7 +52,7 @@ namespace Taksopark.BL
 
         public void UpdateUser(User user)
         {
-            using (var uow = new UnitOfWork(new AppConfigConnectionFactory()))
+            using (var uow = new UnitOfWork(_appConfigConnection))
             {
                 uow.UserRepository.Update(user);
             }
@@ -53,7 +60,7 @@ namespace Taksopark.BL
 
         public void CreateUser(User user)
         {
-            using (var uow = new UnitOfWork(new AppConfigConnectionFactory()))
+            using (var uow = new UnitOfWork(_appConfigConnection))
             {
                 uow.UserRepository.Create(user);
             }
@@ -61,7 +68,7 @@ namespace Taksopark.BL
 
         public void CreateCar(Car car)
         {
-            using (var uow = new UnitOfWork(new AppConfigConnectionFactory()))
+            using (var uow = new UnitOfWork(_appConfigConnection))
             {
                 uow.CarRepository.Create(car);
             }
@@ -69,7 +76,7 @@ namespace Taksopark.BL
 
         public Car GetCarById(int id)
         {
-            using (var uow = new UnitOfWork(new AppConfigConnectionFactory()))
+            using (var uow = new UnitOfWork(_appConfigConnection))
             {
                 var car = uow.CarRepository.GetCarById(id);
                 return car;
@@ -78,7 +85,7 @@ namespace Taksopark.BL
 
         public void UpdateCar(Car car)
         {
-            using (var uow = new UnitOfWork(new AppConfigConnectionFactory()))
+            using (var uow = new UnitOfWork(_appConfigConnection))
             {
                 uow.CarRepository.Update(car);
             }
@@ -86,7 +93,7 @@ namespace Taksopark.BL
 
         public bool IsCarIdBooked(int id)
         {
-            using (var uow = new UnitOfWork(new AppConfigConnectionFactory()))
+            using (var uow = new UnitOfWork(_appConfigConnection))
             {
                 var isBooked = uow.CarRepository.IsCarIdBooked(id);
                 return isBooked;

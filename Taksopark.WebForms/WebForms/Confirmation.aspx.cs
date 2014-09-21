@@ -6,13 +6,23 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Microsoft.Practices.Unity;
 using Taksopark.BL;
+using Taksopark.BL.Interfaces;
 using Taksopark.DAL.Models;
+using Unity.WebForms;
 
 namespace Taksopark.WebForms.Dispatcher
 {
     public partial class Confirmation : System.Web.UI.Page
     {
+        private IOperatorBl _operatorBl;
+
+        protected void Page_Init(object sender, EventArgs e)
+        {
+            this._operatorBl = Application.GetContainer().Resolve<IOperatorBl>();
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -23,8 +33,8 @@ namespace Taksopark.WebForms.Dispatcher
 
         private void GetDrivers()
         {
-            OperatorBl operatorBI = new OperatorBl();
-            drivers = operatorBI.GetAllDrivers();
+            //var operatorBI = Application.GetContainer().Resolve<IOperatorBl>();
+            drivers = _operatorBl.GetAllDrivers();
             
             dropDownList.DataSource = drivers;
             dropDownList.DataValueField = "Id";
@@ -34,8 +44,9 @@ namespace Taksopark.WebForms.Dispatcher
 
         public Request GetRequest(object id)
         {
-            OperatorBl operatorBI = new OperatorBl();
-            var orders = operatorBI.GetAllRequests();
+            //var orders = this._operatorBl.GetAllRequests();
+            var operatorBl = HttpContext.Current.Application.GetContainer().Resolve<IOperatorBl>();
+            var orders = operatorBl.GetAllRequests();
             request = orders.Where(e => e.Id == Convert.ToInt32(id)).FirstOrDefault();
             
             return request;
@@ -58,10 +69,8 @@ namespace Taksopark.WebForms.Dispatcher
 
         private void UpdateRequestStatus(string status)
         {
-            OperatorBl operatorBI = new OperatorBl();
-
             request.Status = status;            
-            operatorBI.UpdateRequest(request);
+            this._operatorBl.UpdateRequest(request);
         }
 
         protected void statusDropdownList_SelectedIndexChanged(object sender, EventArgs e)

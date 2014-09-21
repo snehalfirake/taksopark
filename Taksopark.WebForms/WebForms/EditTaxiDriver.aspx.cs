@@ -5,7 +5,10 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Microsoft.Practices.Unity;
 using Taksopark.BL;
+using Taksopark.BL.Interfaces;
+using Unity.WebForms;
 
 namespace Taksopark.WebForms.WebForms
 {
@@ -15,7 +18,7 @@ namespace Taksopark.WebForms.WebForms
         {
             if (!IsPostBack)
             {
-                AdminBl adminBl = new AdminBl();
+                var adminBl = HttpContext.Current.Application.GetContainer().Resolve<IAdminBl>();
                 var user = adminBl.GetUserById(Convert.ToInt32(Request.QueryString["id"]));
                 EditTaxiDrivers.TaxiDriverIdText = user.Id.ToString();
                 EditTaxiDrivers.TaxiDriverNameText = user.UserName;

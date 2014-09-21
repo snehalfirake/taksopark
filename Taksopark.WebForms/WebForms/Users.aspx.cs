@@ -6,12 +6,15 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Taksopark.BL;
+using Taksopark.BL.Interfaces;
 using Taksopark.DAL;
 using Taksopark.DAL.Models;
 using Taksopark.DAL.Repositories;
 using Taksopark.MVC;
 using Taksopark.WebForms.Classes;
 using Taksopark.WebForms.UserControls;
+using Unity.WebForms;
+using Microsoft.Practices.Unity;
 
 namespace Taksopark.WebForms.WebForms
 {
@@ -24,7 +27,7 @@ namespace Taksopark.WebForms.WebForms
 
         public static IEnumerable<User> GetAllUsersFromRepository()
         {
-            AdminBl adminBl = new AdminBl();
+            IAdminBl adminBl = HttpContext.Current.Application.GetContainer().Resolve<IAdminBl>();
             var AllClients = adminBl.GetUserByRole("Client");
             return AllClients;
         }

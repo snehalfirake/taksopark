@@ -2,7 +2,7 @@
 
 namespace Taksopark.DAL
 {
-    public interface IAppConfigConnectionFactory
+    public interface ISqlConnectionFactory
     {
         SqlConnection Create();
     }

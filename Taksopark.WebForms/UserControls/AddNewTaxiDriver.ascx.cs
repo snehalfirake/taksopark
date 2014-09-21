@@ -6,8 +6,11 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Taksopark.BL;
+using Taksopark.BL.Interfaces;
 using Taksopark.DAL;
 using Taksopark.DAL.Models;
+using Unity.WebForms;
+using Microsoft.Practices.Unity;
 
 namespace Taksopark.WebForms.UserControls
 {
@@ -20,7 +23,7 @@ namespace Taksopark.WebForms.UserControls
 
         protected void btnAddNewTaxiDriver_Click(object sender, EventArgs e)
         {
-            AdminBl adminBl = new AdminBl();
+            IAdminBl adminBl = HttpContext.Current.Application.GetContainer().Resolve<IAdminBl>();
             if (!adminBl.IsLoginBooked(tbxLogin.Text))
             {
                 adminBl.CreateUser(new User()

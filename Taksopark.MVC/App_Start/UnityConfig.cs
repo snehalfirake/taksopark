@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using System.Web.Configuration;
 using Microsoft.Practices.Unity;
 using Taksopark.BL;
+using Taksopark.MVC.Controllers;
 using Taksopark.MVC.Controllers.Home;
 
 namespace Taksopark.MVC.App_Start
@@ -24,8 +23,13 @@ namespace Taksopark.MVC.App_Start
 
         public static void RegisterTypes(IUnityContainer container)
         {
-            ContainerBootstraper.RegisterTypes(container);
+            var conectionString = WebConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+            BLContainerBootstraper.RegisterTypes(container, conectionString);
             container.RegisterType<HomeController>();
+            container.RegisterType<AccountController>();
+            container.RegisterType<ContactsController>();
+            container.RegisterType<ErrorController>();
+            container.RegisterType<UserProfileController>();
         }
     }
 }

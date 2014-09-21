@@ -65,9 +65,8 @@ namespace Taksopark.MVC.Controllers
 
         public ActionResult GetUserHistory()
         {
-            var userBl = new UserBl();
-            var user = userBl.GetUserByLogin((string) Session["UserLogin"]);
-            var requestList = userBl.GetAllRequestsByCreatorID(user.Id);
+            var user = _userBl.GetUserByLogin((string)Session["UserLogin"]);
+            var requestList = _userBl.GetAllRequestsByCreatorID(user.Id);
             var requestModelList = requestList.Select(request => new RequestModel
             {
                 RequestId = request.Id, PhoneNumber = request.PhoneNumber, FinishPoint = request.FinishPoint, StartPoint = request.StartPoint, RequesTime = request.RequesTime, Status = request.Status
@@ -109,10 +108,9 @@ namespace Taksopark.MVC.Controllers
 
         public ActionResult DiscardRequest(int id)
         {
-            var userBl = new UserBl();
-            var request = userBl.GetRequestById(id);
+            var request = _userBl.GetRequestById(id);
             request.Status = "Discard";
-            userBl.UpdateRequest(request);
+            _userBl.UpdateRequest(request);
             return RedirectToAction("GetUserHistory", "UserProfile");
         }
 

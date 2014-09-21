@@ -8,9 +8,15 @@ namespace Taksopark.BL
 {
     public class UserBl : IUserBl
     {
+        private readonly ISqlConnectionFactory _appConfigConnection;
+
+        public UserBl(ISqlConnectionFactory appConfigConnection)
+        {
+            _appConfigConnection = appConfigConnection;
+        }
         public void CreateRequest(DAL.Models.Request request)
         {
-            using (var uow = new UnitOfWork(new AppConfigConnectionFactory()))
+            using (var uow = new UnitOfWork(_appConfigConnection))
             {
                 uow.RequestRepository.Create(request);
             }
@@ -18,7 +24,7 @@ namespace Taksopark.BL
 
         public void UpdateRequest(Request request)
         {
-            using (var uow = new UnitOfWork(new AppConfigConnectionFactory()))
+            using (var uow = new UnitOfWork(_appConfigConnection))
             {
                 uow.RequestRepository.Update(request);
             }
@@ -26,7 +32,7 @@ namespace Taksopark.BL
 
         public void CreateComment(DAL.Models.Comment comment)
         {
-            using (var uow = new UnitOfWork(new AppConfigConnectionFactory()))
+            using (var uow = new UnitOfWork(_appConfigConnection))
             {
                 uow.CommentRepository.Create(comment);
             }
@@ -34,7 +40,7 @@ namespace Taksopark.BL
 
         public void CreateUser(DAL.Models.User user)
         {
-            using (var uow = new UnitOfWork(new AppConfigConnectionFactory()))
+            using (var uow = new UnitOfWork(_appConfigConnection))
             {
                 uow.UserRepository.Create(user);
             }
@@ -42,7 +48,7 @@ namespace Taksopark.BL
 
         public System.Collections.Generic.List<DAL.Models.Car> GetAllCars()
         {
-            using (var uow = new UnitOfWork(new AppConfigConnectionFactory()))
+            using (var uow = new UnitOfWork(_appConfigConnection))
             {
                 return uow.CarRepository.GetAllCars().ToList();
             }
@@ -50,7 +56,7 @@ namespace Taksopark.BL
 
         public List<Request> GetAllRequestsByCreatorID(int creatorId)
         {
-            using (var uow = new UnitOfWork(new AppConfigConnectionFactory()))
+            using (var uow = new UnitOfWork(_appConfigConnection))
             {
                 return uow.RequestRepository.GetAllRequestsByCreatorId(creatorId).ToList();
             }
@@ -58,7 +64,7 @@ namespace Taksopark.BL
 
         public bool IsLoginBooked(string login)
         {
-            using (var uow = new UnitOfWork(new AppConfigConnectionFactory()))
+            using (var uow = new UnitOfWork(_appConfigConnection))
             {
                 return uow.UserRepository.IsLoginBooked(login);
             }
@@ -67,7 +73,7 @@ namespace Taksopark.BL
 
         public DAL.Models.User GetUserByLoginAndPassword(string login, string password)
         {
-            using (var uow = new UnitOfWork(new AppConfigConnectionFactory()))
+            using (var uow = new UnitOfWork(_appConfigConnection))
             {
                 return uow.UserRepository.GetUserByLogInAndPassword(login, password);
             }
@@ -76,7 +82,7 @@ namespace Taksopark.BL
 
         public DAL.Models.User GetUserByLogin(string login)
         {
-            using (var uow = new UnitOfWork(new AppConfigConnectionFactory()))
+            using (var uow = new UnitOfWork(_appConfigConnection))
             {
                 return uow.UserRepository.GetUserByLogIn(login);
             }
@@ -84,7 +90,7 @@ namespace Taksopark.BL
 
         public Request GetRequestById(int id)
         {
-            using (var uow = new UnitOfWork(new AppConfigConnectionFactory()))
+            using (var uow = new UnitOfWork(_appConfigConnection))
             {
                 return uow.RequestRepository.GetRequestById(id);
             }
@@ -93,7 +99,7 @@ namespace Taksopark.BL
 
         public void UpdateUser(DAL.Models.User user)
         {
-            using (var uow = new UnitOfWork(new AppConfigConnectionFactory()))
+            using (var uow = new UnitOfWork(_appConfigConnection))
             {
                 uow.UserRepository.Update(user);
             }
@@ -102,7 +108,7 @@ namespace Taksopark.BL
 
         public List<Request> GetAllRequests()
         {
-            using (var uow = new UnitOfWork(new AppConfigConnectionFactory()))
+            using (var uow = new UnitOfWork(_appConfigConnection))
             {
                 return uow.RequestRepository.GetAllRequests().ToList();
             }
