@@ -90,5 +90,56 @@ namespace Taksopark.DAL.Repositories
                 command.ExecuteNonQuery();
             }
         }
+
+        /// <summary>
+        /// Get car by id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public Car GetCarById(int id)
+        {
+            using (var command = new SqlCommand("GetCarById", _connection))
+            {
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@Id", id);
+                var findCar = new Car();
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        var car = CarMapper.Map(reader);
+                        findCar = car;
+                    }
+                }
+                return findCar;
+            }
+        }
+
+        /// <summary>
+        /// Check is already car with the same id
+        /// </summary>
+        /// <param name="login">String login value</param>
+        /// <returns></returns>
+        public bool IsCarIdBooked(int id)
+        {
+            using (var command = new SqlCommand("IsCarIdBooked", _connection))
+            {
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@Id", id);
+                var car = new Car();
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        car = CarMapper.Map(reader);
+                    }
+                }
+                if (car.Id == id)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }

@@ -25,6 +25,26 @@ namespace Taksopark.WebForms.WebForms
                 EditTaxiDrivers.EmailText = user.Email;
                 EditTaxiDrivers.PasswordText = user.Password;
                 EditTaxiDrivers.StatusText = user.Status;
+
+                var car = adminBl.GetCarById(Convert.ToInt32(Request.QueryString["id"]));
+                if (car.CarYear!=car.CarBrand)
+                {
+                    EditTaxiDrivers.CarBrand = car.CarBrand;
+                    EditTaxiDrivers.CarYear = car.CarYear;
+                    EditTaxiDrivers.CarStartWorkTime = car.StartWorkTime.ToString();
+                    EditTaxiDrivers.CarFinishWorkTime = car.FinishWorkTime.ToString();
+                    EditTaxiDrivers.CarLatitude = car.Latitude;
+                    EditTaxiDrivers.CarLongitude = car.Longitude;
+                }
+                else
+                {
+                    EditTaxiDrivers.CarBrand = "";
+                    EditTaxiDrivers.CarYear = "";
+                    EditTaxiDrivers.CarStartWorkTime = "";
+                    EditTaxiDrivers.CarFinishWorkTime = "";
+                    EditTaxiDrivers.CarLatitude = "";
+                    EditTaxiDrivers.CarLongitude = "";
+                }
             }
         }
     }

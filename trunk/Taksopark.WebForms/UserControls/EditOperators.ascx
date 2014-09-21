@@ -9,7 +9,7 @@
                     <table>
                         <tr>
                             <td>
-                                <asp:Label runat="server" Text="Find Operator by Id: "></asp:Label></td>
+                                <asp:Label runat="server" Text="Find Operator by: " Width="110"></asp:Label></td>
                             <td>
                                 <asp:DropDownList runat="server" ID="ddlFindingCategory" CssClass="ddlFindingCategory" 
                                     Width="220">
