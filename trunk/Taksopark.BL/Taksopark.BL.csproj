@@ -48,7 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdminBl.cs" />
-    <Compile Include="ContainerBootstraper.cs" />
+    <Compile Include="BLContainerBootstraper.cs" />
     <Compile Include="Interfaces\IAdminBl.cs" />
     <Compile Include="Interfaces\IOperatorBl.cs" />
     <Compile Include="Interfaces\IUserBL.cs" />

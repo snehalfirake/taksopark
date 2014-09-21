@@ -2,18 +2,16 @@
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Web.Configuration;
 
 namespace Taksopark.DAL
 {
-    public class AppConfigConnectionFactory : IAppConfigConnectionFactory
+    public class SqlConnectionFactory : ISqlConnectionFactory
     {
         private readonly string _connectionString;
-        private const string ConnectionName = "ConnectionString";
 
-        public AppConfigConnectionFactory()
+        public SqlConnectionFactory(string connectionString)
         {
-            _connectionString = WebConfigurationManager.ConnectionStrings[ConnectionName].ConnectionString;
+            _connectionString = connectionString;
         }
 
         public SqlConnection Create()

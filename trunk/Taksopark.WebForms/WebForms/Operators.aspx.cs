@@ -5,10 +5,13 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Microsoft.Practices.Unity;
 using Taksopark.BL;
+using Taksopark.BL.Interfaces;
 using Taksopark.DAL;
 using Taksopark.DAL.Models;
 using Taksopark.WebForms.Classes;
+using Unity.WebForms;
 
 namespace Taksopark.WebForms.WebForms
 {
@@ -20,7 +23,7 @@ namespace Taksopark.WebForms.WebForms
         }
         public static IEnumerable<User> GetAllOperatorsFromRepository()
         {
-            AdminBl adminBl = new AdminBl();
+            IAdminBl adminBl = HttpContext.Current.Application.GetContainer().Resolve<IAdminBl>();
             var AllOperators = adminBl.GetUserByRole("Operator");
             return AllOperators;
         }

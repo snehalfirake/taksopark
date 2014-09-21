@@ -8,7 +8,7 @@ namespace Taksopark.DAL
     {
         private readonly SqlConnection _connection;
 
-        public UnitOfWork(IAppConfigConnectionFactory configConnection)
+        public UnitOfWork(ISqlConnectionFactory configConnection)
         {
             _connection = configConnection.Create();
         }

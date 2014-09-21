@@ -1,10 +1,11 @@
 using System.Web;
-
+using System.Web.Configuration;
 using Microsoft.Practices.Unity;
+using Taksopark.BL;
 using Unity.WebForms;
 
-[assembly: WebActivator.PostApplicationStartMethod( typeof(Taksopark.MVC.App_Start.UnityWebFormsStart), "PostStart" )]
-namespace Taksopark.MVC.App_Start
+[assembly: WebActivator.PostApplicationStartMethod( typeof(Taksopark.WebForms.App_Start.UnityWebFormsStart), "PostStart" )]
+namespace Taksopark.WebForms.App_Start
 {
 	/// <summary>
 	///		Startup class for the Unity.WebForms NuGet package.
@@ -22,6 +23,7 @@ namespace Taksopark.MVC.App_Start
 		{
 			IUnityContainer container = new UnityContainer();
 			HttpContext.Current.Application.SetContainer( container );
+
 			RegisterDependencies( container );
 		}
 
@@ -31,7 +33,8 @@ namespace Taksopark.MVC.App_Start
 		/// <param name="container">Instance of the container to populate.</param>
 		private static void RegisterDependencies( IUnityContainer container )
 		{
-			// TODO: Add any dependencies needed here
+            var conectionString = WebConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+            BLContainerBootstraper.RegisterTypes(container, conectionString);
 		}
 	}
 }

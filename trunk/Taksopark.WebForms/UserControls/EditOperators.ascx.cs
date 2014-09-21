@@ -6,7 +6,10 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Taksopark.BL;
+using Taksopark.BL.Interfaces;
 using Taksopark.DAL.Models;
+using Unity.WebForms;
+using Microsoft.Practices.Unity;
 
 namespace Taksopark.WebForms.UserControls
 {
@@ -114,7 +117,7 @@ namespace Taksopark.WebForms.UserControls
 
         protected void btnFindOperatorById_Click(object sender, EventArgs e)
         {
-            AdminBl adminBl = new AdminBl();
+            IAdminBl adminBl = HttpContext.Current.Application.GetContainer().Resolve<IAdminBl>();            
             User user;
             if (ddlFindingCategory.SelectedValue == "Id")
             {
@@ -149,7 +152,7 @@ namespace Taksopark.WebForms.UserControls
 
         protected void btnSaveEdit_Click(object sender, EventArgs e)
         {
-            AdminBl adminBl = new AdminBl();
+            IAdminBl adminBl = HttpContext.Current.Application.GetContainer().Resolve<IAdminBl>();
 
             string UserId;
             if (hiddenId.Value != "")

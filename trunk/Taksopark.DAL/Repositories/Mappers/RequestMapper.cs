@@ -22,8 +22,10 @@ namespace Taksopark.DAL.Repositories.Mappers
             request.Status = (string) record["Status"];
             request.StartPoint = (string) record["StartPoint"];
             request.FinishPoint = (string) record["FinishPoint"];
-            request.OperatorId = (int) record["OperatorId"];
-            
+
+            request.OperatorId = record.IsDBNull(record.GetOrdinal("OperatorId")) == false
+                              ? (int)record["OperatorId"]
+                              : default(int?);
             return request;
         }
     }
