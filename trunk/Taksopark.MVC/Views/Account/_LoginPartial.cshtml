@@ -11,7 +11,7 @@
 }
 else
 {
-    <span style="font-family: 'Arial';"><span class="color1">W</span>elcome @Session["UserFullName"]</span>
+    <span style="font-family: 'Arial';"><span class="color1">Welcome</span> @Session["UserFullName"]</span>
     <a href="/Views/Home/">
         <button class="abutton pulse width2">@Html.ActionLink("My Profile", "GetUserProfile", "UserProfile", null, new { style = "text-decoration:none" })</button>
     </a>
