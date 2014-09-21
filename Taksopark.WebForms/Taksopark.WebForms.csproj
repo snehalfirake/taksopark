@@ -103,6 +103,7 @@
     <Content Include="UserControls\AddNewOperator.ascx" />
     <Content Include="UserControls\AddNewTaxiDriver.ascx" />
     <Content Include="UserControls\AddNewUser.ascx" />
+    <Content Include="UserControls\CarsTable.ascx" />
     <Content Include="UserControls\EditOperators.ascx" />
     <Content Include="UserControls\EditTaxiDrivers.ascx" />
     <Content Include="UserControls\EditUsers.ascx" />
@@ -163,6 +164,13 @@
     </Compile>
     <Compile Include="UserControls\AddNewUser.ascx.designer.cs">
       <DependentUpon>AddNewUser.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CarsTable.ascx.cs">
+      <DependentUpon>CarsTable.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\CarsTable.ascx.designer.cs">
+      <DependentUpon>CarsTable.ascx</DependentUpon>
     </Compile>
     <Compile Include="UserControls\EditOperators.ascx.cs">
       <DependentUpon>EditOperators.ascx</DependentUpon>

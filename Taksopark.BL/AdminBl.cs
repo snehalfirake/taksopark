@@ -99,5 +99,14 @@ namespace Taksopark.BL
                 return isBooked;
             }
         }
+
+        public List<Car> GetAllCars()
+        {
+            using (var uow = new UnitOfWork(_appConfigConnection))
+            {
+                var cars = uow.CarRepository.GetAllCars();
+                return cars.ToList();
+            }
+        }
     }
 }

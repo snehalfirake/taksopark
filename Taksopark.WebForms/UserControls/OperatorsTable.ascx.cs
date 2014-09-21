@@ -36,16 +36,11 @@ namespace Taksopark.WebForms.UserControls
 
         protected void OperatorsGV_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            string OperatorId = OperatorsGV.Rows[Convert.ToInt32(e.CommandArgument)].Cells[1].Text;
-            //string OperatorName = OperatorsGV.Rows[Convert.ToInt32(e.CommandArgument)].Cells[2].Text;
-            //string LastName = OperatorsGV.Rows[Convert.ToInt32(e.CommandArgument)].Cells[3].Text;
-            //string Login = OperatorsGV.Rows[Convert.ToInt32(e.CommandArgument)].Cells[4].Text;
-            //string PhoneNumber = OperatorsGV.Rows[Convert.ToInt32(e.CommandArgument)].Cells[5].Text;
-            //string Email = OperatorsGV.Rows[Convert.ToInt32(e.CommandArgument)].Cells[6].Text;
-            //string Password = OperatorsGV.Rows[Convert.ToInt32(e.CommandArgument)].Cells[7].Text;
-            //string Status = OperatorsGV.Rows[Convert.ToInt32(e.CommandArgument)].Cells[9].Text;
-            GridViewClicked(this, new GridViewEventArgs(OperatorId/*, OperatorName, LastName, Login, PhoneNumber, Email,
-                Password, Status*/));
+            if (e.CommandName == "Select")
+            {
+                string OperatorId = OperatorsGV.Rows[Convert.ToInt32(e.CommandArgument)].Cells[1].Text;
+                GridViewClicked(this, new GridViewEventArgs(OperatorId));
+            }
         }
     }
 }

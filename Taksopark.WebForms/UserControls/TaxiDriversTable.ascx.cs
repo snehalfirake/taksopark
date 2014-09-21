@@ -36,18 +36,10 @@ namespace Taksopark.WebForms.UserControls
 
         protected void TaxiDriversGV_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            if (GridViewClicked != null)
+            if (e.CommandName == "Select")
             {
                 string UserId = TaxiDriversGV.Rows[Convert.ToInt32(e.CommandArgument)].Cells[1].Text;
-                //string UserName = TaxiDriversGV.Rows[Convert.ToInt32(e.CommandArgument)].Cells[2].Text;
-                //string LastName = TaxiDriversGV.Rows[Convert.ToInt32(e.CommandArgument)].Cells[3].Text;
-                //string Login = TaxiDriversGV.Rows[Convert.ToInt32(e.CommandArgument)].Cells[4].Text;
-                //string PhoneNumber = TaxiDriversGV.Rows[Convert.ToInt32(e.CommandArgument)].Cells[5].Text;
-                //string Email = TaxiDriversGV.Rows[Convert.ToInt32(e.CommandArgument)].Cells[6].Text;
-                //string Password = TaxiDriversGV.Rows[Convert.ToInt32(e.CommandArgument)].Cells[7].Text;
-                //string Status = TaxiDriversGV.Rows[Convert.ToInt32(e.CommandArgument)].Cells[9].Text;
-                GridViewClicked(this, new GridViewEventArgs(UserId/*, UserName, LastName, Login, PhoneNumber, Email,
-                    Password, Status*/));
+                GridViewClicked(this, new GridViewEventArgs(UserId));
             }
         }
     }
