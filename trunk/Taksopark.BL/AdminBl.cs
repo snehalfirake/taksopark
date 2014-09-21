@@ -25,6 +25,23 @@ namespace Taksopark.BL
                 return user;
             }
         }
+        public User GetUserByLogin(string login)
+        {
+            using (var uow = new UnitOfWork(new AppConfigConnectionFactory()))
+            {
+                var user = uow.UserRepository.GetUserByLogIn(login);
+                return user;
+            }
+        }
+
+        public bool IsLoginBooked(string login)
+        {
+            using (var uow = new UnitOfWork(new AppConfigConnectionFactory()))
+            {
+                var isBooked = uow.UserRepository.IsLoginBooked(login);
+                return isBooked;
+            }
+        }
 
         public void UpdateUser(User user)
         {

@@ -14,7 +14,6 @@ namespace Taksopark.BL
         public static void RegisterTypes(IUnityContainer container)
         {
             container.RegisterType<IAppConfigConnectionFactory, AppConfigConnectionFactory>();
-            container.RegisterType<UnitOfWork>();
             container.RegisterType<IAdminBl, AdminBl>();
             container.RegisterType<IUserBl, UserBl>();
             container.RegisterType<IOperatorBl, OperatorBl>();
