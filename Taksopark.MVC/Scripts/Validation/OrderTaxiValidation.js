@@ -152,7 +152,7 @@ function OrderTaxiValidation() {
     };
 
     _this.PlaceFromOrPlaceToRegularExpression = function (testString) {
-        var exp = new RegExp("^[А-ЯЄІа-яєі]{3,30}[\ \]{0,1}[А-ЯЄІа-яєі]{0,30}[\ \]{0,1}[А-ЯЄІа-яєі]{0,30}[\ \]{0,1}[0-9]{0,4}[\ \]{0,1}[А-ЯЄІа-яєі]{0,1}$");
+        var exp = new RegExp("^[А-ЯЄІЇа-яєії]{3,30}[\ \]{0,1}[А-ЯЄІЇа-яєії]{0,30}[\ \]{0,1}[А-ЯЄІЇа-яєії]{0,30}[\ \]{0,1}[0-9]{0,4}[\ \]{0,1}[А-ЯЄІЇа-яєії]{0,1}$");
         return exp.test(testString);
     };
 

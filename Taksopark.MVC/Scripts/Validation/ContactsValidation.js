@@ -145,7 +145,7 @@ function ContactsValidation() {
     };
 
     _this.NameRegularExpression = function (testString) {
-        var exp = new RegExp("^[A-Za-zА-ЯЄІа-яєі]{2,30}[\ \]{0,1}[A-Za-zА-ЯЄІа-яєі]{2,30}[\ \]{0,1}[A-Za-zА-ЯЄІа-яєі]{2,30}[\ \]{0,1}$");
+        var exp = new RegExp("^[A-Za-zА-ЯЄІЇа-яєії]{2,30}[\ \]{0,1}[A-Za-zА-ЯЄІЇа-яєії]{2,30}[\ \]{0,1}[A-Za-zА-ЯЄІЇа-яєії]{2,30}[\ \]{0,1}$");
         return exp.test(testString);
     };
 
@@ -155,7 +155,7 @@ function ContactsValidation() {
     };
 
     _this.MessageRegularExpression = function (testString) {
-        var exp = new RegExp("^[A-Za-zА-ЯЄІа-яєі0-9!@#$%^&*()_+{},.<>:;?= ]{2,3500}$");
+        var exp = new RegExp("^[A-Za-zА-ЯЄІЇа-яєії0-9!@#$%^&*()_+{},.<>:;?= ]{2,3500}$");
         return exp.test(testString);
     };
 
