@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using Taksopark.DAL.Models;
 using Taksopark.DAL.Repositories.Interfases;
@@ -9,7 +10,6 @@ namespace Taksopark.DAL.Repositories
     public class ImageRepository : IImageRepository
     {
         private readonly SqlConnection _connection;
-
         public ImageRepository(SqlConnection connection)
         {
             _connection = connection;
@@ -21,17 +21,13 @@ namespace Taksopark.DAL.Repositories
         /// <param name="image">Image model</param>
         public void Update(Images image)
         {
-            using (var command = _connection.CreateCommand())
+            using (var command = new SqlCommand("UpdateImage", _connection))
             {
-                command.CommandText = "UPDATE Image SET "
-                                      + "Photo = @photo, "
-                                      + "OwnerId = @ownerId, "
-                                      + "CarId = @carId, "
-                                      + "Where Id = @imageId";
-                command.Parameters.AddWithValue("photo", image.PhotoImage);
-                command.Parameters.AddWithValue("ownerId", image.OwnerId);
-                command.Parameters.AddWithValue("carId", image.CarId);
-                command.Parameters.AddWithValue("imageId", image.Id);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@Photo", image.PhotoImage);
+                command.Parameters.AddWithValue("@OwnerId", image.OwnerId);
+                command.Parameters.AddWithValue("@CarId", image.CarId);
+                command.Parameters.AddWithValue("@ImageId", image.Id);
                 command.ExecuteNonQuery();
             }
         }
@@ -42,13 +38,12 @@ namespace Taksopark.DAL.Repositories
         /// <param name="image">Image model</param>
         public void Create(Images image)
         {
-            using (var command = _connection.CreateCommand())
+            using (var command = new SqlCommand("CreateImage", _connection))
             {
-                command.CommandText = "INSERT INTO IMAGE(Photo, OwnerId, CarId) "
-                                      + "VALUES(@photo, @ownerId, @carId)";
-                command.Parameters.AddWithValue("photo", image.PhotoImage);
-                command.Parameters.AddWithValue("ownerId", image.OwnerId);
-                command.Parameters.AddWithValue("carId", image.CarId);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@Photo", image.PhotoImage);
+                command.Parameters.AddWithValue("@OwnerId", image.OwnerId);
+                command.Parameters.AddWithValue("@CarId", image.CarId);
                 command.ExecuteNonQuery();
             }
         }
@@ -59,9 +54,9 @@ namespace Taksopark.DAL.Repositories
         /// <returns></returns>
         public IEnumerable<Images> GetAllImages()
         {
-            using (var command = _connection.CreateCommand())
+            using (var command = new SqlCommand("GetAllImages", _connection))
             {
-                command.CommandText = "SELECT * FROM Image";
+                command.CommandType = CommandType.StoredProcedure;
                 var imageList = new List<Images>();
                 using (var reader = command.ExecuteReader())
                 {
@@ -81,10 +76,10 @@ namespace Taksopark.DAL.Repositories
         /// <param name="imageId">Image id in DB</param>
         public void DeleteImage(int imageId)
         {
-            using (var command = _connection.CreateCommand())
+            using (var command = new SqlCommand("DeleteImage", _connection))
             {
-                command.CommandText = "DELETE FROM Coments WHERE ID = @imageId";
-                command.Parameters.AddWithValue("imageId", imageId);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@ImageId", imageId);
                 command.ExecuteNonQuery();
             }
         }

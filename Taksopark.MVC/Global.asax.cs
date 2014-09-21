@@ -2,6 +2,7 @@
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using Taksopark.DAL;
 using Taksopark.MVC.Controllers;
 
 namespace Taksopark.MVC
@@ -11,9 +12,9 @@ namespace Taksopark.MVC
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
+            UnityConfig.RegisterComponents(); 
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-            
         }
         protected void Application_Error()
         {

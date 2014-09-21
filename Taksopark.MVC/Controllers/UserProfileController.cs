@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Web.Configuration;
+﻿using System.Linq;
 using System.Web.Mvc;
 using Taksopark.BL;
 using Taksopark.DAL.Models;
@@ -9,7 +8,6 @@ namespace Taksopark.MVC.Controllers
 {
     public class UserProfileController : Controller
     {
-        private readonly string _connectionString = WebConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
 
         [HttpGet]
         public ActionResult GetUserProfile()
@@ -18,7 +16,7 @@ namespace Taksopark.MVC.Controllers
             {
                 return RedirectToAction("Index", "Home");
             }
-            var userBl = new UserBl(_connectionString);
+            var userBl = new UserBl();
             var user = userBl.GetUserByLogin((string) Session["UserLogin"]);
             var editProfileModel = new EditProfileModel
             {
@@ -40,7 +38,7 @@ namespace Taksopark.MVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                var userBl = new UserBl(_connectionString);
+                var userBl = new UserBl();
                 var user = new User
                 {
                     LastName = editProfileModel.LastName,
@@ -62,30 +60,20 @@ namespace Taksopark.MVC.Controllers
 
         public ActionResult GetUserHistory()
         {
-            var userBl = new UserBl(_connectionString);
+            var userBl = new UserBl();
             var user = userBl.GetUserByLogin((string) Session["UserLogin"]);
             var requestList = userBl.GetAllRequestsByCreatorID(user.Id);
-            var requestModelList = new List<RequestModel>();
-            foreach (var request in requestList)
+            var requestModelList = requestList.Select(request => new RequestModel
             {
-                var requestModel = new RequestModel
-                {
-                    RequestId = request.Id,
-                    PhoneNumber = request.PhoneNumber,
-                    FinishPoint = request.FinishPoint,
-                    StartPoint = request.StartPoint,
-                    RequesTime = request.RequesTime,
-                    Status = request.Status
-                };
-                requestModelList.Add(requestModel);
-            }
+                RequestId = request.Id, PhoneNumber = request.PhoneNumber, FinishPoint = request.FinishPoint, StartPoint = request.StartPoint, RequesTime = request.RequesTime, Status = request.Status
+            }).ToList();
             return View(requestModelList);
         }
 
 
         public ActionResult GetRequestDetails(int id)
         {
-            var userBl = new UserBl(_connectionString);
+            var userBl = new UserBl();
             var request = userBl.GetRequestById(id);
             var requestModel = new RequestModel
             {
@@ -102,7 +90,7 @@ namespace Taksopark.MVC.Controllers
 
         public ActionResult EditRequest(int id)
         {
-            var userBl = new UserBl(_connectionString);
+            var userBl = new UserBl();
             var request = userBl.GetRequestById(id);
             var requestModel = new RequestModel
             {
@@ -118,7 +106,7 @@ namespace Taksopark.MVC.Controllers
 
         public ActionResult DiscardRequest(int id)
         {
-            var userBl = new UserBl(_connectionString);
+            var userBl = new UserBl();
             var request = userBl.GetRequestById(id);
             request.Status = "Discard";
             userBl.UpdateRequest(request);
@@ -131,7 +119,7 @@ namespace Taksopark.MVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                var userBl = new UserBl(_connectionString);
+                var userBl = new UserBl();
                 var request = new Request
                 {
                     FinishPoint = requestModel.FinishPoint,
@@ -144,11 +132,7 @@ namespace Taksopark.MVC.Controllers
                 userBl.UpdateRequest(request);
                 return RedirectToAction("GetUserHistory", "UserProfile");
             }
-            else
-            {
-                return View(requestModel);
-            }
+            return View(requestModel);
         }
-
     }
 }

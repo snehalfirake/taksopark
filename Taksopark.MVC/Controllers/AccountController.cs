@@ -1,5 +1,6 @@
 ﻿using System.Web.Configuration;
 using System.Web.Mvc;
+using Microsoft.Ajax.Utilities;
 using Taksopark.BL;
 using Taksopark.DAL.Models;
 using Taksopark.MVC.Models;
@@ -8,8 +9,6 @@ namespace Taksopark.MVC.Controllers
 {
     public class AccountController : Controller
     {
-        private readonly string _connectionString = WebConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
-
         public ActionResult LogOff()
         {
             Session["UserFullName"] = null;
@@ -33,7 +32,7 @@ namespace Taksopark.MVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                var userBl = new UserBl(_connectionString);
+                var userBl = new UserBl();
                 var user = userBl.GetUserByLoginAndPassword(logInModel.Login, logInModel.Password);
                 if (user.UserName != null)
                 {
@@ -57,7 +56,7 @@ namespace Taksopark.MVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                var userBl = new UserBl(_connectionString);
+                var userBl = new UserBl();
                 if (!userBl.IsLoginBooked(registrationModel.Login))
                 {
                     var user = new User

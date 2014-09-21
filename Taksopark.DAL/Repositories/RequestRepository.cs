@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using Taksopark.DAL.Models;
 using Taksopark.DAL.Repositories.Interfases;
@@ -9,7 +10,6 @@ namespace Taksopark.DAL.Repositories
     public class RequestRepository : IRequestRepository
     {
         private readonly SqlConnection _connection;
-
         public RequestRepository(SqlConnection connection)
         {
             _connection = connection;
@@ -21,21 +21,15 @@ namespace Taksopark.DAL.Repositories
         /// <param name="request">Request model</param>
         public void Update(Request request)
         {
-            using (var command = _connection.CreateCommand())
+            using (var command = new SqlCommand("UpdateRequest", _connection))
             {
-                command.CommandText = "UPDATE Request SET "
-                                      + "RequetTime = @requestTime, "
-                                      + "PhoneNumber = @phoneNumber, "
-                                      + "Status = @status, "
-                                      + "StartPoint = @startPoint, "
-                                      + "FinishPoint = @finishPoint "
-                                      + "WHERE Id = @requestId";
-                command.Parameters.AddWithValue("requestTime", request.RequesTime);
-                command.Parameters.AddWithValue("phoneNumber", request.PhoneNumber);
-                command.Parameters.AddWithValue("status", request.Status);
-                command.Parameters.AddWithValue("startPoint", request.StartPoint);
-                command.Parameters.AddWithValue("finishPoint", request.FinishPoint);
-                command.Parameters.AddWithValue("requestId", request.Id);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@RequestTime", request.RequesTime);
+                command.Parameters.AddWithValue("@PhoneNumber", request.PhoneNumber);
+                command.Parameters.AddWithValue("@Status", request.Status);
+                command.Parameters.AddWithValue("@StartPoint", request.StartPoint);
+                command.Parameters.AddWithValue("@FinishPoint", request.FinishPoint);
+                command.Parameters.AddWithValue("@RequestId", request.Id);
                 command.ExecuteNonQuery();
             }
         }
@@ -46,32 +40,30 @@ namespace Taksopark.DAL.Repositories
         /// <param name="request">Request record</param>
         public void Create(Request request)
         {
-            using (var command = _connection.CreateCommand())
+            using (var command = new SqlCommand("CreateRequest", _connection))
             {
-                command.CommandText = "INSERT INTO Request(RequetTime, CreatorId, PhoneNumber, Status, StartPoint, FinishPoint, OperatorId) "
-                                      + "VALUES(@requestTime, @creatorId, @phoneNumber, @status, @startPoint, @finishPoint, @operatorId)";
-                command.Parameters.AddWithValue("requestTime", request.RequesTime);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@RequestTime", request.RequesTime);
                 if (request.CreatorId == null)
                 {
-                    command.Parameters.AddWithValue("creatorId", null);
+                    command.Parameters.AddWithValue("@CreatorId", null);
                 }
                 else
                 {
-                    command.Parameters.AddWithValue("creatorId", request.CreatorId);
+                    command.Parameters.AddWithValue("@CreatorId", request.CreatorId);
                 }
                 if (request.OperatorId == null)
                 {
-                    command.Parameters.AddWithValue("operatorId", -3);
+                    command.Parameters.AddWithValue("@OperatorId", -3);
                 }
                 else
                 {
-                    command.Parameters.AddWithValue("operatorId", request.OperatorId);
+                    command.Parameters.AddWithValue("@OperatorId", request.OperatorId);
                 }
-                command.Parameters.AddWithValue("phoneNumber", request.PhoneNumber);
-                command.Parameters.AddWithValue("status", request.Status);
-                command.Parameters.AddWithValue("startPoint", request.StartPoint);
-                command.Parameters.AddWithValue("finishPoint", request.FinishPoint);
-                
+                command.Parameters.AddWithValue("@PhoneNumber", request.PhoneNumber);
+                command.Parameters.AddWithValue("@Status", request.Status);
+                command.Parameters.AddWithValue("@StartPoint", request.StartPoint);
+                command.Parameters.AddWithValue("@FinishPoint", request.FinishPoint);
                 command.ExecuteNonQuery();
             }
         }
@@ -82,9 +74,9 @@ namespace Taksopark.DAL.Repositories
         /// <returns></returns>
         public IEnumerable<Request> GetAllRequests()
         {
-            using (var command = _connection.CreateCommand())
+            using (var command = new SqlCommand("GetAllRequests", _connection))
             {
-                command.CommandText = "SELECT * FROM Request";
+                command.CommandType = CommandType.StoredProcedure;
                 var requestList = new List<Request>();
                 using (var reader = command.ExecuteReader())
                 {
@@ -104,20 +96,20 @@ namespace Taksopark.DAL.Repositories
         /// <param name="requestId">Request record in DB</param>
         public void DeleteRequest(int requestId)
         {
-            using (var command = _connection.CreateCommand())
+            using (var command = new SqlCommand("DeleteRequest", _connection))
             {
-                command.CommandText = "DELETE FROM Coments WHERE ID = @requestId";
-                command.Parameters.AddWithValue("requestId", requestId);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@RequestId", requestId);
                 command.ExecuteNonQuery();
             }
         }
 
         public Request GetRequestById(int id)
         {
-            using (var command = _connection.CreateCommand())
+            using (var command = new SqlCommand("GetRequestById", _connection))
             {
-                command.CommandText = "SELECT * FROM Request WHERE Id = @id";
-                command.Parameters.AddWithValue("id", id);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@RequestId", id);
                 var request = new Request();
                 using (var reader = command.ExecuteReader())
                 {
@@ -133,10 +125,10 @@ namespace Taksopark.DAL.Repositories
 
         public IEnumerable<Request> GetAllRequestsByCreatorId(int id)
         {
-            using (var command = _connection.CreateCommand())
+            using (var command = new SqlCommand("GetAllRequestsByCreatorId", _connection))
             {
-                command.CommandText = "SELECT * FROM Request WHERE CreatorId = @creatorId";
-                command.Parameters.AddWithValue("creatorId", id);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@CreatorId", id);
                 var requestList = new List<Request>();
                 using (var reader = command.ExecuteReader())
                 {

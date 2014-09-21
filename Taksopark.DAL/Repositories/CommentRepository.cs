@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using Taksopark.DAL.Models;
 using Taksopark.DAL.Repositories.Interfases;
@@ -21,15 +22,13 @@ namespace Taksopark.DAL.Repositories
         /// <param name="comment">Comment model</param>
         public void Update(Comment comment)
         {
-            using (var command = _connection.CreateCommand())
+            using (var command = new SqlCommand("UpdateComment", _connection))
             {
-                command.CommandText = "UPDATE Coments SET "
-                                      + "CreatorId = @creatorId, "
-                                      + "RequestId = @requestId, "
-                                      + "CommentText = @commentText";
-                command.Parameters.AddWithValue("creatorId", comment.CreatorId);
-                command.Parameters.AddWithValue("requestId", comment.RequestId);
-                command.Parameters.AddWithValue("commentText", comment.CommentText);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@CreatorId", comment.CreatorId);
+                command.Parameters.AddWithValue("@RequestId", comment.RequestId);
+                command.Parameters.AddWithValue("@CommentText", comment.CommentText);
+                command.Parameters.AddWithValue("@CommentId", comment.Id);
                 command.ExecuteNonQuery();
             }
         }
@@ -40,13 +39,12 @@ namespace Taksopark.DAL.Repositories
         /// <param name="comment">Comment model</param>
         public void Create(Comment comment)
         {
-            using (var command = _connection.CreateCommand())
+            using (var command = new SqlCommand("CreateComment", _connection))
             {
-                command.CommandText = "INSERT INTO Coments(CreatorId, RequestId, CommentText) "
-                                      + "VALUES(@creatorId, @requestId, @commentText)";
-                command.Parameters.AddWithValue("creatorId", comment.CreatorId);
-                command.Parameters.AddWithValue("requestId", comment.RequestId);
-                command.Parameters.AddWithValue("commentText", comment.CommentText);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@CreatorId", comment.CreatorId);
+                command.Parameters.AddWithValue("@RequestId", comment.RequestId);
+                command.Parameters.AddWithValue("@CommentText", comment.CommentText);
                 command.ExecuteNonQuery();
             }
         }
@@ -57,9 +55,9 @@ namespace Taksopark.DAL.Repositories
         /// <returns></returns>
         public IEnumerable<Comment> GetAllComments()
         {
-            using (var command = _connection.CreateCommand())
+            using (var command = new SqlCommand("GetAllComments", _connection))
             {
-                command.CommandText = "SELECT * FROM Coments";
+                command.CommandType = CommandType.StoredProcedure;
                 var commentList = new List<Comment>();
                 using (var reader = command.ExecuteReader())
                 {
@@ -79,10 +77,10 @@ namespace Taksopark.DAL.Repositories
         /// <param name="commentId">Comment id in DB</param>
         public void DeleteComment(int commentId)
         {
-            using (var command = _connection.CreateCommand())
+            using (var command = new SqlCommand("DeleteComment", _connection))
             {
-                command.CommandText = "DELETE FROM Coments WHERE ID = @commentId";
-                command.Parameters.AddWithValue("commentId", commentId);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@CommentId", commentId);
                 command.ExecuteNonQuery();
             }
         }
