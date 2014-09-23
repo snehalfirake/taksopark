@@ -12,4 +12,12 @@
 </ol>
 <p></p>
 <h3><p align="center">To deploy the database:</p></h3><br>
+<ol>
+<li>Downlaod </li>
+<li>Install</li>
+<li>Create</li>
+<li>Right click</li>
+<li>In dialog window</li>
+<li>Wait few seconds</li>
+</ol>
 <h3><p align="center">To run the system:</p></h3><br>
