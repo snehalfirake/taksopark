@@ -31,9 +31,38 @@ namespace Taksopark.DAL.Repositories
                 command.Parameters.AddWithValue("@StartPoint", request.StartPoint);
                 command.Parameters.AddWithValue("@FinishPoint", request.FinishPoint);
                 command.Parameters.AddWithValue("@RequestId", request.Id);
-                command.Parameters.AddWithValue("@DriverId", request.DriverId);
-                command.Parameters.AddWithValue("@Price", request.Price);
-                command.Parameters.AddWithValue("@Additional", request.Additional);
+                if (request.DriverId == null)
+                {
+                    command.Parameters.AddWithValue("@DriverId", DBNull.Value);
+                }
+                else
+                {
+                    command.Parameters.AddWithValue("@DriverId", request.DriverId);
+                }
+                if (request.Price == null)
+                {
+                    command.Parameters.AddWithValue("@Price", DBNull.Value);
+                }
+                else
+                {
+                    command.Parameters.AddWithValue("@Price", request.Price);
+                }
+                if (request.Additional == null)
+                {
+                    command.Parameters.AddWithValue("@Additional", DBNull.Value);
+                }
+                else
+                {
+                    command.Parameters.AddWithValue("@Additional", request.Additional);
+                }
+                if (request.OperatorId == null)
+                {
+                    command.Parameters.AddWithValue("@OperatorId", DBNull.Value);
+                }
+                else
+                {
+                    command.Parameters.AddWithValue("@OperatorId", request.OperatorId);
+                }
                 command.ExecuteNonQuery();
             }
         }
