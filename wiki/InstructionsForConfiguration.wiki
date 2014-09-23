@@ -1,12 +1,12 @@
 <p align="center"><h1>Instructions how to configure local environment</h1></p>
 <p></p>
 To configure local environment on your PC you should pass few steps.<br>
-To get source code:<br>
+<h1>To get source code:</h1><br>
 <ol>
 <li>Downlaod TortoiseSVN(from http://sourceforge.net/projects/tortoisesvn/)</li>
 <li>Install it in PC</li>
 <li>Create folder in local hard disk</li>
 <li>Right click mouse on created folder and choose SVN Checkout...</li>
 <li>In dialog window paste URL https://taksopark.googlecode.com/svn/trunk/ and click "OK" button</li>
-<li>Wait few seconds for successful updeting project from code.google.com</li>
+<li>Wait few seconds for successful updating project from code.google.com</li>
 </ol>
