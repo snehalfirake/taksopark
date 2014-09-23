@@ -1,0 +1,14 @@
+<h1><p align="center">Architecture Overview</p></h1>
+<h2><p align="center">Technologies and Tools</p></h2>
+<ol>
+	<li>Microsoft SQL Server 2012</li>
+	<li>Microsoft Visual Studion 2013</li>
+	<li>Microsoft .NET Framework</li>	
+	<li>ADO.NET Technology</li>
+	<li>ASP.NET MVC Technology</li>
+	<li>ASP.NET WebFomrs Technology</li>
+	<li>Unity IoC</li>
+</ol>
+
+<h2><p align="center">Component Diagram</p></h2>
+<p align="center"><img src="https://pp.vk.me/c617527/v617527811/1cde5/8XaoLH1GlTk.jpg" alt="Діаграма класів"></img> </p>
