@@ -31,7 +31,9 @@ namespace Taksopark.DAL.Repositories.Mappers
             request.Price = record.IsDBNull(record.GetOrdinal("Price")) == false
                ? (int?)record["Price"]
                : default(int?);
-            request.Additional = (string) record["Additional"];
+            request.Additional = record.IsDBNull(record.GetOrdinal("Additional")) == false
+               ? (string)record["Additional"]
+               : default(string);
             return request;
         }
     }
