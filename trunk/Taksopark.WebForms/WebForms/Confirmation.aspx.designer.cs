@@ -22,31 +22,13 @@ namespace Taksopark.WebForms.Dispatcher {
         protected global::Taksopark.WebForms.UserControls.Dispatcher.OrderInfo OrderInfo;
         
         /// <summary>
-        /// labelStatus элемент управления.
+        /// driversDropDownList элемент управления.
         /// </summary>
         /// <remarks>
         /// Автоматически создаваемое поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label labelStatus;
-        
-        /// <summary>
-        /// statusDropdownList элемент управления.
-        /// </summary>
-        /// <remarks>
-        /// Автоматически создаваемое поле.
-        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList statusDropdownList;
-        
-        /// <summary>
-        /// dropDownList элемент управления.
-        /// </summary>
-        /// <remarks>
-        /// Автоматически создаваемое поле.
-        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dropDownList;
+        protected global::System.Web.UI.WebControls.DropDownList driversDropDownList;
         
         /// <summary>
         /// ComfirmButton элемент управления.
@@ -56,6 +38,24 @@ namespace Taksopark.WebForms.Dispatcher {
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button ComfirmButton;
+        
+        /// <summary>
+        /// rejectButton элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button rejectButton;
+        
+        /// <summary>
+        /// closeButton элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button closeButton;
         
         /// <summary>
         /// ordersDataSource элемент управления.

@@ -16,13 +16,6 @@ namespace Taksopark.WebForms.Dispatcher
 {
     public partial class Confirmation : System.Web.UI.Page
     {
-        private IOperatorBl _operatorBl;
-
-        protected void Page_Init(object sender, EventArgs e)
-        {
-            this._operatorBl = Application.GetContainer().Resolve<IOperatorBl>();
-        }
-
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -33,49 +26,82 @@ namespace Taksopark.WebForms.Dispatcher
 
         private void GetDrivers()
         {
-            //var operatorBI = Application.GetContainer().Resolve<IOperatorBl>();
-            drivers = _operatorBl.GetAllDrivers();
-            
-            dropDownList.DataSource = drivers;
-            dropDownList.DataValueField = "Id";
-            dropDownList.DataTextField = "LastName";
-            dropDownList.DataBind();
-        }
-
-        public Request GetRequest(object id)
-        {
-            //var orders = this._operatorBl.GetAllRequests();
-            var operatorBl = HttpContext.Current.Application.GetContainer().Resolve<IOperatorBl>();
-            var orders = operatorBl.GetAllRequests();
-            request = orders.Where(e => e.Id == Convert.ToInt32(id)).FirstOrDefault();
-            
-            return request;
+            var operatorBL = HttpContext.Current.Application.GetContainer().Resolve<OperatorBl>();
+            driversDropDownList.DataSource = operatorBL.GetAllDrivers();
+            driversDropDownList.DataValueField = "Id";
+            driversDropDownList.DataTextField = "LastName";
+            driversDropDownList.DataTextField = "Id";
+            driversDropDownList.DataBind();
         }
 
         private static Request request;
-        private static List<User> drivers;
 
-        protected void dropDownList_SelectedIndexChanged1(object sender, EventArgs e)
+        public Request GetRequest(object id)
         {
-            //UserBl userBI = new UserBl(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
-            //userBI.CreateRequest
-            //userBI.UpdateUser();
-        }
+            var operatorBl = HttpContext.Current.Application.GetContainer().Resolve<IOperatorBl>();
+            request = operatorBl.GetRequestById(Convert.ToInt32(id));
 
-        protected void ComfirmButton_Click(object sender, EventArgs e)
-        {
-            UpdateRequestStatus("InProgress");
+            return request;
         }
 
         private void UpdateRequestStatus(string status)
         {
-            request.Status = status;            
-            this._operatorBl.UpdateRequest(request);
+            request.Status = status;
+            
+            var operatorBL = HttpContext.Current.Application.GetContainer().Resolve<OperatorBl>();
+            operatorBL.UpdateRequest(request);
         }
 
-        protected void statusDropdownList_SelectedIndexChanged(object sender, EventArgs e)
+        private void UpdateRequestStatus(string status, int driverid, bool submiting)
         {
-            UpdateRequestStatus(statusDropdownList.SelectedValue);
+            request.Status = status;
+
+            if (request.DriverId == null)
+            {
+                request.DriverId = driverid;
+            }
+            else if (submiting)
+            {
+                request.DriverId = driverid;
+            }
+
+            var operatorBL = HttpContext.Current.Application.GetContainer().Resolve<OperatorBl>();
+            operatorBL.UpdateRequest(request);
+        }
+
+        private void UpdateDriver(string status)
+        {
+            if (request.DriverId == null)
+                return;
+
+            var operatorBL = HttpContext.Current.Application.GetContainer().Resolve<OperatorBl>();
+            var driver = operatorBL.GetUserById((int)request.DriverId);
+            UserBl userBL = HttpContext.Current.Application.GetContainer().Resolve<UserBl>();
+
+            driver.Status = status;
+
+            userBL.UpdateUser(driver);
+        }
+
+        protected void ComfirmButton_Click(object sender, EventArgs e)
+        {
+            UpdateRequestStatus("InProgress", Convert.ToInt32(driversDropDownList.SelectedValue), true);
+
+            UpdateDriver("Busy");
+        }
+
+        protected void rejectButton_Click(object sender, EventArgs e)
+        {
+            UpdateRequestStatus("Rejected");
+
+            UpdateDriver("Free");
+        }
+
+        protected void closeButton_Click(object sender, EventArgs e)
+        {
+            UpdateRequestStatus("Closed", Convert.ToInt32(driversDropDownList.SelectedValue), false);
+
+            UpdateDriver("Free");
         }
     }
 }

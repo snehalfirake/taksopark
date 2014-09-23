@@ -15,9 +15,10 @@
             <asp:BoundField DataField="startPoint" HeaderText="Start Point"/>
             <asp:BoundField DataField="finishPoint" HeaderText="Destination Point"/>
             <asp:BoundField DataField="status" HeaderText="Status"/>
+            <asp:BoundField DataField="DriverId" HeaderText="Driver"/>
             <asp:TemplateField>
                 <ItemTemplate>
-                    <asp:LinkButton runat="server" CssClass="button" Text="Edit" PostBackUrl='<%# "~/WebForms/Confirmation.aspx?id=" + Eval("id")  %>' />              
+                    <asp:LinkButton runat="server" CssClass="button danger" Text="Edit" PostBackUrl='<%# "~/WebForms/Confirmation.aspx?id=" + Eval("id")  %>' />              
                 </ItemTemplate>
             </asp:TemplateField>
         </Columns>
