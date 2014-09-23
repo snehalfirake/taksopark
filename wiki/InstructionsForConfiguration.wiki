@@ -3,7 +3,7 @@
 <h3><p align="center">To get source code:</p></h3><br>
 <ol>
 <li>Download TortoiseSVN(from http://sourceforge.net/projects/tortoisesvn/)</li>
-<li>Install it in PC</li>
+<li>Install it in your PC</li>
 <li>Create folder in local hard disk</li>
 <li>Right click mouse on created folder and choose SVN Checkout...</li>
 <li>In dialog window paste URL https://taksopark.googlecode.com/svn/trunk/ and click "OK" button</li>
@@ -23,9 +23,9 @@
 <h3><p align="center">To run the system:</p></h3><br>
 <p></p>
 <ol>
-<li>If it's necessary, download Microsoft Visual Studio 2013 (from if necessary)</li>
+<li>If it's necessary, download Microsoft Visual Studio 2013 (from http://www.microsoft.com/ru-ru/download/details.aspx?id=30678)</li>
 <li>Install MVS 2013 on your PC</li>
 <li>In created folder open Taksopark.sln</li>
-<li>In Solution Explorer in MVS 2013 choose the part of project, which will be launched, after right mouse click choose "Set as start project"</li>
+<li>In Solution Explorer in MVS 2013 choose the part of project, which will be launched first, after right mouse click choose "Set as start project"</li>
 <li>Wait few seconds</li>
 </ol>
