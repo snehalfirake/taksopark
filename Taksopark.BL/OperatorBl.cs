@@ -59,5 +59,14 @@ namespace Taksopark.BL
                 return requestList.ToList();
             }
         }
+
+        public User GetUserById(int id)
+        {
+            using (var uow = new UnitOfWork(_appConfigConnection))
+            {
+                var user = uow.UserRepository.GetUserById(id);
+                return user;
+            }
+        }
     }
 }
