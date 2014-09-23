@@ -16,5 +16,7 @@ namespace Taksopark.BL.Interfaces
         bool IsCarIdBooked(int id);
         void UpdateCar(Car car);
         List<Car> GetAllCars();
+        List<Driver> GetAllDrivers();
+        List<Driver> GetAllDriversByStatus(string status);
     }
 }

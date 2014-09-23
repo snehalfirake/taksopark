@@ -53,6 +53,14 @@ namespace Taksopark.DAL
             }
         }
 
+        public DriverRepository DriverRepository
+        {
+            get
+            {
+                return new DriverRepository(_connection);
+            }
+        }
+
         public void Dispose()
         {
             _connection.Dispose();
