@@ -27,5 +27,5 @@
 <li>Install MVS 2013 on your PC</li>
 <li>In created folder open Taksopark.sln</li>
 <li>In Solution Explorer in MVS 2013 choose the part of project, which will be launched first, after right mouse click choose "Set as start project"</li>
-<li>Wait few seconds</li>
+<li>Add connection string into Web.config file in current project</li>
 </ol>
