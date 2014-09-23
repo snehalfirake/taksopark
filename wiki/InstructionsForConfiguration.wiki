@@ -13,9 +13,9 @@
 <h3><p align="center">To deploy the database:</p></h3><br>
 <p></p>
 <ol>
-<li>Downlaod</li>
-<li>Install</li>
-<li>Create</li>
+<li>Downlaod Microsoft SQL Server and SQL management studio (from http://www.microsoft.com/ru-ru/download/details.aspx?id=29062)</li>
+<li>Install it's your PC</li>
+<li>Create new query in current connection</li>
 <li>Right click</li>
 <li>In dialog window</li>
 <li>Wait few seconds</li>
