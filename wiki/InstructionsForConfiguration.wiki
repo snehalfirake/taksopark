@@ -15,7 +15,7 @@
 <ol>
 <li>Downlaod Microsoft SQL Server and SQL management studio (from http://www.microsoft.com/ru-ru/download/details.aspx?id=29062)</li>
 <li>Install it's your PC</li>
-<li>Create new query in current connection(query script is in file located in project in DBQueary folder)</li>
+<li>Create new query in current connection(query script is in file located in project folder in DBQueary directory)</li>
 <li>Right click</li>
 <li>In dialog window</li>
 <li>Wait few seconds</li>
