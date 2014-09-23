@@ -5,20 +5,23 @@ create table [Request]
 	[CreatorId] int,
 	[PhoneNumber] varchar(15),
 	[Status] varchar(15),
-	[StartPoint] varchar(max),
-	[FinishPoint] varchar(max),
-	[OperatorId] int
+	[StartPoint] nvarchar(512),
+	[FinishPoint] nvarchar(512),
+	[OperatorId] int,
+	[DriverId] int,
+	[Price] int,
+	[Additional] nvarchar(2048)
 )
 
 create table [Users]
 (
 	[Id] int identity(1 ,1) not null primary key,
-	[Name] varchar(max) not null,
-	[LastName] varchar(max) not null,
-	[Login] varchar(max),
+	[Name] nvarchar(512) not null,
+	[LastName] nvarchar(512) not null,
+	[Login] nvarchar(512),
 	[PhoneNumber] varchar(15),
-	[Email] varchar(70),
-	[Password] varchar(60),
+	[Email] nvarchar(70),
+	[Password] nvarchar(60),
 	[Role] varchar(15),
 	[Status] varchar(15)
 )
@@ -26,7 +29,7 @@ create table [Users]
 create table [Cars]
 (
 	[Id] int identity(1 ,1) not null primary key references [Users](Id),
-	[Brand] varchar(max),
+	[Brand] nvarchar(512),
 	[Year] varchar(4),
 	[StartWorkTime] datetime not null,	
 	[FinishWorkTime] datetime not null,
@@ -47,7 +50,7 @@ create table [Coments]
 	[Id] int identity(1 ,1) not null primary key,
 	[CreatorId] int not null,
 	[RequestId] int not null,
-	[CommentText] varchar(max)	
+	[CommentText] nvarchar(2048)	
 )
 
 
@@ -77,22 +80,6 @@ insert into Users (Name, LastName, Login, PhoneNumber, Email, Password, Role, St
 insert into Users (Name, LastName, Login, PhoneNumber, Email, Password, Role, Status) values ('Ihor', 'Shpak', 'Shpak_93', '380969535345', 'igor@gmail.com.ua', 'asd123341190', 'Operator', 'Active')
 insert into Users (Name, LastName, Login, PhoneNumber, Email, Password, Role, Status) values ('Ivan', 'SFedak', 'Ivan_93', '380969534566', 'iva@gmail.com.ua', 'asd12334', 'Client', 'Active')
 insert into Users (Name, LastName, Login, PhoneNumber, Email, Password, Role, Status) values ('Roman', 'Novak', 'Novar_93', '380969556789', 'romnov@gmail.com.ua', 'asd12334', 'Client', 'Active')
-
-INSERT INTO [Image] (Photo, OwnerId, CarId) 
-SELECT  BulkColumn, null, 4
-FROM Openrowset( Bulk 'E:\cars\car2.jpg', Single_Blob) as image
-
-INSERT INTO [Image] (Photo, OwnerId, CarId) 
-SELECT  BulkColumn, null, 5
-FROM Openrowset( Bulk 'E:\cars\car1.jpg', Single_Blob) as image
-
-INSERT INTO [Image] (Photo, OwnerId, CarId) 
-SELECT  BulkColumn, null, 6
-FROM Openrowset( Bulk 'E:\cars\car3.jpg', Single_Blob) as image
-
-INSERT INTO [Image] (Photo, OwnerId, CarId) 
-SELECT  BulkColumn, 1, null
-FROM Openrowset( Bulk 'E:\cars\user1.jpg', Single_Blob) as image
 
 insert into Cars (Brand, Year, StartWorkTime, FinishWorkTime, Latitude, Longitude) values ('Honda', 2012, convert(datetime,'18-10-14 06:00:00 PM',5), convert(datetime,'18-10-14 19:30:00 PM',5), '-54.0000000', '54.23423423423')
 insert into Cars (Brand, Year, StartWorkTime, FinishWorkTime, Latitude, Longitude) values ('Skoda', 2010, convert(datetime,'18-06-12 10:34:09 PM',5), convert(datetime,'18-06-12 10:34:09 PM',5), '-26.003245252', '14.1343434')

@@ -6,10 +6,9 @@ namespace Taksopark.BL.Interfaces
     public interface IOperatorBl
     {
         List<Request> GetAllRequests();
-        List<Request> GetActiveRequests();
-        List<Request> GetProgressRequests();
-        List<Request> GetClosedRequests();
         void UpdateRequest(Request request);
         List<User> GetAllDrivers();
+        Request GetRequestById(int id);
+        List<Request> GetRequestsByState(string state);
     }
 }

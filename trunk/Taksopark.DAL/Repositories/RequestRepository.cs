@@ -31,6 +31,9 @@ namespace Taksopark.DAL.Repositories
                 command.Parameters.AddWithValue("@StartPoint", request.StartPoint);
                 command.Parameters.AddWithValue("@FinishPoint", request.FinishPoint);
                 command.Parameters.AddWithValue("@RequestId", request.Id);
+                command.Parameters.AddWithValue("@DriverId", request.DriverId);
+                command.Parameters.AddWithValue("@Price", request.Price);
+                command.Parameters.AddWithValue("@Additional", request.Additional);
                 command.ExecuteNonQuery();
             }
         }
@@ -60,6 +63,30 @@ namespace Taksopark.DAL.Repositories
                 else
                 {
                     command.Parameters.AddWithValue("@OperatorId", request.OperatorId);
+                }
+                if (request.DriverId == null)
+                {
+                    command.Parameters.AddWithValue("@DriverId", DBNull.Value);
+                }
+                else
+                {
+                    command.Parameters.AddWithValue("@DriverId", request.DriverId);
+                }
+                if (request.Price == null)
+                {
+                    command.Parameters.AddWithValue("@Price", DBNull.Value);
+                }
+                else
+                {
+                    command.Parameters.AddWithValue("@Price", request.Price);
+                }
+                if (request.Additional == null)
+                {
+                    command.Parameters.AddWithValue("@Additional", DBNull.Value);
+                }
+                else
+                {
+                    command.Parameters.AddWithValue("@Additional", request.Additional);
                 }
                 command.Parameters.AddWithValue("@PhoneNumber", request.PhoneNumber);
                 command.Parameters.AddWithValue("@Status", request.Status);
@@ -130,6 +157,25 @@ namespace Taksopark.DAL.Repositories
             {
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.AddWithValue("@CreatorId", id);
+                var requestList = new List<Request>();
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        var request = RequestMapper.Map(reader);
+                        requestList.Add(request);
+                    }
+                }
+                return requestList;
+            }
+        }
+
+        public IEnumerable<Request> GetAllRequestsByState(string state)
+        {
+            using (var command = new SqlCommand("GetAllRequestsByState", _connection))
+            {
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@State", state);
                 var requestList = new List<Request>();
                 using (var reader = command.ExecuteReader())
                 {
