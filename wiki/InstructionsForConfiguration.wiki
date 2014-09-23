@@ -1,4 +1,4 @@
-<p align="center"><h1>Instructions how to configure local environment</h1></p>
+<p align="center"><<h1>Instructions how to configure local environment</h1></p>
 
 To configure local environment on your PC you should pass few steps.
 To get source code:
