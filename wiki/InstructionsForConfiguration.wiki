@@ -10,3 +10,5 @@
 <li>In dialog window paste URL https://taksopark.googlecode.com/svn/trunk/ and click "OK" button</li>
 <li>Wait few seconds for successful updating project from code.google.com</li>
 </ol>
+<p></p>
+<h3><p align="center">To deploy the database:</p></h3><br>
