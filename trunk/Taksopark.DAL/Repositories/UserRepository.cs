@@ -209,5 +209,35 @@ namespace Taksopark.DAL.Repositories
                 return user;
             }
         }
+
+        /// <summary>
+        /// Get drivers join cars
+        /// </summary>
+        /// <returns></returns>
+        public List<List<string>> GetDriversJoinCarsInfo()
+        {
+            var userList = new List<List<string>>();
+            using (var command = new SqlCommand("GetDriversJoinCarsInfo", _connection))
+            {
+                command.CommandType = CommandType.StoredProcedure;
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        var driverList = new List<string>();
+                        driverList.Add(reader["Name"].ToString());
+                        driverList.Add(reader["LastName"].ToString());
+                        driverList.Add(reader["Login"].ToString());
+                        driverList.Add(reader["PhoneNumber"].ToString());
+                        driverList.Add(reader["Email"].ToString());
+                        driverList.Add(reader["Status"].ToString());
+                        driverList.Add(reader["Brand"].ToString());
+                        driverList.Add(reader["Year"].ToString());
+                        userList.Add(driverList);
+                    }
+                }
+            }
+            return userList;
+        }
     }
 }

@@ -40,6 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Driver.cs" />
+    <Compile Include="Repositories\DriverRepository.cs" />
+    <Compile Include="Repositories\Interfases\IDriverRepository.cs" />
+    <Compile Include="Repositories\Mappers\DriverMapper.cs" />
     <Compile Include="SqlConnectionFactory.cs" />
     <Compile Include="ISqlConnectionFactory.cs" />
     <Compile Include="Models\Car.cs" />
