@@ -1,7 +1,7 @@
-<p align="center"><<h1>Instructions how to configure local environment</h1></p>
-
-To configure local environment on your PC you should pass few steps.
-To get source code:
+<p align="center"><h1>Instructions how to configure local environment</h1></p>
+<p></p>
+To configure local environment on your PC you should pass few steps.<br>
+To get source code:<br>
 1. Downlaod TortoiseSVN(from http://sourceforge.net/projects/tortoisesvn/)
 2. Install it in PC
 3. Create folder in local hard disk
