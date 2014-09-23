@@ -15,11 +15,6 @@ namespace Taksopark.BL
             _appConfigConnection = appConfigConnection;
         }
 
-        //public OperatorBl()
-        //{
-        //    _appConfigConnection = new SqlConnectionFactory("Data Source=SQL5013.myASP.NET;Initial Catalog=DB_9B37A6_TaxiServiceDB;User Id=DB_9B37A6_TaxiServiceDB_admin;Password=12345678;");
-        //}
-
         public List<Request> GetAllRequests()
         {
             using (var uow = new UnitOfWork(_appConfigConnection))
@@ -28,35 +23,6 @@ namespace Taksopark.BL
             }
         }
 
-        public List<Request> GetActiveRequests()
-        {
-            using (var uow = new UnitOfWork(_appConfigConnection))
-            {
-                return (from request in uow.RequestRepository.GetAllRequests()
-                    where request.Status == "Active"
-                    select request).ToList();
-            }
-        }
-
-        public List<Request> GetProgressRequests()
-        {
-            using (var uow = new UnitOfWork(_appConfigConnection))
-            {
-                return (from request in uow.RequestRepository.GetAllRequests()
-                        where request.Status == "InProgress"
-                        select request).ToList();
-            }
-        }
-
-        public List<Request> GetClosedRequests()
-        {
-            using (var uow = new UnitOfWork(_appConfigConnection))
-            {
-                return (from request in uow.RequestRepository.GetAllRequests()
-                        where request.Status == "Closed"
-                        select request).ToList();
-            }
-        }
 
         public void UpdateRequest(Request request)
         {
@@ -70,10 +36,27 @@ namespace Taksopark.BL
         {
             using (var uow = new UnitOfWork(_appConfigConnection))
             {
-                var userList = from user in uow.UserRepository.GetAllUsers()
-                               where user.Role == "Driver"
-                               select user;
+                var userList = uow.UserRepository.GetUsersByRole("Driver");
                 return userList.ToList();
+            }
+        }
+
+
+        public Request GetRequestById(int id)
+        {
+            using (var uow = new UnitOfWork(_appConfigConnection))
+            {
+                var request = uow.RequestRepository.GetRequestById(id);
+                return request;
+            }
+        }
+
+        public List<Request> GetRequestsByState(string state)
+        {
+            using (var uow = new UnitOfWork(_appConfigConnection))
+            {
+                var requestList = uow.RequestRepository.GetAllRequestsByState(state);
+                return requestList.ToList();
             }
         }
     }
