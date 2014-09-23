@@ -3,7 +3,7 @@
 <h3><p align="center">To configure local environment on your PC you should pass few steps.</p></h3><br>
 <h3><p align="center">To get source code:</p></h3><br>
 <ol>
-<li>Downlaod TortoiseSVN(from http://sourceforge.net/projects/tortoisesvn/)</li>
+<li>Download TortoiseSVN(from http://sourceforge.net/projects/tortoisesvn/)</li>
 <li>Install it in PC</li>
 <li>Create folder in local hard disk</li>
 <li>Right click mouse on created folder and choose SVN Checkout...</li>
@@ -14,7 +14,7 @@
 <h3><p align="center">To deploy the database:</p></h3><br>
 <p></p>
 <ol>
-<li>Downlaod </li>
+<li>Downlaod</li>
 <li>Install</li>
 <li>Create</li>
 <li>Right click</li>
@@ -24,10 +24,9 @@
 <h3><p align="center">To run the system:</p></h3><br>
 <p></p>
 <ol>
-<li>Downlaod </li>
-<li>Install</li>
-<li>Create</li>
-<li>Right click</li>
-<li>In dialog window</li>
+<li>If it's necessary, download Microsoft Visual Studio 2013 (from if necessary)</li>
+<li>Install MVS 2013 on your PC</li>
+<li>In created folder open Taksopark.sln</li>
+<li>In Solution Explorer in MVS 2013 choose the part of project, which will be launched, after right mouse click choose "Set as start project"</li>
 <li>Wait few seconds</li>
 </ol>
