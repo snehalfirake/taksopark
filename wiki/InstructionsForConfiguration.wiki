@@ -3,7 +3,7 @@
 <h3><p align="center">To get source code:</p></h3><br>
 <ol>
 <li>Download TortoiseSVN(from http://sourceforge.net/projects/tortoisesvn/)</li>
-<li>Install it in your PC</li>
+<li>Install it on your PC</li>
 <li>Create folder in local hard disk</li>
 <li>Right click mouse on created folder and choose SVN Checkout...</li>
 <li>In dialog window paste URL https://taksopark.googlecode.com/svn/trunk/ and click "OK" button</li>
@@ -14,7 +14,7 @@
 <p></p>
 <ol>
 <li>Downlaod Microsoft SQL Server and SQL management studio (from http://www.microsoft.com/ru-ru/download/details.aspx?id=29062)</li>
-<li>Install it's your PC</li>
+<li>Install it on your PC</li>
 <li>Create new query in current connection(query script is in file located in project folder in DBQueary directory)</li>
 <li>Right click</li>
 <li>In dialog window</li>
@@ -24,7 +24,7 @@
 <p></p>
 <ol>
 <li>If it's necessary, download Microsoft Visual Studio 2013 (from http://www.microsoft.com/ru-ru/download/details.aspx?id=30678)</li>
-<li>Install MVS 2013 on your PC</li>
+<li>Install it on your PC</li>
 <li>In created folder open Taksopark.sln</li>
 <li>In Solution Explorer in MVS 2013 choose the part of project, which will be launched first, after right mouse click choose "Set as start project"</li>
 <li>Add connection string into Web.config file in current project</li>
