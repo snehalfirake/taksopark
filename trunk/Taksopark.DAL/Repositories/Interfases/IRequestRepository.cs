@@ -12,5 +12,6 @@ namespace Taksopark.DAL.Repositories.Interfases
         void DeleteRequest(int requestId);
         Request GetRequestById(int id);
         IEnumerable<Request> GetAllRequestsByState(string state);
+        IEnumerable<Request> GetAllRequestsByStatus(string status);
     }
 }

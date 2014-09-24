@@ -18,7 +18,8 @@
             <asp:BoundField DataField="DriverId" HeaderText="Driver"/>
             <asp:TemplateField>
                 <ItemTemplate>
-                    <asp:LinkButton runat="server" CssClass="button danger" Text="Edit" PostBackUrl='<%# "~/WebForms/Confirmation.aspx?id=" + Eval("id")  %>' />              
+                    <asp:LinkButton ID="btnEdit" runat="server" CssClass="button danger" 
+                        Text="Edit" PostBackUrl='<%# "~/WebForms/Confirmation.aspx?id=" + Eval("id")  %>' />              
                 </ItemTemplate>
             </asp:TemplateField>
         </Columns>

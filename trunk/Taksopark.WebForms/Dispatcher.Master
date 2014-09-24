@@ -21,7 +21,7 @@
 <body>
     <form id="form1" runat="server">
         <%--Header--%>
-
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <div class="header">
             <div id="site_title">
                 <a href="Home.aspx">
