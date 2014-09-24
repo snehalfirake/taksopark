@@ -22,6 +22,24 @@ namespace Taksopark.WebForms.WebForms {
         protected global::System.Web.UI.WebControls.Button btnAdd;
         
         /// <summary>
+        /// UpdatePanel1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
+        
+        /// <summary>
+        /// ddlOperatorStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlOperatorStatus;
+        
+        /// <summary>
         /// OperatorsTable control.
         /// </summary>
         /// <remarks>

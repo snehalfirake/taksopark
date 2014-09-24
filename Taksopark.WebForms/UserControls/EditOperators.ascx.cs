@@ -153,7 +153,7 @@ namespace Taksopark.WebForms.UserControls
         protected void btnSaveEdit_Click(object sender, EventArgs e)
         {
             IAdminBl adminBl = HttpContext.Current.Application.GetContainer().Resolve<IAdminBl>();
-
+            
             string UserId;
             if (hiddenId.Value != "")
             {
@@ -177,8 +177,15 @@ namespace Taksopark.WebForms.UserControls
                 Role = "Operator",
                 Status = ddlEditStatus.Text
             };
-            adminBl.UpdateUser(updatedUser);
-            Response.Redirect("~/WebForms/Operators.aspx");
+            if (!adminBl.IsLoginBookedByOtherId(updatedUser.Login, updatedUser.Id))
+            {
+                adminBl.UpdateUser(updatedUser);
+                Response.Redirect("~/WebForms/Operators.aspx");
+            }
+            else
+            {
+                loginBooked.InnerText = "Login is booked!";
+            }
         }
 
         protected void btnCancelEdit_Click(object sender, EventArgs e)

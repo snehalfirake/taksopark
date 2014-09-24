@@ -160,9 +160,15 @@ table td {
    background-image: -ms-linear-gradient(top, #fafafa, #E0E0E0);
    background-image: -o-linear-gradient(top, #fafafa, #E0E0E0);
    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fafafa', endColorstr='#E0E0E0');
-   padding: 14px 20px
+   padding: 14px 20px;
+   padding-left: 2px;
+   padding-right: 2px;
+   text-align:center;
 }
 
+.buttonTable{
+    width:100%;
+}
 .featured-column {}
 
 
