@@ -22,6 +22,24 @@ namespace Taksopark.WebForms.WebForms {
         protected global::System.Web.UI.WebControls.Button btnAdd;
         
         /// <summary>
+        /// UpdatePanel1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
+        
+        /// <summary>
+        /// ddlDriverStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlDriverStatus;
+        
+        /// <summary>
         /// TaxiDriversTable1 control.
         /// </summary>
         /// <remarks>
@@ -31,15 +49,6 @@ namespace Taksopark.WebForms.WebForms {
         protected global::Taksopark.WebForms.UserControls.TaxiDriversTable TaxiDriversTable1;
         
         /// <summary>
-        /// CarsTable control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Taksopark.WebForms.UserControls.CarsTable CarsTable;
-        
-        /// <summary>
         /// allTaxiDriversDS control.
         /// </summary>
         /// <remarks>
@@ -47,14 +56,5 @@ namespace Taksopark.WebForms.WebForms {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ObjectDataSource allTaxiDriversDS;
-        
-        /// <summary>
-        /// allCarsDS control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource allCarsDS;
     }
 }

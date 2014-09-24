@@ -176,8 +176,15 @@ namespace Taksopark.WebForms.UserControls
                 Role = "Client",
                 Status = ddlEditStatus.Text
             };
-            adminBl.UpdateUser(updatedUser);
-            Response.Redirect("~/WebForms/Users.aspx");
+            if (!adminBl.IsLoginBookedByOtherId(updatedUser.Login, updatedUser.Id))
+            {
+                adminBl.UpdateUser(updatedUser);
+                Response.Redirect("~/WebForms/Users.aspx");
+            }
+            else
+            {
+                loginBooked.InnerText = "Login is booked!";
+            }
         }
 
         protected void btnCancelEdit_Click(object sender, EventArgs e)

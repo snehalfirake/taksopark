@@ -18,5 +18,8 @@ namespace Taksopark.BL.Interfaces
         List<Car> GetAllCars();
         List<Driver> GetAllDrivers();
         List<Driver> GetAllDriversByStatus(string status);
+        bool IsLoginBookedByOtherId(string login, int id);
+        List<User> GetAllUsersByStatus(string status);
+        List<User> GetAllOperatorsByStatus(string status);
     }
 }

@@ -58,15 +58,6 @@ namespace Taksopark.WebForms.UserControls {
         protected global::System.Web.UI.WebControls.Button btnFindOperatorById;
         
         /// <summary>
-        /// tbxEditOperatorName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbxEditOperatorName;
-        
-        /// <summary>
         /// requiredEditOperatorName control.
         /// </summary>
         /// <remarks>
@@ -76,13 +67,13 @@ namespace Taksopark.WebForms.UserControls {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator requiredEditOperatorName;
         
         /// <summary>
-        /// tbxEditLastName control.
+        /// tbxEditOperatorName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbxEditLastName;
+        protected global::System.Web.UI.WebControls.TextBox tbxEditOperatorName;
         
         /// <summary>
         /// requiredEditLastName control.
@@ -94,13 +85,13 @@ namespace Taksopark.WebForms.UserControls {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator requiredEditLastName;
         
         /// <summary>
-        /// tbxEditLogin control.
+        /// tbxEditLastName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbxEditLogin;
+        protected global::System.Web.UI.WebControls.TextBox tbxEditLastName;
         
         /// <summary>
         /// requiredEditLogin control.
@@ -112,13 +103,13 @@ namespace Taksopark.WebForms.UserControls {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator requiredEditLogin;
         
         /// <summary>
-        /// tbxEditPhoneNumber control.
+        /// tbxEditLogin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbxEditPhoneNumber;
+        protected global::System.Web.UI.WebControls.TextBox tbxEditLogin;
         
         /// <summary>
         /// regExprValEditPhoneNumber control.
@@ -130,6 +121,42 @@ namespace Taksopark.WebForms.UserControls {
         protected global::System.Web.UI.WebControls.RegularExpressionValidator regExprValEditPhoneNumber;
         
         /// <summary>
+        /// requiredEditPhoneNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator requiredEditPhoneNumber;
+        
+        /// <summary>
+        /// tbxEditPhoneNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbxEditPhoneNumber;
+        
+        /// <summary>
+        /// regExprValEditEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator regExprValEditEmail;
+        
+        /// <summary>
+        /// requiredEditEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator requiredEditEmail;
+        
+        /// <summary>
         /// tbxEditEmail control.
         /// </summary>
         /// <remarks>
@@ -137,24 +164,6 @@ namespace Taksopark.WebForms.UserControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbxEditEmail;
-        
-        /// <summary>
-        /// RegularExpressionValidator1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
-        
-        /// <summary>
-        /// tbxEditPassword control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbxEditPassword;
         
         /// <summary>
         /// requiredEditPassword control.
@@ -166,13 +175,13 @@ namespace Taksopark.WebForms.UserControls {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator requiredEditPassword;
         
         /// <summary>
-        /// ddlEditStatus control.
+        /// tbxEditPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlEditStatus;
+        protected global::System.Web.UI.WebControls.TextBox tbxEditPassword;
         
         /// <summary>
         /// requiredEditStatus control.
@@ -182,6 +191,24 @@ namespace Taksopark.WebForms.UserControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator requiredEditStatus;
+        
+        /// <summary>
+        /// ddlEditStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlEditStatus;
+        
+        /// <summary>
+        /// loginBooked control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTableCell loginBooked;
         
         /// <summary>
         /// btnSaveEdit control.

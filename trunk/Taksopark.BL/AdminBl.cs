@@ -126,5 +126,30 @@ namespace Taksopark.BL
                 return drivers.ToList();
             }
         }
+        public bool IsLoginBookedByOtherId(string login, int id)
+        {
+            using (var uow = new UnitOfWork(_appConfigConnection))
+            {
+                var isBooked = uow.UserRepository.IsLoginBookedByOtherId(login, id);
+                return isBooked;
+            }
+        }
+        public List<User> GetAllUsersByStatus(string status)
+        {
+            using (var uow = new UnitOfWork(_appConfigConnection))
+            {
+                var users = uow.UserRepository.GetAllUsersByStatus(status);
+                return users.ToList();
+            }
+        }
+
+        public List<User> GetAllOperatorsByStatus(string status)
+        {
+            using (var uow = new UnitOfWork(_appConfigConnection))
+            {
+                var operators = uow.UserRepository.GetAllOperatorsByStatus(status);
+                return operators.ToList();
+            }
+        }
     }
 }

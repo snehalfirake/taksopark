@@ -9,7 +9,7 @@
         <div class="heading_bg">
             <h2>Add New Taxi Driver</h2>
         </div>
-        <div class="centerDiv">
+        <div>
             <uc:AddNewTaxiDriver runat="server" id="AddNewTaxiDriver" />
         </div>
     </div>

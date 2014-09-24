@@ -28,6 +28,17 @@ namespace Taksopark.WebForms.UserControls
                 TaxiDriversGV.DataSourceID = value;
             }
         }
+        public object DataSource
+        {
+            get
+            {
+                return TaxiDriversGV.DataSource;
+            }
+            set 
+            {
+                TaxiDriversGV.DataSource = value;
+            }
+        }
         protected void TaxiDriversGV_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             TaxiDriversGV.PageIndex = e.NewPageIndex;

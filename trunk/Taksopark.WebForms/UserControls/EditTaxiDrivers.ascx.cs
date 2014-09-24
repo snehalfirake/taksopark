@@ -233,13 +233,20 @@ namespace Taksopark.WebForms.UserControls
                 tbxEditEmail.Text = "";
                 tbxEditPassword.Text = "";
                 ddlEditStatus.Text = "";
+
+                tbxCarBrand.Text = "";
+                tbxCarYear.Text = "";
+                tbxCarStartWorkTime.Text = "";
+                tbxCarFinishWorkTime.Text = "";
+                tbxCarLatitude.Text = "";
+                tbxCarLongitude.Text = "";
             }
         }
 
         protected void btnSaveEdit_Click(object sender, EventArgs e)
         {
             IAdminBl adminBl = HttpContext.Current.Application.GetContainer().Resolve<IAdminBl>();
-
+            
             string UserId;
             if (hiddenId.Value != "")
             {
@@ -263,28 +270,36 @@ namespace Taksopark.WebForms.UserControls
                 Role = "Driver",
                 Status = ddlEditStatus.Text
             };
-            adminBl.UpdateUser(updatedUser);
 
-            var updatedCar = new Car()
+            if (!adminBl.IsLoginBookedByOtherId(updatedUser.Login, updatedUser.Id))
             {
-                Id = updatedUser.Id,
-                CarBrand = tbxCarBrand.Text,
-                CarYear = tbxCarYear.Text,
-                StartWorkTime = DateTime.Parse(tbxCarStartWorkTime.Text),
-                FinishWorkTime = DateTime.Parse(tbxCarFinishWorkTime.Text),
-                Latitude = tbxCarLatitude.Text,
-                Longitude = tbxCarLongitude.Text
-            };
-            if(adminBl.IsCarIdBooked(updatedCar.Id))
-            {
-                adminBl.UpdateCar(updatedCar);
+                adminBl.UpdateUser(updatedUser);
+
+                var updatedCar = new Car()
+                {
+                    Id = updatedUser.Id,
+                    CarBrand = tbxCarBrand.Text,
+                    CarYear = tbxCarYear.Text,
+                    StartWorkTime = DateTime.Parse(tbxCarStartWorkTime.Text),
+                    FinishWorkTime = DateTime.Parse(tbxCarFinishWorkTime.Text),
+                    Latitude = tbxCarLatitude.Text,
+                    Longitude = tbxCarLongitude.Text
+                };
+                if (adminBl.IsCarIdBooked(updatedCar.Id))
+                {
+                    adminBl.UpdateCar(updatedCar);
+                }
+                else
+                {
+                    adminBl.CreateCar(updatedCar);
+                }
+
+                Response.Redirect("~/WebForms/TaxiDrivers.aspx");
             }
             else
             {
-                adminBl.CreateCar(updatedCar);
+                loginBooked.InnerText = "Login is booked!";
             }
-
-            Response.Redirect("~/WebForms/TaxiDrivers.aspx");
         }
 
         protected void btnCancelEdit_Click(object sender, EventArgs e)

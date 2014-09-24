@@ -13,15 +13,6 @@ namespace Taksopark.WebForms.UserControls {
     public partial class AddNewTaxiDriver {
         
         /// <summary>
-        /// tbxTaxiDriverName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbxTaxiDriverName;
-        
-        /// <summary>
         /// requiredUserName control.
         /// </summary>
         /// <remarks>
@@ -31,121 +22,13 @@ namespace Taksopark.WebForms.UserControls {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator requiredUserName;
         
         /// <summary>
-        /// tbxLastName control.
+        /// tbxTaxiDriverName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbxLastName;
-        
-        /// <summary>
-        /// requiredTaxiDriverLastName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator requiredTaxiDriverLastName;
-        
-        /// <summary>
-        /// tbxLogin control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbxLogin;
-        
-        /// <summary>
-        /// requiredLogin control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator requiredLogin;
-        
-        /// <summary>
-        /// tbxPhoneNumber control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbxPhoneNumber;
-        
-        /// <summary>
-        /// regExprValPhoneNumber control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator regExprValPhoneNumber;
-        
-        /// <summary>
-        /// tbxEmail control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbxEmail;
-        
-        /// <summary>
-        /// regExprValEmail control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator regExprValEmail;
-        
-        /// <summary>
-        /// tbxPassword control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbxPassword;
-        
-        /// <summary>
-        /// requiredPassword control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator requiredPassword;
-        
-        /// <summary>
-        /// ddlStatus control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlStatus;
-        
-        /// <summary>
-        /// requiredStatus control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator requiredStatus;
-        
-        /// <summary>
-        /// tbxCarBrand control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbxCarBrand;
+        protected global::System.Web.UI.WebControls.TextBox tbxTaxiDriverName;
         
         /// <summary>
         /// requiredCarBrand control.
@@ -157,13 +40,31 @@ namespace Taksopark.WebForms.UserControls {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator requiredCarBrand;
         
         /// <summary>
-        /// tbxCarYear control.
+        /// tbxCarBrand control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbxCarYear;
+        protected global::System.Web.UI.WebControls.TextBox tbxCarBrand;
+        
+        /// <summary>
+        /// requiredTaxiDriverLastName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator requiredTaxiDriverLastName;
+        
+        /// <summary>
+        /// tbxLastName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbxLastName;
         
         /// <summary>
         /// requiredCarYear control.
@@ -175,13 +76,31 @@ namespace Taksopark.WebForms.UserControls {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator requiredCarYear;
         
         /// <summary>
-        /// tbxCarStartWorkTime control.
+        /// tbxCarYear control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbxCarStartWorkTime;
+        protected global::System.Web.UI.WebControls.TextBox tbxCarYear;
+        
+        /// <summary>
+        /// requiredLogin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator requiredLogin;
+        
+        /// <summary>
+        /// tbxLogin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbxLogin;
         
         /// <summary>
         /// requiredCarStartWorkTime control.
@@ -193,13 +112,40 @@ namespace Taksopark.WebForms.UserControls {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator requiredCarStartWorkTime;
         
         /// <summary>
-        /// tbxCarFinishWorkTime control.
+        /// tbxCarStartWorkTime control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbxCarFinishWorkTime;
+        protected global::System.Web.UI.WebControls.TextBox tbxCarStartWorkTime;
+        
+        /// <summary>
+        /// requiredPhoneNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator requiredPhoneNumber;
+        
+        /// <summary>
+        /// regExprValPhoneNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator regExprValPhoneNumber;
+        
+        /// <summary>
+        /// tbxPhoneNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbxPhoneNumber;
         
         /// <summary>
         /// requiredCarFinishWorkTime control.
@@ -211,13 +157,40 @@ namespace Taksopark.WebForms.UserControls {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator requiredCarFinishWorkTime;
         
         /// <summary>
-        /// tbxCarLatitude control.
+        /// tbxCarFinishWorkTime control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbxCarLatitude;
+        protected global::System.Web.UI.WebControls.TextBox tbxCarFinishWorkTime;
+        
+        /// <summary>
+        /// requiredCarEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator requiredCarEmail;
+        
+        /// <summary>
+        /// regExprValEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator regExprValEmail;
+        
+        /// <summary>
+        /// tbxEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbxEmail;
         
         /// <summary>
         /// requiredCarLatitude control.
@@ -229,13 +202,31 @@ namespace Taksopark.WebForms.UserControls {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator requiredCarLatitude;
         
         /// <summary>
-        /// tbxCarLongitude control.
+        /// tbxCarLatitude control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbxCarLongitude;
+        protected global::System.Web.UI.WebControls.TextBox tbxCarLatitude;
+        
+        /// <summary>
+        /// requiredPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator requiredPassword;
+        
+        /// <summary>
+        /// tbxPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbxPassword;
         
         /// <summary>
         /// requiredCarLongitude control.
@@ -245,6 +236,33 @@ namespace Taksopark.WebForms.UserControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator requiredCarLongitude;
+        
+        /// <summary>
+        /// tbxCarLongitude control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbxCarLongitude;
+        
+        /// <summary>
+        /// requiredStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator requiredStatus;
+        
+        /// <summary>
+        /// ddlStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlStatus;
         
         /// <summary>
         /// loginBooked control.

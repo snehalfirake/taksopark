@@ -239,5 +239,71 @@ namespace Taksopark.DAL.Repositories
             }
             return userList;
         }
+
+        /// <summary>
+        /// Check is already user with the same login, but other id
+        /// </summary>
+        /// <param name="login">String login value</param>
+        /// <returns></returns>
+        public bool IsLoginBookedByOtherId(string login, int id)
+        {
+            using (var command = new SqlCommand("IsLoginBookedByOtherId", _connection))
+            {
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@Login", login);
+                command.Parameters.AddWithValue("@ID", id);
+                var user = new User();
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        user = UserMapper.Map(reader);
+                    }
+                }
+                if (user.Login == login)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public IEnumerable<User> GetAllUsersByStatus(string status)
+        {
+            var userList = new List<User>();
+            using (var command = new SqlCommand("GetAllUsersByStatus", _connection))
+            {
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@Status", status);
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        var user = UserMapper.Map(reader);
+                        userList.Add(user);
+                    }
+                }
+            }
+            return userList;
+        }
+
+        public IEnumerable<User> GetAllOperatorsByStatus(string status)
+        {
+            var operatorList = new List<User>();
+            using (var command = new SqlCommand("GetAllOperatorsByStatus", _connection))
+            {
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@Status", status);
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        var user = UserMapper.Map(reader);
+                        operatorList.Add(user);
+                    }
+                }
+            }
+            return operatorList;
+        }
     }
 }

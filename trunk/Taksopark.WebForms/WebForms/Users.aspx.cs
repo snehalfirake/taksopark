@@ -25,11 +25,54 @@ namespace Taksopark.WebForms.WebForms
 
         }
 
-        public static IEnumerable<User> GetAllUsersFromRepository()
+        public static IEnumerable<User> GetAllUsersFromRepository(string status)
         {
-            IAdminBl adminBl = HttpContext.Current.Application.GetContainer().Resolve<IAdminBl>();
-            var AllClients = adminBl.GetUserByRole("Client");
-            return AllClients;
+            var emptyResult = new List<User>();
+            emptyResult.Add(new User()
+            {
+                Id = -1
+            });
+            if (status == "All")
+            {
+                IAdminBl adminBl = HttpContext.Current.Application.GetContainer().Resolve<IAdminBl>();
+                //var AllDrivers = adminBl.GetUserByRole("Driver");
+                var AllClients = adminBl.GetUserByRole("Client");
+                if (AllClients.Count > 0)
+                {
+                    return AllClients;
+                }
+                else
+                {
+                    return emptyResult;
+                }
+            }
+            else if (status == "Active")
+            {
+                IAdminBl adminBl = HttpContext.Current.Application.GetContainer().Resolve<IAdminBl>();
+                var AllClientsByStatus = adminBl.GetAllUsersByStatus("Active");
+                if (AllClientsByStatus.Count > 0)
+                {
+                    return AllClientsByStatus;
+                }
+                else
+                {
+                    return emptyResult;
+                }
+            }
+            else if (status == "Inactive")
+            {
+                IAdminBl adminBl = HttpContext.Current.Application.GetContainer().Resolve<IAdminBl>();
+                var AllClientsByStatus = adminBl.GetAllUsersByStatus("Inactive");
+                if (AllClientsByStatus.Count > 0)
+                {
+                    return AllClientsByStatus;
+                }
+                else
+                {
+                    return emptyResult;
+                }
+            }
+            return emptyResult;
         }
 
         protected void btnAdd_Click(object sender, EventArgs e)

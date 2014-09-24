@@ -15,22 +15,22 @@
 <body>
     <form id="form1" runat="server">
         <div class="header">
-            <h1 class="center" style="text-align:center">Lviv Taxi: admin-panel</h1>
+            <h1 class="center" style="text-align:center">Lviv Taxi: Admin Console</h1>
             <div id="site_title">
                 <a href="Users.aspx">
                     <img src="/Images/Admin/logo.png" />
                 </a>
             </div>
             <ol id="menu">
-                <li class="active_menu_item"><a href="Users.aspx">Users info</a>
+                <li class="active_menu_item"><a href="Users.aspx">Users</a>
                     <%--<ol>
                         <li><a href="Users.aspx">Show All Users</a></li>
                         <li><a href="AddUser.aspx">Add New User</a></li>
                         <li><a href="EditUser.aspx">Edit User</a></li>
                     </ol>--%>
                 </li>
-                <li><a href="Operators.aspx">Operators info</a></li>
-                <li><a href="TaxiDrivers.aspx">Taxi drivers & Cars info</a></li>
+                <li><a href="Operators.aspx">Operators</a></li>
+                <li><a href="TaxiDrivers.aspx">Taxi drivers</a></li>
             </ol>
         </div>
         

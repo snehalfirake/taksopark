@@ -21,11 +21,54 @@ namespace Taksopark.WebForms.WebForms
         {
 
         }
-        public static IEnumerable<User> GetAllOperatorsFromRepository()
+        public static IEnumerable<User> GetAllOperatorsFromRepository(string status)
         {
-            IAdminBl adminBl = HttpContext.Current.Application.GetContainer().Resolve<IAdminBl>();
-            var AllOperators = adminBl.GetUserByRole("Operator");
-            return AllOperators;
+            var emptyResult = new List<User>();
+            emptyResult.Add(new User()
+            {
+                Id = -1
+            });
+            if (status == "All")
+            {
+                IAdminBl adminBl = HttpContext.Current.Application.GetContainer().Resolve<IAdminBl>();
+                //var AllDrivers = adminBl.GetUserByRole("Driver");
+                var AllOperators = adminBl.GetUserByRole("Operator");
+                if (AllOperators.Count > 0)
+                {
+                    return AllOperators;
+                }
+                else
+                {
+                    return emptyResult;
+                }
+            }
+            else if (status == "Active")
+            {
+                IAdminBl adminBl = HttpContext.Current.Application.GetContainer().Resolve<IAdminBl>();
+                var AllOperatorsByStatus = adminBl.GetAllOperatorsByStatus("Active");
+                if (AllOperatorsByStatus.Count > 0)
+                {
+                    return AllOperatorsByStatus;
+                }
+                else
+                {
+                    return emptyResult;
+                }
+            }
+            else if (status == "Inactive")
+            {
+                IAdminBl adminBl = HttpContext.Current.Application.GetContainer().Resolve<IAdminBl>();
+                var AllOperatorsByStatus = adminBl.GetAllOperatorsByStatus("Inactive");
+                if (AllOperatorsByStatus.Count > 0)
+                {
+                    return AllOperatorsByStatus;
+                }
+                else
+                {
+                    return emptyResult;
+                }
+            }
+            return emptyResult;
         }
 
         protected void OperatorsTable_GridViewClicked(object sender, GridViewEventArgs e)
