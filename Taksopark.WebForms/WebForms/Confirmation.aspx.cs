@@ -11,6 +11,7 @@ using Taksopark.BL;
 using Taksopark.BL.Interfaces;
 using Taksopark.DAL.Models;
 using Unity.WebForms;
+using Taksopark.DAL.Repositories;
 
 namespace Taksopark.WebForms.Dispatcher
 {
@@ -21,33 +22,96 @@ namespace Taksopark.WebForms.Dispatcher
             if (!IsPostBack)
             {
                 GetDrivers();
+                SetRequest();
+            }
+        }
+
+        protected override void OnLoadComplete(EventArgs e)
+        {
+            if (request.Status == "Active")
+            {
+                confirmButton.Enabled = true;
+                rejectButton.Enabled = true;
+                closeButton.Enabled = false;
+
+                confirmButton.CssClass = "btn btn-s-md btn-info";
+                rejectButton.CssClass = "btn btn-s-md btn-danger";
+                closeButton.CssClass = "btn btn-s-md btn-white disabled";
+            }
+            else if (request.Status == "InProgress")
+            {
+                confirmButton.Enabled = false;
+                rejectButton.Enabled = true;
+                closeButton.Enabled = true;
+
+                confirmButton.CssClass = "btn btn-s-md btn-white disabled";
+                rejectButton.CssClass = "btn btn-s-md btn-danger";
+                closeButton.CssClass = "btn btn-s-md btn-success";
+            }
+            else if (request.Status == "Rejected")
+            {
+                confirmButton.Enabled = true;
+                rejectButton.Enabled = false;
+                closeButton.Enabled = false;
+
+                confirmButton.CssClass = "btn btn-s-md btn-info";
+                rejectButton.CssClass = "btn btn-s-md btn-white disabled";
+                closeButton.CssClass = "btn btn-s-md btn-white disabled";
+            }
+            else if (request.Status == "Closed")
+            {
+                confirmButton.Enabled = false;
+                rejectButton.Enabled = false;
+                closeButton.Enabled = false;
+
+                confirmButton.CssClass = "btn btn-s-md btn-white disabled";
+                rejectButton.CssClass = "btn btn-s-md btn-white disabled";
+                closeButton.CssClass = "btn btn-s-md btn-white disabled";
+            }
+            else
+            {
+                throw new Exception("Wrong status data " + request.Status);
             }
         }
 
         private void GetDrivers()
         {
-            var operatorBL = HttpContext.Current.Application.GetContainer().Resolve<OperatorBl>();
-            driversDropDownList.DataSource = operatorBL.GetAllDrivers();
+            IAdminBl adminBl = HttpContext.Current.Application.GetContainer().Resolve<IAdminBl>();
+
+            driversDropDownList.DataSource = adminBl.GetAllDrivers();
             driversDropDownList.DataValueField = "Id";
-            driversDropDownList.DataTextField = "LastName";
-            driversDropDownList.DataTextField = "Id";
+            driversDropDownList.DataTextField = "DriverInfo";
             driversDropDownList.DataBind();
         }
 
         private static Request request;
 
-        public Request GetRequest(object id)
+        private void SetRequest()
         {
             var operatorBl = HttpContext.Current.Application.GetContainer().Resolve<IOperatorBl>();
-            request = operatorBl.GetRequestById(Convert.ToInt32(id));
+            request = operatorBl.GetRequestById(Convert.ToInt32(Request.QueryString["id"]));
 
-            return request;
+            detailsView1.DataSource = new List<Request>() { request };
+            detailsView1.DataBind();
+
+            //orderInfo.DataSource = new List<Request>() { request };
+            //orderInfo.DataBind();
+        }
+
+        public Request GetRequest(object id)
+        {
+            //var operatorBl = HttpContext.Current.Application.GetContainer().Resolve<IOperatorBl>();
+            //request = operatorBl.GetRequestById(Convert.ToInt32(id));
+
+            //return request;
+
+            return null;
         }
 
         private void UpdateRequestStatus(string status)
         {
             request.Status = status;
-            
+            request.DriverId = null;
             var operatorBL = HttpContext.Current.Application.GetContainer().Resolve<OperatorBl>();
             operatorBL.UpdateRequest(request);
         }
@@ -100,7 +164,6 @@ namespace Taksopark.WebForms.Dispatcher
         protected void closeButton_Click(object sender, EventArgs e)
         {
             UpdateRequestStatus("Closed", Convert.ToInt32(driversDropDownList.SelectedValue), false);
-
             UpdateDriver("Free");
         }
     }

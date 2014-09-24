@@ -8,7 +8,17 @@
             <div class="heading_bg">
                 <h2>Order details</h2>
             </div>
-            <uc1:OrderInfo runat="server" ID="OrderInfo" />
+            <%--<uc1:OrderInfo runat="server" ID="orderInfo" />--%>
+            <asp:DetailsView runat="server" ID="detailsView1" AutoGenerateRows="false">
+                <Fields>
+                    <asp:BoundField DataField="id" HeaderText="Id" />
+                    <asp:BoundField DataField="RequesTime" HeaderText="Created At" />
+                    <asp:BoundField DataField="phoneNumber" HeaderText="Phone" />
+                    <asp:BoundField DataField="startPoint" HeaderText="Start Point" />
+                    <asp:BoundField DataField="finishPoint" HeaderText="Destination Point" />
+                    <asp:BoundField DataField="status" HeaderText="Status" />
+                </Fields>
+            </asp:DetailsView>
             <br />
             <div>
             </div>
@@ -20,13 +30,15 @@
             <div>
                 <asp:DropDownList runat="server"
                     ID="driversDropDownList"
-                    Width="465" Height="25">
+                    Width="100%"
+                    CssClass="form-control">
                 </asp:DropDownList>
                 <br />
-                <br />
-                <asp:Button runat="server" ID="ComfirmButton" Text="Submit" Width="33%" CssClass="button" OnClick="ComfirmButton_Click" />
-                <asp:Button runat="server" ID="rejectButton" Text="Reject" Width="32%" CssClass="button danger" OnClick="rejectButton_Click" />
-                <asp:Button runat="server" ID="closeButton" Text="Close Request" Width="33%" CssClass="button danger" OnClick="closeButton_Click" />
+                <%--<div class="btn-group btn-group-justified">--%>
+                    <asp:Button runat="server" ID="confirmButton" Text="Submit" Width="33%" CssClass="btn btn-s-md btn-info" OnClick="ComfirmButton_Click" />
+                    <asp:Button runat="server" ID="rejectButton" Text="Reject" Width="32%" CssClass="btn btn-s-md btn-danger" OnClick="rejectButton_Click" />
+                    <asp:Button runat="server" ID="closeButton" Text="Close" Width="33%" CssClass="btn btn-s-md btn-success" OnClick="closeButton_Click" />
+                <%--</div>--%>
             </div>
 
             <div class="heading_bg" style="clear: both">

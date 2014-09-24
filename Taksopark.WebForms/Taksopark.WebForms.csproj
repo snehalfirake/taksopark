@@ -78,6 +78,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Themes\Main\Main.skin" />
+    <Content Include="todoStyles.css" />
     <Content Include="Dispatcher.Master" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">

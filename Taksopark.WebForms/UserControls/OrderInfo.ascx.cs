@@ -13,5 +13,29 @@ namespace Taksopark.WebForms.UserControls.Dispatcher
         {
 
         }
+
+        public string DataSourceID
+        {
+            get
+            {
+                return detailsView1.DataSourceID;
+            }
+            set
+            {
+                detailsView1.DataSourceID = value;
+            }
+        }
+
+        public object DataSource
+        {
+            get
+            {
+                return detailsView1.DataSource;
+            }
+            set
+            {
+                detailsView1.DataSource = value;
+            }
+        }
     }
 }
