@@ -9,6 +9,7 @@
     <%--<link href='http://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css' />--%>
     <link href="Fonts/Quicksand.css" rel='stylesheet' type='text/css' />
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="todoStyles.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="menu/css/simple_menu.css" />
 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
