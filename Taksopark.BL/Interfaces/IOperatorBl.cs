@@ -11,5 +11,6 @@ namespace Taksopark.BL.Interfaces
         Request GetRequestById(int id);
         List<Request> GetRequestsByState(string state);
         User GetUserById(int id);
+        List<Request> GetAllRequestsByStatus(string status);
     }
 }

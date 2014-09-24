@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="true" CodeBehind="EditUser.aspx.cs" Inherits="Taksopark.WebForms.WebForms.EditUser" Theme="Main" %>
+﻿<%@ Page Title="Lviv Taxi: Edit User" Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="true" CodeBehind="EditUser.aspx.cs" Inherits="Taksopark.WebForms.WebForms.EditUser" Theme="Main" %>
 
 <%@ Register Src="~/UserControls/EditUsers.ascx" TagPrefix="uc" TagName="EditUsers" %>
 

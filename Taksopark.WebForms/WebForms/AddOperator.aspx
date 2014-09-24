@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="true" CodeBehind="AddOperator.aspx.cs" Inherits="Taksopark.WebForms.WebForms.AddOperator" Theme="Main" %>
+﻿<%@ Page Title="Lviv Taxi: Add Operator" Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="true" CodeBehind="AddOperator.aspx.cs" Inherits="Taksopark.WebForms.WebForms.AddOperator" Theme="Main" %>
 
 <%@ Register Src="~/UserControls/AddNewOperator.ascx" TagPrefix="uc" TagName="AddNewOperator" %>
 

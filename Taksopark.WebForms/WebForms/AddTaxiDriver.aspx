@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="true" CodeBehind="AddTaxiDriver.aspx.cs" Inherits="Taksopark.WebForms.WebForms.AddTaxiDriver" Theme="Main" %>
+﻿<%@ Page Title="Lviv Taxi: Add Taxi Driver" Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="true" CodeBehind="AddTaxiDriver.aspx.cs" Inherits="Taksopark.WebForms.WebForms.AddTaxiDriver" Theme="Main" %>
 
 <%@ Register Src="~/UserControls/AddNewTaxiDriver.ascx" TagPrefix="uc" TagName="AddNewTaxiDriver" %>
 

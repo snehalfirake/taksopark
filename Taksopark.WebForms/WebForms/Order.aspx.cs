@@ -18,15 +18,43 @@ namespace Taksopark.WebForms.Dispatcher
         
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
 
-        public static IEnumerable<Request> GetAllRequests()
+        public IEnumerable<Request> GetAllRequests(string status)
         {
-            var operatorBl = HttpContext.Current.Application.GetContainer().Resolve<IOperatorBl>();
-            //var orders = operatoerBl.GetActiveRequests();
-            var orders = operatorBl.GetAllRequests();
-            return orders;
+            var emptyResult = new List<Request>();
+            emptyResult.Add(new Request()
+            {
+                Id = -1,
+                RequesTime = default(DateTime)
+            });
+            if (status == "All")
+            {
+                IOperatorBl operatorBl = HttpContext.Current.Application.GetContainer().Resolve<IOperatorBl>();
+                var orders = operatorBl.GetAllRequests();
+                if (orders.Count > 0)
+                {
+                    return orders;
+                }
+                else
+                {
+                    return emptyResult;
+                }
+            }
+            else
+            {
+                IOperatorBl operatorBl = HttpContext.Current.Application.GetContainer().Resolve<IOperatorBl>();
+                var orders = operatorBl.GetAllRequestsByStatus(status);
+                if (orders.Count > 0)
+                {
+                    return orders;
+                }
+                else
+                {
+                    return emptyResult;
+                }
+            }
         }
     }
 }

@@ -217,5 +217,23 @@ namespace Taksopark.DAL.Repositories
                 return requestList;
             }
         }
+        public IEnumerable<Request> GetAllRequestsByStatus(string status)
+        {
+            using (var command = new SqlCommand("GetAllRequestsByStatus", _connection))
+            {
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@Status", status);
+                var requestList = new List<Request>();
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        var request = RequestMapper.Map(reader);
+                        requestList.Add(request);
+                    }
+                }
+                return requestList;
+            }
+        }
     }
 }

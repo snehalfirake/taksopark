@@ -25,7 +25,7 @@
         </div>
         <div class="one-half last">
             <div class="heading_bg">
-                <h2>Avaliable drivers</h2>
+                <h2>Available drivers</h2>
             </div>
             <div>
                 <asp:DropDownList runat="server"
