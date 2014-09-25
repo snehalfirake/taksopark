@@ -9,7 +9,7 @@
     <%--<link href='http://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css' />--%>
     <link href="Fonts/Quicksand.css" rel='stylesheet' type='text/css' />
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="todoStyles.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="Styles/Styles.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="menu/css/simple_menu.css" />
 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
@@ -30,15 +30,8 @@
             </div>
             <ol id="menu">
                 <li class="active_menu_item">
-                    <a href="Home.aspx">Home</a>
+                    <asp:HyperLink runat="server" NavigateUrl="~/WebForms/Order.aspx" Text="Orders"/>
                 </li>
-                <li><a>Orders</a>
-                    <ol>
-                        <li><a href="Order.aspx">View order list</a></li>
-                    </ol>
-                </li>
-
-                <li><a href="#">Contact admin</a></li>
             </ol>
         </div>
 

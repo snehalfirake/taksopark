@@ -33,6 +33,22 @@
                         </tr>
                         <tr>
                             <td>
+                                <b>Date</b>
+                            </td>
+                            <td>
+                                <%# Eval("Date") %>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>Time</b>
+                            </td>
+                            <td>
+                                <%# Eval("Time") %>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
                                 <b>Created</b>
                             </td>
                             <td>
@@ -55,31 +71,18 @@
                                 <%# Eval("FinishPoint") %>
                             </td>
                         </tr>
-                         <tr>
+                        <tr>
                             <td>
                                 <b>Status</b>
                             </td>
                             <td>
-                                <asp:Image runat="server" ImageUrl='<%# Eval("Status") %>' Width="25" Height="25"/>
+                                <asp:Image runat="server" ImageUrl='<%# Eval("StatusIconUrl") %>' Width="17" Height="17" />&nbsp
+                                <asp:Label runat="server" Text='<%# Eval("Status") %>' />
                             </td>
                         </tr>
                     </table>
                 </ItemTemplate>
             </asp:FormView>
-
-            <%--<asp:DetailsView runat="server" ID="detailsView1" AutoGenerateRows="false">
-                <Fields>
-                    <asp:BoundField DataField="id" HeaderText="Id" />
-                    <asp:BoundField DataField="RequesTime" HeaderText="Created At" />
-                    <asp:BoundField DataField="phoneNumber" HeaderText="Phone" />
-                    <asp:BoundField DataField="startPoint" HeaderText="Start Point" />
-                    <asp:BoundField DataField="finishPoint" HeaderText="Destination Point" />
-                    <asp:BoundField DataField="status" HeaderText="Status" />
-                </Fields>
-                <FooterTemplate>
-                    <asp:Image ID="image1" runat="server" CausesValidation="True" ImageUrl="~/Images/StatusImages/Active.png"  Width="25" Height="25"/>
-                </FooterTemplate>
-            </asp:DetailsView>--%>
             <br />
             <div>
             </div>
