@@ -4,9 +4,7 @@
 <ol>
 <li>Install TortoiseSVN(from http://sourceforge.net/projects/tortoisesvn/)</li>
 <li>Create folder in local hard disk(for example "Taksopark")</li>
-<li>Right click mouse on created folder and choose SVN Checkout...</li>
-<li>In dialog window paste URL https://taksopark.googlecode.com/svn/trunk/ and click "OK" button</li>
-<li>Wait a few seconds for successful updating project from code.google.com</li>
+<li>Pull the last version of the project from https://taksopark.googlecode.com/svn/trunk/ into the created folder</li>
 </ol>
 <p></p>
 <h3><p align="center">Deploy the Database</p></h3><br>
