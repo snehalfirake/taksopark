@@ -19,7 +19,7 @@
 <ol>
 <li>Install Microsoft Visual Studio 2012/2013(Express for Web is enought)</li>
 <li>Open the solution Taksopark.sln</li>
-<li>Change connection string in the Web.config of the project Taksopark.MVC</li>
-<li>Change connection string in the Web.config of the project Taksopark.WebForms</li> 
-<li>The projects Taksopark.MVC and Taksopark.WebForms are ready to run</li>
+<li>Change connection string in the Web.config of the project "Taksopark.MVC"</li>
+<li>Change connection string in the Web.config of the project "Taksopark.WebForms"</li> 
+<li>The projects "Taksopark.MVC" and "Taksopark.WebForms" are ready to run</li>
 </ol>
