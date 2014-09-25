@@ -12,7 +12,7 @@ insert into Cars (Brand, Year, StartWorkTime, FinishWorkTime, Latitude, Longitud
 
 insert into [Request] (RequetTime, CreatorId, PhoneNumber, Status, StartPoint, FinishPoint, OperatorId, DriverId, Price, Additional) values (convert(datetime,'18-10-14 15:00:00 PM',5), null, '0631709471', 2, 'Prospekt Shevchenka', 'Syhiv', null, null, 43, null)
 insert into [Request] (RequetTime, CreatorId, PhoneNumber, Status, StartPoint, FinishPoint, OperatorId, DriverId, Price, Additional) values (convert(datetime,'18-10-14 15:00:00 PM',5), 5, '0631709471', 4, 'Shevchenka', 'Kaluna', 3, 1, 56, null)
-insert into [Request] (RequetTime, CreatorId, PhoneNumber, Status, StartPoint, FinishPoint, OperatorId, DriverId, Price, Additional) values (convert(datetime,'1-10-14 20:00:00 PM',5), 5, '0634564561', '8, 'Ryasne', 'Pidvalna', 4, 2, 88, null)
+insert into [Request] (RequetTime, CreatorId, PhoneNumber, Status, StartPoint, FinishPoint, OperatorId, DriverId, Price, Additional) values (convert(datetime,'1-10-14 20:00:00 PM',5), 5, '0634564561', 8, 'Ryasne', 'Pidvalna', 4, 2, 88, null)
 
 
 --Insert scripts--

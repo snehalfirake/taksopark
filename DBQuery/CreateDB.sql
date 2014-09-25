@@ -1,3 +1,7 @@
+CREATE DATABASE [TaxiServiseDB]
+GO
+USE [TaxiServiseDB]
+GO
 create table [Request]
 (
 	[Id] int identity(1 ,1) not null primary key,
