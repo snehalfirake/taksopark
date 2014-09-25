@@ -8,8 +8,8 @@
             <div class="heading_bg">
                 <h2>Order details</h2>
             </div>
-            <%--<uc1:OrderInfo runat="server" ID="orderInfo" />--%>
-            <asp:DetailsView runat="server" ID="detailsView1" AutoGenerateRows="false">
+            <uc1:OrderInfo runat="server" ID="orderInfo" />
+            <%--<asp:DetailsView runat="server" ID="detailsView1" AutoGenerateRows="false">
                 <Fields>
                     <asp:BoundField DataField="id" HeaderText="Id" />
                     <asp:BoundField DataField="RequesTime" HeaderText="Created At" />
@@ -18,7 +18,68 @@
                     <asp:BoundField DataField="finishPoint" HeaderText="Destination Point" />
                     <asp:BoundField DataField="status" HeaderText="Status" />
                 </Fields>
-            </asp:DetailsView>
+            </asp:DetailsView>--%>
+
+            <asp:FormView runat="server" ID="formView">
+                <ItemTemplate>
+                    <table>
+                        <tr>
+                            <td>
+                                <b>Id</b>
+                            </td>
+                            <td>
+                                <%# Eval("Id") %>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>Created</b>
+                            </td>
+                            <td>
+                                <%# Eval("CreatedAt") %>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>Start</b>
+                            </td>
+                            <td>
+                                <%# Eval("StartPoint") %>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>Destination</b>
+                            </td>
+                            <td>
+                                <%# Eval("FinishPoint") %>
+                            </td>
+                        </tr>
+                         <tr>
+                            <td>
+                                <b>Status</b>
+                            </td>
+                            <td>
+                                <asp:Image runat="server" ImageUrl='<%# Eval("Status") %>' Width="25" Height="25"/>
+                            </td>
+                        </tr>
+                    </table>
+                </ItemTemplate>
+            </asp:FormView>
+
+            <%--<asp:DetailsView runat="server" ID="detailsView1" AutoGenerateRows="false">
+                <Fields>
+                    <asp:BoundField DataField="id" HeaderText="Id" />
+                    <asp:BoundField DataField="RequesTime" HeaderText="Created At" />
+                    <asp:BoundField DataField="phoneNumber" HeaderText="Phone" />
+                    <asp:BoundField DataField="startPoint" HeaderText="Start Point" />
+                    <asp:BoundField DataField="finishPoint" HeaderText="Destination Point" />
+                    <asp:BoundField DataField="status" HeaderText="Status" />
+                </Fields>
+                <FooterTemplate>
+                    <asp:Image ID="image1" runat="server" CausesValidation="True" ImageUrl="~/Images/StatusImages/Active.png"  Width="25" Height="25"/>
+                </FooterTemplate>
+            </asp:DetailsView>--%>
             <br />
             <div>
             </div>
@@ -35,9 +96,9 @@
                 </asp:DropDownList>
                 <br />
                 <%--<div class="btn-group btn-group-justified">--%>
-                    <asp:Button runat="server" ID="confirmButton" Text="Submit" Width="33%" CssClass="btn btn-s-md btn-info" OnClick="ComfirmButton_Click" />
-                    <asp:Button runat="server" ID="rejectButton" Text="Reject" Width="32%" CssClass="btn btn-s-md btn-danger" OnClick="rejectButton_Click" />
-                    <asp:Button runat="server" ID="closeButton" Text="Close" Width="33%" CssClass="btn btn-s-md btn-success" OnClick="closeButton_Click" />
+                <asp:Button runat="server" ID="confirmButton" Text="Submit" Width="33%" CssClass="btn btn-s-md btn-info" OnClick="ComfirmButton_Click" />
+                <asp:Button runat="server" ID="rejectButton" Text="Reject" Width="32%" CssClass="btn btn-s-md btn-danger" OnClick="rejectButton_Click" />
+                <asp:Button runat="server" ID="closeButton" Text="Close" Width="33%" CssClass="btn btn-s-md btn-success" OnClick="closeButton_Click" />
                 <%--</div>--%>
             </div>
 
