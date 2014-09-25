@@ -91,10 +91,15 @@ namespace Taksopark.WebForms.Dispatcher
             var operatorBl = HttpContext.Current.Application.GetContainer().Resolve<IOperatorBl>();
             request = operatorBl.GetRequestById(Convert.ToInt32(Request.QueryString["id"]));
 
-            detailsView1.DataSource = new List<Request>() { request };
-            detailsView1.DataBind();
+            //detailsView1.DataSource = new List<Request>() { request };
+            //detailsView1.DataBind();
 
-            //orderInfo.DataSource = new List<Request>() { request };
+            RequestInfo info = new RequestInfo(request);
+
+            formView.DataSource = new List<Request>() { info };
+            formView.DataBind();
+
+            //orderInfo.DataSource1 = new List<Request>() { request };
             //orderInfo.DataBind();
         }
 
@@ -166,5 +171,113 @@ namespace Taksopark.WebForms.Dispatcher
             UpdateRequestStatus("Closed", Convert.ToInt32(driversDropDownList.SelectedValue), false);
             UpdateDriver("Free");
         }
+    }
+
+    public class RequestInfo : Request
+    {
+        public RequestInfo(Request request)
+        {
+            this.Id = request.Id;
+            this.CreatorId = request.CreatorId;
+            this.OperatorId = request.OperatorId;
+            this.DriverId = request.DriverId;
+            this.PhoneNumber = request.PhoneNumber;
+            this.Price = request.Price;
+            this.RequesTime = request.RequesTime;
+            this.StartPoint = request.StartPoint;
+            this.FinishPoint = request.FinishPoint;
+            this.Status = request.Status;
+        }
+
+        private string _status = "Active";
+
+        public new string Status
+        {
+            get
+            {
+                return _status;
+            }
+            set
+            {
+                _status = value;
+
+                if (_status == "Active")
+                {
+                    _status = "~/Images/StatusImages/Active.png";
+                }
+                else if (_status == "InProgress")
+                {
+                    _status = "~/Images/StatusImages/InProgress.png";
+                }
+                else if (_status == "Rejected")
+                {
+                    _status = "~/Images/StatusImages/Rejected.png";
+                }
+                else if (_status == "Closed")
+                {
+                    _status = "~/Images/StatusImages/Closed.png";
+                }
+            }
+        }
+
+        private string _created = string.Empty;
+        public string CreatedAt
+        {
+            get
+            {
+                return GetDate();
+            }
+        }
+
+        public override string ToString()
+        {
+            return this.Id.ToString();
+        }
+
+        protected String GetDate()
+        {
+
+            var subtract = DateTime.Now.Subtract(RequesTime);
+
+            string timeAgo;
+            if (subtract.Days == 0)
+            {
+                if (subtract.Hours > 0)
+                {
+                    switch (subtract.Hours)
+                    {
+                        case 1:
+                            timeAgo = "hour";
+                            break;
+                        default:
+                            timeAgo = "hours";
+                            break;
+                    }
+
+                    return String.Format("{0} {1} ago", subtract.Hours, timeAgo);
+                }
+                if (subtract.Minutes > 0)
+                {
+                    switch (subtract.Minutes)
+                    {
+                        case 1:
+                            timeAgo = "minute";
+                            break;
+                        default:
+                            timeAgo = "minutes";
+                            break;
+                    }
+
+                    return String.Format("{0} {1} ago", subtract.Minutes, timeAgo);
+                }
+
+                return String.Format("{0} sec ago", subtract.Seconds);
+            }
+
+            return String.Format("{0} {1} {2}", RequesTime.Day, months[RequesTime.Month - 1], RequesTime.Year, subtract.Days);
+        }
+
+        private string[] months = { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
+
     }
 }

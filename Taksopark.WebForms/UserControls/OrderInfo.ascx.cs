@@ -26,16 +26,16 @@ namespace Taksopark.WebForms.UserControls.Dispatcher
             }
         }
 
-        public object DataSource
-        {
-            get
-            {
-                return detailsView1.DataSource;
-            }
-            set
-            {
-                detailsView1.DataSource = value;
-            }
-        }
+        //public object DataSource
+        //{
+        //    get
+        //    {
+        //        return detailsView1.DataSource;
+        //    }
+        //    set
+        //    {
+        //        detailsView1.DataSource = value;
+        //    }
+        //}
     }
 }
