@@ -2,8 +2,7 @@
 <br>
 <h3><p align="center">Get Source Code</p></h3><br>
 <ol>
-<li>Download TortoiseSVN(from http://sourceforge.net/projects/tortoisesvn/)</li>
-<li>Install it on your PC</li>
+<li>Install TortoiseSVN(from http://sourceforge.net/projects/tortoisesvn/)</li>
 <li>Create folder in local hard disk(for example "Taksopark")</li>
 <li>Right click mouse on created folder and choose SVN Checkout...</li>
 <li>In dialog window paste URL https://taksopark.googlecode.com/svn/trunk/ and click "OK" button</li>
