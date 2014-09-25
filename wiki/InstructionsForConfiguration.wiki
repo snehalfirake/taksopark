@@ -1,6 +1,6 @@
-<h1><p align="center">Instructions how to configure local environment</p></h1>
-<h3><p align="center">To configure local environment on your PC you should pass few steps.</p></h3><br>
-<h3><p align="center">To get source code:</p></h3><br>
+<h1><p align="center">Instructions to Сonfigure Local Environment</p></h1>
+<br>
+<h3><p align="center">Get Source Code</p></h3><br>
 <ol>
 <li>Download TortoiseSVN(from http://sourceforge.net/projects/tortoisesvn/)</li>
 <li>Install it on your PC</li>
@@ -10,7 +10,7 @@
 <li>Wait few seconds for successful updating project from code.google.com</li>
 </ol>
 <p></p>
-<h3><p align="center">To deploy the database:</p></h3><br>
+<h3><p align="center">Deploy the Database</p></h3><br>
 <p></p>
 <ol>
 <li>Downlaod Microsoft SQL Server and SQL Management Studio (from http://www.microsoft.com/ru-ru/download/details.aspx?id=29062)</li>
@@ -18,7 +18,7 @@
 <li>Create new query in current connection(query script is in file located in project folder in DBQueary directory)</li>
 <li>Run the script in Management Studio (press F5 key)</li>
 </ol>
-<h3><p align="center">To run the system:</p></h3><br>
+<h3><p align="center">Run the System</p></h3><br>
 <p></p>
 <ol>
 <li>If it's necessary, download Microsoft Visual Studio 2013 (from http://www.microsoft.com/ru-ru/download/details.aspx?id=30678)</li>
