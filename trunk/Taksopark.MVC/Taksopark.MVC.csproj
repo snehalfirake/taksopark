@@ -170,7 +170,9 @@
     <Content Include="Scripts\Validation\ContactsValidation.js" />
     <Content Include="Scripts\Validation\LoginValidation.js" />
     <Content Include="Scripts\Validation\OrderTaxiValidation.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />

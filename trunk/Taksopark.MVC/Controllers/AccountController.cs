@@ -5,6 +5,7 @@ using Taksopark.BL;
 using Taksopark.BL.Interfaces;
 using Taksopark.DAL.Models;
 using Taksopark.MVC.Models;
+using System.Web.Security;
 
 namespace Taksopark.MVC.Controllers
 {
@@ -18,8 +19,7 @@ namespace Taksopark.MVC.Controllers
         }
         public ActionResult LogOff()
         {
-            Session["UserFullName"] = null;
-            Session["UserLogin"] = null;
+            FormsAuthentication.SignOut();
             return RedirectToAction("Index", "Home");
         }
 
@@ -42,9 +42,9 @@ namespace Taksopark.MVC.Controllers
                 var user = _userBl.GetUserByLoginAndPassword(logInModel.Login, logInModel.Password);
                 if (user.UserName != null)
                 {
-                    Session["UserFullName"] = user.UserName + " " + user.LastName;
-                    Session["UserLogin"] = user.Login;
-                    System.Web.Security.FormsAuthentication.SetAuthCookie(user.UserName, false);
+                    //Session["UserFullName"] = user.UserName + " " + user.LastName;
+                    //Session["UserLogin"] = user.Login;
+                    FormsAuthentication.SetAuthCookie(user.Login, false);
                     return RedirectToAction("Index", "Home");
                 }
                 else
@@ -76,8 +76,9 @@ namespace Taksopark.MVC.Controllers
                         UserName = registrationModel.FirstName
                     };
                     _userBl.CreateUser(user);
-                    Session["UserFullName"] = user.UserName + " " + user.LastName;
-                    Session["UserLogin"] = user.Login;
+                    //Session["UserFullName"] = user.UserName + " " + user.LastName;
+                    //Session["UserLogin"] = user.Login;
+                    FormsAuthentication.SetAuthCookie(user.Login, false);
                     return RedirectToAction("Index", "Home");
                 }
                 else
@@ -87,5 +88,22 @@ namespace Taksopark.MVC.Controllers
             }
             return View(registrationModel);
         }
+
+        public ActionResult LoginPartial()
+        {
+            ViewBag.IsAuthenticated = this.IsAuthenticated();
+            return PartialView("_LoginPartial");
+        }
+
+        #region Helpers
+
+        private bool IsAuthenticated()
+        {
+            return User != null && User.Identity != null && User.Identity.IsAuthenticated;
+        }
+
+        #endregion Helpers
+
+
     }
 }

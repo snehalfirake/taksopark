@@ -7,6 +7,7 @@ using Taksopark.MVC.Models;
 
 namespace Taksopark.MVC.Controllers
 {
+    [Authorize]
     public class UserProfileController : Controller
     {
         private readonly IUserBl _userBl;
@@ -16,14 +17,16 @@ namespace Taksopark.MVC.Controllers
             _userBl = userBl;
         }
 
+
         [HttpGet]
         public ActionResult GetUserProfile()
         {
-            if (Session["UserLogin"] == null)
-            {
-                return RedirectToAction("Index", "Home");
-            }
-            var user = _userBl.GetUserByLogin((string)Session["UserLogin"]);
+
+            //if (Session["UserLogin"] == null)
+            //{
+            //    return RedirectToAction("Index", "Home");
+            //}
+            var user = _userBl.GetUserByLogin(User.Identity.Name);
             var editProfileModel = new EditProfileModel
             {
                 Id = user.Id,
@@ -37,6 +40,7 @@ namespace Taksopark.MVC.Controllers
             };
             return View(editProfileModel);
         }
+
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -57,15 +61,16 @@ namespace Taksopark.MVC.Controllers
                     Password = editProfileModel.Password
                 };
                 _userBl.UpdateUser(user);
-                Session["UserFullName"] = user.UserName + " " + user.LastName;
+                //Session["UserFullName"] = user.UserName + " " + user.LastName;
                 return RedirectToAction("Index", "Home");   
             }
             return View(editProfileModel);
         }
 
+
         public ActionResult GetUserHistory()
         {
-            var user = _userBl.GetUserByLogin((string)Session["UserLogin"]);
+            var user = _userBl.GetUserByLogin(User.Identity.Name);
             var requestList = _userBl.GetAllRequestsByCreatorID(user.Id);
             var requestModelList = requestList.Select(request => new RequestModel
             {
@@ -73,7 +78,6 @@ namespace Taksopark.MVC.Controllers
             }).ToList();
             return View(requestModelList);
         }
-
 
         public ActionResult GetRequestDetails(int id)
         {
@@ -105,6 +109,7 @@ namespace Taksopark.MVC.Controllers
             };
             return View(requestModel);
         }
+
 
         public ActionResult DiscardRequest(int id)
         {

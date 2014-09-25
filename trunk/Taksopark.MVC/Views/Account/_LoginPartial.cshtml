@@ -1,17 +1,20 @@
-﻿@if (Session["UserFullName"] == null)
+﻿@{
+    bool isAuthenticated = ViewBag.IsAuthenticated;
+}
+
+
+@if (!isAuthenticated)
 {
-    @*<a type="button" href="#login-form" data-toggle="modal">
-        <button class="pulse width1 abutton">Login</button></a>*@
     <a href="/Views/Account/">
         <button class="abutton pulse width2" style="text-decoration: none;">@Html.ActionLink("Log In", "LogIn", "Account", null, new { style = "text-decoration:none" })</button>
     </a>
     <a href="/Views/Account/">
-        <button class="abutton pulse width2" style="text-decoration: none;">@Html.ActionLink("Registrate", "RegisterUser", "Account", null, new { style = "text-decoration:none" })</button>
+        <button class="abutton pulse width2" style="text-decoration: none;">@Html.ActionLink("Register", "RegisterUser", "Account", null, new { style = "text-decoration:none" })</button>
     </a>
 }
 else
 {
-    <span style="font-family: 'Arial';"><span class="color1">Welcome</span> @Session["UserFullName"]</span>
+    <span style="font-family: 'Arial';"><span class="color1">Welcome</span></span>
     <a href="/Views/Home/">
         <button class="abutton pulse width2">@Html.ActionLink("My Profile", "GetUserProfile", "UserProfile", null, new { style = "text-decoration:none" })</button>
     </a>

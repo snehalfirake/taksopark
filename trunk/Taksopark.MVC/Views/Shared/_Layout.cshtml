@@ -43,7 +43,8 @@
         </div>*@
         <div>
             <div class="login-st" style="margin-right: 5px;">
-                @Html.Partial("~/Views/Account/_LoginPartial.cshtml")
+                @Html.Action("LoginPartial", "Account")
+                @*@Html.Partial("~/Views/Account/_LoginPartial.cshtml")*@
                 @*<a type="button" href="#login-form" data-toggle="modal">
                     <button class="pulse width1 abutton">Login</button></a>
                 <a href="/Views/Home/">
