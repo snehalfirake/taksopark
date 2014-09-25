@@ -4,26 +4,25 @@
 <ol>
 <li>Download TortoiseSVN(from http://sourceforge.net/projects/tortoisesvn/)</li>
 <li>Install it on your PC</li>
-<li>Create folder in local hard disk</li>
+<li>Create folder in local hard disk(for example "Taksopark")</li>
 <li>Right click mouse on created folder and choose SVN Checkout...</li>
 <li>In dialog window paste URL https://taksopark.googlecode.com/svn/trunk/ and click "OK" button</li>
-<li>Wait few seconds for successful updating project from code.google.com</li>
+<li>Wait a few seconds for successful updating project from code.google.com</li>
 </ol>
 <p></p>
 <h3><p align="center">Deploy the Database</p></h3><br>
 <p></p>
 <ol>
-<li>Downlaod Microsoft SQL Server and SQL Management Studio (from http://www.microsoft.com/ru-ru/download/details.aspx?id=29062)</li>
-<li>Install it on your PC</li>
-<li>Create new query in current connection(query script is in file located in project folder in DBQueary directory)</li>
-<li>Run the script in Management Studio (press F5 key)</li>
+<li>Install SQL Server Express 2008/2012/2014</li>
+<li>Install Microsoft SQL Server and SQL Management Studio 2008/2012/2014 (from http://www.microsoft.com/ru-ru/download/details.aspx?id=29062)</li>
+<li>Execut the script https://taksopark.googlecode.com/svn/trunk/DBQuery/CreateDB.sql)</li>
 </ol>
 <h3><p align="center">Run the System</p></h3><br>
 <p></p>
 <ol>
-<li>If it's necessary, download Microsoft Visual Studio 2013 (from http://www.microsoft.com/ru-ru/download/details.aspx?id=30678)</li>
-<li>Install it on your PC</li>
-<li>In created folder open Taksopark.sln</li>
-<li>In Solution Explorer in MVS 2013 choose the part of project, which will be launched first, after right mouse click choose "Set as start project"</li>
-<li>Add connection string into Web.config file in current project</li>
+<li>Install Microsoft Visual Studio 2012/2013(Express for Web is enought)</li>
+<li>Open the solution Taksopark.sln</li>
+<li>Change connection string in the Web.config of the project Taksopark.MVC</li>
+<li>Change connection string in the Web.config of the project Taksopark.WebForms</li> 
+<li>The projects Taksopark.MVC and Taksopark.WebForms are ready to run</li>
 </ol>
