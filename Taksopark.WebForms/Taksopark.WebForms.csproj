@@ -78,6 +78,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Themes\Main\Main.skin" />
+    <Content Include="Images\Admin\NoDataAvailable.png" />
     <Content Include="Images\StatusImages\Active.png" />
     <Content Include="Images\StatusImages\Closed.png" />
     <Content Include="Images\StatusImages\InProgress.png" />

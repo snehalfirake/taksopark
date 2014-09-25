@@ -8,7 +8,10 @@
         PageSize="20"
         OnPageIndexChanging="gridViewOrders_PageIndexChanging" 
         AutoGenerateColumns="false"
-        DataSourceID="ordersDataSource" CssClass="gvMain">
+        DataSourceID="ordersDataSource" CssClass="gvMain tableOrders" ShowHeaderWhenEmpty="true">
+        <EmptyDataTemplate>
+            <img src="../Images/Admin/NoDataAvailable.png" />
+        </EmptyDataTemplate>
         <Columns>
             <asp:BoundField DataField="id" HeaderText="Id"/>
             <asp:BoundField DataField="RequesTime" HeaderText="Created At"/>

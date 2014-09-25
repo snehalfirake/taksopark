@@ -25,54 +25,20 @@ namespace Taksopark.WebForms.WebForms
 
         }
 
-        public static IEnumerable<User> GetAllUsersFromRepository(string status)
+        public IEnumerable<User> GetAllUsersFromRepository(string status)
         {
-            var emptyResult = new List<User>();
-            emptyResult.Add(new User()
-            {
-                Id = -1
-            });
             if (status == "All")
             {
                 IAdminBl adminBl = HttpContext.Current.Application.GetContainer().Resolve<IAdminBl>();
-                //var AllDrivers = adminBl.GetUserByRole("Driver");
                 var AllClients = adminBl.GetUserByRole("Client");
-                if (AllClients.Count > 0)
-                {
-                    return AllClients;
-                }
-                else
-                {
-                    return emptyResult;
-                }
+                return AllClients;
             }
-            else if (status == "Active")
+            else
             {
                 IAdminBl adminBl = HttpContext.Current.Application.GetContainer().Resolve<IAdminBl>();
-                var AllClientsByStatus = adminBl.GetAllUsersByStatus("Active");
-                if (AllClientsByStatus.Count > 0)
-                {
-                    return AllClientsByStatus;
-                }
-                else
-                {
-                    return emptyResult;
-                }
+                var AllClientsByStatus = adminBl.GetAllUsersByStatus(status);
+                return AllClientsByStatus;
             }
-            else if (status == "Inactive")
-            {
-                IAdminBl adminBl = HttpContext.Current.Application.GetContainer().Resolve<IAdminBl>();
-                var AllClientsByStatus = adminBl.GetAllUsersByStatus("Inactive");
-                if (AllClientsByStatus.Count > 0)
-                {
-                    return AllClientsByStatus;
-                }
-                else
-                {
-                    return emptyResult;
-                }
-            }
-            return emptyResult;
         }
 
         protected void btnAdd_Click(object sender, EventArgs e)
@@ -83,11 +49,6 @@ namespace Taksopark.WebForms.WebForms
         protected void btnEdit_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/WebForms/EditUser.aspx");
-        }
-
-        protected void UsersTable_GridViewClicked(object sender, GridViewEventArgs e)
-        {
-            Response.Redirect(String.Format("~/WebForms/EditUser.aspx?id={0}", e.UserId));
         }
     }
 }

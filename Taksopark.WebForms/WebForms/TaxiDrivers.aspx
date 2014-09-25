@@ -9,7 +9,6 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-
     <div class="one">
         <div class="heading_bg">
             <h2>Taxi Drivers</h2>
@@ -24,7 +23,8 @@
                             <asp:Label runat="server" Text="Status: "></asp:Label>
                         </div>
                         <div style="display: inline-block; width: 150px;">
-                            <asp:DropDownList runat="server" ID="ddlDriverStatus" AutoPostBack="true" EnableTheming="false" CssClass="ddlStatusForFilter">
+                            <asp:DropDownList runat="server" ID="ddlDriverStatus" AutoPostBack="true" 
+                                EnableTheming="false" CssClass="ddlStatusForFilter">
                                 <asp:ListItem Text="All"></asp:ListItem>
                                 <asp:ListItem Text="Active"></asp:ListItem>
                                 <asp:ListItem Text="Inactive"></asp:ListItem>
@@ -33,23 +33,13 @@
                         <br />
                         <br />
                     </div>
-                    <uc:TaxiDriversTable runat="server" ID="TaxiDriversTable1" DataSourceID="allTaxiDriversDS"
-                        OnGridViewClicked="TaxiDriversTable1_GridViewClicked" />
+                    <uc:TaxiDriversTable runat="server" ID="TaxiDriversTable1" DataSourceID="allTaxiDriversDS" />
                 </ContentTemplate>
             </asp:UpdatePanel>
         </div>
         <br />
         <br />
     </div>
-
-    <%--<div class="one">
-        <div class="heading_bg">
-            <h2>All Cars</h2>
-            <uc:CarsTable runat="server" id="CarsTable" DataSourceID="allCarsDS" OnGridViewClicked="CarsTable_GridViewClicked" />
-        </div>
-        <br />
-        <br />
-    </div>--%>
 
     <asp:ObjectDataSource runat="server" ID="allTaxiDriversDS" TypeName="Taksopark.WebForms.WebForms.TaxiDrivers"
         SelectMethod="GetAllTaxiDriversFromRepository">

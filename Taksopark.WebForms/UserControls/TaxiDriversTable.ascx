@@ -3,10 +3,11 @@
 <div>
     <asp:GridView runat="server" ID="TaxiDriversGV" AllowPaging="true" PageSize="20"
         OnPageIndexChanging="TaxiDriversGV_PageIndexChanging" DataSourceID="allTaxiDriversDS"
-        AutoGenerateColumns="false" OnRowCommand="TaxiDriversGV_RowCommand">
+        AutoGenerateColumns="false" OnRowCommand="TaxiDriversGV_RowCommand" ShowHeaderWhenEmpty="true">
+        <EmptyDataTemplate>
+            <img src="../Images/Admin/NoDataAvailable.png" />
+        </EmptyDataTemplate>
         <Columns>
-            <%--<asp:ButtonField HeaderText="Edit" Text="Edit" CommandName="Select" ControlStyle-ForeColor="Red" />
-            <asp:ButtonField HeaderText="More info" Text="More..." ControlStyle-ForeColor="Blue" />--%>
             <asp:TemplateField HeaderText="">
                 <ItemTemplate>
                     <asp:HyperLink runat="server" Text="Edit"
@@ -55,7 +56,6 @@
                     <%# Eval("Status") %>
                 </ItemTemplate>
             </asp:TemplateField>
-
         </Columns>
         <HeaderStyle CssClass="gvHeader" />
         <SelectedRowStyle CssClass="gvSelectedRow" />
