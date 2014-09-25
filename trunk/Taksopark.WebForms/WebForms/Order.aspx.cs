@@ -23,37 +23,18 @@ namespace Taksopark.WebForms.Dispatcher
 
         public IEnumerable<Request> GetAllRequests(string status)
         {
-            var emptyResult = new List<Request>();
-            emptyResult.Add(new Request()
-            {
-                Id = -1,
-                RequesTime = default(DateTime)
-            });
             if (status == "All")
             {
                 IOperatorBl operatorBl = HttpContext.Current.Application.GetContainer().Resolve<IOperatorBl>();
                 var orders = operatorBl.GetAllRequests();
-                if (orders.Count > 0)
-                {
-                    return orders;
-                }
-                else
-                {
-                    return emptyResult;
-                }
+                return orders;
+                
             }
             else
             {
                 IOperatorBl operatorBl = HttpContext.Current.Application.GetContainer().Resolve<IOperatorBl>();
                 var orders = operatorBl.GetAllRequestsByStatus(status);
-                if (orders.Count > 0)
-                {
-                    return orders;
-                }
-                else
-                {
-                    return emptyResult;
-                }
+                return orders;
             }
         }
     }

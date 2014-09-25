@@ -23,7 +23,8 @@
                             <asp:Label runat="server" Text="Status: "></asp:Label>
                         </div>
                         <div style="display: inline-block; width: 150px;">
-                            <asp:DropDownList runat="server" ID="ddlOperatorStatus" AutoPostBack="true" EnableTheming="false" CssClass="ddlStatusForFilter">
+                            <asp:DropDownList runat="server" ID="ddlOperatorStatus" AutoPostBack="true" 
+                                EnableTheming="false" CssClass="ddlStatusForFilter">
                                 <asp:ListItem Text="All"></asp:ListItem>
                                 <asp:ListItem Text="Active"></asp:ListItem>
                                 <asp:ListItem Text="Inactive"></asp:ListItem>
@@ -32,7 +33,7 @@
                         <br />
                         <br />
                     </div>
-                    <uc:OperatorsTable runat="server" ID="OperatorsTable" DataSourceID="allOperatorsDS" OnGridViewClicked="OperatorsTable_GridViewClicked" />
+                    <uc:OperatorsTable runat="server" ID="OperatorsTable" DataSourceID="allOperatorsDS" />
                 </ContentTemplate>
             </asp:UpdatePanel>
         </div>
@@ -40,7 +41,7 @@
         <br />
     </div>
 
-    <asp:ObjectDataSource runat="server" ID="allOperatorsDS" TypeName="Taksopark.WebForms.WebForms.Operators" 
+    <asp:ObjectDataSource runat="server" ID="allOperatorsDS" TypeName="Taksopark.WebForms.WebForms.Operators"
         SelectMethod="GetAllOperatorsFromRepository">
         <SelectParameters>
             <asp:ControlParameter Name="status" Type="String" ControlID="ddlOperatorStatus" />

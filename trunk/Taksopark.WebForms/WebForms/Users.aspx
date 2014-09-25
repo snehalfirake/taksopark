@@ -2,7 +2,6 @@
 
 <%@ Register Src="~/UserControls/UsersTable.ascx" TagPrefix="uc" TagName="UsersTable" %>
 <%@ Register Src="~/UserControls/AddNewUser.ascx" TagPrefix="uc" TagName="AddNewUser" %>
-<%@ Register Src="~/UserControls/EditUsers.ascx" TagPrefix="uc" TagName="EditUsers" %>
 
 
 
@@ -19,13 +18,13 @@
             <br />
             <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                 <ContentTemplate>
-
                     <div class="one-third">
                         <div style="display: inline-block;">
                             <asp:Label runat="server" Text="Status: "></asp:Label>
                         </div>
                         <div style="display: inline-block; width: 150px;">
-                            <asp:DropDownList runat="server" ID="ddlUserStatus" AutoPostBack="true" EnableTheming="false" CssClass="ddlStatusForFilter">
+                            <asp:DropDownList runat="server" ID="ddlUserStatus" AutoPostBack="true" 
+                                EnableTheming="false" CssClass="ddlStatusForFilter">
                                 <asp:ListItem Text="All"></asp:ListItem>
                                 <asp:ListItem Text="Active"></asp:ListItem>
                                 <asp:ListItem Text="Inactive"></asp:ListItem>
@@ -34,7 +33,7 @@
                         <br />
                         <br />
                     </div>
-                    <uc:UsersTable runat="server" ID="UsersTable" DataSourceID="allUsersDS" OnGridViewClicked="UsersTable_GridViewClicked" />
+                    <uc:UsersTable runat="server" ID="UsersTable" DataSourceID="allUsersDS" />
                 </ContentTemplate>
             </asp:UpdatePanel>
             <br />

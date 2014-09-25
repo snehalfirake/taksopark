@@ -21,59 +21,20 @@ namespace Taksopark.WebForms.WebForms
         {
 
         }
-        public static IEnumerable<User> GetAllOperatorsFromRepository(string status)
+        public IEnumerable<User> GetAllOperatorsFromRepository(string status)
         {
-            var emptyResult = new List<User>();
-            emptyResult.Add(new User()
-            {
-                Id = -1
-            });
             if (status == "All")
             {
                 IAdminBl adminBl = HttpContext.Current.Application.GetContainer().Resolve<IAdminBl>();
-                //var AllDrivers = adminBl.GetUserByRole("Driver");
                 var AllOperators = adminBl.GetUserByRole("Operator");
-                if (AllOperators.Count > 0)
-                {
-                    return AllOperators;
-                }
-                else
-                {
-                    return emptyResult;
-                }
+                return AllOperators;
             }
-            else if (status == "Active")
+            else
             {
                 IAdminBl adminBl = HttpContext.Current.Application.GetContainer().Resolve<IAdminBl>();
-                var AllOperatorsByStatus = adminBl.GetAllOperatorsByStatus("Active");
-                if (AllOperatorsByStatus.Count > 0)
-                {
-                    return AllOperatorsByStatus;
-                }
-                else
-                {
-                    return emptyResult;
-                }
+                var AllOperatorsByStatus = adminBl.GetAllOperatorsByStatus(status);
+                return AllOperatorsByStatus;
             }
-            else if (status == "Inactive")
-            {
-                IAdminBl adminBl = HttpContext.Current.Application.GetContainer().Resolve<IAdminBl>();
-                var AllOperatorsByStatus = adminBl.GetAllOperatorsByStatus("Inactive");
-                if (AllOperatorsByStatus.Count > 0)
-                {
-                    return AllOperatorsByStatus;
-                }
-                else
-                {
-                    return emptyResult;
-                }
-            }
-            return emptyResult;
-        }
-
-        protected void OperatorsTable_GridViewClicked(object sender, GridViewEventArgs e)
-        {
-            Response.Redirect(String.Format("~/WebForms/EditOperator.aspx?id={0}", e.UserId));
         }
 
         protected void btnAdd_Click(object sender, EventArgs e)

@@ -3,9 +3,11 @@
 <div>
     <asp:GridView runat="server" ID="OperatorsGV" AllowPaging="true" PageSize="20"
         OnPageIndexChanging="OperatorsGV_PageIndexChanging" DataSourceID="allOperatorsDS"
-        AutoGenerateColumns="false" OnRowCommand="OperatorsGV_RowCommand">
+        AutoGenerateColumns="false" OnRowCommand="OperatorsGV_RowCommand" ShowHeaderWhenEmpty="true">
+        <EmptyDataTemplate>
+            <img src="../Images/Admin/NoDataAvailable.png" />
+        </EmptyDataTemplate>
         <Columns>
-            <%--<asp:ButtonField HeaderText="Edit" Text="Edit" CommandName="Select" />--%>
             <asp:TemplateField HeaderText="">
                 <ItemTemplate>
                     <asp:HyperLink runat="server" Text="Edit"
@@ -42,7 +44,6 @@
                     <%# Eval("Status") %>
                 </ItemTemplate>
             </asp:TemplateField>
-
         </Columns>
         <HeaderStyle CssClass="gvHeader" />
         <SelectedRowStyle CssClass="gvSelectedRow" />

@@ -22,15 +22,19 @@
                 </a>
             </div>
             <ol id="menu">
-                <li class="active_menu_item"><a href="Users.aspx">Users</a>
+                <li class="active_menu_item">
+                    <asp:HyperLink runat="server" NavigateUrl="~/WebForms/Users.aspx" Text="Users">
+                    </asp:HyperLink>
                     <%--<ol>
                         <li><a href="Users.aspx">Show All Users</a></li>
                         <li><a href="AddUser.aspx">Add New User</a></li>
                         <li><a href="EditUser.aspx">Edit User</a></li>
                     </ol>--%>
                 </li>
-                <li><a href="Operators.aspx">Operators</a></li>
-                <li><a href="TaxiDrivers.aspx">Taxi drivers</a></li>
+                <li><asp:HyperLink runat="server" NavigateUrl="~/WebForms/Operators.aspx" Text="Operators">
+                    </asp:HyperLink></li>
+                <li><asp:HyperLink runat="server" NavigateUrl="~/WebForms/TaxiDrivers.aspx" Text="Taxi drivers">
+                    </asp:HyperLink></li>
             </ol>
         </div>
         
