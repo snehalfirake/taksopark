@@ -24,7 +24,7 @@ namespace Taksopark.WebForms.WebForms
         }
         public IEnumerable<Driver> GetAllTaxiDriversFromRepository (string status)
         {
-            if (status == "All")//(int) RolesEnum.Driver
+            if (status == "All")
             {
                 IAdminBl adminBl = HttpContext.Current.Application.GetContainer().Resolve<IAdminBl>();
                 var AllDrivers = adminBl.GetAllDrivers();

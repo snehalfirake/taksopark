@@ -13,6 +13,6 @@ namespace Taksopark.DAL.Models
         public string Password { get; set; }
         public int Role{ get; set; }
         public int Status { get; set; }
-        public int? DriverStaus { get; set; }
+        public int? DriverStatus { get; set; }
     }
 }

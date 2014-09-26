@@ -27,7 +27,7 @@ namespace Taksopark.WebForms.WebForms
                 EditTaxiDrivers.PhoneNumberText = user.PhoneNumber;
                 EditTaxiDrivers.EmailText = user.Email;
                 EditTaxiDrivers.PasswordText = user.Password;
-                EditTaxiDrivers.StatusText = user.Status.ToString();
+                EditTaxiDrivers.StatusText = ((Taksopark.DAL.Enums.UserStatusEnum)(user.Status)).ToString();
 
                 var car = adminBl.GetCarById(Convert.ToInt32(Request.QueryString["id"]));
                 if (car.CarYear!=car.CarBrand)

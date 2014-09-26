@@ -85,10 +85,10 @@ namespace Taksopark.DAL.Repositories
         /// <returns></returns>
         public Car GetCarById(int id)
         {
-            using (var command = new SqlCommand("GetCarById", _connection))
+            using (var command = new SqlCommand("sp_GetCarById", _connection))
             {
                 command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.AddWithValue("@Id", id);
+                command.Parameters.AddWithValue("@CarID", id);
                 var findCar = new Car();
                 using (var reader = command.ExecuteReader())
                 {
@@ -105,10 +105,10 @@ namespace Taksopark.DAL.Repositories
 
         public bool IsCarIdBooked(int id)
         {
-            using (var command = new SqlCommand("GetCarById", _connection))
+            using (var command = new SqlCommand("sp_GetCarById", _connection))
             {
                 command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.AddWithValue("@Id", id);
+                command.Parameters.AddWithValue("@CarID", id);
                 var car = new Car();
                 using (var reader = command.ExecuteReader())
                 {

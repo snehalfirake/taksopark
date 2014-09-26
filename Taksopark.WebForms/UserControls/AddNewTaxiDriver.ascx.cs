@@ -37,7 +37,7 @@ namespace Taksopark.WebForms.UserControls
                     Password = tbxPassword.Text,
                     Role = (int) RolesEnum.Driver,
                     Status = Convert.ToInt32(ddlStatus.Text),
-                    DriverStaus = (int?) DriverStatusEnum.Free
+                    DriverStatus = (int?) DriverStatusEnum.Free
                 });
 
                 int CarId = adminBl.GetUserByLogin(tbxLogin.Text).Id;

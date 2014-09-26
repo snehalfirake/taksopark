@@ -137,7 +137,7 @@ namespace Taksopark.WebForms.UserControls
                 tbxEditPhoneNumber.Text = user.PhoneNumber;
                 tbxEditEmail.Text = user.Email;
                 tbxEditPassword.Text = user.Password;
-                ddlEditStatus.Text = user.Status.ToString();
+                ddlEditStatus.Text = ((UserStatusEnum)user.Status).ToString();
             }
             else
             {
@@ -176,8 +176,8 @@ namespace Taksopark.WebForms.UserControls
                 Email = tbxEditEmail.Text,
                 Password = tbxEditPassword.Text,
                 Role = (int) RolesEnum.Operator,
-                Status = Convert.ToInt32(ddlEditStatus.Text),
-                DriverStaus = (int?) DriverStatusEnum.Free
+                Status = (int)Enum.Parse(typeof(UserStatusEnum), ddlEditStatus.Text),
+                DriverStatus = (int?) DriverStatusEnum.Free
             };
             if (!adminBl.IsLoginBookedByOtherId(updatedUser.Login, updatedUser.Id))
             {

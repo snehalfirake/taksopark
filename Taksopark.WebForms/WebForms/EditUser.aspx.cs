@@ -27,7 +27,7 @@ namespace Taksopark.WebForms.WebForms
                 EditUsers.PhoneNumberText = user.PhoneNumber;
                 EditUsers.EmailText = user.Email;
                 EditUsers.PasswordText = user.Password;
-                EditUsers.StatusText = user.Status.ToString();
+                EditUsers.StatusText = ((Taksopark.DAL.Enums.UserStatusEnum)(user.Status)).ToString();
             }
         }
     }

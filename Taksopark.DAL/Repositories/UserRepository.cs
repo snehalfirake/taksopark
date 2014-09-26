@@ -34,13 +34,13 @@ namespace Taksopark.DAL.Repositories
                 command.Parameters.AddWithValue("@Password", user.Password);
                 command.Parameters.AddWithValue("@Role", user.Role);
                 command.Parameters.AddWithValue("@Status", user.Status);
-                if (user.DriverStaus == null)
+                if (user.DriverStatus == null)
                 {
                     command.Parameters.AddWithValue("@DriverStatus", DBNull.Value);
                 }
                 else
                 {
-                    command.Parameters.AddWithValue("@DriverStatus", user.DriverStaus);
+                    command.Parameters.AddWithValue("@DriverStatus", user.DriverStatus);
 
                 }
                 command.Parameters.AddWithValue("@UserId", user.Id);
@@ -67,13 +67,13 @@ namespace Taksopark.DAL.Repositories
                 command.Parameters.AddWithValue("@Password", user.Password);
                 command.Parameters.AddWithValue("@Role", user.Role);
                 command.Parameters.AddWithValue("@Status", user.Status);
-                if (user.DriverStaus == null)
+                if (user.DriverStatus == null)
                 {
                     command.Parameters.AddWithValue("@DriverStatus", DBNull.Value);
                 }
                 else
                 {
-                    command.Parameters.AddWithValue("@DriverStatus", user.DriverStaus);
+                    command.Parameters.AddWithValue("@DriverStatus", user.DriverStatus);
                   
                 }
                 command.ExecuteNonQuery();
