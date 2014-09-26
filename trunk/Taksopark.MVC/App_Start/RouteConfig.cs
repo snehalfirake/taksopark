@@ -10,6 +10,11 @@ namespace Taksopark.MVC
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+            name: "Account/LogIn",
+            url: "login",
+            defaults: new { controller = "Account", action = "login" }
+        );
+            routes.MapRoute(
                 name: "Account/RegisterUser",
                 url: "register",
                 defaults: new { controller = "Account", action = "RegisterUser" }
@@ -21,8 +26,13 @@ namespace Taksopark.MVC
                 defaults: new { controller = "UserProfile", action = "GetUserHistory" }
             );
 
+            routes.MapRoute(
+            name: "UserProfile/GetUserProfile",
+            url: "profile",
+            defaults: new { controller = "UserProfile", action = "GetUserProfile" }
+        );
 
-            //UserProfile/GetUserProfile
+            
 
             routes.MapRoute(
                 name: "Default",
