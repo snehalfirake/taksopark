@@ -203,7 +203,7 @@ namespace Taksopark.WebForms.UserControls
                 tbxEditPhoneNumber.Text = user.PhoneNumber;
                 tbxEditEmail.Text = user.Email;
                 tbxEditPassword.Text = user.Password;
-                ddlEditStatus.Text = user.Status.ToString();
+                ddlEditStatus.Text = ((UserStatusEnum)user.Status).ToString();
 
                 var car = adminBl.GetCarById(user.Id);
                 if (car.CarYear != car.CarBrand)
@@ -268,8 +268,8 @@ namespace Taksopark.WebForms.UserControls
                 PhoneNumber = tbxEditPhoneNumber.Text,
                 Email = tbxEditEmail.Text,
                 Password = tbxEditPassword.Text,
-                Role = (int) RolesEnum.Driver,
-                Status = Convert.ToInt32(ddlEditStatus.Text)
+                Role = (int)RolesEnum.Driver,
+                Status = (int)Enum.Parse(typeof(UserStatusEnum), ddlEditStatus.Text)
             };
 
             if (!adminBl.IsLoginBookedByOtherId(updatedUser.Login, updatedUser.Id))

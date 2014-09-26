@@ -23,7 +23,7 @@ namespace Taksopark.WebForms.Dispatcher
 
         public IEnumerable<Request> GetAllRequests(int status)
         {
-            if (status == "All")
+            if (status == 4)
             {
                 IOperatorBl operatorBl = HttpContext.Current.Application.GetContainer().Resolve<IOperatorBl>();
                 var orders = operatorBl.GetAllRequests();

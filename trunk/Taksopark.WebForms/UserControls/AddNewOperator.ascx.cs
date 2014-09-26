@@ -37,7 +37,7 @@ namespace Taksopark.WebForms.UserControls
                     Password = tbxPassword.Text,
                     Role = (int) RolesEnum.Operator,
                     Status = Convert.ToInt32(ddlStatus.Text),
-                    DriverStaus = null
+                    DriverStatus = null
                 });
                 Response.Redirect("~/WebForms/Operators.aspx");
             }

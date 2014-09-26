@@ -19,7 +19,7 @@ namespace Taksopark.DAL.Repositories.Mappers
                 Password = (string)record["Password"],
                 Role = (int)record["Role"],
                 Status = (int)record["Status"],
-                DriverStaus = record.IsDBNull(record.GetOrdinal("DriverStatus")) == false
+                DriverStatus = record.IsDBNull(record.GetOrdinal("DriverStatus")) == false
                ? (int?)record["DriverStatus"]
                : default(int?)
             };

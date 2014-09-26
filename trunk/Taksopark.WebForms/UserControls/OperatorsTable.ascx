@@ -41,7 +41,7 @@
 
             <asp:TemplateField HeaderText="Status">
                 <ItemTemplate>
-                    <%# Eval("Status") %>
+                    <%# ((Taksopark.DAL.Enums.UserStatusEnum)Eval("Status")).ToString() %>
                 </ItemTemplate>
             </asp:TemplateField>
         </Columns>
