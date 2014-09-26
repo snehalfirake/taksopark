@@ -46,9 +46,9 @@ namespace Taksopark.MVC.Controllers.Home
         public ActionResult OrderTaxi()
         {
             var request = new Request();
-            if (Session["UserLogin"] != null)
+            if (User.Identity.IsAuthenticated)
             {
-                var user = _userBl.GetUserByLogin((string)Session["UserLogin"]);
+                var user = _userBl.GetUserByLogin(User.Identity.Name);
                 request.CreatorId = user.Id;
             }
             else
