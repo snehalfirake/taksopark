@@ -269,7 +269,8 @@ namespace Taksopark.WebForms.UserControls
                 Email = tbxEditEmail.Text,
                 Password = tbxEditPassword.Text,
                 Role = (int)RolesEnum.Driver,
-                Status = (int)Enum.Parse(typeof(UserStatusEnum), ddlEditStatus.Text)
+                Status = (int)Enum.Parse(typeof(UserStatusEnum), ddlEditStatus.Text),
+                DriverStatus = (int?)DriverStatusEnum.Free
             };
 
             if (!adminBl.IsLoginBookedByOtherId(updatedUser.Login, updatedUser.Id))

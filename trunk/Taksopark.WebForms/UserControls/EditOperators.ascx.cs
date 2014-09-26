@@ -177,7 +177,7 @@ namespace Taksopark.WebForms.UserControls
                 Password = tbxEditPassword.Text,
                 Role = (int) RolesEnum.Operator,
                 Status = (int)Enum.Parse(typeof(UserStatusEnum), ddlEditStatus.Text),
-                DriverStatus = (int?) DriverStatusEnum.Free
+                DriverStatus = null
             };
             if (!adminBl.IsLoginBookedByOtherId(updatedUser.Login, updatedUser.Id))
             {

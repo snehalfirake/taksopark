@@ -36,7 +36,7 @@ namespace Taksopark.WebForms.UserControls
                     Email = tbxEmail.Text,
                     Password = tbxPassword.Text,
                     Role = (int) RolesEnum.Driver,
-                    Status = Convert.ToInt32(ddlStatus.Text),
+                    Status = (int)Enum.Parse(typeof(UserStatusEnum), ddlStatus.Text),
                     DriverStatus = (int?) DriverStatusEnum.Free
                 });
 

@@ -36,8 +36,8 @@ namespace Taksopark.WebForms.UserControls
                     PhoneNumber = tbxPhoneNumber.Text,
                     Email = tbxEmail.Text,
                     Password = tbxPassword.Text,
-                    Role = (int) RolesEnum.Client,
-                    Status = Convert.ToInt32(ddlStatus.Text),
+                    Role = (int)RolesEnum.Client,
+                    Status = (int)Enum.Parse(typeof(UserStatusEnum), ddlStatus.Text),
                     DriverStatus = null
                 });
                 Response.Redirect("~/WebForms/Users.aspx");
