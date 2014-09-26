@@ -26,20 +26,27 @@ namespace Taksopark.WebForms.WebForms
 
         }
 
-        public IEnumerable<User> GetAllUsersFromRepository(int status)
+        public IEnumerable<User> GetAllUsersFromRepository(string status)
         {
-            if (status == (int) RolesEnum.Client)
+            if (status == "All")
             {
                 IAdminBl adminBl = HttpContext.Current.Application.GetContainer().Resolve<IAdminBl>();
                 var AllClients = adminBl.GetUserByRole((int) RolesEnum.Client);
                 return AllClients;
             }
-            else
+            else if (status == UserStatusEnum.Active.ToString())
             {
                 IAdminBl adminBl = HttpContext.Current.Application.GetContainer().Resolve<IAdminBl>();
-                var AllClientsByStatus = adminBl.GetAllUsersByStatus(status);
+                var AllClientsByStatus = adminBl.GetAllUsersByStatus((int)UserStatusEnum.Active);
                 return AllClientsByStatus;
             }
+            else if (status == UserStatusEnum.Inactive.ToString())
+            {
+                IAdminBl adminBl = HttpContext.Current.Application.GetContainer().Resolve<IAdminBl>();
+                var AllClientsByStatus = adminBl.GetAllUsersByStatus((int)UserStatusEnum.Inactive);
+                return AllClientsByStatus;
+            }
+            return new List<User>();
         }
 
         protected void btnAdd_Click(object sender, EventArgs e)

@@ -22,20 +22,27 @@ namespace Taksopark.WebForms.WebForms
         {
 
         }
-        public IEnumerable<User> GetAllOperatorsFromRepository(int status)
+        public IEnumerable<User> GetAllOperatorsFromRepository(string status)
         {
-            if (status == (int) RolesEnum.Operator)
+            if (status == "All")
             {
                 IAdminBl adminBl = HttpContext.Current.Application.GetContainer().Resolve<IAdminBl>();
                 var AllOperators = adminBl.GetUserByRole((int) RolesEnum.Operator);
                 return AllOperators;
             }
-            else
+            else if (status == UserStatusEnum.Active.ToString())
             {
                 IAdminBl adminBl = HttpContext.Current.Application.GetContainer().Resolve<IAdminBl>();
-                var AllOperatorsByStatus = adminBl.GetAllOperatorsByStatus(status);
+                var AllOperatorsByStatus = adminBl.GetAllOperatorsByStatus((int)UserStatusEnum.Active);
                 return AllOperatorsByStatus;
             }
+            else if (status == UserStatusEnum.Inactive.ToString())
+            {
+                IAdminBl adminBl = HttpContext.Current.Application.GetContainer().Resolve<IAdminBl>();
+                var AllOperatorsByStatus = adminBl.GetAllOperatorsByStatus((int)UserStatusEnum.Inactive);
+                return AllOperatorsByStatus;
+            }
+            return new List<User>();
         }
 
         protected void btnAdd_Click(object sender, EventArgs e)

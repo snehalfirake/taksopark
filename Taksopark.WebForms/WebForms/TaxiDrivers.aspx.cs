@@ -22,20 +22,27 @@ namespace Taksopark.WebForms.WebForms
         {
             
         }
-        public IEnumerable<Driver> GetAllTaxiDriversFromRepository (int status)
+        public IEnumerable<Driver> GetAllTaxiDriversFromRepository (string status)
         {
-            if (status == (int) RolesEnum.Driver)
+            if (status == "All")//(int) RolesEnum.Driver
             {
                 IAdminBl adminBl = HttpContext.Current.Application.GetContainer().Resolve<IAdminBl>();
                 var AllDrivers = adminBl.GetAllDrivers();
                 return AllDrivers;
             }
-            else
+            else if (status == UserStatusEnum.Active.ToString())
             {
                 IAdminBl adminBl = HttpContext.Current.Application.GetContainer().Resolve<IAdminBl>();
-                var AllDriversByStatus = adminBl.GetAllDriversByStatus(status);
+                var AllDriversByStatus = adminBl.GetAllDriversByStatus((int)UserStatusEnum.Active);
                 return AllDriversByStatus;
             }
+            else if(status == UserStatusEnum.Inactive.ToString())
+            {
+                IAdminBl adminBl = HttpContext.Current.Application.GetContainer().Resolve<IAdminBl>();
+                var AllDriversByStatus = adminBl.GetAllDriversByStatus((int)UserStatusEnum.Inactive);
+                return AllDriversByStatus;
+            }
+            return new List<Driver>();
         }
 
         protected void btnAdd_Click(object sender, EventArgs e)
