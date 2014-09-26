@@ -147,20 +147,6 @@ namespace Taksopark.DAL.Repositories
             }
         }
 
-        /// <summary>
-        /// Delete request record from DB
-        /// </summary>
-        /// <param name="requestId">Request record in DB</param>
-        public void DeleteRequest(int requestId)
-        {
-            using (var command = new SqlCommand("DeleteRequest", _connection))
-            {
-                command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.AddWithValue("@RequestId", requestId);
-                command.ExecuteNonQuery();
-            }
-        }
-
         public Request GetRequestById(int id)
         {
             using (var command = new SqlCommand("GetRequestById", _connection))
@@ -199,7 +185,7 @@ namespace Taksopark.DAL.Repositories
             }
         }
 
-        public IEnumerable<Request> GetAllRequestsByState(string state)
+        public IEnumerable<Request> GetAllRequestsByState(int state)
         {
             using (var command = new SqlCommand("GetAllRequestsByState", _connection))
             {
@@ -217,7 +203,7 @@ namespace Taksopark.DAL.Repositories
                 return requestList;
             }
         }
-        public IEnumerable<Request> GetAllRequestsByStatus(string status)
+        public IEnumerable<Request> GetAllRequestsByStatus(int status)
         {
             using (var command = new SqlCommand("GetAllRequestsByStatus", _connection))
             {

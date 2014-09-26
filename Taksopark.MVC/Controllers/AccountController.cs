@@ -3,6 +3,7 @@ using System.Web.Mvc;
 using Microsoft.Ajax.Utilities;
 using Taksopark.BL;
 using Taksopark.BL.Interfaces;
+using Taksopark.DAL.Enums;
 using Taksopark.DAL.Models;
 using Taksopark.MVC.Models;
 using System.Web.Security;
@@ -71,9 +72,10 @@ namespace Taksopark.MVC.Controllers
                         PhoneNumber = registrationModel.PhoneNumber,
                         Email = registrationModel.Email,
                         Password = registrationModel.Password,
-                        Role = "Client",
-                        Status = "Active",
-                        UserName = registrationModel.FirstName
+                        Role = (int) RolesEnum.Client,
+                        Status = (int) UserStatusEnum.Active,
+                        UserName = registrationModel.FirstName,
+                        DriverStaus = null
                     };
                     _userBl.CreateUser(user);
                     //Session["UserFullName"] = user.UserName + " " + user.LastName;

@@ -14,7 +14,7 @@ namespace Taksopark.BL
         {
             _appConfigConnection = appConfigConnection;
         }
-        public void CreateRequest(DAL.Models.Request request)
+        public void CreateRequest(Request request)
         {
             using (var uow = new UnitOfWork(_appConfigConnection))
             {
@@ -30,7 +30,7 @@ namespace Taksopark.BL
             }
         }
 
-        public void CreateComment(DAL.Models.Comment comment)
+        public void CreateComment(Comment comment)
         {
             using (var uow = new UnitOfWork(_appConfigConnection))
             {
@@ -38,7 +38,7 @@ namespace Taksopark.BL
             }
         }
 
-        public void CreateUser(DAL.Models.User user)
+        public void CreateUser(User user)
         {
             using (var uow = new UnitOfWork(_appConfigConnection))
             {
@@ -46,7 +46,7 @@ namespace Taksopark.BL
             }
         }
 
-        public System.Collections.Generic.List<DAL.Models.Car> GetAllCars()
+        public List<Car> GetAllCars()
         {
             using (var uow = new UnitOfWork(_appConfigConnection))
             {
@@ -71,7 +71,7 @@ namespace Taksopark.BL
         }
 
 
-        public DAL.Models.User GetUserByLoginAndPassword(string login, string password)
+        public User GetUserByLoginAndPassword(string login, string password)
         {
             using (var uow = new UnitOfWork(_appConfigConnection))
             {
@@ -80,7 +80,7 @@ namespace Taksopark.BL
         }
 
 
-        public DAL.Models.User GetUserByLogin(string login)
+        public User GetUserByLogin(string login)
         {
             using (var uow = new UnitOfWork(_appConfigConnection))
             {
@@ -97,7 +97,7 @@ namespace Taksopark.BL
         }
 
 
-        public void UpdateUser(DAL.Models.User user)
+        public void UpdateUser(User user)
         {
             using (var uow = new UnitOfWork(_appConfigConnection))
             {

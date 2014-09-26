@@ -70,18 +70,5 @@ namespace Taksopark.DAL.Repositories
             }
         }
 
-        /// <summary>
-        /// Delete image record drom DB
-        /// </summary>
-        /// <param name="imageId">Image id in DB</param>
-        public void DeleteImage(int imageId)
-        {
-            using (var command = new SqlCommand("DeleteImage", _connection))
-            {
-                command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.AddWithValue("@ImageId", imageId);
-                command.ExecuteNonQuery();
-            }
-        }
     }
 }

@@ -2,6 +2,7 @@
 using System.Linq;
 using Taksopark.BL.Interfaces;
 using Taksopark.DAL;
+using Taksopark.DAL.Enums;
 using Taksopark.DAL.Models;
 
 namespace Taksopark.BL
@@ -36,7 +37,7 @@ namespace Taksopark.BL
         {
             using (var uow = new UnitOfWork(_appConfigConnection))
             {
-                var userList = uow.UserRepository.GetUsersByRole("Driver");
+                var userList = uow.UserRepository.GetUsersByRole((int) RolesEnum.Driver);
                 return userList.ToList();
             }
         }
@@ -51,7 +52,7 @@ namespace Taksopark.BL
             }
         }
 
-        public List<Request> GetRequestsByState(string state)
+        public List<Request> GetRequestsByState(int state)
         {
             using (var uow = new UnitOfWork(_appConfigConnection))
             {
@@ -69,7 +70,7 @@ namespace Taksopark.BL
             }
         }
 
-        public List<Request> GetAllRequestsByStatus(string status)
+        public List<Request> GetAllRequestsByStatus(int status)
         {
             using (var uow = new UnitOfWork(_appConfigConnection))
             {

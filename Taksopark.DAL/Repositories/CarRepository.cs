@@ -77,19 +77,6 @@ namespace Taksopark.DAL.Repositories
             }
         }
 
-        /// <summary>
-        /// Delete car record from DB
-        /// </summary>
-        /// <param name="carId">Car id in DB</param>
-        public void DeleteCar(int carId)
-        {
-            using (var command = new SqlCommand("DeleteCar", _connection))
-            {
-                command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.AddWithValue("@CarId", carId);
-                command.ExecuteNonQuery();
-            }
-        }
 
         /// <summary>
         /// Get car by id

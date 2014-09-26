@@ -15,7 +15,7 @@ namespace Taksopark.BL
             _appConfigConnection = appConfigConnection;
         }
 
-        public List<User> GetUserByRole(string role)
+        public List<User> GetUserByRole(int role)
         {
             using (var uow = new UnitOfWork(_appConfigConnection))
             {
@@ -118,7 +118,7 @@ namespace Taksopark.BL
             }
         }
 
-        public List<Driver> GetAllDriversByStatus(string status)
+        public List<Driver> GetAllDriversByStatus(int status)
         {
             using (var uow = new UnitOfWork(_appConfigConnection))
             {
@@ -134,7 +134,7 @@ namespace Taksopark.BL
                 return isBooked;
             }
         }
-        public List<User> GetAllUsersByStatus(string status)
+        public List<User> GetAllUsersByStatus(int status)
         {
             using (var uow = new UnitOfWork(_appConfigConnection))
             {
@@ -143,7 +143,7 @@ namespace Taksopark.BL
             }
         }
 
-        public List<User> GetAllOperatorsByStatus(string status)
+        public List<User> GetAllOperatorsByStatus(int status)
         {
             using (var uow = new UnitOfWork(_appConfigConnection))
             {

@@ -9,6 +9,7 @@ using Microsoft.Practices.Unity;
 using Taksopark.BL;
 using Taksopark.BL.Interfaces;
 using Taksopark.DAL;
+using Taksopark.DAL.Enums;
 using Taksopark.DAL.Models;
 using Taksopark.WebForms.Classes;
 using Unity.WebForms;
@@ -21,12 +22,12 @@ namespace Taksopark.WebForms.WebForms
         {
 
         }
-        public IEnumerable<User> GetAllOperatorsFromRepository(string status)
+        public IEnumerable<User> GetAllOperatorsFromRepository(int status)
         {
-            if (status == "All")
+            if (status == (int) RolesEnum.Operator)
             {
                 IAdminBl adminBl = HttpContext.Current.Application.GetContainer().Resolve<IAdminBl>();
-                var AllOperators = adminBl.GetUserByRole("Operator");
+                var AllOperators = adminBl.GetUserByRole((int) RolesEnum.Operator);
                 return AllOperators;
             }
             else

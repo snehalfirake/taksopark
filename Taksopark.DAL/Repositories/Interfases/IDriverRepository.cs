@@ -10,6 +10,6 @@ namespace Taksopark.DAL.Repositories.Interfases
     interface IDriverRepository
     {
         IEnumerable<Driver> GetAllDrivers();
-        IEnumerable<Driver> GetAllDriversByStatus(string status);
+        IEnumerable<Driver> GetAllDriversByStatus(int status);
     }
 }

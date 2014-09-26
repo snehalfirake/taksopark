@@ -8,6 +8,7 @@ using System.Web.UI.WebControls;
 using Taksopark.BL;
 using Taksopark.BL.Interfaces;
 using Taksopark.DAL;
+using Taksopark.DAL.Enums;
 using Taksopark.DAL.Models;
 using Taksopark.DAL.Repositories;
 using Taksopark.MVC;
@@ -25,12 +26,12 @@ namespace Taksopark.WebForms.WebForms
 
         }
 
-        public IEnumerable<User> GetAllUsersFromRepository(string status)
+        public IEnumerable<User> GetAllUsersFromRepository(int status)
         {
-            if (status == "All")
+            if (status == (int) RolesEnum.Client)
             {
                 IAdminBl adminBl = HttpContext.Current.Application.GetContainer().Resolve<IAdminBl>();
-                var AllClients = adminBl.GetUserByRole("Client");
+                var AllClients = adminBl.GetUserByRole((int) RolesEnum.Client);
                 return AllClients;
             }
             else

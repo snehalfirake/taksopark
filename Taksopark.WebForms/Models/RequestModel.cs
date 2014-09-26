@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Taksopark.DAL.Enums;
 using Taksopark.DAL.Models;
 
 namespace Taksopark.WebForms.Models
@@ -28,19 +29,19 @@ namespace Taksopark.WebForms.Models
         {
             get
             {
-                if (this.Status == "Active")
+                if (this.Status == (int) RequestStatusEnum.Active)
                 {
                     return "~/Images/StatusImages/Active.png";
                 }
-                else if (this.Status == "InProgress")
+                else if (this.Status == (int)RequestStatusEnum.InProgress)
                 {
                     return "~/Images/StatusImages/InProgress.png";
                 }
-                else if (this.Status == "Rejected")
+                else if (this.Status == (int)RequestStatusEnum.Rejected)
                 {
                     return "~/Images/StatusImages/Rejected.png";
                 }
-                else if (this.Status == "Closed")
+                else if (this.Status == (int)RequestStatusEnum.Closed)
                 {
                     return "~/Images/StatusImages/Closed.png";
                 }

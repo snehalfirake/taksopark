@@ -131,6 +131,7 @@
     <Content Include="WebForms\EditTaxiDriver.aspx" />
     <Content Include="WebForms\EditUser.aspx" />
     <Content Include="WebForms\Home.aspx" />
+    <Content Include="WebForms\LogOn.aspx" />
     <Content Include="WebForms\Operators.aspx" />
     <Content Include="WebForms\Order.aspx" />
     <Content Include="WebForms\TaxiDrivers.aspx" />
@@ -149,6 +150,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\RequestModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserControls\AddNewOperator.ascx.cs">
       <DependentUpon>AddNewOperator.ascx</DependentUpon>
@@ -290,6 +292,13 @@
     <Compile Include="WebForms\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
+    <Compile Include="WebForms\LogOn.aspx.cs">
+      <DependentUpon>LogOn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\LogOn.aspx.designer.cs">
+      <DependentUpon>LogOn.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WebForms\Operators.aspx.cs">
       <DependentUpon>Operators.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -319,9 +328,7 @@
       <DependentUpon>Users.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Taksopark.BL\Taksopark.BL.csproj">
       <Project>{e539054c-b886-4d6c-9c06-d0bb1202777f}</Project>

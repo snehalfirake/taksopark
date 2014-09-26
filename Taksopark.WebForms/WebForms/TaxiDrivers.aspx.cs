@@ -8,6 +8,7 @@ using System.Web.UI.WebControls;
 using Taksopark.BL;
 using Taksopark.BL.Interfaces;
 using Taksopark.DAL;
+using Taksopark.DAL.Enums;
 using Taksopark.DAL.Models;
 using Taksopark.WebForms.Classes;
 using Unity.WebForms;
@@ -21,9 +22,9 @@ namespace Taksopark.WebForms.WebForms
         {
             
         }
-        public IEnumerable<Driver> GetAllTaxiDriversFromRepository (string status)
+        public IEnumerable<Driver> GetAllTaxiDriversFromRepository (int status)
         {
-            if (status == "All")
+            if (status == (int) RolesEnum.Driver)
             {
                 IAdminBl adminBl = HttpContext.Current.Application.GetContainer().Resolve<IAdminBl>();
                 var AllDrivers = adminBl.GetAllDrivers();
