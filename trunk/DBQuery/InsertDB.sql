@@ -1,3 +1,4 @@
+USE [TaxiServiseDB]
 insert into Users (Name, LastName, Login, PhoneNumber, Email, Password, Role, Status, DriverStatus) values ('Vitalik', 'Komaniak', 'Vitalik_93', '380969535748', 'vit@gmail.com.ua', '341190', 2, 2, 2)
 insert into Users (Name, LastName, Login, PhoneNumber, Email, Password, Role, Status, DriverStatus) values ('Roman', 'Gusak', 'Gusak_93', '380969534548', 'rom@gmail.com.ua', '341190asd', 2, 2, 2)
 insert into Users (Name, LastName, Login, PhoneNumber, Email, Password, Role, Status, DriverStatus) values ('Volodya', 'Komaniak', 'Volodya_93', '380967895748', 'vol@gmail.com.ua', 'asd341190', 4, 2, null)
