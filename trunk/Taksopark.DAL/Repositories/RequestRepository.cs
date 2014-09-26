@@ -42,7 +42,7 @@ namespace Taksopark.DAL.Repositories
                 }
                 if (request.Price == null)
                 {
-                    command.Parameters.AddWithValue("@Price", DBNull.Value);
+                    command.Parameters.AddWithValue("@Price", 0);
                 }
                 else
                 {
