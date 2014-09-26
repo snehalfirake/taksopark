@@ -9,6 +9,7 @@ using System.Web.UI.WebControls;
 using Microsoft.Practices.Unity;
 using Taksopark.BL;
 using Taksopark.BL.Interfaces;
+using Taksopark.DAL.Enums;
 using Taksopark.DAL.Models;
 using Unity.WebForms;
 using Taksopark.DAL.Repositories;
@@ -35,7 +36,7 @@ namespace Taksopark.WebForms.Dispatcher
 
         private void UpdateOrderButtons()
         {
-            if (request.Status == "Active")
+            if (request.Status == (int) RequestStatusEnum.Active)
             {
                 confirmButton.Enabled = true;
                 rejectButton.Enabled = true;
@@ -45,7 +46,7 @@ namespace Taksopark.WebForms.Dispatcher
                 rejectButton.CssClass = "btn btn-s-md btn-danger";
                 closeButton.CssClass = "btn btn-s-md btn-white disabled";
             }
-            else if (request.Status == "InProgress")
+            else if (request.Status == (int) RequestStatusEnum.InProgress)
             {
                 confirmButton.Enabled = false;
                 rejectButton.Enabled = true;
@@ -55,7 +56,7 @@ namespace Taksopark.WebForms.Dispatcher
                 rejectButton.CssClass = "btn btn-s-md btn-danger";
                 closeButton.CssClass = "btn btn-s-md btn-success";
             }
-            else if (request.Status == "Rejected")
+            else if (request.Status == (int) RequestStatusEnum.Rejected)
             {
                 confirmButton.Enabled = true;
                 rejectButton.Enabled = false;
@@ -65,7 +66,7 @@ namespace Taksopark.WebForms.Dispatcher
                 rejectButton.CssClass = "btn btn-s-md btn-white disabled";
                 closeButton.CssClass = "btn btn-s-md btn-white disabled";
             }
-            else if (request.Status == "Closed")
+            else if (request.Status == (int) RequestStatusEnum.Closed)
             {
                 confirmButton.Enabled = false;
                 rejectButton.Enabled = false;
@@ -120,7 +121,7 @@ namespace Taksopark.WebForms.Dispatcher
             return null;
         }
 
-        private void UpdateRequestStatus(string status)
+        private void UpdateRequestStatus(int status)
         {
             request.Status = status;
             request.DriverId = null;
@@ -128,7 +129,7 @@ namespace Taksopark.WebForms.Dispatcher
             operatorBL.UpdateRequest(request);
         }
 
-        private void UpdateRequestStatus(string status, int driverid, bool submiting)
+        private void UpdateRequestStatus(int status, int driverid, bool submiting)
         {
             request.Status = status;
 
@@ -154,28 +155,28 @@ namespace Taksopark.WebForms.Dispatcher
             var driver = operatorBL.GetUserById((int)request.DriverId);
             UserBl userBL = HttpContext.Current.Application.GetContainer().Resolve<UserBl>();
 
-            driver.Status = status;
+            driver.Status = Convert.ToInt32(status);
 
             userBL.UpdateUser(driver);
         }
 
         protected void ComfirmButton_Click(object sender, EventArgs e)
         {
-            UpdateRequestStatus("InProgress", Convert.ToInt32(driversDropDownList.SelectedValue), true);
+            UpdateRequestStatus((int) RequestStatusEnum.InProgress, Convert.ToInt32(driversDropDownList.SelectedValue), true);
 
             UpdateDriver("Busy");
         }
 
         protected void rejectButton_Click(object sender, EventArgs e)
         {
-            UpdateRequestStatus("Rejected");
+            UpdateRequestStatus((int) RequestStatusEnum.Rejected);
 
             UpdateDriver("Free");
         }
 
         protected void closeButton_Click(object sender, EventArgs e)
         {
-            UpdateRequestStatus("Closed", Convert.ToInt32(driversDropDownList.SelectedValue), false);
+            UpdateRequestStatus((int) RequestStatusEnum.Closed, Convert.ToInt32(driversDropDownList.SelectedValue), false);
             UpdateDriver("Free");
         }
     }

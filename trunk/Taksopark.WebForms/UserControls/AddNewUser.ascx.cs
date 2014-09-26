@@ -8,6 +8,7 @@ using System.Web.UI.WebControls;
 using Taksopark.BL;
 using Taksopark.BL.Interfaces;
 using Taksopark.DAL;
+using Taksopark.DAL.Enums;
 using Taksopark.DAL.Models;
 using Taksopark.DAL.Repositories;
 using Microsoft.Practices.Unity;
@@ -35,8 +36,9 @@ namespace Taksopark.WebForms.UserControls
                     PhoneNumber = tbxPhoneNumber.Text,
                     Email = tbxEmail.Text,
                     Password = tbxPassword.Text,
-                    Role = "Client",
-                    Status = ddlStatus.Text
+                    Role = (int) RolesEnum.Client,
+                    Status = Convert.ToInt32(ddlStatus.Text),
+                    DriverStaus = null
                 });
                 Response.Redirect("~/WebForms/Users.aspx");
             }

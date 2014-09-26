@@ -47,7 +47,7 @@ namespace Taksopark.DAL.Repositories
         /// </summary>
         /// <param name="status"></param>
         /// <returns></returns>
-        public IEnumerable<Driver> GetAllDriversByStatus(string status)
+        public IEnumerable<Driver> GetAllDriversByStatus(int status)
         {
             var driverList = new List<Driver>();
             using (var command = new SqlCommand("GetAllDriversByStatus", _connection))

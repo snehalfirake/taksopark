@@ -21,7 +21,7 @@ namespace Taksopark.WebForms.Dispatcher
             
         }
 
-        public IEnumerable<Request> GetAllRequests(string status)
+        public IEnumerable<Request> GetAllRequests(int status)
         {
             if (status == "All")
             {

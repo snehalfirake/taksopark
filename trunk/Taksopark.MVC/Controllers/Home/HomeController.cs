@@ -3,6 +3,7 @@ using System;
 using System.Web.Mvc;
 using Taksopark.BL;
 using Taksopark.BL.Interfaces;
+using Taksopark.DAL.Enums;
 using Taksopark.DAL.Models;
 
 namespace Taksopark.MVC.Controllers.Home
@@ -58,7 +59,7 @@ namespace Taksopark.MVC.Controllers.Home
             request.FinishPoint = Request["txtFrom"];
             request.PhoneNumber = Request["txtPhone"];
             request.StartPoint = Request["txtTo"];
-            request.Status = "Active";
+            request.Status = (int) RequestStatusEnum.Active;
             //request.RequesTime = Request["date-time"] == string.Empty
             //    ? DateTime.Now
             //    : DateTime.Parse(Request["date-time"]);

@@ -9,6 +9,5 @@ namespace Taksopark.DAL.Repositories.Interfases
         void Update(Images image);
         void Create(Images image);
         IEnumerable<Images> GetAllImages();
-        void DeleteImage(int imageId);
     }
 }

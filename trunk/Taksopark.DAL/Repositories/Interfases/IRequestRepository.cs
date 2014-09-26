@@ -9,9 +9,8 @@ namespace Taksopark.DAL.Repositories.Interfases
         void Create(Request request);
         IEnumerable<Request> GetAllRequests();
         IEnumerable<Request> GetAllRequestsByCreatorId(int id); 
-        void DeleteRequest(int requestId);
         Request GetRequestById(int id);
-        IEnumerable<Request> GetAllRequestsByState(string state);
-        IEnumerable<Request> GetAllRequestsByStatus(string status);
+        IEnumerable<Request> GetAllRequestsByState(int state);
+        IEnumerable<Request> GetAllRequestsByStatus(int status);
     }
 }

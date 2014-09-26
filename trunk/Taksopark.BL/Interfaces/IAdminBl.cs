@@ -5,7 +5,7 @@ namespace Taksopark.BL.Interfaces
 {
     public interface IAdminBl
     {
-        List<User> GetUserByRole(string role);
+        List<User> GetUserByRole(int role);
         void UpdateUser(User user);
         void CreateCar(Car car);
         void CreateUser(User user);
@@ -17,9 +17,9 @@ namespace Taksopark.BL.Interfaces
         void UpdateCar(Car car);
         List<Car> GetAllCars();
         List<Driver> GetAllDrivers();
-        List<Driver> GetAllDriversByStatus(string status);
+        List<Driver> GetAllDriversByStatus(int status);
         bool IsLoginBookedByOtherId(string login, int id);
-        List<User> GetAllUsersByStatus(string status);
-        List<User> GetAllOperatorsByStatus(string status);
+        List<User> GetAllUsersByStatus(int status);
+        List<User> GetAllOperatorsByStatus(int status);
     }
 }

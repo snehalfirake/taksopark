@@ -61,34 +61,13 @@ namespace Taksopark.DAL.Repositories
             }
         }
         
-        /// <summary>
-        /// Get all user records
-        /// </summary>
-        /// <returns></returns>
-        public IEnumerable<User> GetAllUsers()
-        {
-            var userList = new List<User>();
-            using (var command = new SqlCommand("GetAllUsers", _connection))
-            {
-                command.CommandType = CommandType.StoredProcedure;
-                using (var reader = command.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                        var user = UserMapper.Map(reader);
-                        userList.Add(user);
-                    }
-                }
-            }
-            return userList;
-        }
 
         /// <summary>
         /// Get users by role
         /// </summary>
         /// <param name="role"></param>
         /// <returns></returns>
-        public IEnumerable<User> GetUsersByRole(string role)
+        public IEnumerable<User> GetUsersByRole(int role)
         {
             var userList = new List<User>();
             using (var command = new SqlCommand("GetUsersByRole", _connection))
@@ -107,19 +86,6 @@ namespace Taksopark.DAL.Repositories
             return userList;
         }
 
-        /// <summary>
-        /// Delete user record from DB
-        /// </summary>
-        /// <param name="userId">User id in DB</param>
-        public void DeleteUser(int userId)
-        {
-            using (var command = new SqlCommand("DeleteUser", _connection))
-            {
-                command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.AddWithValue("@UserId", userId);
-                command.ExecuteNonQuery();
-            }
-        }
 
         /// <summary>
         /// Check is already user with the same login
@@ -244,6 +210,7 @@ namespace Taksopark.DAL.Repositories
         /// Check is already user with the same login, but other id
         /// </summary>
         /// <param name="login">String login value</param>
+        /// <param name="id"></param>
         /// <returns></returns>
         public bool IsLoginBookedByOtherId(string login, int id)
         {
@@ -268,7 +235,7 @@ namespace Taksopark.DAL.Repositories
             return false;
         }
 
-        public IEnumerable<User> GetAllUsersByStatus(string status)
+        public IEnumerable<User> GetAllUsersByStatus(int status)
         {
             var userList = new List<User>();
             using (var command = new SqlCommand("GetAllUsersByStatus", _connection))
@@ -287,7 +254,7 @@ namespace Taksopark.DAL.Repositories
             return userList;
         }
 
-        public IEnumerable<User> GetAllOperatorsByStatus(string status)
+        public IEnumerable<User> GetAllOperatorsByStatus(int status)
         {
             var operatorList = new List<User>();
             using (var command = new SqlCommand("GetAllOperatorsByStatus", _connection))

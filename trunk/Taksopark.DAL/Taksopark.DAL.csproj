@@ -40,6 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enums\DriverStatusEnum.cs" />
+    <Compile Include="Enums\RequestStatusEnum.cs" />
+    <Compile Include="Enums\RolesEnum.cs" />
+    <Compile Include="Enums\UserStatusEnum.cs" />
     <Compile Include="Models\Driver.cs" />
     <Compile Include="Repositories\DriverRepository.cs" />
     <Compile Include="Repositories\Interfases\IDriverRepository.cs" />

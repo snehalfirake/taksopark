@@ -8,6 +8,5 @@ namespace Taksopark.DAL.Repositories.Interfases
         void Update(Car car);
         void Create(Car car);
         IEnumerable<Car> GetAllCars();
-        void DeleteCar(int carId);
     }
 }

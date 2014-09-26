@@ -71,18 +71,5 @@ namespace Taksopark.DAL.Repositories
             }
         }
 
-        /// <summary>
-        /// Delete comment record from DB
-        /// </summary>
-        /// <param name="commentId">Comment id in DB</param>
-        public void DeleteComment(int commentId)
-        {
-            using (var command = new SqlCommand("DeleteComment", _connection))
-            {
-                command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.AddWithValue("@CommentId", commentId);
-                command.ExecuteNonQuery();
-            }
-        }
     }
 }

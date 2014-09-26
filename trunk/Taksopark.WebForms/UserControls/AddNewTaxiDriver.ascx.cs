@@ -8,6 +8,7 @@ using System.Web.UI.WebControls;
 using Taksopark.BL;
 using Taksopark.BL.Interfaces;
 using Taksopark.DAL;
+using Taksopark.DAL.Enums;
 using Taksopark.DAL.Models;
 using Unity.WebForms;
 using Microsoft.Practices.Unity;
@@ -34,8 +35,9 @@ namespace Taksopark.WebForms.UserControls
                     PhoneNumber = tbxPhoneNumber.Text,
                     Email = tbxEmail.Text,
                     Password = tbxPassword.Text,
-                    Role = "Driver",
-                    Status = ddlStatus.Text
+                    Role = (int) RolesEnum.Driver,
+                    Status = Convert.ToInt32(ddlStatus.Text),
+                    DriverStaus = (int?) DriverStatusEnum.Free
                 });
 
                 int CarId = adminBl.GetUserByLogin(tbxLogin.Text).Id;

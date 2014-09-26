@@ -2,6 +2,7 @@
 using System.Web.Mvc;
 using Taksopark.BL;
 using Taksopark.BL.Interfaces;
+using Taksopark.DAL.Enums;
 using Taksopark.DAL.Models;
 using Taksopark.MVC.Models;
 
@@ -56,9 +57,10 @@ namespace Taksopark.MVC.Controllers
                     Email = editProfileModel.Email,
                     Id = editProfileModel.Id,
                     Login = editProfileModel.Login,
-                    Role = "Client",
-                    Status = "Active",
-                    Password = editProfileModel.Password
+                    Role = (int) RolesEnum.Client,
+                    Status = (int) UserStatusEnum.Active,
+                    Password = editProfileModel.Password,
+                    DriverStaus = null,
                 };
                 _userBl.UpdateUser(user);
                 //Session["UserFullName"] = user.UserName + " " + user.LastName;
@@ -114,7 +116,7 @@ namespace Taksopark.MVC.Controllers
         public ActionResult DiscardRequest(int id)
         {
             var request = _userBl.GetRequestById(id);
-            request.Status = "Discard";
+            request.Status = (int) RequestStatusEnum.Rejected;
             _userBl.UpdateRequest(request);
             return RedirectToAction("GetUserHistory", "UserProfile");
         }

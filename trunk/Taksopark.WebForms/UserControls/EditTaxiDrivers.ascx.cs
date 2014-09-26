@@ -7,6 +7,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Taksopark.BL;
 using Taksopark.BL.Interfaces;
+using Taksopark.DAL.Enums;
 using Taksopark.DAL.Models;
 using Unity.WebForms;
 using Microsoft.Practices.Unity;
@@ -194,7 +195,7 @@ namespace Taksopark.WebForms.UserControls
                 user = adminBl.GetUserByLogin(tbxFindTaxiDriverByCategory.Text);
                 hiddenId.Value = user.Id.ToString();
             }
-            if ((user != null) && (user.Role == "Driver"))
+            if ((user != null) && (user.Role == (decimal) RolesEnum.Driver))
             {
                 tbxEditTaxiDriverName.Text = user.UserName;
                 tbxEditLastName.Text = user.LastName;
@@ -202,7 +203,7 @@ namespace Taksopark.WebForms.UserControls
                 tbxEditPhoneNumber.Text = user.PhoneNumber;
                 tbxEditEmail.Text = user.Email;
                 tbxEditPassword.Text = user.Password;
-                ddlEditStatus.Text = user.Status;
+                ddlEditStatus.Text = user.Status.ToString();
 
                 var car = adminBl.GetCarById(user.Id);
                 if (car.CarYear != car.CarBrand)
@@ -267,8 +268,8 @@ namespace Taksopark.WebForms.UserControls
                 PhoneNumber = tbxEditPhoneNumber.Text,
                 Email = tbxEditEmail.Text,
                 Password = tbxEditPassword.Text,
-                Role = "Driver",
-                Status = ddlEditStatus.Text
+                Role = (int) RolesEnum.Driver,
+                Status = Convert.ToInt32(ddlEditStatus.Text)
             };
 
             if (!adminBl.IsLoginBookedByOtherId(updatedUser.Login, updatedUser.Id))

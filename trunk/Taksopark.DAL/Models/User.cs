@@ -1,4 +1,6 @@
-﻿namespace Taksopark.DAL.Models
+﻿using Taksopark.DAL.Enums;
+
+namespace Taksopark.DAL.Models
 {
     public class User
     {
@@ -9,7 +11,8 @@
         public string PhoneNumber { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
-        public string Role { get; set; }
-        public string Status { get; set; }
+        public int Role{ get; set; }
+        public int Status { get; set; }
+        public int? DriverStaus { get; set; }
     }
 }
