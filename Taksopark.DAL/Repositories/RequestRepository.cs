@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Data.SqlTypes;
 using Taksopark.DAL.Models;
 using Taksopark.DAL.Repositories.Interfases;
 using Taksopark.DAL.Repositories.Mappers;
@@ -22,7 +23,7 @@ namespace Taksopark.DAL.Repositories
         /// <param name="request">Request model</param>
         public void Update(Request request)
         {
-            using (var command = new SqlCommand("UpdateRequest", _connection))
+            using (var command = new SqlCommand("sp_UpdateRequest", _connection))
             {
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.AddWithValue("@RequestTime", request.RequesTime);
@@ -73,7 +74,7 @@ namespace Taksopark.DAL.Repositories
         /// <param name="request">Request record</param>
         public void Create(Request request)
         {
-            using (var command = new SqlCommand("CreateRequest", _connection))
+            using (var command = new SqlCommand("sp_CreateRequest", _connection))
             {
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.AddWithValue("@RequestTime", request.RequesTime);
@@ -103,7 +104,7 @@ namespace Taksopark.DAL.Repositories
                 }
                 if (request.Price == null)
                 {
-                    command.Parameters.AddWithValue("@Price", DBNull.Value);
+                    command.Parameters.AddWithValue("@Price", 0);
                 }
                 else
                 {
@@ -131,7 +132,7 @@ namespace Taksopark.DAL.Repositories
         /// <returns></returns>
         public IEnumerable<Request> GetAllRequests()
         {
-            using (var command = new SqlCommand("GetAllRequests", _connection))
+            using (var command = new SqlCommand("sp_GetAllRequests", _connection))
             {
                 command.CommandType = CommandType.StoredProcedure;
                 var requestList = new List<Request>();
@@ -149,7 +150,7 @@ namespace Taksopark.DAL.Repositories
 
         public Request GetRequestById(int id)
         {
-            using (var command = new SqlCommand("GetRequestById", _connection))
+            using (var command = new SqlCommand("sp_GetRequestById", _connection))
             {
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.AddWithValue("@RequestId", id);
@@ -168,7 +169,7 @@ namespace Taksopark.DAL.Repositories
 
         public IEnumerable<Request> GetAllRequestsByCreatorId(int id)
         {
-            using (var command = new SqlCommand("GetAllRequestsByCreatorId", _connection))
+            using (var command = new SqlCommand("sp_GetAllRequestsByCreatorId", _connection))
             {
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.AddWithValue("@CreatorId", id);
@@ -187,7 +188,7 @@ namespace Taksopark.DAL.Repositories
 
         public IEnumerable<Request> GetAllRequestsByState(int state)
         {
-            using (var command = new SqlCommand("GetAllRequestsByState", _connection))
+            using (var command = new SqlCommand("sp_GetAllRequestsByState", _connection))
             {
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.AddWithValue("@State", state);
@@ -205,10 +206,10 @@ namespace Taksopark.DAL.Repositories
         }
         public IEnumerable<Request> GetAllRequestsByStatus(int status)
         {
-            using (var command = new SqlCommand("GetAllRequestsByStatus", _connection))
+            using (var command = new SqlCommand("sp_GetAllRequestsByState", _connection))
             {
                 command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.AddWithValue("@Status", status);
+                command.Parameters.AddWithValue("@State", status);
                 var requestList = new List<Request>();
                 using (var reader = command.ExecuteReader())
                 {

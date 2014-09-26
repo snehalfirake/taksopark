@@ -9,7 +9,6 @@ namespace Taksopark.BL.Interfaces
         void UpdateRequest(Request request);
         List<User> GetAllDrivers();
         Request GetRequestById(int id);
-        List<Request> GetRequestsByState(int state);
         User GetUserById(int id);
         List<Request> GetAllRequestsByStatus(int status);
     }

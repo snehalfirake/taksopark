@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using Taksopark.DAL.Models;
@@ -22,7 +23,7 @@ namespace Taksopark.DAL.Repositories
         /// <param name="user">User model</param>
         public void Update(User user)
         {
-            using (var command = new SqlCommand("UpdateUser", _connection))
+            using (var command = new SqlCommand("sp_UpdateUser", _connection))
             {
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.AddWithValue("@UserName", user.UserName);
@@ -33,6 +34,15 @@ namespace Taksopark.DAL.Repositories
                 command.Parameters.AddWithValue("@Password", user.Password);
                 command.Parameters.AddWithValue("@Role", user.Role);
                 command.Parameters.AddWithValue("@Status", user.Status);
+                if (user.DriverStaus == null)
+                {
+                    command.Parameters.AddWithValue("@DriverStatus", DBNull.Value);
+                }
+                else
+                {
+                    command.Parameters.AddWithValue("@DriverStatus", user.DriverStaus);
+
+                }
                 command.Parameters.AddWithValue("@UserId", user.Id);
                 command.ExecuteNonQuery();
             }
@@ -46,7 +56,7 @@ namespace Taksopark.DAL.Repositories
         /// <param name="user">User model</param>
         public void Create(User user)
         {
-            using (var command = new SqlCommand("CreateUser", _connection))
+            using (var command = new SqlCommand("sp_CreateUser", _connection))
             {
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.AddWithValue("@UserName", user.UserName);
@@ -57,6 +67,15 @@ namespace Taksopark.DAL.Repositories
                 command.Parameters.AddWithValue("@Password", user.Password);
                 command.Parameters.AddWithValue("@Role", user.Role);
                 command.Parameters.AddWithValue("@Status", user.Status);
+                if (user.DriverStaus == null)
+                {
+                    command.Parameters.AddWithValue("@DriverStatus", DBNull.Value);
+                }
+                else
+                {
+                    command.Parameters.AddWithValue("@DriverStatus", user.DriverStaus);
+                  
+                }
                 command.ExecuteNonQuery();
             }
         }
@@ -70,7 +89,7 @@ namespace Taksopark.DAL.Repositories
         public IEnumerable<User> GetUsersByRole(int role)
         {
             var userList = new List<User>();
-            using (var command = new SqlCommand("GetUsersByRole", _connection))
+            using (var command = new SqlCommand("sp_GetUsersByRole", _connection))
             {
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.AddWithValue("@Role", role);
@@ -94,7 +113,7 @@ namespace Taksopark.DAL.Repositories
         /// <returns></returns>
         public bool IsLoginBooked(string login)
         {
-            using (var command = new SqlCommand("IsLoginBooked", _connection))
+            using (var command = new SqlCommand("sp_IsLoginBooked", _connection))
             {
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.AddWithValue("@Login", login);
@@ -121,7 +140,7 @@ namespace Taksopark.DAL.Repositories
         /// <returns></returns>
         public User GetUserById(int id)
         {
-            using (var command = new SqlCommand("GetUserById", _connection))
+            using (var command = new SqlCommand("sp_GetUserById", _connection))
             {
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.AddWithValue("@Id", id);
@@ -141,7 +160,7 @@ namespace Taksopark.DAL.Repositories
 
         public User GetUserByLogInAndPassword(string login, string password)
         {
-            using (var command = new SqlCommand("GetUserByLogInAndPassword", _connection))
+            using (var command = new SqlCommand("sp_GetUserByLogInAndPassword", _connection))
             {
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.AddWithValue("@Login", login);
@@ -160,7 +179,7 @@ namespace Taksopark.DAL.Repositories
 
         public User GetUserByLogIn(string login)
         {
-            using (var command = new SqlCommand("GetUserByLogIn", _connection))
+            using (var command = new SqlCommand("sp_GetUserByLogIn", _connection))
             {
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.AddWithValue("@Login", login);
@@ -176,35 +195,6 @@ namespace Taksopark.DAL.Repositories
             }
         }
 
-        /// <summary>
-        /// Get drivers join cars
-        /// </summary>
-        /// <returns></returns>
-        public List<List<string>> GetDriversJoinCarsInfo()
-        {
-            var userList = new List<List<string>>();
-            using (var command = new SqlCommand("GetDriversJoinCarsInfo", _connection))
-            {
-                command.CommandType = CommandType.StoredProcedure;
-                using (var reader = command.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                        var driverList = new List<string>();
-                        driverList.Add(reader["Name"].ToString());
-                        driverList.Add(reader["LastName"].ToString());
-                        driverList.Add(reader["Login"].ToString());
-                        driverList.Add(reader["PhoneNumber"].ToString());
-                        driverList.Add(reader["Email"].ToString());
-                        driverList.Add(reader["Status"].ToString());
-                        driverList.Add(reader["Brand"].ToString());
-                        driverList.Add(reader["Year"].ToString());
-                        userList.Add(driverList);
-                    }
-                }
-            }
-            return userList;
-        }
 
         /// <summary>
         /// Check is already user with the same login, but other id
@@ -214,7 +204,7 @@ namespace Taksopark.DAL.Repositories
         /// <returns></returns>
         public bool IsLoginBookedByOtherId(string login, int id)
         {
-            using (var command = new SqlCommand("IsLoginBookedByOtherId", _connection))
+            using (var command = new SqlCommand("sp_IsLoginBookedByOtherId", _connection))
             {
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.AddWithValue("@Login", login);
@@ -238,7 +228,7 @@ namespace Taksopark.DAL.Repositories
         public IEnumerable<User> GetAllUsersByStatus(int status)
         {
             var userList = new List<User>();
-            using (var command = new SqlCommand("GetAllUsersByStatus", _connection))
+            using (var command = new SqlCommand("sp_GetAllUsersByStatus", _connection))
             {
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.AddWithValue("@Status", status);
@@ -257,7 +247,7 @@ namespace Taksopark.DAL.Repositories
         public IEnumerable<User> GetAllOperatorsByStatus(int status)
         {
             var operatorList = new List<User>();
-            using (var command = new SqlCommand("GetAllOperatorsByStatus", _connection))
+            using (var command = new SqlCommand("sp_GetAllOperatorsByStatus", _connection))
             {
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.AddWithValue("@Status", status);

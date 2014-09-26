@@ -8,5 +8,7 @@ namespace Taksopark.DAL.Repositories.Interfases
         void Update(Car car);
         void Create(Car car);
         IEnumerable<Car> GetAllCars();
+        bool IsCarIdBooked(int id);
+        Car GetCarById(int id);
     }
 }

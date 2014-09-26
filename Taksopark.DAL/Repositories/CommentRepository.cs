@@ -22,7 +22,7 @@ namespace Taksopark.DAL.Repositories
         /// <param name="comment">Comment model</param>
         public void Update(Comment comment)
         {
-            using (var command = new SqlCommand("UpdateComment", _connection))
+            using (var command = new SqlCommand("sp_UpdateComment", _connection))
             {
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.AddWithValue("@CreatorId", comment.CreatorId);
@@ -39,7 +39,7 @@ namespace Taksopark.DAL.Repositories
         /// <param name="comment">Comment model</param>
         public void Create(Comment comment)
         {
-            using (var command = new SqlCommand("CreateComment", _connection))
+            using (var command = new SqlCommand("sp_CreateComment", _connection))
             {
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.AddWithValue("@CreatorId", comment.CreatorId);
@@ -53,11 +53,12 @@ namespace Taksopark.DAL.Repositories
         /// Get all comment record
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<Comment> GetAllComments()
+        public IEnumerable<Comment> GetAllCommentsByCreatorId(int id)
         {
-            using (var command = new SqlCommand("GetAllComments", _connection))
+            using (var command = new SqlCommand("sp_GetAllCommentsByCreatorId", _connection))
             {
                 command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@CreatorId", id);
                 var commentList = new List<Comment>();
                 using (var reader = command.ExecuteReader())
                 {

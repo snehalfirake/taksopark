@@ -10,7 +10,6 @@ namespace Taksopark.DAL.Repositories.Interfases
         IEnumerable<Request> GetAllRequests();
         IEnumerable<Request> GetAllRequestsByCreatorId(int id); 
         Request GetRequestById(int id);
-        IEnumerable<Request> GetAllRequestsByState(int state);
         IEnumerable<Request> GetAllRequestsByStatus(int status);
     }
 }

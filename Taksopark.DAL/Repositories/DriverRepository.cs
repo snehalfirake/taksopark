@@ -27,7 +27,7 @@ namespace Taksopark.DAL.Repositories
         public IEnumerable<Driver> GetAllDrivers()
         {
             var driverList = new List<Driver>();
-            using (var command = new SqlCommand("GetAllDrivers", _connection))
+            using (var command = new SqlCommand("sp_GetAllDrivers", _connection))
             {
                 command.CommandType = CommandType.StoredProcedure;
                 using (var reader = command.ExecuteReader())
@@ -50,7 +50,7 @@ namespace Taksopark.DAL.Repositories
         public IEnumerable<Driver> GetAllDriversByStatus(int status)
         {
             var driverList = new List<Driver>();
-            using (var command = new SqlCommand("GetAllDriversByStatus", _connection))
+            using (var command = new SqlCommand("sp_GetAllDriversByStatus", _connection))
             {
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.AddWithValue("@Status", status);
