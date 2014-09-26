@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.Principal;
 using System.Web;
 using System.Web.Security;
 using Microsoft.Practices.Unity;
@@ -23,15 +24,23 @@ namespace Taksopark.WebForms.WebForms
             var user = userBl.GetUserByLoginAndPassword(login, password);
             if (user.UserName != null)
             {
-                if (user.Role == (int) RolesEnum.Operator)
+                if (user.Role == (int) RolesEnum.Operator || user.Role == (int) RolesEnum.Admin)
                 {
-                    Response.Redirect("Home.aspx");
                     FormsAuthentication.SetAuthCookie(user.Login, false);
-                }
-                else if (user.Role == (int) RolesEnum.Admin)
-                {
-                    Response.Redirect("Users.aspx");
-                    FormsAuthentication.SetAuthCookie(user.Login, false);
+                    IPrincipal principal = HttpContext.Current.User;
+                    var userName = principal.Identity.Name;
+                    IIdentity identity = new GenericIdentity(userName);
+                    var role = user.Role;
+                    string[] roles = new[] { role.ToString() };
+                    HttpContext.Current.User = new GenericPrincipal(identity, roles);
+                    if (user.Role == (int)RolesEnum.Operator)
+                    {
+                        Response.Redirect("Home.aspx");
+                    }
+                    else if (user.Role == (int)RolesEnum.Admin)
+                    {
+                        Response.Redirect("Users.aspx");
+                    }
                 }
             }
         }
