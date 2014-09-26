@@ -29,14 +29,14 @@ namespace Taksopark.WebForms.Dispatcher
             {
                 IOperatorBl operatorBl = HttpContext.Current.Application.GetContainer().Resolve<IOperatorBl>();
                 var orders = operatorBl.GetAllRequests();
-                return orders;
+                return orders.OrderBy(o => o.RequesTime).ToList();
                 
             }
             //else
             {
                 IOperatorBl operatorBl = HttpContext.Current.Application.GetContainer().Resolve<IOperatorBl>();
                 var orders = operatorBl.GetAllRequestsByStatus((int)Enum.Parse(typeof(RequestStatusEnum), status));
-                return orders;
+                return orders.OrderBy(o => o.RequesTime).ToList();
             }
         }
     }
