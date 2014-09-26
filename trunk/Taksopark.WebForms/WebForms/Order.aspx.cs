@@ -10,6 +10,8 @@ using Taksopark.BL;
 using Taksopark.BL.Interfaces;
 using Taksopark.DAL.Models;
 using Unity.WebForms;
+using Taksopark.WebForms.WebForms;
+using Taksopark.DAL.Enums;
 
 namespace Taksopark.WebForms.Dispatcher
 {
@@ -21,9 +23,9 @@ namespace Taksopark.WebForms.Dispatcher
             
         }
 
-        public IEnumerable<Request> GetAllRequests(int status)
+        public IEnumerable<Request> GetAllRequests(string status)
         {
-            if (status == 4)
+            if (status == "All")
             {
                 IOperatorBl operatorBl = HttpContext.Current.Application.GetContainer().Resolve<IOperatorBl>();
                 var orders = operatorBl.GetAllRequests();
@@ -33,7 +35,7 @@ namespace Taksopark.WebForms.Dispatcher
             else
             {
                 IOperatorBl operatorBl = HttpContext.Current.Application.GetContainer().Resolve<IOperatorBl>();
-                var orders = operatorBl.GetAllRequestsByStatus(status);
+                var orders = operatorBl.GetAllRequestsByStatus((int)Enum.Parse(typeof(RequestStatusEnum), status));
                 return orders;
             }
         }
