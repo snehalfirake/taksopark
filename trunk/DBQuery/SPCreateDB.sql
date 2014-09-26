@@ -669,8 +669,7 @@ BEGIN
 	IF ((@OldStatus = 2 AND @Status = 8) OR (@OldStatus = 4 AND @Status = 2) 
 	OR (@OldStatus = 32 AND @Status = 2) OR (@OldStatus = 32 AND @Status = 4) 
 	OR (@OldStatus = 32 AND @Status = 8) OR (@OldStatus = 8 AND @Status = 2)
-	OR (@OldStatus = 8 AND @Status = 8) OR (@OldStatus = 8 AND @Status = 4)
-	OR (@OldStatus = 8 AND @Status = 32))
+	OR (@OldStatus = 8 AND @Status = 4) OR (@OldStatus = 8 AND @Status = 32))
 		BEGIN
 			RAISERROR (15600,-1,-1, 'Wrong Request Update');
 		END
