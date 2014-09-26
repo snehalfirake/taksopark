@@ -75,7 +75,7 @@ namespace Taksopark.MVC.Controllers
                         Role = (int) RolesEnum.Client,
                         Status = (int) UserStatusEnum.Active,
                         UserName = registrationModel.FirstName,
-                        DriverStaus = null
+                        DriverStatus = null
                     };
                     _userBl.CreateUser(user);
                     //Session["UserFullName"] = user.UserName + " " + user.LastName;

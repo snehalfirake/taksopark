@@ -60,7 +60,7 @@ namespace Taksopark.MVC.Controllers
                     Role = (int) RolesEnum.Client,
                     Status = (int) UserStatusEnum.Active,
                     Password = editProfileModel.Password,
-                    DriverStaus = null,
+                    DriverStatus = null,
                 };
                 _userBl.UpdateUser(user);
                 //Session["UserFullName"] = user.UserName + " " + user.LastName;
