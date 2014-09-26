@@ -1,3 +1,3 @@
 <h1><p align="center">Architecture Overview</p></h1>
 <h2><p align="center">Component Diagram</p></h2>
-<p align="left"><img src="https://pp.vk.me/c624918/v624918811/40a3/tswTBUuUKac.jpg" alt="Діаграма класів"></img> </p>
+<p align="left"><img src="https://pp.vk.me/c624918/v624918811/40a2/oCJgfdaD4j0.jpg" alt="Діаграма класів"></img> </p>
