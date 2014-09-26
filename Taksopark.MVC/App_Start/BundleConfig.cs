@@ -6,7 +6,7 @@ namespace Taksopark.MVC
     {
         public static void RegisterBundles(BundleCollection bundles)
         {
-            bundles.Add(new StyleBundle("~/Content/Layout/my-css").Include("~/Content/Layout/style.css", "~/Content/Layout/login-style.css", "~/Content/Layout/DateTimePicker.css"));
+            bundles.Add(new StyleBundle("~/Content/Layout/my-css").Include("~/Content/Layout/style.css", "~/Content/Layout/login-style.css", "~/Content/Layout/DateTimePicker.css", "~/Content/auto-complite/auto-complite-style.css"));
 
             bundles.Add(new StyleBundle("~/Content/Layout/slider-style").Include("~/Content/Layout/js-image-slider.css"));
 
