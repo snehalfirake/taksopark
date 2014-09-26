@@ -9,6 +9,6 @@ namespace Taksopark.DAL.Enums
     public enum UserStatusEnum
     {
         Active = 2,
-        Banned = 4
+        Inactive = 4
     }
 }
