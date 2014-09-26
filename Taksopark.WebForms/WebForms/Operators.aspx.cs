@@ -20,7 +20,7 @@ namespace Taksopark.WebForms.WebForms
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
         public IEnumerable<User> GetAllOperatorsFromRepository(string status)
         {

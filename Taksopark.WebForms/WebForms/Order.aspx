@@ -14,8 +14,8 @@
                         <asp:DropDownList runat="server" ID="ddlRequestStatus" AutoPostBack="true"
                             EnableTheming="false" CssClass="ddlStatusForFilter btn btn-s-md btn-info" Font-Size="Large">
                             <asp:ListItem Text="Active"></asp:ListItem>
-                            <asp:ListItem Text="Closed"></asp:ListItem>
                             <asp:ListItem Text="InProgress"></asp:ListItem>
+                            <asp:ListItem Text="Closed"></asp:ListItem>
                             <asp:ListItem Text="Rejected"></asp:ListItem>
                             <asp:ListItem Text="All"></asp:ListItem>
                         </asp:DropDownList>
