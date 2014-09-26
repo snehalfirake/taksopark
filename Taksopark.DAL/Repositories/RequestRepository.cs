@@ -72,7 +72,7 @@ namespace Taksopark.DAL.Repositories
         /// Insert new request record
         /// </summary>
         /// <param name="request">Request record</param>
-        public void Create(Request request)
+        public int Create(Request request)
         {
             using (var command = new SqlCommand("sp_CreateRequest", _connection))
             {
@@ -122,7 +122,14 @@ namespace Taksopark.DAL.Repositories
                 command.Parameters.AddWithValue("@Status", request.Status);
                 command.Parameters.AddWithValue("@StartPoint", request.StartPoint);
                 command.Parameters.AddWithValue("@FinishPoint", request.FinishPoint);
+                var parameterReturnValue = new SqlParameter("@RequestId", SqlDbType.Int, 4)
+                {
+                    Direction = ParameterDirection.Output
+                };
+                command.Parameters.Add(parameterReturnValue);
                 command.ExecuteNonQuery();
+                var value = command.Parameters["@RequestId"].Value;
+                return Convert.ToInt32(value);
             }
         }
 

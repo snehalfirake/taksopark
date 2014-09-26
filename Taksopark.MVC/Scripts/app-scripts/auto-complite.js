@@ -1240,9 +1240,13 @@
     ];
 
     $("#placeFromTextBoxId").autocomplete({
-        source: availableStreets
+        source: availableStreets,
+        minLength: 0,
+        maxLength: 20
     });
     $("#placeToTextBoxId").autocomplete({
-        source: availableStreets
+        source: availableStreets,
+        minLength: 0,
+        maxLength: 20
     });
 });

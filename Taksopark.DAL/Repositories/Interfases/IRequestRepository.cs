@@ -6,7 +6,7 @@ namespace Taksopark.DAL.Repositories.Interfases
     interface IRequestRepository
     {
         void Update(Request request);
-        void Create(Request request);
+        int Create(Request request);
         IEnumerable<Request> GetAllRequests();
         IEnumerable<Request> GetAllRequestsByCreatorId(int id); 
         Request GetRequestById(int id);

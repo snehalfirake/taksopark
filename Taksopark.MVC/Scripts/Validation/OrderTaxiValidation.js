@@ -9,7 +9,6 @@ function OrderTaxiValidation() {
     var _this = this;
 
     _this.initialize = function () {
-
         $("#placeFromTextBoxId").focus(function () {
             if ($("#placeFromTextBoxId").hasClass("error-textBoxValidationClass")) {
                 $("#placeFromTextBoxId").removeClass("error-textBoxValidationClass").addClass("textBoxValidationClass");
@@ -152,7 +151,7 @@ function OrderTaxiValidation() {
     };
 
     _this.PlaceFromOrPlaceToRegularExpression = function (testString) {
-        var exp = new RegExp("^[А-ЯЄІЇа-яєії]{3,30}[\ \]{0,1}[А-ЯЄІЇа-яєії]{0,30}[\ \]{0,1}[А-ЯЄІЇа-яєії]{0,30}[\ \]{0,1}[0-9]{0,4}[\ \]{0,1}[А-ЯЄІЇа-яєії]{0,1}$");
+        var exp = new RegExp("^[A-Za-zА-ЯЄІЇҐа-яєіїґ-]{3,30}[\ \]{0,1}[A-Za-zА-ЯЄІЇҐа-яєіїґ-]{0,30}[\ \]{0,1}[A-Za-zА-ЯЄІЇҐа-яєіїґ-]{0,30}[\ \]{0,1}[0-9]{0,4}[\ \]{0,1}[A-Za-zА-ЯЄІЇҐа-яєіїґ-]{0,1}$");
         return exp.test(testString);
     };
 

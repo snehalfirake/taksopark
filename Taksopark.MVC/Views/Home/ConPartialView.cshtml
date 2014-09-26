@@ -5,6 +5,8 @@
 @Scripts.Render("~/bundles/ready-script")
 @Styles.Render("~/Content/Layout/slider-style")
 @Scripts.Render("~/bundles/slider-js")
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<script src="https://maps.googleapis.com/maps/api/js?sensor=false.." type="text/javascript"></script>
 <script>
     auto();
 </script>
@@ -14,94 +16,43 @@
     });
 </script>
 
+
+<link rel="stylesheet" href="/Content/auto-complite/auto-complite-style.css">
 <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-<script src="//code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
 <link rel="stylesheet" type="text/css" href="/Content/Layout/DateTimePicker.css" />
-<link rel="stylesheet" href="//code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
 <script type="text/javascript" src="/Scripts/app-scripts/DateTimePicker.js"></script>
-<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-<script src="https://maps.googleapis.com/maps/api/js?sensor=false.." type="text/javascript"></script>
-<script src="//code.jquery.com/jquery-1.10.2.js"></script>
-<script src="//code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
 <script src="/Scripts/app-scripts/map-script.js"></script>
 <script src="/Scripts/app-scripts/auto-complite.js"></script>
-<script src="~/Scripts/jquery.unobtrusive-ajax.min.js" type="text/javascript"></script>
+<script src="/Scripts/jquery.unobtrusive-ajax.min.js"></script>
 <script src="/Scripts/app-scripts/order-dialog.js"></script>
-<script>
-    var orderTaxi;
-
-    $(function () {
-        orderTaxi = new OrderTaxi();
-        orderTaxi.initialize();
-    });
-    function OrderTaxi() {
-        var _this = this;
-        var directionDisplay;
-        var map;
-
-        _this.initialize = function () {
-
-            directionsDisplay = new google.maps.DirectionsRenderer();
-            var lviv = new google.maps.LatLng(49.8382112, 24.0294017);
-            var myOptions = {
-                zoom: 12,
-                mapTypeId: google.maps.MapTypeId.ROADMAP,
-                center: lviv
-            };
-            map = new google.maps.Map(document.getElementById("TaxiMap1"), myOptions);
-            directionsDisplay.setMap(map);
-
-            $("#showTheWayButtonId").click(function () {
-                _this.CalcRoute();
-            });
-        };
-
-        var directionsService = new google.maps.DirectionsService();
-
-        _this.CalcRoute = function () {
-
-            var distanceInput = document.getElementById("distance");
-            var priceInput = document.getElementById("price");
-            var placeFrom = $("#placeFromTextBoxId").val();
-            var placeTo = $("#placeToTextBoxId").val();
-            var start = "Львів, " + placeFrom;
-            var end = "Львів, " + placeTo;
-
-            if ((orderTaxiValidation.PlaceFromOrPlaceToRegularExpression(placeFrom)) &&
-                (orderTaxiValidation.PlaceFromOrPlaceToRegularExpression(placeTo))) {
-                var request = {
-                    origin: start,
-                    destination: end,
-                    travelMode: google.maps.DirectionsTravelMode.DRIVING
-                };
-            }
-            directionsService.route(request, function (response, status) {
-                if (status == google.maps.DirectionsStatus.OK) {
-                    directionsDisplay.setDirections(response);
-                    distanceInput.value = response.routes[0].legs[0].distance.value / 1000;
-                    if (parseFloat(distanceInput.value) < 2) {
-                        priceInput.value = 18;
-                    } else if (parseInt(distanceInput.value) > 2) {
-                        priceInput.value = parseInt((distanceInput.value * 3) + 15);
-                    }
-                }
-            });
-        };
-    };
-</script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.9/jquery-ui.js" type="text/javascript"></script>
+<link href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.9/themes/start/jquery-ui.css" rel="stylesheet" type="text/css" />
+<link href="/Content/OrderTaxi/order-dialog-styles.css" rel="stylesheet" type="text/css" />
 <div class="container_12">
 </div>
 <div class="clear"></div>
 <div class="inner-map-div" style="margin-bottom: 200px;">
-    @using (Ajax.BeginForm("OrderTaxi", new AjaxOptions
-    {
-        InsertionMode = InsertionMode.Replace,
-        HttpMethod = "GET",
-        UpdateTargetId = "orderTaxiFormHolderId"
-    }))
-    {
-    <div id="dialog" title="Dialog" class="ui-dialog-title">
-        <p>Thank you for order. We will contact with you.</p>
+    <div id="order-dialog" title="Сonfirmation">
+        <div class="message"><span class="color1">Do</span> you want to submit the order?</div>
+        <br />
+        <div>
+            <div style="float: left; margin-right: 3px;">
+                <label><span class="color1">F</span>rom:</label>
+                <br />
+                <input type="text" id="dialogFromId" readonly="true" style="border: none; width: 180px;"/>
+            </div>
+            <div style="float: left; margin-right: 3px;">
+                <label><span class="color1">T</span>o:</label>
+                <br />
+                <input type="text" id="dialogToId" readonly="true" style="border: none; width: 180px;" />
+            </div>
+            <div style="float: left; margin-right: 3px;">
+                <label><span class="color1">P</span>hone:</label>
+                <br />
+                <input type="text" id="dialogPhoneId" readonly="true" style="border: none; width: 120px;" />
+            </div>
+        </div>
     </div>
     <div id="orderTaxiFormHolderId">
         <div id="toggle" style="text-align: center">
@@ -111,34 +62,33 @@
 
         <div id="placeFronContettHolderId">
             <span id="paceFromErrorSpanId"></span>
-            <input type="text" id="placeFromTextBoxId" class="textBoxValidationClass" name="txtFrom" placeholder="From:" />
+            <input type="text" id="placeFromTextBoxId" class="textBoxValidationClass" name="placeFromTextBoxId" placeholder="From:" />
         </div>
 
         <div id="placeToContettHolderId">
             <span id="paceToErrorSpanId"></span>
-            <input type="text" id="placeToTextBoxId" class="textBoxValidationClass" name="txtTo" placeholder="To:" />
+            <input type="text" id="placeToTextBoxId" class="textBoxValidationClass" name="placeToTextBoxId" placeholder="To:" />
         </div>
 
         <div id="phoneContettHolderId">
             <span id="phoneErrorSpanId"></span>
-            <input type="text" id="phoneTextBoxId" class="textBoxValidationClass" name="txtPhone" placeholder="Phone:" />
+            <input type="text" id="phoneTextBoxId" class="textBoxValidationClass" name="phoneTextBoxId" placeholder="Phone:" />
         </div>
         <div id="orderTaxiButtonHolderId">
-            <button type="submit" id="orderTaxiButtonId" class="abutton" style="height: 34px;">OrderTaxi</button>
-            @*
-            <button id="show" class="abutton">More</button>*@
+            <!--<button id="show" type="button" class="abutton">More</button>-->
+            <button type="button" id="orderTaxiButtonId" class="abutton" style="height: 34px;">OrderTaxi</button>
         </div>
         <br />
     </div>
-    }
     <br />
     <div id="showTheWayHolderId">
         <span style="font-size: 19px;"><span class="color1">Location</span> on map</span>
         <div style="float: right">
-            <label for="distance"><span class="color1">D</span>istance (km): </label>
-            <input type="text" name="distance" id="distance" readonly="true" />
-            <label for="distance"><span class="color1">A</span>pproximate price (uah): </label>
-            <input type="text" name="price" id="price" readonly="true" />
+            <label for="distance" style="font-size: 17px;"><span class="color1">D</span>istance (km): </label>
+            <label for="distance" id="distance" style="margin-right: 70px; font-size: 17px;">0</label>
+
+            <label for="price" style="font-size: 17px;"><span class="color1" style="font-size: 19px;">A</span>pproximate price (uah): </label>
+            <label for="price" id="price" style="margin-right: 50px; font-size: 17px;">0</label>
             <button id="showTheWayButtonId" class="abutton">Show the way</button>
         </div>
     </div>

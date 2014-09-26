@@ -14,11 +14,11 @@ namespace Taksopark.BL
         {
             _appConfigConnection = appConfigConnection;
         }
-        public void CreateRequest(Request request)
+        public int CreateRequest(DAL.Models.Request request)
         {
             using (var uow = new UnitOfWork(_appConfigConnection))
             {
-                uow.RequestRepository.Create(request);
+                return uow.RequestRepository.Create(request);
             }
         }
 
