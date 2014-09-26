@@ -17,7 +17,14 @@
             <asp:BoundField DataField="RequesTime" HeaderText="Created At"/>
             <asp:BoundField DataField="startPoint" HeaderText="Start Point"/>
             <asp:BoundField DataField="finishPoint" HeaderText="Destination Point"/>
-            <asp:BoundField DataField="status" HeaderText="Status"/>
+
+            <%--<asp:BoundField DataField="status" HeaderText="Status"/>--%>
+            <asp:TemplateField HeaderText="Status">
+                <ItemTemplate>
+                    <%# ((Taksopark.DAL.Enums.RequestStatusEnum)Eval("Status")).ToString() %>
+                </ItemTemplate>
+            </asp:TemplateField>
+
             <asp:BoundField DataField="DriverId" HeaderText="Driver"/>
             <asp:TemplateField>
                 <ItemTemplate>

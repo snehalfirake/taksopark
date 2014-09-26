@@ -77,7 +77,7 @@
                             </td>
                             <td>
                                 <asp:Image runat="server" ImageUrl='<%# Eval("StatusIconUrl") %>' Width="17" Height="17" />&nbsp
-                                <asp:Label runat="server" Text='<%# Eval("Status") %>' />
+                                <asp:Label runat="server" Text='<%# ((Taksopark.DAL.Enums.UserStatusEnum)Eval("Status")).ToString() %>' />
                             </td>
                         </tr>
                     </table>
