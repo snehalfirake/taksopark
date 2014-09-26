@@ -25,14 +25,14 @@ namespace Taksopark.WebForms.Dispatcher
 
         public IEnumerable<Request> GetAllRequests(string status)
         {
-            //if (status == "All")
+            if (status == "All")
             {
                 IOperatorBl operatorBl = HttpContext.Current.Application.GetContainer().Resolve<IOperatorBl>();
                 var orders = operatorBl.GetAllRequests();
                 return orders.OrderBy(o => o.RequesTime).ToList();
                 
             }
-            //else
+            else
             {
                 IOperatorBl operatorBl = HttpContext.Current.Application.GetContainer().Resolve<IOperatorBl>();
                 var orders = operatorBl.GetAllRequestsByStatus((int)Enum.Parse(typeof(RequestStatusEnum), status));
