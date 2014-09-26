@@ -29,11 +29,14 @@ namespace Taksopark.BL
         public void UpdateRequest(Request request)
         {
             var oldRequest = this.GetRequestById(request.Id);
-            if ((oldRequest.Status == 2 && request.Status == 8) || (oldRequest.Status == 4 && request.Status == 2)
-                || (oldRequest.Status == 32 && request.Status == 2) || (oldRequest.Status == 32 && request.Status == 4)
-                || (oldRequest.Status == 32 && request.Status == 8) || (oldRequest.Status == 8 && request.Status == 2)
-                || (oldRequest.Status == 8 && request.Status == 8) || (oldRequest.Status == 8 && request.Status == 4)
-                || (oldRequest.Status == 8 && request.Status == 32))
+            if ((oldRequest.Status == (int)RequestStatusEnum.Active && request.Status == (int)RequestStatusEnum.Closed)
+                || (oldRequest.Status == (int)RequestStatusEnum.InProgress && request.Status == (int)RequestStatusEnum.Active)
+                || (oldRequest.Status == (int)RequestStatusEnum.Rejected && request.Status == (int)RequestStatusEnum.Active)
+                || (oldRequest.Status == (int)RequestStatusEnum.Rejected && request.Status == (int)RequestStatusEnum.InProgress)
+                || (oldRequest.Status == (int)RequestStatusEnum.Rejected && request.Status == (int)RequestStatusEnum.Closed)
+                || (oldRequest.Status == (int)RequestStatusEnum.Closed && request.Status == (int)RequestStatusEnum.Active)
+                || (oldRequest.Status == (int)RequestStatusEnum.Closed && request.Status == (int)RequestStatusEnum.InProgress)
+                || (oldRequest.Status == (int)RequestStatusEnum.Closed && request.Status == (int)RequestStatusEnum.Rejected))
             {
                 throw new SqlTypeException("Wrong parametrs for request update");
             }
