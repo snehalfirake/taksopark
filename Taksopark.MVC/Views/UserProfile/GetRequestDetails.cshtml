@@ -1,4 +1,5 @@
-﻿@model Taksopark.MVC.Models.RequestModel
+﻿@using Taksopark.DAL.Enums
+@model Taksopark.MVC.Models.RequestModel
 
 @{
     ViewBag.Title = "GetRequestDetails";
@@ -51,18 +52,18 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                @if (Model.Status == "Active")
+                @if (Model.Status == (int)RequestStatusEnum.Active)
                 {
                     <button class="abutton pulse width2" style="text-decoration: none;">@Html.ActionLink("Edit", "EditRequest", new { id = Model.RequestId })</button>
                 }
-                @if (Model.Status != "Closed" && Model.Status != "Discard")
+                @if (Model.Status != (int)RequestStatusEnum.Closed && Model.Status != (int)RequestStatusEnum.Rejected)
                 {
                     <button class="abutton pulse width2" style="text-decoration: none;">@Html.ActionLink("Discard", "DiscardRequest", new { id = Model.RequestId })</button>
                 }
-                @if (Model.Status == "Closed" || Model.Status == "Discard")
+                @*@if (Model.Status == 8 || Model.Status == 32)
                 {
-                    <button class="abutton pulse width2" style="text-decoration: none;">@Html.ActionLink("Comment", "AddComent", new { id = Model.RequestId })</button>
-                }
+                    <button onclick="@Url.Action("Comment", "AddComent", new { id = Model.RequestId })" class="abutton pulse width2" style="text-decoration: none;">@Html.ActionLink("Comment", "AddComent", new { id = Model.RequestId })</button>
+                }*@
             </div>
         </div>
     </div>
