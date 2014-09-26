@@ -20,8 +20,8 @@
                         <header class="panel-heading text-center">Sign in </header>
                         <div class="form-group">
                             <br />
-                            <label class="control-label">Email</label>
-                            <input id="txtUserName" type="text" runat="server" placeholder="test@example.com" class="form-control" />
+                            <label class="control-label">Login</label>
+                            <input id="txtUserName" type="text" runat="server" placeholder="username" class="form-control" />
                         </div>
                         <div class="form-group">
                             <label class="control-label">Password</label>
@@ -30,10 +30,8 @@
                         <div class="line line-dashed"></div>
                         <div class="form-group">
                             <asp:LinkButton runat="server" CssClass="pull-right m-t-xs" Text="Forgot password?"/>
-                            <asp:Button runat="server" Text="SignIn" CssClass="btn btn-info" OnClick="LogOn_Click" />
+                            <asp:Button runat="server" Text="Sign In" CssClass="btn btn-info" OnClick="LogOn_Click" />
                             <div class="line line-dashed"></div>
-                            <p class="text-muted text-center"><small>Do not have an account?</small></p>
-                            <asp:Button runat="server" CssClass="btn btn-white btn-block" Text="Create Account" />
                         </div>
                     </section>
                 </div>
