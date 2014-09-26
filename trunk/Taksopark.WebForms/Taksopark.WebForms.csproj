@@ -78,15 +78,37 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Themes\Main\Main.skin" />
+    <Content Include="FutureStyle\css\app.v1.css" />
+    <Content Include="FutureStyle\css\app.v1.js" />
+    <Content Include="FutureStyle\css\font.css" />
+    <Content Include="FutureStyle\css\select2-spinner.html" />
+    <Content Include="FutureStyle\css\select2.html" />
+    <Content Include="FutureStyle\css\select2x2.html" />
+    <Content Include="FutureStyle\font\fontawesome-webfont.svg" />
+    <Content Include="FutureStyle\images\avatar.jpg" />
+    <Content Include="FutureStyle\images\avatar_default.jpg" />
+    <Content Include="FutureStyle\images\ipad.png" />
+    <Content Include="FutureStyle\images\iphone.png" />
+    <Content Include="FutureStyle\images\macpro.png" />
+    <Content Include="FutureStyle\js\apps\notes.js" />
+    <Content Include="FutureStyle\js\apps\tasks.js" />
     <Content Include="Images\Admin\NoDataAvailable.png" />
     <Content Include="Images\StatusImages\Active.png" />
     <Content Include="Images\StatusImages\Closed.png" />
     <Content Include="Images\StatusImages\InProgress.png" />
     <Content Include="Images\StatusImages\Rejected.png" />
+    <Content Include="Styles\app.v1.js" />
+    <Content Include="Styles\font.css" />
     <Content Include="todoStyles.css" />
     <Content Include="Dispatcher.Master" />
     <Content Include="packages.config" />
     <Content Include="Images\StatusImages\Thumbs.db" />
+    <Content Include="FutureStyle\font\fontawesome-webfont.eot" />
+    <Content Include="FutureStyle\font\fontawesome-webfont.eot%40" />
+    <Content Include="FutureStyle\font\fontawesome-webfont.ttf" />
+    <Content Include="FutureStyle\font\fontawesome-webfont.woff" />
+    <Content Include="FutureStyle\images\Descr.WD3" />
+    <Content Include="FutureStyle\images\Thumbs.db" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -130,7 +152,6 @@
     <Content Include="WebForms\EditOperator.aspx" />
     <Content Include="WebForms\EditTaxiDriver.aspx" />
     <Content Include="WebForms\EditUser.aspx" />
-    <Content Include="WebForms\Home.aspx" />
     <Content Include="WebForms\LogOn.aspx" />
     <Content Include="WebForms\Operators.aspx" />
     <Content Include="WebForms\Order.aspx" />
@@ -284,13 +305,6 @@
     </Compile>
     <Compile Include="WebForms\EditUser.aspx.designer.cs">
       <DependentUpon>EditUser.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WebForms\Home.aspx.cs">
-      <DependentUpon>Home.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForms\Home.aspx.designer.cs">
-      <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebForms\LogOn.aspx.cs">
       <DependentUpon>LogOn.aspx</DependentUpon>
