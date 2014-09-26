@@ -13,5 +13,7 @@ namespace Taksopark.DAL.Repositories.Interfases
         bool IsLoginBookedByOtherId(string login, int id);
         IEnumerable<User> GetAllUsersByStatus(int status);
         IEnumerable<User> GetAllOperatorsByStatus(int status);
+        IEnumerable<User> GetUsersByRole(int role);
+        User GetUserById(int id);
     }
 }

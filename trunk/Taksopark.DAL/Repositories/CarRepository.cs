@@ -21,7 +21,7 @@ namespace Taksopark.DAL.Repositories
         /// <param name="car">Car model</param>
         public void Update(Car car)
         {
-            using (var command = new SqlCommand("UpdateCar", _connection))
+            using (var command = new SqlCommand("sp_UpdateCar", _connection))
             {
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.AddWithValue("@Brand", car.CarBrand);
@@ -41,7 +41,7 @@ namespace Taksopark.DAL.Repositories
         /// <param name="car">Car model</param>
         public void Create(Car car)
         {
-            using (var command = new SqlCommand("CreateCar", _connection))
+            using (var command = new SqlCommand("sp_CreateCar", _connection))
             {
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.AddWithValue("@Brand", car.CarBrand);
@@ -61,7 +61,7 @@ namespace Taksopark.DAL.Repositories
         /// <returns></returns>
         public IEnumerable<Car> GetAllCars()
         {
-            using (var command = new SqlCommand("GetAllCars", _connection))
+            using (var command = new SqlCommand("sp_GetAllCars", _connection))
             {
                 var carsList = new List<Car>();
                 command.CommandType = CommandType.StoredProcedure;
@@ -102,14 +102,10 @@ namespace Taksopark.DAL.Repositories
             }
         }
 
-        /// <summary>
-        /// Check is already car with the same id
-        /// </summary>
-        /// <param name="login">String login value</param>
-        /// <returns></returns>
+
         public bool IsCarIdBooked(int id)
         {
-            using (var command = new SqlCommand("IsCarIdBooked", _connection))
+            using (var command = new SqlCommand("GetCarById", _connection))
             {
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.AddWithValue("@Id", id);

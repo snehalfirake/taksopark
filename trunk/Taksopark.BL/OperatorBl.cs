@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Data.SqlTypes;
 using System.Linq;
 using Taksopark.BL.Interfaces;
 using Taksopark.DAL;
@@ -27,8 +28,17 @@ namespace Taksopark.BL
 
         public void UpdateRequest(Request request)
         {
-            using (var uow = new UnitOfWork(_appConfigConnection))
+            var oldRequest = this.GetRequestById(request.Id);
+            if ((oldRequest.Status == 2 && request.Status == 8) || (oldRequest.Status == 4 && request.Status == 2)
+                || (oldRequest.Status == 32 && request.Status == 2) || (oldRequest.Status == 32 && request.Status == 4)
+                || (oldRequest.Status == 32 && request.Status == 8) || (oldRequest.Status == 8 && request.Status == 2)
+                || (oldRequest.Status == 8 && request.Status == 8) || (oldRequest.Status == 8 && request.Status == 4)
+                || (oldRequest.Status == 8 && request.Status == 32))
             {
+                throw new SqlTypeException("Wrong parametrs for request update");
+            }
+            using (var uow = new UnitOfWork(_appConfigConnection)){
+               
                 uow.RequestRepository.Update(request);
             }
         }
@@ -49,15 +59,6 @@ namespace Taksopark.BL
             {
                 var request = uow.RequestRepository.GetRequestById(id);
                 return request;
-            }
-        }
-
-        public List<Request> GetRequestsByState(int state)
-        {
-            using (var uow = new UnitOfWork(_appConfigConnection))
-            {
-                var requestList = uow.RequestRepository.GetAllRequestsByState(state);
-                return requestList.ToList();
             }
         }
 

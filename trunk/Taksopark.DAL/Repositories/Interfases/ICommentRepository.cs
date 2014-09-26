@@ -7,6 +7,6 @@ namespace Taksopark.DAL.Repositories.Interfases
     {
         void Update(Comment comment);
         void Create(Comment comment);
-        IEnumerable<Comment> GetAllComments();
+        IEnumerable<Comment> GetAllCommentsByCreatorId(int id);
     }
 }
