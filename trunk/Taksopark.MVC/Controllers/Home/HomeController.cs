@@ -47,13 +47,14 @@ namespace Taksopark.MVC.Controllers.Home
         [HttpPost]
         public JsonResult OrderTaxi(string from, string to, string phone)
         {
-            var request = new Request();
-            if (User.Identity.IsAuthenticated)
+            if (IsOrderValid(from, to, phone))
             {
-                var user = _userBl.GetUserByLogin(User.Identity.Name);
-                request.CreatorId = user.Id;
-                    var user = _userBl.GetUserByLogin((string) Session["UserLogin"]);
+                var request = new Request();
+                if (User.Identity.IsAuthenticated)
+                {
+                    var user = _userBl.GetUserByLogin(User.Identity.Name);
                     request.CreatorId = user.Id;
+
                 }
                 else
                 {
@@ -79,6 +80,7 @@ namespace Taksopark.MVC.Controllers.Home
                 });
             }
         }
+
         private bool IsOrderValid(string @from, string to, string phone)
         {
             var placeFromToReg =
