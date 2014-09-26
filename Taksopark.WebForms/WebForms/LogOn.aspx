@@ -40,7 +40,7 @@
         <footer id="footer">
             <div class="text-center padder clearfix">
                 <p>
-                    <small>A-Team &copy; 2013</small>
+                    <small>A-Team &copy; 2014</small>
                 </p>
             </div>
         </footer>
