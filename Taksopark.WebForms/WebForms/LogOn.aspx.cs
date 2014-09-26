@@ -35,7 +35,7 @@ namespace Taksopark.WebForms.WebForms
                     HttpContext.Current.User = new GenericPrincipal(identity, roles);
                     if (user.Role == (int)RolesEnum.Operator)
                     {
-                        Response.Redirect("Home.aspx");
+                        Response.Redirect("Order.aspx");
                     }
                     else if (user.Role == (int)RolesEnum.Admin)
                     {
