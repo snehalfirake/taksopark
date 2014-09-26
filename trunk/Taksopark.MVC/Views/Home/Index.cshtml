@@ -4,3 +4,21 @@
 }
 
 @Html.Partial("ConPartialView")
+
+@section sources{
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<script src="https://maps.googleapis.com/maps/api/js?sensor=false.." type="text/javascript"></script>
+<script>
+    auto();
+</script>
+<script>
+    $(document).ready(function () {
+        $("#dtBox").DateTimePicker();
+    });
+</script>
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<link rel="stylesheet" type="text/css" href="/Content/Layout/DateTimePicker.css" />
+<script type="text/javascript" src="/Scripts/app-scripts/DateTimePicker.js"></script>
+<script src="~/Scripts/app-scripts/map-script.js"></script>
+<script src="/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+}

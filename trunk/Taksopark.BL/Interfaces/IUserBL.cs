@@ -5,7 +5,7 @@ namespace Taksopark.BL.Interfaces
 {
     public interface IUserBl
     {
-        void CreateRequest(Request request);
+        int CreateRequest(Request request);
         void UpdateRequest(Request request);
         void CreateComment(Comment comment);
         void CreateUser(User user);

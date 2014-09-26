@@ -1,5 +1,7 @@
 ﻿
 using System;
+using System.ComponentModel.DataAnnotations;
+using System.Text.RegularExpressions;
 using System.Web.Mvc;
 using Taksopark.BL;
 using Taksopark.BL.Interfaces;
@@ -43,31 +45,52 @@ namespace Taksopark.MVC.Controllers.Home
         }
 
         [HttpPost]
-        public ActionResult OrderTaxi()
+        public JsonResult OrderTaxi(string from, string to, string phone)
         {
             var request = new Request();
             if (User.Identity.IsAuthenticated)
             {
                 var user = _userBl.GetUserByLogin(User.Identity.Name);
                 request.CreatorId = user.Id;
+                    var user = _userBl.GetUserByLogin((string) Session["UserLogin"]);
+                    request.CreatorId = user.Id;
+                }
+                else
+                {
+                    request.CreatorId = null;
+                }
+                request.OperatorId = null;
+                request.FinishPoint = to;
+                request.PhoneNumber = phone;
+                request.StartPoint = from;
+                request.Status = (int) RequestStatusEnum.Active;
+                request.RequesTime = DateTime.Now;
+                int requestId = _userBl.CreateRequest(request);
+                return Json(new
+                {
+                    RequestId = requestId
+                });
             }
             else
             {
-                request.CreatorId = null;
+                return Json(new
+                {
+                    ValidationError = "The spacified order is invalid"
+                });
             }
-            request.OperatorId = null;
-            request.FinishPoint = Request["txtFrom"];
-            request.PhoneNumber = Request["txtPhone"];
-            request.StartPoint = Request["txtTo"];
-            request.Status = (int) RequestStatusEnum.Active;
-            //request.RequesTime = Request["date-time"] == string.Empty
-            //    ? DateTime.Now
-            //    : DateTime.Parse(Request["date-time"]);
-            request.RequesTime = DateTime.Now;
-
-            _userBl.CreateRequest(request);
-            return RedirectToAction("Index", "Home");
         }
+        private bool IsOrderValid(string @from, string to, string phone)
+        {
+            var placeFromToReg =
+                new Regex(
+                    @"^[A-Za-zА-ЯЄІЇҐа-яєіїґ-]{3,30}[\ \]{0,1}[A-Za-zА-ЯЄІЇҐа-яєіїґ-]{0,30}[\ \]{0,1}[A-Za-zА-ЯЄІЇҐа-яєіїґ-]{0,30}[\ \]{0,1}[0-9]{0,4}[\ \]{0,1}[A-Za-zА-ЯЄІЇҐа-яєіїґ-]{0,1}$");
+            var phoneReg = new Regex(@"^[(]{0,1}[0-9]{3}[)]{0,1}[-\ \.]{0,1}[0-9]{3}[-\ \.]{0,1}[0-9]{4}$");
 
+            var placeFromMatch = placeFromToReg.Match(@from);
+            Match placeToMatch = placeFromToReg.Match(to);
+            Match phoneMatch = phoneReg.Match(phone);
+            
+            return placeFromMatch.Success && placeToMatch.Success && phoneMatch.Success;
+        }
     }
 }
