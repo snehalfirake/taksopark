@@ -23,9 +23,7 @@ namespace Taksopark.WebForms.Models
             this.Status = request.Status;
         }
 
-        private string _status = "Active";
-
-        public new string StatusIconUrl
+        public string StatusIconUrl
         {
             get
             {

@@ -4,13 +4,15 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
     <title>Dispatcher</title>
-    <%--<link href='http://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css' />--%>
     <link href="Fonts/Quicksand.css" rel='stylesheet' type='text/css' />
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="Styles/Styles.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="menu/css/simple_menu.css" />
+
+    <link href="Styles/metro/metro-bootstrap.css" rel="stylesheet" />
+    <link href="Styles/metro/iconFont.css" rel="stylesheet" />
 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
     <script type="text/javascript" src="contact_form/js/jquery.tools.js"></script>
@@ -23,6 +25,36 @@
         <%--Header--%>
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <div class="header">
+            <div class="metro">
+                <nav class="navigation-bar dark">
+                    <div class="navigation-bar-content">
+                        <a href="/" class="element">TAKSOPARK <sup>2014</sup></a>
+                        <span class="element-divider"></span>
+
+                        <a class="pull-menu" href="#"></a>
+                        <ul class="element-menu">
+                            <li>
+                                <a href="#">Single Order</a>
+                            </li>
+                        </ul>
+
+                        <div class="no-tablet-portrait">
+                            <span class="element-divider"></span>
+                            <a class="element brand" href="#"><span class="icon-spin"></span></a>
+                            <span class="element-divider"></span>
+
+                            <div class="element place-right">
+                                <a class="icon-exit" href="#"></a>
+                            </div>
+                            <span class="element-divider place-right"></span>
+                            <button class="element image-button image-left place-right">
+                                Nazar Krypiak
+                            <img src="http://cs616522.vk.me/v616522861/1d32f/b5Qd3Inj7R0.jpg" />
+                            </button>
+                        </div>
+                    </div>
+                </nav>
+            </div>
             <div id="site_title">
                 <a href="Home.aspx">
                     <img src="/Images/Admin/logo.png" />
@@ -30,7 +62,7 @@
             </div>
             <ol id="menu">
                 <li class="active_menu_item">
-                    <asp:HyperLink runat="server" NavigateUrl="~/WebForms/Order.aspx" Text="Orders"/>
+                    <asp:HyperLink runat="server" NavigateUrl="~/WebForms/Order.aspx" Text="Orders" />
                 </li>
             </ol>
         </div>
