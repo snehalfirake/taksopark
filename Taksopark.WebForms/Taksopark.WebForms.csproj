@@ -99,6 +99,11 @@
     <Content Include="Images\StatusImages\Rejected.png" />
     <Content Include="Styles\app.v1.js" />
     <Content Include="Styles\font.css" />
+    <Content Include="Styles\metro\fonts\iconFont.dev.svg" />
+    <Content Include="Styles\metro\fonts\iconFont.svg" />
+    <Content Include="Styles\metro\fonts\metroSysIcons.svg" />
+    <Content Include="Styles\metro\iconFont.css" />
+    <Content Include="Styles\metro\metro-bootstrap.css" />
     <Content Include="todoStyles.css" />
     <Content Include="Dispatcher.Master" />
     <Content Include="packages.config" />
@@ -109,6 +114,16 @@
     <Content Include="FutureStyle\font\fontawesome-webfont.woff" />
     <Content Include="FutureStyle\images\Descr.WD3" />
     <Content Include="FutureStyle\images\Thumbs.db" />
+    <Content Include="Styles\metro\fonts\iconFont.eot" />
+    <Content Include="Styles\metro\fonts\iconFont.json" />
+    <Content Include="Styles\metro\fonts\iconFont.ttf" />
+    <Content Include="Styles\metro\fonts\iconFont.woff" />
+    <Content Include="Styles\metro\fonts\metroSysIcons.ttf" />
+    <Content Include="Styles\metro\fonts\metroSysIcons.woff" />
+    <Content Include="Styles\metro\fonts\OpenSans-Bold.woff" />
+    <Content Include="Styles\metro\fonts\OpenSans-Light.woff" />
+    <Content Include="Styles\metro\fonts\OpenSans.woff" />
+    <Content Include="Styles\metro\fonts\PTSerif-Caption.woff" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
