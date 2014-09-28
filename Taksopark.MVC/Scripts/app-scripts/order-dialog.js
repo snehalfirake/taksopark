@@ -62,14 +62,14 @@
     });
 
     $("#orderTaxiButtonId").on("click", function () {
-
+        $("#cover").removeClass('cover');
+        $("#cover").addClass('cover');
         var placeFrom = $("#placeFromTextBoxId").val();
         var placeTo = $("#placeToTextBoxId").val();
         var phone = $("#phoneTextBoxId").val();
 
         if ((!($("#placeFromTextBoxId").val() == "") && (!$("#placeToTextBoxId").val() == "") && (!$("#phoneTextBoxId").val() == ""))) {
             $("#order-dialog").dialog("open");
-
             $("#dialogFromId").val(placeFrom);
             $("#dialogToId").val(placeTo);
             $("#dialogPhoneId").val(phone);

@@ -140,6 +140,7 @@
     <Content Include="Content\Layout\reset.css" />
     <Content Include="Content\Layout\style.css" />
     <Content Include="Content\Layout\superfish.css" />
+    <Content Include="Content\OrderTaxi\extended-order-styles.css" />
     <Content Include="Content\OrderTaxi\order-dialog-styles.css" />
     <Content Include="Content\OrderTaxi\OrdetTaxiStyles.css" />
     <Content Include="Content\Site.css" />
