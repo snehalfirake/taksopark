@@ -1,13 +1,3 @@
-/*  
-	-------------------------	jQuery DateTimePicker v0.1.1	----------------------------
-	
-	Version 0.1.1
-	Copyright 2014 Curious Solutions Pvt Ltd and Neha Kadam
-	
-	https://github.com/CuriousSolutions/DateTimePicker
-	
-*/
-
 
 ;(function ( $, window, document, undefined ) {
 	

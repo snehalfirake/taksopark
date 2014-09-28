@@ -45,7 +45,7 @@ namespace Taksopark.MVC.Controllers.Home
         }
 
         [HttpPost]
-        public JsonResult OrderTaxi(string from, string to, string phone)
+        public JsonResult OrderTaxi(string from, string to, string phone, string date, string service)
         {
             if (IsOrderValid(from, to, phone))
             {
@@ -65,7 +65,15 @@ namespace Taksopark.MVC.Controllers.Home
                 request.PhoneNumber = phone;
                 request.StartPoint = from;
                 request.Status = (int) RequestStatusEnum.Active;
-                request.RequesTime = DateTime.Now;
+                if (date == "")
+                {
+                    request.RequesTime = DateTime.Now;
+                }
+                else
+                {
+                    request.RequesTime = DateTime.Parse(date);
+                }
+                request.Additional = service;
                 int requestId = _userBl.CreateRequest(request);
                 return Json(new
                 {
