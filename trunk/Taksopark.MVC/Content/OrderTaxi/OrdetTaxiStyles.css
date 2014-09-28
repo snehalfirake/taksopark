@@ -99,13 +99,16 @@
 }
 
 #orderTaxiButtonHolderId {
-    max-height:34px;
-    height:34px;
-    max-width:84px;
-    width:84px;
+    max-height:50px;
+    height:45px;
+    max-width:170px;
+    width:147px;
     position:relative;
     float:right;
     top: 34px;
+}
+
+#show {
 }
 
 #showTheWayHolderId {

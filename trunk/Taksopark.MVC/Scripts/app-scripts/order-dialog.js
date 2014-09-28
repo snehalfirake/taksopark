@@ -13,6 +13,8 @@
                 var txtplaceFrom = $("#placeFromTextBoxId").val();
                 var txtplaceTo = $("#placeToTextBoxId").val();
                 var txtphone = $("#phoneTextBoxId").val();
+                var txtdate = $("#date-time").val();
+                var checked_radio = $('input:radio[name=service]:checked').val();
                 $.ajax({
                     url: "/Home/OrderTaxi",
                     type: "POST",
@@ -21,13 +23,15 @@
                     data: {
                         from: txtplaceFrom,
                         to: txtplaceTo,
-                        phone: txtphone
+                        phone: txtphone,
+                        date: txtdate,
+                        service: checked_radio
                     },
                     success: function (data) {
                         if (data.RequestId) {
                             $('.ui-dialog-buttonpane').find('button:first').css('visibility', 'hidden');
                             $(":button:contains('Reject')").text('Ok');
-                            $(".message").text("Your order has been successfully completed!").css("color", "green");
+                            $(".message").text("Your order has been successfully submited!").css("color", "green");
                             $("#placeFromTextBoxId").val("");
                             $("#placeToTextBoxId").val("");
                             $("#phoneTextBoxId").val("");
