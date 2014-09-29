@@ -18,7 +18,7 @@
 <ul>
 <li>Execute the script https://code.google.com/p/taksopark/source/browse/trunk/DBFiles/CreateLocalDB.sql</li>
 <li>Use backup file(MSS 2012) https://code.google.com/p/taksopark/source/browse/trunk/DBFiles/TaxiServiseDB.bak</li>
-</li>
+</ul>
 </ol>
 <h3><p align="center">Run the System</p></h3><br>
 <p></p>
