@@ -22,9 +22,9 @@ To order taxi you must enter some information:
 <li><h4>On "Home" page you can register or Sign In</h4></li>
 For Sign In use:
 <br/>
-Login: Ivan_93
+Login: Client1
 <br/>
-Password: asd12334
+Password: 654321
 <img src="https://pp.vk.me/c624722/v624722811/30ba/KURJ3h1lkns.jpg" />
 <li><h4>On "Contacts" you can contact us via email</h4></li>
 <img src="https://pp.vk.me/c617530/v617530811/1f293/u2_iMJv47Tk.jpg" />
@@ -41,9 +41,9 @@ Password: asd12334
 <img src="https://pp.vk.me/c624722/v624722811/30f3/qAl9VVR3m3s.jpg" />
 For Sign In use:
 <br/>
-Login: Orest_92
+Login: Admin
 <br/>
-Password: 1
+Password: 123456
 <li><h4>Admin can control:</h4></li>
 - Users<br/>
 - Operators<br/>
@@ -58,9 +58,9 @@ Password: 1
 <br/>
 For Sign In use:
 <br/>
-Login: Volodya_93
+Login: Operator1
 <br/>
-Password: asd341190
+Password: asd123
 <li><h4>Operator can view orders list</h4></li>
 <img src="https://pp.vk.me/c618324/v618324811/164d3/ZLyQ65YS6CY.jpg" />
 <li><h4>Operator can assign taxi driver to order and change order status</h4></li>
