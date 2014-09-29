@@ -33,7 +33,7 @@
                         <div class="form-group">
                            
                             <label class="control-label">Password</label>
-                            <input id="txtUserPass" type="password" class="txtUserName1" runat="server" style="margin-left: 50px; height: 30px; width: 70%; float:right" />
+                            <input id="txtUserPass" type="password" class="txtUserName1" runat="server" />
 
                         &nbsp;
                         </div>
