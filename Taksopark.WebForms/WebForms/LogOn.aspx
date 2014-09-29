@@ -17,25 +17,19 @@
             <a class="nav-brand">Taksopark Control Panel</a>
             <div class="row m-n">
                 <div class="col-md-4 col-md-offset-4 m-t-lg" >
-                    <section class="panel" style="height: 280px; width: 415px;">
+                    <section class="panel" style="height: 250px; width: 415px;">
 <%--                        <header class="panel-heading text-center">Sign in </header>--%>
                         <asp:CustomValidator ID="CustomValidator1" runat="server" ErrorMessage="Provided login or password is incorect"    CssClass="validatorsMessage" ></asp:CustomValidator>
-                        <div class="form-group">
-                            <asp:RegularExpressionValidator runat="server" CssClass="validatorsMessage" ErrorMessage="Login must be less than 20 characters lenght" ControlToValidate="txtUserName" ValidationExpression="^[\s\S]{0,20}$"></asp:RegularExpressionValidator>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" CssClass="validatorsMessage" runat="server" ControlToValidate="txtUserName" ErrorMessage="Login Is Required"></asp:RequiredFieldValidator>
-                        </div>
-                        <br />
-                        <br />
+
+                        <asp:RegularExpressionValidator runat="server" CssClass="validatorsMessage" ErrorMessage="Login must be less than 20 characters lenght" ControlToValidate="txtUserName" ValidationExpression="^[\s\S]{0,20}$"></asp:RegularExpressionValidator>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" CssClass="validatorsMessage" runat="server" ControlToValidate="txtUserName" ErrorMessage="Login Is Required"></asp:RequiredFieldValidator>
                         <div class="form-group">
                             <label class="control-label">Login</label>
                             <input id="txtUserName" type="text" runat="server"  class="txtUserName1" />
                         </div>
-                        <div class="form-group">
-                            <asp:RegularExpressionValidator CssClass="validatorsMessage" runat="server" ErrorMessage="Password must be less than 15 characters lenght" ControlToValidate="txtUserPass" ValidationExpression="^[\s\S]{0,15}$"></asp:RegularExpressionValidator>
-                            <asp:RequiredFieldValidator CssClass="validatorsMessage" ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtUserPass" ErrorMessage="Password Is Required"></asp:RequiredFieldValidator>
-                        </div>
-                        <br />
-                        <br />
+
+                        <asp:RegularExpressionValidator CssClass="validatorsMessage" runat="server" ErrorMessage="Password must be less than 15 characters lenght" ControlToValidate="txtUserPass" ValidationExpression="^[\s\S]{0,15}$"></asp:RegularExpressionValidator>
+                        <asp:RequiredFieldValidator CssClass="validatorsMessage" ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtUserPass" ErrorMessage="Password Is Required"></asp:RequiredFieldValidator>
                         <div class="form-group">
                             <label class="control-label">Password</label>
                             <input id="txtUserPass" type="password" class="txtUserName1" runat="server" />
