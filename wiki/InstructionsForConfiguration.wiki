@@ -9,10 +9,12 @@
 <p></p>
 <h3><p align="center">Deploy the Database</p></h3><br>
 <p></p>
+* You don't need to deploy the database localy on your PC as it's already located on the server side and connection string is inserted in Web.config files. But if you still need to deploy it - use the below instructions:
 <ol>
 <li>Install SQL Server Express 2008/2012/2014</li>
 <li>Install Microsoft SQL Server and SQL Management Studio 2008/2012/2014</li>
-<li>Execut the script https://taksopark.googlecode.com/svn/trunk/DBQuery/CreateDB.sql</li>
+
+<li>Execute the script https://taksopark.googlecode.com/svn/trunk/DBQuery/CreateDB.sql</li>
 </ol>
 <h3><p align="center">Run the System</p></h3><br>
 <p></p>
