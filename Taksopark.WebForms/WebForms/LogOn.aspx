@@ -21,7 +21,7 @@
                         <div class="form-group">
                             <br />
                             <label class="control-label">Login</label>
-                            <input id="txtUserName" type="text" runat="server" placeholder="username" class="form-control" />
+                            <input id="txtUserName" type="text" runat="server"  class="form-control" />
                         </div>
                         <div class="form-group">
                             <label class="control-label">Password</label>
@@ -29,7 +29,7 @@
                         </div>
                         <div class="line line-dashed"></div>
                         <div class="form-group">
-                            <asp:LinkButton runat="server" CssClass="pull-right m-t-xs" Text="Forgot password?"/>
+<%--                            <asp:LinkButton runat="server" CssClass="pull-right m-t-xs" Text="Forgot password?"/>--%>
                             <asp:Button runat="server" Text="Sign In" CssClass="btn btn-info" OnClick="LogOn_Click" />
                             <div class="line line-dashed"></div>
                         </div>
