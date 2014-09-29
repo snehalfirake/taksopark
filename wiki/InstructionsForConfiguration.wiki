@@ -14,7 +14,7 @@
 <ol>
 <li>Install SQL Server Express 2008/2012/2014</li>
 <li>Install Microsoft SQL Server and SQL Management Studio 2008/2012/2014</li>
-&#10050; Optional :
+&diams; Optional :
 <ul>
 <li>Execute the script https://code.google.com/p/taksopark/source/browse/trunk/DBFiles/CreateLocalDB.sql</li>
 <li>Use backup file(MSS 2012) https://code.google.com/p/taksopark/source/browse/trunk/DBFiles/TaxiServiseDB.bak</li>
