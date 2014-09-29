@@ -12,7 +12,7 @@ namespace Taksopark.WebForms.Dispatcher
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            userLogin.InnerText = "Welcome, " + HttpContext.Current.User.Identity.Name + "!";
         }
 
         protected void Unnamed_Click(object sender, EventArgs e)

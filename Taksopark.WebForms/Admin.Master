@@ -18,42 +18,21 @@
 <body>
     <form id="form1" runat="server">
         <div class="header">
-            <div class="metro">
-                <nav class="navigation-bar dark">
-                    <div class="navigation-bar-content">
-                        <a href="/" class="element">TAKSOPARK <sup>2014</sup></a>
-                        <span class="element-divider"></span>
-
-                        <a class="pull-menu" href="#"></a>
-                        <ul class="element-menu">
-                            <li>
-                                <a href="#">Single Order</a>
-                            </li>
-                        </ul>
-
-                        <div class="no-tablet-portrait">
-                            <span class="element-divider"></span>
-                            <a class="element brand" href="#"><span class="icon-spin"></span></a>
-                            <span class="element-divider"></span>
-
-                            <div class="element place-right">
-                                <asp:Button Text="Sign Out" class="icon-exit" runat="server" href="#" onclick="Unnamed_Click"></asp:Button>
-                            </div>
-                            <span class="element-divider place-right"></span>
-                            <button class="element image-button image-left place-right">
-                                Nazar Krypiak
-                            <img src="http://cs616522.vk.me/v616522861/1d32f/b5Qd3Inj7R0.jpg" />
-                            </button>
-                        </div>
-                    </div>
-                </nav>
-            </div>
-            <h1 class="center" style="text-align:center">Lviv Taxi: Admin Console</h1>
-            <div id="site_title">
-                <a href="Users.aspx">
+            <div class="centerMenuDiv">
+                <div class="leftMenuImage">
                     <img src="/Images/Admin/logo.png" />
-                </a>
+                </div>
+                <div class="longTitle">
+                    Lviv Taxi: Admin Console
+                </div>
+                <div class="userLoginDiv" id="userLogin" runat="server">
+                </div>
+                <div class="buttonLogOut">
+                    <asp:Button Text="Sign Out" EnableTheming="false" class="icon-exit" runat="server" href="#" onclick="Unnamed_Click" Width="80" Height="30"></asp:Button>
+                </div>
+                <div class="lastMenuDiv"></div>
             </div>
+            
             <ol id="menu">
                 <li class="active_menu_item">
                     <asp:HyperLink runat="server" NavigateUrl="~/WebForms/Users.aspx" Text="Users">
