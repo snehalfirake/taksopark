@@ -28,7 +28,7 @@
                 <div class="userLoginDiv" id="userLogin" runat="server">
                 </div>
                 <div class="buttonLogOut">
-                    <asp:Button Text="Sign Out" EnableTheming="false" class="icon-exit" runat="server" href="#" onclick="Unnamed_Click" Width="80" Height="30"></asp:Button>
+                    <asp:Button Text="Sign Out" EnableTheming="false" class="icon-exit" runat="server" href="#" onclick="Unnamed_Click" Width="80" Height="30" CssClass="fontFamilyStandart"></asp:Button>
                 </div>
                 <div class="lastMenuDiv"></div>
             </div>
