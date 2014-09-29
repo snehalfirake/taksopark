@@ -8,8 +8,8 @@ insert into Users (Name, LastName, Login, PhoneNumber, Email, Password, Role, St
 insert into Users (Name, LastName, Login, PhoneNumber, Email, Password, Role, Status, DriverStatus) values ('Admin', 'AdminLN', 'Admin', '380969556789', 'orest@gmail.com.ua', '123456', 32, 2, null)
 
 insert into Cars (Brand, Year, StartWorkTime, FinishWorkTime, Latitude, Longitude) values ('Honda', 2012, convert(datetime,'18-10-14 06:00:00 PM',5), convert(datetime,'18-10-14 19:30:00 PM',5), '-54.0000000', '54.23423423423')
-insert into Cars (Brand, Year, StartWorkTime, FinishWorkTime, Latitude, Longitude) values ('Skoda', 2010, convert(datetime,'18-06-12 10:34:09 PM',5), convert(datetime,'18-06-12 10:34:09 PM',5), '-26.003245252', '14.1343434')
-insert into Cars (Brand, Year, StartWorkTime, FinishWorkTime, Latitude, Longitude) values ('Toyota', 2011, convert(datetime,'12-10-14 10:00:00 PM',5), convert(datetime,'12-10-14 22:30:00 PM',5), '-37.0000000', '54.23424323423')
+insert into Cars (Brand, Year, StartWorkTime, FinishWorkTime, Latitude, Longitude) values ('Skoda', 2010, convert(datetime,'18-06-12 10:34:00 PM',5), convert(datetime,'18-06-12 18:34:00 PM',5), '-26.003245252', '14.1343434')
+
 
 insert into [Request] (RequetTime, CreatorId, PhoneNumber, Status, StartPoint, FinishPoint, OperatorId, DriverId, Price, Additional) values (convert(datetime,'18-10-14 15:00:00 PM',5), null, '0631709471', 2, 'Prospekt Shevchenka', 'Syhiv', null, null, 43, null)
 insert into [Request] (RequetTime, CreatorId, PhoneNumber, Status, StartPoint, FinishPoint, OperatorId, DriverId, Price, Additional) values (convert(datetime,'18-10-14 15:00:00 PM',5), 5, '0631709471', 4, 'Shevchenka', 'Kaluna', 3, 1, 56, null)
