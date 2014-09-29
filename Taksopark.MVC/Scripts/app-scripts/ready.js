@@ -1,21 +1,21 @@
 ﻿var flag = false;
 
 $(document).ready(function () {
-
-    $("#toggle").hide();
-    
+    $("#toggle").hide();   
     $("#show").click(function () {
         if (!flag) {
             flag = true;
-            $("#toggle").show("clip", { direction: "vertical" }, 500);
+            $("#toggle").show("slide", { direction: "up" }, 500);
+            $("#show").text("Hide ");
         }
         else {
             flag = false;
-            $("#toggle").hide("clip", { direction: "vertical" }, 500);
+            $("#toggle").hide("slide", { direction: "up" }, 500);
+            $("#show").text("More");
+            $("#date-time").val("");
+            $('input:radio[name=service]').prop('checked', false);
         }
-
     });
-
     $("#dtBox").DateTimePicker();
 });
 
