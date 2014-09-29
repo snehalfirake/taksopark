@@ -17,7 +17,7 @@
             <a class="nav-brand">Taksopark Control Panel</a>
             <div class="row m-n">
                 <div class="col-md-4 col-md-offset-4 m-t-lg" >
-                    <section class="panel" style="height: 230px">
+                    <section class="panel" style="height: 230px; width: 405px;">
 <%--                        <header class="panel-heading text-center">Sign in </header>--%>
                         <asp:CustomValidator ID="CustomValidator1" runat="server" ErrorMessage="Provided login or password is incorect"    CssClass="validatorsMessage" ></asp:CustomValidator>
                         <asp:RegularExpressionValidator runat="server"  CssClass="validatorsMessage" ErrorMessage="Login must be less than 20 characters lenght"  ControlToValidate="txtUserName" ValidationExpression="^[\s\S]{0,20}$"></asp:RegularExpressionValidator>
