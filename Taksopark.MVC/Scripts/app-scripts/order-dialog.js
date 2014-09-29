@@ -75,7 +75,6 @@
             $("#dialogPhoneId").val(phone);
         } else {
             $(this).dialog("close");
-            alert("Type data!!!");
         }
     });
 });
