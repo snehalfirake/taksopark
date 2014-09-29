@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Dispatcher.Master" AutoEventWireup="true" CodeBehind="Confirmation.aspx.cs" Inherits="Taksopark.WebForms.Dispatcher.Confirmation" %>
 
-<%@ Register Src="~/UserControls/Dispatcher/OrderInfo.ascx" TagPrefix="uc1" TagName="OrderInfo" %>
+<%@ Register Src="~/UserControls/OrderInfo.ascx" TagPrefix="uc1" TagName="OrderInfo" %>
 
 <asp:Content ID="content3" ContentPlaceHolderID="contentMenu" runat="server">
    <%-- <div class="menuDiv">

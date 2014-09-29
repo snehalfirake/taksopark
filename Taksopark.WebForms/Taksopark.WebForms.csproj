@@ -97,6 +97,7 @@
     <Content Include="Images\StatusImages\Closed.png" />
     <Content Include="Images\StatusImages\InProgress.png" />
     <Content Include="Images\StatusImages\Rejected.png" />
+    <Content Include="style.css" />
     <Content Include="Styles\Admin\LogOn.css" />
     <Content Include="Styles\app.v1.js" />
     <Content Include="Styles\font.css" />
@@ -105,6 +106,7 @@
     <Content Include="Styles\metro\fonts\metroSysIcons.svg" />
     <Content Include="Styles\metro\iconFont.css" />
     <Content Include="Styles\metro\metro-bootstrap.css" />
+    <Content Include="Styles\Styles.css" />
     <Content Include="todoStyles.css" />
     <Content Include="Dispatcher.Master" />
     <Content Include="packages.config" />
@@ -356,6 +358,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Styles\NewFolder1\" />
+    <Folder Include="UserControls\Dispatcher\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Taksopark.BL\Taksopark.BL.csproj">
