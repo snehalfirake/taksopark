@@ -1,7 +1,9 @@
 ﻿.validatorsMessage {
-      color:red;
+    color:red;
     text-align:center;
     font-size: 11px;
+    Width: 100%;
+    float: right;
 }
 
 .CustomValidator1 {
@@ -9,7 +11,7 @@
 }
 
 .btn-info2 {
-        display: inline-block;
+    display: inline-block;
     padding: 6px 12px;
     margin-bottom: 0;
     font-size: 14px;
