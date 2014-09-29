@@ -1,4 +1,4 @@
-<h1><p align="center">Instructions to Сonfigure Local Environment</p></h1>
+<h1><p align="center">Instructions to Configure Local Environment</p></h1>
 <br>
 <h3><p align="center">Get Source Code</p></h3><br>
 <ol>
@@ -9,12 +9,16 @@
 <p></p>
 <h3><p align="center">Deploy the Database</p></h3><br>
 <p></p>
-* You don't need to deploy the database localy on your PC as it's already located on the server side and connection string is inserted in Web.config files. But if you still need to deploy it - use the below instructions:
+&#9733; You don't need to deploy the database localy on your PC as it's already located on the server side and connection string is inserted in Web.config files. 
+</br>But if you still need to deploy it - use the below instructions:
 <ol>
 <li>Install SQL Server Express 2008/2012/2014</li>
 <li>Install Microsoft SQL Server and SQL Management Studio 2008/2012/2014</li>
-
-<li>Execute the script https://taksopark.googlecode.com/svn/trunk/DBQuery/CreateDB.sql</li>
+&#10050; Optional :
+<ul>
+<li>Execute the script https://code.google.com/p/taksopark/source/browse/trunk/DBFiles/CreateLocalDB.sql</li>
+<li>Use backup file(MSS 2012) https://code.google.com/p/taksopark/source/browse/trunk/DBFiles/TaxiServiseDB.bak</li>
+</li>
 </ol>
 <h3><p align="center">Run the System</p></h3><br>
 <p></p>
