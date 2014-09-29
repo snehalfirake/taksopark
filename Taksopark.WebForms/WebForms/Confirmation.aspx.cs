@@ -86,7 +86,7 @@ namespace Taksopark.WebForms.Dispatcher
         {
             IAdminBl adminBl = HttpContext.Current.Application.GetContainer().Resolve<IAdminBl>();
 
-            driversDropDownList.DataSource = adminBl.GetAllDrivers();
+            driversDropDownList.DataSource = adminBl.GetAllDriversByStatus((int)Enum.Parse(typeof(DriverStatusEnum), "Free"));
             driversDropDownList.DataValueField = "Id";
             driversDropDownList.DataTextField = "DriverInfo";
             driversDropDownList.DataBind();
