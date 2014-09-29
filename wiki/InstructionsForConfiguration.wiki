@@ -9,12 +9,12 @@
 <p></p>
 <h3><p align="center">Deploy the Database</p></h3><br>
 <p></p>
-<span>*</span> You don't need to deploy the database localy on your PC as it's already located on the server side and connection string is inserted in Web.config files. 
+P.S. You don't need to deploy the database localy on your PC as it's already located on the server side and connection string is inserted in Web.config files. 
 </br>But if you still need to deploy it - use the below instructions:
 <ol>
 <li>Install SQL Server Express 2008/2012/2014</li>
 <li>Install Microsoft SQL Server and SQL Management Studio 2008/2012/2014</li>
-&diams; Optional :
+   Optional :
 <ul>
 <li>Execute the script https://code.google.com/p/taksopark/source/browse/trunk/DBFiles/CreateLocalDB.sql</li>
 <li>Use backup file(MSS 2012) https://code.google.com/p/taksopark/source/browse/trunk/DBFiles/TaxiServiseDB.bak</li>
