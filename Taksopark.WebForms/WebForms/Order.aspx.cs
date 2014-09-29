@@ -39,5 +39,10 @@ namespace Taksopark.WebForms.Dispatcher
                 return orders.OrderBy(o => o.RequesTime).ToList();
             }
         }
+
+        protected void timerToRefreshOrders_Tick(object sender, EventArgs e)
+        {
+            OrdersTable.DataBind();
+        }
     }
 }
