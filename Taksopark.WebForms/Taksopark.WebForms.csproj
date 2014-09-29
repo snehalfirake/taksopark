@@ -113,7 +113,6 @@
     <Content Include="FutureStyle\font\fontawesome-webfont.ttf" />
     <Content Include="FutureStyle\font\fontawesome-webfont.woff" />
     <Content Include="FutureStyle\images\Descr.WD3" />
-    <Content Include="FutureStyle\images\Thumbs.db" />
     <Content Include="Styles\metro\fonts\iconFont.eot" />
     <Content Include="Styles\metro\fonts\iconFont.json" />
     <Content Include="Styles\metro\fonts\iconFont.ttf" />
@@ -130,10 +129,6 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
-    <Content Include="App_Data\TaksoparkDB.mdf" />
-    <Content Include="App_Data\TaksoparkDB_log.ldf">
-      <DependentUpon>TaksoparkDB.mdf</DependentUpon>
-    </Content>
     <Content Include="App_Themes\Main\MainStyle.css" />
     <Content Include="Images\Admin\article_bg.png" />
     <Content Include="Images\Admin\body_bg.png" />
@@ -357,7 +352,9 @@
       <DependentUpon>Users.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Taksopark.BL\Taksopark.BL.csproj">
       <Project>{e539054c-b886-4d6c-9c06-d0bb1202777f}</Project>

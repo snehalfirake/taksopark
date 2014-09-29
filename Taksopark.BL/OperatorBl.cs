@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data.SqlTypes;
 using System.Linq;
 using Taksopark.BL.Interfaces;
@@ -38,7 +39,7 @@ namespace Taksopark.BL
                 || (oldRequest.Status == (int)RequestStatusEnum.Closed && request.Status == (int)RequestStatusEnum.InProgress)
                 || (oldRequest.Status == (int)RequestStatusEnum.Closed && request.Status == (int)RequestStatusEnum.Rejected))
             {
-                throw new SqlTypeException("Wrong parametrs for request update");
+                throw new ArgumentException("Wrong parametrs for request update");
             }
             using (var uow = new UnitOfWork(_appConfigConnection)){
                

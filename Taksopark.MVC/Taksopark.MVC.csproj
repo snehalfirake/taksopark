@@ -167,8 +167,6 @@
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
     <Content Include="Scripts\jquery-ui-1.8.20.js" />
-    <Content Include="Scripts\jquery-ui.js" />
-    <Content Include="Scripts\jquery-ui.min.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\OrderTaxi\OrderTaxi.js" />
@@ -191,6 +189,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CommentModel.cs" />
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\Driver.cs" />
     <Compile Include="Models\EditProfileModel.cs" />
@@ -227,6 +226,7 @@
     <Content Include="Views\UserProfile\GetUserHistory.cshtml" />
     <Content Include="Views\UserProfile\GetRequestDetails.cshtml" />
     <Content Include="Views\UserProfile\EditRequest.cshtml" />
+    <Content Include="Views\UserProfile\AddComent.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

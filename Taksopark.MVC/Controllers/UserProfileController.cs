@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
 using Taksopark.BL;
 using Taksopark.BL.Interfaces;
@@ -74,10 +76,42 @@ namespace Taksopark.MVC.Controllers
         {
             var user = _userBl.GetUserByLogin(User.Identity.Name);
             var requestList = _userBl.GetAllRequestsByCreatorID(user.Id);
-            var requestModelList = requestList.Select(request => new RequestModel
+            var requestModelList = new List<RequestModel>();
+            foreach (var request in requestList)
             {
-                RequestId = request.Id, PhoneNumber = request.PhoneNumber, FinishPoint = request.FinishPoint, StartPoint = request.StartPoint, RequesTime = request.RequesTime, Status = request.Status
-            }).ToList();
+                var requestModel = new RequestModel
+                {
+                    RequestId = request.Id,
+                    PhoneNumber = request.PhoneNumber,
+                    FinishPoint = request.FinishPoint,
+                    StartPoint = request.StartPoint,
+                    RequesTime = request.RequesTime
+                };
+                switch (request.Status)
+                {
+                    case (int) RequestStatusEnum.Active:
+                    {
+                        requestModel.Status = "Active";
+                        break;
+                    }
+                    case (int)RequestStatusEnum.Closed:
+                    {
+                        requestModel.Status = "Closed";
+                        break;
+                    }
+                    case (int)RequestStatusEnum.InProgress:
+                    {
+                        requestModel.Status = "In Progress";
+                        break;
+                    }
+                    case (int)RequestStatusEnum.Rejected:
+                    {
+                        requestModel.Status = "Rejected";
+                        break;
+                    }
+                }
+                requestModelList.Add(requestModel);
+            }
             return View(requestModelList);
         }
 
@@ -91,9 +125,30 @@ namespace Taksopark.MVC.Controllers
                 StartPoint = request.StartPoint,
                 PhoneNumber = request.PhoneNumber,
                 RequesTime = request.RequesTime,
-                Status = request.Status
             };
-
+            switch (request.Status)
+            {
+                case (int) RequestStatusEnum.Active:
+                {
+                    requestModel.Status = "Active";
+                    break;
+                }
+                case (int) RequestStatusEnum.Closed:
+                {
+                    requestModel.Status = "Closed";
+                    break;
+                }
+                case (int) RequestStatusEnum.InProgress:
+                {
+                    requestModel.Status = "In Progress";
+                    break;
+                }
+                case (int) RequestStatusEnum.Rejected:
+                {
+                    requestModel.Status = "Rejected";
+                    break;
+                }
+            }
             return View(requestModel);
         }
 
@@ -107,8 +162,30 @@ namespace Taksopark.MVC.Controllers
                 StartPoint = request.StartPoint,
                 PhoneNumber = request.PhoneNumber,
                 RequesTime = request.RequesTime,
-                Status = request.Status
             };
+            switch (request.Status)
+            {
+                case (int) RequestStatusEnum.Active:
+                {
+                    requestModel.Status = "Active";
+                    break;
+                }
+                case (int) RequestStatusEnum.Closed:
+                {
+                    requestModel.Status = "Closed";
+                    break;
+                }
+                case (int) RequestStatusEnum.InProgress:
+                {
+                    requestModel.Status = "In Progress";
+                    break;
+                }
+                case (int) RequestStatusEnum.Rejected:
+                {
+                    requestModel.Status = "Rejected";
+                    break;
+                }
+            }
             return View(requestModel);
         }
 
@@ -133,13 +210,65 @@ namespace Taksopark.MVC.Controllers
                     StartPoint = requestModel.StartPoint,
                     PhoneNumber = requestModel.PhoneNumber,
                     RequesTime = requestModel.RequesTime,
-                    Status = requestModel.Status,
                     Id = requestModel.RequestId
                 };
+                switch (requestModel.Status)
+                {
+                    case "Active" :
+                    {
+                        request.Status = (int)RequestStatusEnum.Active;
+                        break;
+                    }
+                    case "Closed":
+                    {
+                        request.Status = (int) RequestStatusEnum.Closed;
+                        break;
+                    }
+                    case "In Progress":
+                    {
+                        request.Status = (int) RequestStatusEnum.InProgress;
+                        break;
+                    }
+                    case "Rejected":
+                    {
+                        request.Status = (int) RequestStatusEnum.Rejected;
+                        break;
+                    }
+                }
                 _userBl.UpdateRequest(request);
                 return RedirectToAction("GetUserHistory", "UserProfile");
             }
             return View(requestModel);
+        }
+
+        [HttpGet]
+        public ActionResult AddComent(int id)
+        {
+            var user = _userBl.GetUserByLogin(User.Identity.Name);
+            var commentModel = new CommentModel()
+            {
+                CreatorId = user.Id,
+                CommentText = null,
+                RequestId = id
+            };
+            return View(commentModel);
+        }
+
+        [HttpPost]
+        public ActionResult AddComent(CommentModel commentModel)
+        {
+            if (ModelState.IsValid)
+            {
+                var comment = new Comment
+                {
+                    CommentText = commentModel.CommentText,
+                    CreatorId = commentModel.CreatorId,
+                    RequestId = commentModel.RequestId
+                };
+                _userBl.CreateComment(comment);
+                return RedirectToAction("GetRequestDetails" + "/" + Convert.ToString(commentModel.RequestId), "UserProfile");
+            }
+            return View(commentModel);
         }
     }
 }
