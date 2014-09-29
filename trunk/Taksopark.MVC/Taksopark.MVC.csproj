@@ -121,6 +121,7 @@
     <Content Include="Content\Image\arrow_l.gif" />
     <Content Include="Content\Image\arrow_r.gif" />
     <Content Include="Content\Image\camera-loader.gif" />
+    <Content Include="Content\Image\circle.png" />
     <Content Include="Content\Image\logo.bmp" />
     <Content Include="Content\Image\Pause.png" />
     <Content Include="Content\Image\prevnext.png" />

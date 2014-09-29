@@ -6,12 +6,10 @@ $(document).ready(function () {
         if (!flag) {
             flag = true;
             $("#toggle").show("slide", { direction: "up" }, 500);
-            $("#show").text("Hide ");
         }
         else {
             flag = false;
             $("#toggle").hide("slide", { direction: "up" }, 500);
-            $("#show").text("More");
             $("#date-time").val("");
             $('input:radio[name=service]').prop('checked', false);
         }
