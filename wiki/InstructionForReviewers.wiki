@@ -14,7 +14,7 @@ To order taxi you must enter some information:
 <br/>
 - Start point of ride;
 <br/>
-- Finish point of ride;</br>
+- Finish point of ride;<br/>
 - Your phone number.
 <h4>In order to see the road press "Show the way" button(It will automatically calculate your ride price)</h4>
 <h4>To confirm your order press "Order Taxi" button</h4>
