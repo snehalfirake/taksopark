@@ -1152,3 +1152,59 @@ div.dark_rounded #pp_full_res .pp_inline,div.dark_square #pp_full_res .pp_inline
     padding:10px; 
     padding-right:15px;
 }
+
+/*Menu*/
+.centerMenuDiv{
+    padding:5px;
+    width:100%;
+    min-height:82px;
+    max-height:82px;
+    background-color:#ffb400;
+    display:inline-block;
+}
+.leftMenuImage{
+    display:block;
+    float:left;
+    height:82px;
+    width:144px;
+}
+
+.longTitle{
+    width:570px;
+    height:82px;
+    /*padding-bottom:50px;*/
+    padding-top:30px;
+    text-align:center;
+    display:block;
+    float:left;
+    color: #000;
+    text-transform: uppercase;
+    font-family: 'Quicksand', sans-serif;
+    font-size:38px;
+}
+.userLoginDiv{
+    width:150px;
+    height:82px;
+    display:block;
+    float:left;  
+    padding-top:30px;
+    /*padding-bottom:20px;*/
+    text-align:center;
+    font-size:14px;
+}
+.buttonLogOut{
+    width:30px;
+    height:82px;
+    display:block;
+    float:left;  
+    /*padding-bottom:20px;*/
+    padding-top:25px;
+    text-align:center;
+    font-size:14px;
+    font-family: Arial, Helvetica, sans-serif;
+font-style: normal;
+font-weight: normal;
+}
+.lastMenuDiv{
+    clear:both;
+}

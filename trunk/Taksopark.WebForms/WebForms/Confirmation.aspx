@@ -3,14 +3,16 @@
 <%@ Register Src="~/UserControls/Dispatcher/OrderInfo.ascx" TagPrefix="uc1" TagName="OrderInfo" %>
 
 <asp:Content ID="content3" ContentPlaceHolderID="contentMenu" runat="server">
-    <div class="menuDiv">
+   <%-- <div class="menuDiv">
         <span class="centerSpan">Order details</span>
         
     </div>
     <span class="right">
-            <asp:HyperLink runat="server" Text="Back to dashboard" CssClass="btn btn-s-md" BackColor="Black" 
-                ForeColor="White" NavigateUrl="~/WebForms/Order.aspx" />
-        </span>
+        <br />
+        <asp:HyperLink runat="server" Text="Back to dashboard" CssClass="btn btn-s-md" BackColor="Black"
+            ForeColor="White" NavigateUrl="~/WebForms/Order.aspx" />
+    </span>--%>
+    Order details
 </asp:Content>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Content" runat="server">
@@ -127,10 +129,13 @@
         
         <div class="one bottomLine">
             <span class="right">
+                <br />
                 <asp:HyperLink runat="server" Text="Back to dashboard" CssClass="btn btn-s-md" BackColor="Black" 
                     ForeColor="White" NavigateUrl="~/WebForms/Order.aspx" />
             </span>
         </div>
+        <br />
+            <br />
     </div>
 
     <asp:ObjectDataSource runat="server" ID="ordersDataSource" TypeName="Taksopark.WebForms.Dispatcher.Confirmation" SelectMethod="GetRequest">

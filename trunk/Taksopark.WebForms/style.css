@@ -2352,3 +2352,12 @@ div.dark_rounded #pp_full_res .pp_inline, div.dark_square #pp_full_res .pp_inlin
     float: left;
     border-top: 2px solid #000;
 }
+
+.centerSpan2{
+    vertical-align:bottom !important;
+    padding: 50px;
+    text-align:end;
+    text-transform: uppercase;
+font-family: 'Quicksand', sans-serif;
+font-size:38px;
+}

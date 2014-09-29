@@ -5,9 +5,10 @@
     <%--<meta http-equiv="refresh" content="10"/>--%>
 </asp:Content>
 <asp:Content ID="content3" ContentPlaceHolderID="contentMenu" runat="server">
-    <div class="menuDiv">
+    <%--<div class="menuDiv">
         <span class="centerSpan">Orders</span>
-    </div> 
+    </div> --%>
+    Orders
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="Content" runat="server">
