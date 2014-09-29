@@ -1,0 +1,33 @@
+﻿@using System.Web.Optimization
+
+@{
+    Layout = null;
+}
+
+@model Taksopark.MVC.Models.TaxiOrdering
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>OrderTaxi</title>
+    @Styles.Render("~/Content/Layout/my-css")
+</head>
+    <body style="background-color: white">
+        <div style="padding-top: 50px; padding-left: 18px; margin-left: auto; margin-right: auto; margin-top: 150px; border: 1px solid #fdc903; width: 200px; height: 250px; border-radius: 3px;">
+            <div>
+                <span><span style="margin-left: 2px; color: #fdc903;">F</span>rom:</span>
+                @Html.EditorFor(model => model.PlaceFrom)
+                <br />
+                <span><span style="margin-left: 2px; color: #fdc903;">T</span>o:</span>
+                @Html.EditorFor(model => model.PlaceTo)
+                <br />
+                <span><span style="margin-left: 2px; color: #fdc903;">P</span>hone:</span>
+                <input type="text" />
+                <br />
+                <button class="abutton">Order</button><button class="abutton">Cancel</button>
+            </div>
+        </div>
+    </body>
+</html>

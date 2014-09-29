@@ -1,0 +1,8 @@
+﻿.ui-autocomplete {
+     max-height: 200px;
+     overflow-y: auto;
+     overflow-x: hidden;
+}
+* html .ui-autocomplete {
+     height: 100px;
+}

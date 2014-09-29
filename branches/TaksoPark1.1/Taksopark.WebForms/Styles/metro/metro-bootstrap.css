@@ -1,0 +1,4795 @@
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 1.4rem;
+}
+html,
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+  display: block;
+}
+audio,
+canvas,
+video {
+  display: inline-block;
+}
+audio:not([controls]) {
+  display: none;
+}
+a:hover,
+a:active,
+.tile:active {
+  outline: 0;
+}
+sub,
+sup {
+  position: relative;
+  font-size: 75%;
+  line-height: 0;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+}
+#map_canvas img,
+.google-maps img {
+  max-width: none;
+}
+button,
+input,
+select,
+textarea {
+  margin: 0;
+  font-size: 100%;
+  vertical-align: middle;
+}
+button,
+input {
+  line-height: normal;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+label,
+select,
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+input[type="radio"],
+input[type="checkbox"] {
+  cursor: pointer;
+}
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  -ms-box-sizing: content-box;
+  -o-box-sizing: content-box;
+  box-sizing: content-box;
+}
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+textarea {
+  overflow: auto;
+  vertical-align: top;
+}
+input[type=text]::-ms-clear,
+input[type=email]::-ms-clear,
+input[type=url]::-ms-clear,
+input[type=tel]::-ms-clear,
+input[type=number]::-ms-clear,
+input[type=time]::-ms-clear {
+  display: none;
+}
+input[type=password]::-ms-reveal {
+  display: none;
+}
+* {
+  border-collapse: collapse;
+}
+a {
+  text-decoration: none;
+}
+@media print {
+  * {
+    text-shadow: none !important;
+    color: #000 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+  .ir a:after,
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
+    content: "";
+  }
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+  thead {
+    display: table-header-group;
+  }
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+  img {
+    max-width: 100% !important;
+  }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+.metro .box-sizing-border {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.metro .box-sizing-content {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  -ms-box-sizing: content-box;
+  -o-box-sizing: content-box;
+  box-sizing: content-box;
+}
+.metro .text-left {
+  text-align: left;
+}
+.metro .text-right {
+  text-align: right;
+}
+.metro .text-center {
+  text-align: center;
+}
+.metro .text-justify {
+  text-align: justify;
+}
+.metro .text-ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.metro .text-bold {
+  font-weight: bold;
+}
+.metro .text-normal {
+  font-weight: normal;
+}
+.metro .text-italic {
+  font-style: italic;
+}
+.metro .no-border {
+  border: 0 !important;
+}
+.metro .border {
+  border: 1px #eaeaea solid;
+}
+.metro .border-left {
+  border-left: 1px #eaeaea solid;
+}
+.metro .border-right {
+  border-right: 1px #eaeaea solid;
+}
+.metro .border-top {
+  border-top: 1px #eaeaea solid;
+}
+.metro .border-bottom {
+  border-bottom: 1px #eaeaea solid;
+}
+.metro .collapse-separate {
+  border-collapse: separate;
+}
+.metro .collapse-collapse {
+  border-collapse: collapse;
+}
+.metro .pos-abs {
+  position: absolute;
+}
+.metro .pos-rel {
+  position: relative;
+}
+.metro .pos-fix {
+  position: fixed;
+}
+.metro .place-left {
+  float: left;
+}
+.metro .place-right {
+  float: right;
+}
+.metro .place-top-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.metro .place-top-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.metro .place-bottom-left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.metro .place-bottom-right {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.metro .on-left {
+  margin-right: 5px;
+}
+.metro .on-right {
+  margin-left: 5px;
+}
+.metro .on-left-more {
+  margin-right: 10px;
+}
+.metro .on-right-more {
+  margin-left: 10px;
+}
+.metro .padding5 {
+  padding: 5px;
+}
+.metro .padding10 {
+  padding: 10px;
+}
+.metro .padding15 {
+  padding: 15px;
+}
+.metro .padding20 {
+  padding: 20px;
+}
+.metro .margin5 {
+  margin: 5px;
+}
+.metro .margin10 {
+  margin: 10px;
+}
+.metro .margin15 {
+  margin: 15px;
+}
+.metro .margin20 {
+  margin: 20px;
+}
+.metro .nlm {
+  margin-left: 0 !important;
+}
+.metro .nrm {
+  margin-right: 0 !important;
+}
+.metro .ntm {
+  margin-top: 0 !important;
+}
+.metro .nbm {
+  margin-bottom: 0 !important;
+}
+.metro .nlp {
+  padding-left: 0 !important;
+}
+.metro .nrp {
+  padding-right: 0 !important;
+}
+.metro .ntp {
+  padding-top: 0 !important;
+}
+.metro .nbp {
+  padding-bottom: 0 !important;
+}
+.metro .no-margin {
+  margin: 0  !important;
+}
+.metro .no-padding {
+  padding: 0  !important;
+}
+.metro .no-float {
+  float: none !important;
+}
+.metro .block {
+  display: block !important;
+  float: none !important;
+}
+.metro .inline-block {
+  display: inline-block !important;
+}
+.metro .hide,
+.metro .no-display {
+  display: none !important;
+}
+.metro .no-visible {
+  visibility: hidden !important;
+}
+.metro .visible {
+  visibility: visible !important;
+}
+.metro .scroll-y,
+.metro .scroll-vertical {
+  overflow-y: scroll;
+}
+.metro .scroll-x,
+.metro .scroll-horizontal {
+  overflow-x: scroll;
+}
+.metro .no-overflow {
+  overflow: hidden;
+}
+.metro .overflow {
+  overflow: scroll;
+}
+.metro .one-column {
+  -moz-columns: 1;
+  -webkit-columns: 1;
+  -o-columns: 1;
+  -ms-columns: 1;
+  columns: 1;
+  -moz-column-gap: 20px;
+  -webkit-column-gap: 20px;
+  -o-column-gap: 20px;
+  -ms-column-gap: 20px;
+  column-gap: 20px;
+}
+.metro .two-columns {
+  -moz-columns: 2;
+  -webkit-columns: 2;
+  -o-columns: 2;
+  -ms-columns: 2;
+  columns: 2;
+  -moz-column-gap: 20px;
+  -webkit-column-gap: 20px;
+  -o-column-gap: 20px;
+  -ms-column-gap: 20px;
+  column-gap: 20px;
+}
+.metro .three-columns {
+  -moz-columns: 3;
+  -webkit-columns: 3;
+  -o-columns: 3;
+  -ms-columns: 3;
+  columns: 3;
+  -moz-column-gap: 20px;
+  -webkit-column-gap: 20px;
+  -o-column-gap: 20px;
+  -ms-column-gap: 20px;
+  column-gap: 20px;
+}
+.metro .four-columns {
+  -moz-columns: 4;
+  -webkit-columns: 4;
+  -o-columns: 4;
+  -ms-columns: 4;
+  columns: 4;
+  -moz-column-gap: 20px;
+  -webkit-column-gap: 20px;
+  -o-column-gap: 20px;
+  -ms-column-gap: 20px;
+  column-gap: 20px;
+}
+.metro .five-columns {
+  -moz-columns: 5;
+  -webkit-columns: 5;
+  -o-columns: 5;
+  -ms-columns: 5;
+  columns: 5;
+  -moz-column-gap: 20px;
+  -webkit-column-gap: 20px;
+  -o-column-gap: 20px;
+  -ms-column-gap: 20px;
+  column-gap: 20px;
+}
+.metro .square5 {
+  width: 5px;
+  height: 5px;
+}
+.metro .square10 {
+  width: 10px;
+  height: 10px;
+}
+.metro .square15 {
+  width: 15px;
+  height: 15px;
+}
+.metro .square20 {
+  width: 20px;
+  height: 20px;
+}
+.metro .shadow {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3), 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+.metro .text-shadow {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+.metro .opacity {
+  opacity: .9;
+}
+.metro .half-opacity {
+  opacity: .5;
+}
+.metro .hi-opacity {
+  opacity: .2;
+}
+.metro .clearfix:before,
+.metro .clearfix:after {
+  display: table;
+  content: "";
+}
+.metro .clearfix:after {
+  clear: both;
+}
+.metro #element .selected {
+  border: 4px #4390df solid;
+}
+.metro #element .selected:after {
+  position: absolute;
+  display: block;
+  border-top: 28px solid #4390df;
+  border-left: 28px solid transparent;
+  right: 0;
+  content: "";
+  top: 0;
+  z-index: 101;
+}
+.metro #element .selected:before {
+  position: absolute;
+  display: block;
+  content: "\e003";
+  color: #fff;
+  right: 0;
+  font-family: 'metroSysIcons';
+  font-size: 9pt;
+  font-weight: normal;
+  z-index: 102;
+  top: 0;
+}
+.metro .rotate45 {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.metro .rotate90 {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+.metro .rotate135 {
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+.metro .rotate180 {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.metro .rotate225 {
+  -webkit-transform: rotate(225deg);
+  -moz-transform: rotate(225deg);
+  -ms-transform: rotate(225deg);
+  -o-transform: rotate(225deg);
+  transform: rotate(225deg);
+}
+.metro .rotate270 {
+  -webkit-transform: rotate(270deg);
+  -moz-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  -o-transform: rotate(270deg);
+  transform: rotate(270deg);
+}
+.metro .rotate360 {
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+.metro .rotateX45 {
+  -webkit-transform: rotateX(45deg);
+  -moz-transform: rotateX(45deg);
+  -ms-transform: rotateX(45deg);
+  -o-transform: rotateX(45deg);
+  transform: rotateX(45deg);
+}
+.metro .rotateX90 {
+  -webkit-transform: rotateX(90deg);
+  -moz-transform: rotateX(90deg);
+  -ms-transform: rotateX(90deg);
+  -o-transform: rotateX(90deg);
+  transform: rotateX(90deg);
+}
+.metro .rotateX135 {
+  -webkit-transform: rotateX(135deg);
+  -moz-transform: rotateX(135deg);
+  -ms-transform: rotateX(135deg);
+  -o-transform: rotateX(135deg);
+  transform: rotateX(135deg);
+}
+.metro .rotateX180 {
+  -webkit-transform: rotateX(180deg);
+  -moz-transform: rotateX(180deg);
+  -ms-transform: rotateX(180deg);
+  -o-transform: rotateX(180deg);
+  transform: rotateX(180deg);
+}
+.metro .rotateX225 {
+  -webkit-transform: rotateX(225deg);
+  -moz-transform: rotateX(225deg);
+  -ms-transform: rotateX(225deg);
+  -o-transform: rotateX(225deg);
+  transform: rotateX(225deg);
+}
+.metro .rotateX270 {
+  -webkit-transform: rotateX(270deg);
+  -moz-transform: rotateX(270deg);
+  -ms-transform: rotateX(270deg);
+  -o-transform: rotateX(270deg);
+  transform: rotateX(270deg);
+}
+.metro .rotateX360 {
+  -webkit-transform: rotateX(360deg);
+  -moz-transform: rotateX(360deg);
+  -ms-transform: rotateX(360deg);
+  -o-transform: rotateX(360deg);
+  transform: rotateX(360deg);
+}
+.metro .rotateY45 {
+  -webkit-transform: rotateY(45deg);
+  -moz-transform: rotateY(45deg);
+  -ms-transform: rotateY(45deg);
+  -o-transform: rotateY(45deg);
+  transform: rotateY(45deg);
+}
+.metro .rotateY90 {
+  -webkit-transform: rotateY(90deg);
+  -moz-transform: rotateY(90deg);
+  -ms-transform: rotateY(90deg);
+  -o-transform: rotateY(90deg);
+  transform: rotateY(90deg);
+}
+.metro .rotateY135 {
+  -webkit-transform: rotateY(135deg);
+  -moz-transform: rotateY(135deg);
+  -ms-transform: rotateY(135deg);
+  -o-transform: rotateY(135deg);
+  transform: rotateY(135deg);
+}
+.metro .rotateY180 {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+.metro .rotateY225 {
+  -webkit-transform: rotateY(225deg);
+  -moz-transform: rotateY(225deg);
+  -ms-transform: rotateY(225deg);
+  -o-transform: rotateY(225deg);
+  transform: rotateY(225deg);
+}
+.metro .rotateY270 {
+  -webkit-transform: rotateY(270deg);
+  -moz-transform: rotateY(270deg);
+  -ms-transform: rotateY(270deg);
+  -o-transform: rotateY(270deg);
+  transform: rotateY(270deg);
+}
+.metro .rotateY360 {
+  -webkit-transform: rotateY(360deg);
+  -moz-transform: rotateY(360deg);
+  -ms-transform: rotateY(360deg);
+  -o-transform: rotateY(360deg);
+  transform: rotateY(360deg);
+}
+@font-face {
+  font-family: "PT Serif Caption";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Cambria"), local("PT Serif Caption"), local("PTSerif-Caption"), url(https://themes.googleusercontent.com/static/fonts/ptserifcaption/v6/7xkFOeTxxO1GMC1suOUYWWhBabBbEjGd1iRmpyoZukE.woff) format('woff');
+}
+@font-face {
+  font-family: "Open Sans Light";
+  font-style: normal;
+  font-weight: 300;
+  src: local("Segoe UI Light"), local("Open Sans Light"), local("OpenSans-Light"), url(https://themes.googleusercontent.com/static/fonts/opensans/v8/DXI1ORHCpsQm3Vp6mXoaTZ1r3JsPcQLi8jytr04NNhU.woff) format('woff');
+}
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Segoe UI"), local("Open Sans"), local("OpenSans"), url(https://themes.googleusercontent.com/static/fonts/opensans/v8/K88pR3goAWT7BTt32Z01mz8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+}
+@font-face {
+  font-family: "Open Sans Bold";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Segoe UI Bold"), local("Open Sans Bold"), local("OpenSans-Bold"), url(https://themes.googleusercontent.com/static/fonts/opensans/v8/k3k702ZOKiLJc3WVjuplzJ1r3JsPcQLi8jytr04NNhU.woff) format('woff');
+}
+.metro .text-rest-state {
+  color: #000000;
+}
+.metro .text-rest2-state {
+  color: #000000;
+}
+.metro .text-hover-state {
+  color: rgba(0, 0, 0, 0.8);
+}
+.metro .text-pressed-state {
+  color: rgba(0, 0, 0, 0.4);
+}
+.metro #font .light {
+  font-weight: 300;
+}
+.metro #font .normal {
+  font-weight: normal;
+  font-style: normal;
+}
+.metro #font .bold {
+  font-weight: bold;
+}
+.metro #font .italic {
+  font-style: italic;
+}
+.metro #font .segoe {
+  font-family: 'Segoe UI_', 'Open Sans', Verdana, Arial, Helvetica, sans-serif;
+}
+.metro #font .segoe-bold {
+  font-family: 'Segoe UI Semibold_', 'Open Sans Bold', Verdana, Arial, Helvetica, sans-serif;
+}
+.metro #font .segoe-light {
+  font-family: 'Segoe UI Light_', 'Open Sans Light', Verdana, Arial, Helvetica, sans-serif;
+}
+.metro #font .cambria {
+  font-family: 'Cambria_', 'PT Serif Caption', Verdana, Arial, Helvetica, sans-serif;
+}
+.metro #font .mono {
+  font-family: 'Courier New', monospace;
+}
+.metro #font .serif {
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+.metro #font .sans {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.metro .header,
+.metro .subheader {
+  font-family: 'Segoe UI Light_', 'Open Sans Light', Verdana, Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  color: #000000;
+  letter-spacing: 0.00em;
+}
+.metro .header {
+  font-size: 4.8rem;
+  line-height: 4.8rem;
+}
+.metro .subheader {
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+  letter-spacing: 0.01em;
+}
+.metro .subheader-secondary {
+  font-family: 'Segoe UI Light_', 'Open Sans Light', Verdana, Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.00em;
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+  letter-spacing: 0.01em;
+  color: #000000;
+  font-size: 2.2rem;
+  line-height: 2.2rem;
+}
+.metro .item-title {
+  font-family: 'Segoe UI Semibold_', 'Open Sans Bold', Verdana, Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: #000000;
+  font-size: 1.6rem;
+  line-height: 1.6rem;
+  letter-spacing: 0.02em;
+}
+.metro .item-title-secondary {
+  font-family: 'Segoe UI Semibold_', 'Open Sans Bold', Verdana, Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 1.6rem;
+  line-height: 1.6rem;
+  letter-spacing: 0.02em;
+  color: #000000;
+  font-size: 1.4rem;
+  line-height: 1.4rem;
+}
+.metro .navigation {
+  font-family: 'Segoe UI_', 'Open Sans', Verdana, Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  color: #000000;
+  font-size: 1.2rem;
+  line-height: 1.2rem;
+  letter-spacing: 0.02em;
+}
+.metro .body-text {
+  font-family: 'Segoe UI_', 'Open Sans', Verdana, Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  color: #000000;
+  font-size: 11pt;
+  line-height: 15pt;
+  letter-spacing: 0.02em;
+}
+.metro .code-text {
+  font-family: 'Segoe UI_', 'Open Sans', Verdana, Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  color: #000000;
+  font-size: 11pt;
+  line-height: 15pt;
+  letter-spacing: 0.02em;
+  font-family: 'Courier New', monospace;
+}
+.metro .tertiary-text {
+  font-family: 'Segoe UI_', 'Open Sans', Verdana, Arial, Helvetica, sans-serif;
+  color: #000000;
+  font-size: 1.3rem;
+  line-height: 1.5rem;
+  font-weight: normal !important;
+}
+.metro .tertiary-text-secondary {
+  font-family: 'Segoe UI_', 'Open Sans', Verdana, Arial, Helvetica, sans-serif;
+  font-size: 1.3rem;
+  line-height: 1.5rem;
+  font-weight: normal !important;
+  color: #000000;
+}
+.metro .readable-text {
+  font-family: 'Cambria_', 'PT Serif Caption', Verdana, Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1.8rem;
+  line-height: 2rem;
+}
+.metro .menu-title {
+  font-family: 'Segoe UI Light_', 'Open Sans Light', Verdana, Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  color: #000000;
+  letter-spacing: 0.00em;
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+  letter-spacing: 0.01em;
+  font-size: 4rem;
+}
+.metro .menu-item {
+  font-family: 'Segoe UI Light_', 'Open Sans Light', Verdana, Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.00em;
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+  letter-spacing: 0.01em;
+  color: #000000;
+  line-height: 2.2rem;
+  font-size: 2.2rem;
+}
+.metro .menu-item-secondary {
+  font-family: 'Segoe UI Semibold_', 'Open Sans Bold', Verdana, Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: #000000;
+  font-size: 1.6rem;
+  line-height: 1.6rem;
+  letter-spacing: 0.02em;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1.4rem;
+}
+.metro h1,
+.metro h2,
+.metro h3,
+.metro h4,
+.metro h5,
+.metro h6 {
+  padding: 0;
+  margin: 10px 0;
+}
+.metro h1 {
+  font-family: 'Segoe UI Light_', 'Open Sans Light', Verdana, Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  color: #000000;
+  letter-spacing: 0.00em;
+  font-size: 4.8rem;
+  line-height: 4.8rem;
+}
+.metro h2 {
+  font-family: 'Segoe UI Light_', 'Open Sans Light', Verdana, Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  color: #000000;
+  letter-spacing: 0.00em;
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+  letter-spacing: 0.01em;
+}
+.metro h3 {
+  font-family: 'Segoe UI Light_', 'Open Sans Light', Verdana, Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.00em;
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+  letter-spacing: 0.01em;
+  color: #000000;
+  font-size: 2.2rem;
+  line-height: 2.2rem;
+  font-weight: bold;
+}
+.metro h4 {
+  font-family: 'Segoe UI Semibold_', 'Open Sans Bold', Verdana, Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: #000000;
+  font-size: 1.6rem;
+  line-height: 1.6rem;
+  letter-spacing: 0.02em;
+}
+.metro h5 {
+  font-family: 'Segoe UI Semibold_', 'Open Sans Bold', Verdana, Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 1.6rem;
+  line-height: 1.6rem;
+  letter-spacing: 0.02em;
+  color: #000000;
+  font-size: 1.4rem;
+  line-height: 1.4rem;
+}
+.metro h6 {
+  font-family: 'Segoe UI_', 'Open Sans', Verdana, Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  color: #000000;
+  font-size: 11pt;
+  line-height: 15pt;
+  letter-spacing: 0.02em;
+  font-weight: bold;
+  font-size: 9pt;
+}
+.metro h1 small {
+  font-size: 19.25pt;
+}
+.metro h2 small {
+  font-size: 13.75pt;
+}
+.metro h3 small {
+  font-size: 11pt;
+}
+.metro h4 small {
+  font-size: 11pt;
+}
+.metro a,
+.metro .link {
+  color: #2e92cf;
+}
+.metro a:hover,
+.metro .link:hover {
+  color: rgba(45, 173, 237, 0.8);
+}
+.metro a:focus,
+.metro .link:focus,
+.metro a:active,
+.metro .link:active {
+  color: rgba(45, 173, 237, 0.6);
+}
+.metro div,
+.metro span,
+.metro p {
+  font-family: 'Segoe UI_', 'Open Sans', Verdana, Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+.metro p {
+  margin: 0 0 7pt;
+  font-family: 'Segoe UI_', 'Open Sans', Verdana, Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  color: #000000;
+  font-size: 11pt;
+  line-height: 15pt;
+  letter-spacing: 0.02em;
+}
+.metro strong {
+  font-family: 'Segoe UI Semibold_', 'Open Sans Bold', Verdana, Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+.metro .text-muted {
+  color: #999999 !important;
+}
+.metro .text-info {
+  color: #1ba1e2 !important;
+}
+.metro .text-alert {
+  color: #e51400 !important;
+}
+.metro .text-warning {
+  color: #fa6800 !important;
+}
+.metro .text-success {
+  color: #60a917 !important;
+}
+.metro abbr {
+  text-decoration: none;
+  border-bottom: 1px #999999 dotted;
+  cursor: help;
+}
+.metro address {
+  font-family: 'Segoe UI_', 'Open Sans', Verdana, Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  margin-bottom: 7pt;
+}
+.metro blockquote {
+  margin: 0;
+  padding: 0;
+  border-left: 4px #999999 solid;
+  padding-left: 10px;
+}
+.metro blockquote small {
+  color: #999999;
+}
+.metro blockquote small:before {
+  content: "\2014 \00A0";
+}
+.metro blockquote.place-right {
+  border: 0;
+  border-right: 4px #999999 solid;
+  padding-right: 10px;
+  text-align: right;
+}
+.metro blockquote.place-right small:before {
+  content: "";
+}
+.metro blockquote.place-right small:after {
+  content: " \00A0 \2014";
+}
+.metro .unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+.metro .unstyled li ul,
+.metro .unstyled li ol {
+  list-style: none;
+  padding-left: 25px;
+}
+.metro .inline {
+  list-style: none;
+}
+.metro .inline li {
+  display: inline-block;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.metro ul,
+.metro ol {
+  margin-left: 5px;
+  padding-left: 15px;
+  font-family: 'Segoe UI_', 'Open Sans', Verdana, Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  color: #000000;
+  font-size: 11pt;
+  line-height: 15pt;
+  letter-spacing: 0.02em;
+}
+.metro ul li,
+.metro ol li {
+  line-height: 20px;
+}
+.metro ul li ul,
+.metro ol li ul,
+.metro ul li ol,
+.metro ol li ol {
+  padding-left: 25px;
+}
+.metro ol.styled {
+  counter-reset: li;
+  margin-left: 0;
+  padding-left: 0;
+  font-family: 'Cambria_', 'PT Serif Caption', Verdana, Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1.8rem;
+  line-height: 2rem;
+}
+.metro ol.styled > li {
+  position: relative;
+  margin: 0 0 6px 2em;
+  padding: 4px 12px;
+  list-style: none;
+}
+.metro ol.styled > li:before {
+  content: counter(li);
+  counter-increment: li;
+  position: absolute;
+  top: -2px;
+  left: -2em;
+  box-sizing: border-box;
+  width: 2em;
+  margin-right: 8px;
+  padding: 4px;
+  color: #fff;
+  background: #666;
+  font-weight: bold;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  text-align: center;
+}
+.metro ol.styled.rounded > li:before {
+  border-radius: 100%;
+}
+.metro dl dt,
+.metro dl dd {
+  line-height: 20px;
+}
+.metro dl dt {
+  font-family: 'Segoe UI Semibold_', 'Open Sans Bold', Verdana, Arial, Helvetica, sans-serif;
+}
+.metro dl dd {
+  margin-left: 15px;
+}
+.metro dl.horizontal dt {
+  float: left;
+  width: 160px;
+  overflow: hidden;
+  clear: left;
+  text-align: right;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.metro dl.horizontal dd {
+  margin-left: 180px;
+}
+.metro .prettyprint * {
+  font-family: 'Segoe UI_', 'Open Sans', Verdana, Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  color: #000000;
+  font-size: 11pt;
+  line-height: 15pt;
+  letter-spacing: 0.02em;
+  font-family: 'Courier New', monospace;
+  font-size: .9em !important;
+  line-height: 10pt;
+}
+.metro .container {
+  margin: 0 auto;
+}
+.metro .page {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.metro .page:before,
+.metro .page:after {
+  display: table;
+  content: "";
+}
+.metro .page:after {
+  clear: both;
+}
+.metro .page .page-header .page-header-content {
+  min-height: auto;
+}
+.metro .page .page-header .page-header-content:before,
+.metro .page .page-header .page-header-content:after {
+  display: table;
+  content: "";
+}
+.metro .page .page-header .page-header-content:after {
+  clear: both;
+}
+.metro .page .page-header .page-header-content .branding {
+  display: inline-block;
+  width: auto;
+  padding: 10px 0;
+  margin-right: 20px;
+}
+.metro .page .page-header .page-header-content .branding .brand-title {
+  font-family: 'Segoe UI Light_', 'Open Sans Light', Verdana, Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  color: #000000;
+  letter-spacing: 0.00em;
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+  letter-spacing: 0.01em;
+  display: block;
+}
+.metro .page .page-header .page-header-content .branding .brand-slogan {
+  font-family: 'Segoe UI Semibold_', 'Open Sans Bold', Verdana, Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 1.6rem;
+  line-height: 1.6rem;
+  letter-spacing: 0.02em;
+  color: #000000;
+  font-size: 1.4rem;
+  line-height: 1.4rem;
+  font-weight: normal;
+  font-style: normal;
+  font-family: 'Segoe UI Light_', 'Open Sans Light', Verdana, Arial, Helvetica, sans-serif;
+  display: block;
+}
+.metro .page .page-header .page-header-content .branding .brand-title,
+.metro .page .page-header .page-header-content .branding .brand-slogan {
+  margin: 0;
+}
+.metro .page .page-header .page-header-content .branding a + .brand-title,
+.metro .page .page-header .page-header-content .branding a + .brand-slogan {
+  text-decoration: none !important;
+}
+.metro .page .page-region .page-region-content {
+  min-height: 500px;
+}
+.metro .page .page-region .page-region-content:before,
+.metro .page .page-region .page-region-content:after {
+  display: table;
+  content: "";
+}
+.metro .page .page-region .page-region-content:after {
+  clear: both;
+}
+.metro .page .page-footer .page-footer-content {
+  height: 100px;
+}
+.metro .page .page-footer .page-footer-content:before,
+.metro .page .page-footer .page-footer-content:after {
+  display: table;
+  content: "";
+}
+.metro .page .page-footer .page-footer-content:after {
+  clear: both;
+}
+.metro .page.secondary .page-region-content,
+.metro .page.secondary .page-header-content {
+  padding-left: 80px;
+}
+.metro .app-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  min-height: 100px;
+  background-color: #1d1d1d;
+  z-index: 1060;
+}
+.metro .charms {
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  min-width: 200px;
+  width: auto;
+  z-index: 1060;
+}
+.metro .charms.place-left {
+  left: 0;
+  right: auto;
+}
+.metro .message-dialog {
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: auto;
+  min-height: 100px;
+  top: 30%;
+  padding: 10px 10px 0;
+  z-index: 1050;
+}
+.metro .error-bar,
+.metro .warning-bar,
+.metro .info-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 10px 20px;
+  color: #fff;
+  min-height: 100px;
+  z-index: 1050;
+}
+.metro .error-bar {
+  background-color: #9a1616 !important;
+}
+.metro .warning-bar {
+  background-color: #bf5a15 !important;
+}
+.metro .info-bar {
+  background-color: #4390df !important;
+}
+.metro .span1,
+.metro .size1 {
+  width: 60px !important;
+}
+.metro .span2,
+.metro .size2 {
+  width: 140px !important;
+}
+.metro .span3,
+.metro .size3 {
+  width: 220px !important;
+}
+.metro .span4,
+.metro .size4 {
+  width: 300px !important;
+}
+.metro .span5,
+.metro .size5 {
+  width: 380px !important;
+}
+.metro .span6,
+.metro .size6 {
+  width: 460px !important;
+}
+.metro .span7,
+.metro .size7 {
+  width: 540px !important;
+}
+.metro .span8,
+.metro .size8 {
+  width: 620px !important;
+}
+.metro .span9,
+.metro .size9 {
+  width: 700px !important;
+}
+.metro .span10,
+.metro .size10 {
+  width: 780px !important;
+}
+.metro .span11,
+.metro .size11 {
+  width: 860px !important;
+}
+.metro .span12,
+.metro .size12 {
+  width: 940px !important;
+}
+.metro .offset1 {
+  margin-left: 80px !important;
+}
+.metro .offset1:not(:first-child) {
+  margin-left: 100px !important;
+}
+.metro .offset2 {
+  margin-left: 160px !important;
+}
+.metro .offset2:not(:first-child) {
+  margin-left: 180px !important;
+}
+.metro .offset3 {
+  margin-left: 240px !important;
+}
+.metro .offset3:not(:first-child) {
+  margin-left: 260px !important;
+}
+.metro .offset4 {
+  margin-left: 320px !important;
+}
+.metro .offset4:not(:first-child) {
+  margin-left: 340px !important;
+}
+.metro .offset5 {
+  margin-left: 400px !important;
+}
+.metro .offset5:not(:first-child) {
+  margin-left: 420px !important;
+}
+.metro .offset6 {
+  margin-left: 480px !important;
+}
+.metro .offset6:not(:first-child) {
+  margin-left: 500px !important;
+}
+.metro .offset7 {
+  margin-left: 560px !important;
+}
+.metro .offset7:not(:first-child) {
+  margin-left: 580px !important;
+}
+.metro .offset8 {
+  margin-left: 640px !important;
+}
+.metro .offset8:not(:first-child) {
+  margin-left: 660px !important;
+}
+.metro .offset9 {
+  margin-left: 720px !important;
+}
+.metro .offset9:not(:first-child) {
+  margin-left: 740px !important;
+}
+.metro .offset10 {
+  margin-left: 800px !important;
+}
+.metro .offset10:not(:first-child) {
+  margin-left: 820px !important;
+}
+.metro .offset11 {
+  margin-left: 880px !important;
+}
+.metro .offset11:not(:first-child) {
+  margin-left: 900px !important;
+}
+.metro .offset12 {
+  margin-left: 960px !important;
+}
+.metro .offset12:not(:first-child) {
+  margin-left: 980px !important;
+}
+.metro .grid {
+  margin-bottom: 20px;
+}
+.metro .grid .row {
+  display: block;
+  margin-top: 20px;
+}
+.metro .grid .row:before,
+.metro .grid .row:after {
+  display: table;
+  content: "";
+}
+.metro .grid .row:after {
+  clear: both;
+}
+.metro .grid .row [class*="span"] {
+  float: left;
+  min-height: 1px;
+  margin-left: 20px;
+}
+.metro .grid .row [class*="span"]:first-child {
+  margin-left: 0;
+}
+.metro .grid.fluid {
+  width: 100%;
+}
+.metro .grid.fluid .row .span1 {
+  width: 6.382978% !important;
+}
+.metro .grid.fluid .row .span2 {
+  width: 14.893615% !important;
+}
+.metro .grid.fluid .row .span3 {
+  width: 23.404252% !important;
+}
+.metro .grid.fluid .row .span4 {
+  width: 31.914889% !important;
+}
+.metro .grid.fluid .row .span5 {
+  width: 40.425526% !important;
+}
+.metro .grid.fluid .row .span6 {
+  width: 48.936163% !important;
+}
+.metro .grid.fluid .row .span7 {
+  width: 57.4468% !important;
+}
+.metro .grid.fluid .row .span8 {
+  width: 65.957437% !important;
+}
+.metro .grid.fluid .row .span9 {
+  width: 74.468074% !important;
+}
+.metro .grid.fluid .row .span10 {
+  width: 82.978711% !important;
+}
+.metro .grid.fluid .row .span11 {
+  width: 91.489348% !important;
+}
+.metro .grid.fluid .row .span12 {
+  width: 99.999985% !important;
+}
+.metro .grid.fluid .row [class*="span"] {
+  margin-left: 2.127659%;
+}
+.metro .grid.fluid .row [class*="span"]:first-child {
+  margin-left: 0;
+}
+.metro .grid.fluid .row .offset1 {
+  margin-left: 8.510637% !important;
+}
+.metro .grid.fluid .row .offset1:not(:first-child) {
+  margin-left: 10.638296% !important;
+}
+.metro .grid.fluid .row .offset2 {
+  margin-left: 17.021274% !important;
+}
+.metro .grid.fluid .row .offset2:not(:first-child) {
+  margin-left: 19.148933% !important;
+}
+.metro .grid.fluid .row .offset3 {
+  margin-left: 25.531911% !important;
+}
+.metro .grid.fluid .row .offset3:not(:first-child) {
+  margin-left: 27.65957% !important;
+}
+.metro .grid.fluid .row .offset4 {
+  margin-left: 34.042548% !important;
+}
+.metro .grid.fluid .row .offset4:not(:first-child) {
+  margin-left: 36.170207% !important;
+}
+.metro .grid.fluid .row .offset5 {
+  margin-left: 42.553185% !important;
+}
+.metro .grid.fluid .row .offset5:not(:first-child) {
+  margin-left: 44.680844% !important;
+}
+.metro .grid.fluid .row .offset6 {
+  margin-left: 51.063822% !important;
+}
+.metro .grid.fluid .row .offset6:not(:first-child) {
+  margin-left: 53.191481% !important;
+}
+.metro .grid.fluid .row .offset7 {
+  margin-left: 59.574459% !important;
+}
+.metro .grid.fluid .row .offset7:not(:first-child) {
+  margin-left: 61.702118% !important;
+}
+.metro .grid.fluid .row .offset8 {
+  margin-left: 68.085096% !important;
+}
+.metro .grid.fluid .row .offset8:not(:first-child) {
+  margin-left: 70.212755% !important;
+}
+.metro .grid.fluid .row .offset9 {
+  margin-left: 76.595733% !important;
+}
+.metro .grid.fluid .row .offset9:not(:first-child) {
+  margin-left: 78.723392% !important;
+}
+.metro .grid.fluid .row .offset10 {
+  margin-left: 85.10637% !important;
+}
+.metro .grid.fluid .row .offset10:not(:first-child) {
+  margin-left: 87.234029% !important;
+}
+.metro .grid.fluid .row .offset11 {
+  margin-left: 93.617007% !important;
+}
+.metro .grid.fluid .row .offset11:not(:first-child) {
+  margin-left: 95.744666% !important;
+}
+.metro .grid.fluid .row .offset12 {
+  margin-left: 102.127644% !important;
+}
+.metro .grid.fluid .row .offset12:not(:first-child) {
+  margin-left: 104.255303% !important;
+}
+.metro table {
+  max-width: 100%;
+  background-color: #ffffff;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.metro .table {
+  width: 100%;
+  margin-bottom: 14pt;
+}
+.metro .table th,
+.metro .table td {
+  padding: 8px;
+  font-size: 14px;
+  line-height: 14pt;
+  vertical-align: top;
+  border-bottom: 1px #eaeaea solid;
+}
+.metro .table th[class*="span"],
+.metro .table td[class*="span"] {
+  display: table-cell !important;
+  float: none !important;
+  margin: 0;
+}
+.metro .table thead th {
+  vertical-align: bottom;
+}
+.metro .table thead th,
+.metro .table thead td {
+  border-bottom: 1px solid #111111;
+}
+.metro .table tbody tr:last-child td {
+  border-bottom: 0;
+}
+.metro .table tbody + tbody {
+  border-top: 2px solid #eaeaea;
+}
+.metro .table tfoot th,
+.metro .table tfoot td {
+  border-top: 1px solid #111111;
+}
+.metro .table .table {
+  background-color: #bfbfbf;
+}
+.metro .table.condensed th,
+.metro .table.condensed td {
+  padding: 4px 5px;
+}
+.metro .table.condensed th .input-control,
+.metro .table.condensed td .input-control {
+  margin: 0;
+}
+.metro .table.super-condensed th,
+.metro .table.super-condensed td {
+  padding: 2px;
+}
+.metro .table.super-condensed th .input-control,
+.metro .table.super-condensed td .input-control {
+  margin: 0;
+}
+.metro .table.striped tbody tr:nth-child(odd) {
+  background: #eeeeee;
+}
+.metro .table.bordered {
+  border: 1px #eaeaea solid;
+  border-left: 0;
+}
+.metro .table.bordered td,
+.metro .table.bordered th {
+  border-left: 1px #eaeaea solid;
+  border-bottom: 1px #eaeaea solid;
+}
+.metro .table.no-border td,
+.metro .table.no-border th {
+  border: 0;
+}
+.metro .table.border {
+  border: 1px #eaeaea solid !important;
+}
+.metro .table.hovered tbody tr:hover {
+  background-color: rgba(28, 183, 236, 0.1);
+}
+.metro .table tr.success {
+  background-color: #60a917 !important;
+}
+.metro .table tr.error {
+  background-color: #e51400 !important;
+}
+.metro .table tr.warning {
+  background-color: #fa6800 !important;
+}
+.metro .table tr.info {
+  background-color: #4390df !important;
+}
+.metro .table tr.info td,
+.metro .table tr.warning td,
+.metro .table tr.error td,
+.metro .table tr.success td,
+.metro .table tr.info td *,
+.metro .table tr.warning td *,
+.metro .table tr.error td *,
+.metro .table tr.success td * {
+  color: #ffffff !important;
+}
+.metro .table tr.selected {
+  background-color: rgba(28, 183, 236, 0.1);
+}
+.metro .button {
+  padding: 4px 12px;
+  text-align: center;
+  vertical-align: middle !important;
+  background-color: #d9d9d9;
+  border: 1px transparent solid;
+  color: #222222;
+  border-radius: 0;
+  cursor: pointer;
+  display: inline-block;
+  outline: none;
+  font-family: 'Segoe UI Light_', 'Open Sans Light', Verdana, Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  margin: auto;
+}
+.metro .button.default {
+  background-color: #008287;
+  color: #fff;
+}
+.metro .button:focus {
+  outline: 0;
+  border: 1px #353535 dotted;
+}
+.metro .button:disabled,
+.metro .button.disabled {
+  background-color: #eaeaea !important;
+  color: #bebebe !important;
+  cursor: not-allowed !important;
+}
+.metro .button * {
+  color: inherit;
+}
+.metro .button *:hover {
+  color: inherit;
+}
+.metro a.button:hover {
+  color: inherit;
+}
+.metro a.button * {
+  color: inherit;
+}
+.metro a.button *:hover {
+  color: inherit;
+}
+.metro .button.primary {
+  background-color: #16499a !important;
+  color: #ffffff !important;
+}
+.metro .button.info {
+  background-color: #4390df !important;
+  color: #ffffff !important;
+}
+.metro .button.success {
+  background-color: #60a917 !important;
+  color: #ffffff !important;
+}
+.metro .button.warning {
+  background-color: #fa6800 !important;
+  color: #ffffff !important;
+}
+.metro .button.danger {
+  background-color: #9a1616 !important;
+  color: #ffffff !important;
+}
+.metro .button.inverse {
+  background-color: #1d1d1d !important;
+  color: #ffffff !important;
+}
+.metro .button.link {
+  background-color: transparent !important;
+  color: #2e92cf !important;
+}
+.metro .button.link:hover {
+  text-decoration: underline;
+}
+.metro .button.link:disabled,
+.metro .button.link.disabled {
+  background-color: transparent !important;
+  color: #bebebe !important;
+  cursor: not-allowed !important;
+}
+.metro .button.link [class*="icon-"] {
+  text-decoration: none !important;
+}
+.metro button {
+  padding: 4px 12px;
+  text-align: center;
+  vertical-align: middle !important;
+  background-color: #d9d9d9;
+  border: 1px transparent solid;
+  color: #222222;
+  border-radius: 0;
+  cursor: pointer;
+  display: inline-block;
+  outline: none;
+  font-family: 'Segoe UI Light_', 'Open Sans Light', Verdana, Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  margin: auto;
+}
+.metro button.default {
+  background-color: #008287;
+  color: #fff;
+}
+.metro button:focus {
+  outline: 0;
+  border: 1px #353535 dotted;
+}
+.metro button:disabled,
+.metro button.disabled {
+  background-color: #eaeaea !important;
+  color: #bebebe !important;
+  cursor: not-allowed !important;
+}
+.metro button * {
+  color: inherit;
+}
+.metro button *:hover {
+  color: inherit;
+}
+.metro button.primary {
+  background-color: #16499a !important;
+  color: #ffffff !important;
+}
+.metro button.info {
+  background-color: #4390df !important;
+  color: #ffffff !important;
+}
+.metro button.success {
+  background-color: #60a917 !important;
+  color: #ffffff !important;
+}
+.metro button.warning {
+  background-color: #fa6800 !important;
+  color: #ffffff !important;
+}
+.metro button.danger {
+  background-color: #9a1616 !important;
+  color: #ffffff !important;
+}
+.metro button.inverse {
+  background-color: #1d1d1d !important;
+  color: #ffffff !important;
+}
+.metro button.link {
+  background-color: transparent !important;
+  color: #2e92cf !important;
+}
+.metro button.link:hover {
+  text-decoration: underline;
+}
+.metro button.link:disabled,
+.metro button.link.disabled {
+  background-color: transparent !important;
+  color: #bebebe !important;
+  cursor: not-allowed !important;
+}
+.metro button.link [class*="icon-"] {
+  text-decoration: none !important;
+}
+.metro button:active {
+  background-color: #1d1d1d !important;
+  color: #ffffff !important;
+  border-color: transparent;
+}
+.metro button.large {
+  padding: 11px 19px;
+  font-size: 17.5px;
+}
+.metro button.small {
+  padding: 2px 10px;
+  font-size: 11.9px;
+}
+.metro button.mini {
+  padding: 0px 6px;
+  font-size: 10.5px;
+}
+.metro .command-button {
+  padding: 4px 12px;
+  text-align: center;
+  vertical-align: middle !important;
+  background-color: #d9d9d9;
+  border: 1px transparent solid;
+  color: #222222;
+  border-radius: 0;
+  cursor: pointer;
+  display: inline-block;
+  outline: none;
+  font-family: 'Segoe UI Light_', 'Open Sans Light', Verdana, Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  margin: auto;
+  text-align: left;
+  font-size: 14pt;
+  width: auto;
+}
+.metro .command-button.default {
+  background-color: #008287;
+  color: #fff;
+}
+.metro .command-button:focus {
+  outline: 0;
+  border: 1px #353535 dotted;
+}
+.metro .command-button:disabled,
+.metro .command-button.disabled {
+  background-color: #eaeaea !important;
+  color: #bebebe !important;
+  cursor: not-allowed !important;
+}
+.metro .command-button * {
+  color: inherit;
+}
+.metro .command-button *:hover {
+  color: inherit;
+}
+.metro .command-button.primary {
+  background-color: #16499a !important;
+  color: #ffffff !important;
+}
+.metro .command-button.info {
+  background-color: #4390df !important;
+  color: #ffffff !important;
+}
+.metro .command-button.success {
+  background-color: #60a917 !important;
+  color: #ffffff !important;
+}
+.metro .command-button.warning {
+  background-color: #fa6800 !important;
+  color: #ffffff !important;
+}
+.metro .command-button.danger {
+  background-color: #9a1616 !important;
+  color: #ffffff !important;
+}
+.metro .command-button.inverse {
+  background-color: #1d1d1d !important;
+  color: #ffffff !important;
+}
+.metro .command-button.link {
+  background-color: transparent !important;
+  color: #2e92cf !important;
+}
+.metro .command-button.link:hover {
+  text-decoration: underline;
+}
+.metro .command-button.link:disabled,
+.metro .command-button.link.disabled {
+  background-color: transparent !important;
+  color: #bebebe !important;
+  cursor: not-allowed !important;
+}
+.metro .command-button.link [class*="icon-"] {
+  text-decoration: none !important;
+}
+.metro .command-button:active {
+  background-color: #1d1d1d !important;
+  color: #ffffff !important;
+  border-color: transparent;
+}
+.metro .command-button.large {
+  padding: 11px 19px;
+  font-size: 17.5px;
+}
+.metro .command-button.small {
+  padding: 2px 10px;
+  font-size: 11.9px;
+}
+.metro .command-button.mini {
+  padding: 0px 6px;
+  font-size: 10.5px;
+}
+.metro .command-button small {
+  display: block;
+  font-family: 'Segoe UI_', 'Open Sans', Verdana, Arial, Helvetica, sans-serif;
+  font-size: 1.3rem;
+  line-height: 1.5rem;
+  font-weight: normal !important;
+  color: #000000;
+  color: inherit;
+}
+.metro .command-button [class*="icon-"] {
+  font-size: 1.7em;
+  margin-top: 0;
+}
+.metro .command-button [class*="icon-"].on-left {
+  float: left;
+}
+.metro .command-button [class*="icon-"].on-right {
+  float: right;
+}
+.metro .command-button [class*="icon-"].on-left + small {
+  margin-left: 40px;
+}
+.metro .command-button [class*="icon-"].on-right + small {
+  margin-right: 40px;
+}
+.metro .toolbar {
+  width: auto;
+  margin-bottom: 10px;
+}
+.metro .toolbar:before,
+.metro .toolbar:after {
+  display: table;
+  content: "";
+}
+.metro .toolbar:after {
+  clear: both;
+}
+.metro .toolbar.transparent button,
+.metro .toolbar .transparent button,
+.metro .toolbar.transparent .button,
+.metro .toolbar .transparent .button {
+  background-color: transparent;
+}
+.metro .toolbar.transparent button:hover,
+.metro .toolbar .transparent button:hover,
+.metro .toolbar.transparent .button:hover,
+.metro .toolbar .transparent .button:hover {
+  background-color: #eeeeee;
+  border: 1px #ffffff solid;
+}
+.metro .toolbar button,
+.metro .toolbar .button {
+  color: inherit;
+  padding: 4px 8px;
+  display: block;
+  float: left;
+  font-size: 12pt;
+  line-height: 12pt;
+  margin-right: 2px;
+}
+.metro .toolbar button:last-child,
+.metro .toolbar .button:last-child {
+  margin-right: 0;
+}
+.metro .toolbar.no-spaces button,
+.metro .toolbar .toolbar-group.no-spaces button,
+.metro .toolbar.no-spaces .button,
+.metro .toolbar .toolbar-group.no-spaces .button {
+  margin-right: 0;
+}
+.metro .toolbar.no-spaces button:active,
+.metro .toolbar .toolbar-group.no-spaces button:active,
+.metro .toolbar.no-spaces .button:active,
+.metro .toolbar .toolbar-group.no-spaces .button:active {
+  background-color: #1d1d1d;
+  color: #ffffff;
+  top: auto;
+  left: auto;
+}
+.metro .toolbar .divider {
+  display: block;
+  float: left;
+  height: 12px;
+  width: 1px;
+  margin: 8px 8px;
+  background-color: #999999;
+  vertical-align: middle !important;
+}
+.metro .toolbar .toolbar-group {
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+  margin-right: 10px;
+  color: inherit;
+}
+.metro .toolbar .toolbar-group:before,
+.metro .toolbar .toolbar-group:after {
+  display: table;
+  content: "";
+}
+.metro .toolbar .toolbar-group:after {
+  clear: both;
+}
+.metro .button-dropdown {
+  position: relative;
+  display: inline-block;
+}
+.metro .button-dropdown .dropdown-menu.place-right {
+  right: 0;
+  left: auto;
+}
+.metro button.dropdown-toggle,
+.metro .button.dropdown-toggle {
+  padding-right: 16px;
+  border: 0;
+}
+.metro button.dropdown-toggle:before,
+.metro .button.dropdown-toggle:before {
+  position: absolute;
+  font-family: metroSysIcons;
+  font-size: 12px;
+  right: 1px;
+  z-index: 2;
+}
+.metro .image-button {
+  padding: 4px 12px;
+  text-align: center;
+  vertical-align: middle !important;
+  background-color: #d9d9d9;
+  border: 1px transparent solid;
+  color: #222222;
+  border-radius: 0;
+  cursor: pointer;
+  display: inline-block;
+  outline: none;
+  font-family: 'Segoe UI Light_', 'Open Sans Light', Verdana, Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  margin: auto;
+  position: relative;
+  border: 0;
+  padding-right: 45px;
+}
+.metro .image-button.default {
+  background-color: #008287;
+  color: #fff;
+}
+.metro .image-button:focus {
+  outline: 0;
+  border: 1px #353535 dotted;
+}
+.metro .image-button:disabled,
+.metro .image-button.disabled {
+  background-color: #eaeaea !important;
+  color: #bebebe !important;
+  cursor: not-allowed !important;
+}
+.metro .image-button * {
+  color: inherit;
+}
+.metro .image-button *:hover {
+  color: inherit;
+}
+.metro .image-button.primary {
+  background-color: #16499a !important;
+  color: #ffffff !important;
+}
+.metro .image-button.info {
+  background-color: #4390df !important;
+  color: #ffffff !important;
+}
+.metro .image-button.success {
+  background-color: #60a917 !important;
+  color: #ffffff !important;
+}
+.metro .image-button.warning {
+  background-color: #fa6800 !important;
+  color: #ffffff !important;
+}
+.metro .image-button.danger {
+  background-color: #9a1616 !important;
+  color: #ffffff !important;
+}
+.metro .image-button.inverse {
+  background-color: #1d1d1d !important;
+  color: #ffffff !important;
+}
+.metro .image-button.link {
+  background-color: transparent !important;
+  color: #2e92cf !important;
+}
+.metro .image-button.link:hover {
+  text-decoration: underline;
+}
+.metro .image-button.link:disabled,
+.metro .image-button.link.disabled {
+  background-color: transparent !important;
+  color: #bebebe !important;
+  cursor: not-allowed !important;
+}
+.metro .image-button.link [class*="icon-"] {
+  text-decoration: none !important;
+}
+.metro .image-button:active {
+  background-color: #1d1d1d !important;
+  color: #ffffff !important;
+  border-color: transparent;
+}
+.metro .image-button.large {
+  padding: 11px 19px;
+  font-size: 17.5px;
+}
+.metro .image-button.small {
+  padding: 2px 10px;
+  font-size: 11.9px;
+}
+.metro .image-button.mini {
+  padding: 0px 6px;
+  font-size: 10.5px;
+}
+.metro .image-button img,
+.metro .image-button:active img,
+.metro .image-button [class*="icon-"] {
+  display: block;
+  position: absolute;
+  float: right;
+  right: 0;
+  top: 0;
+  padding: 5px;
+  height: 100%;
+  margin-left: 0px;
+  box-sizing: border-box;
+  border: 1px transparent solid;
+  z-index: 2;
+  text-align: center;
+}
+.metro .image-button [class*="icon-"] {
+  vertical-align: middle !important;
+  font-size: 12pt;
+  line-height: 12pt;
+  top: 0;
+  right: 0;
+}
+.metro .image-button.image-left {
+  padding-right: 12px;
+  padding-left: 45px;
+}
+.metro .image-button.image-left img,
+.metro .image-button.image-left:active img,
+.metro .image-button.image-left [class*="icon-"] {
+  right: auto;
+  left: 0;
+}
+.metro .image-button:focus {
+  border: 0;
+}
+.metro .shortcut {
+  padding: 4px 12px;
+  vertical-align: middle !important;
+  background-color: #d9d9d9;
+  border: 1px transparent solid;
+  color: #222222;
+  border-radius: 0;
+  cursor: pointer;
+  outline: none;
+  font-family: 'Segoe UI Light_', 'Open Sans Light', Verdana, Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  margin: auto;
+  height: 92px;
+  width: 92px;
+  text-align: center;
+  font-size: 12pt;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  display: inline-block;
+  position: relative;
+}
+.metro .shortcut.default {
+  background-color: #008287;
+  color: #fff;
+}
+.metro .shortcut:focus {
+  outline: 0;
+  border: 1px #353535 dotted;
+}
+.metro .shortcut:disabled,
+.metro .shortcut.disabled {
+  background-color: #eaeaea !important;
+  color: #bebebe !important;
+  cursor: not-allowed !important;
+}
+.metro .shortcut * {
+  color: inherit;
+}
+.metro .shortcut *:hover {
+  color: inherit;
+}
+.metro .shortcut.primary {
+  background-color: #16499a !important;
+  color: #ffffff !important;
+}
+.metro .shortcut.info {
+  background-color: #4390df !important;
+  color: #ffffff !important;
+}
+.metro .shortcut.success {
+  background-color: #60a917 !important;
+  color: #ffffff !important;
+}
+.metro .shortcut.warning {
+  background-color: #fa6800 !important;
+  color: #ffffff !important;
+}
+.metro .shortcut.danger {
+  background-color: #9a1616 !important;
+  color: #ffffff !important;
+}
+.metro .shortcut.inverse {
+  background-color: #1d1d1d !important;
+  color: #ffffff !important;
+}
+.metro .shortcut.link {
+  background-color: transparent !important;
+  color: #2e92cf !important;
+}
+.metro .shortcut.link:hover {
+  text-decoration: underline;
+}
+.metro .shortcut.link:disabled,
+.metro .shortcut.link.disabled {
+  background-color: transparent !important;
+  color: #bebebe !important;
+  cursor: not-allowed !important;
+}
+.metro .shortcut.link [class*="icon-"] {
+  text-decoration: none !important;
+}
+.metro .shortcut:active {
+  background-color: #1d1d1d !important;
+  color: #ffffff !important;
+  border-color: transparent;
+}
+.metro .shortcut.large {
+  padding: 11px 19px;
+  font-size: 17.5px;
+}
+.metro .shortcut.small {
+  padding: 2px 10px;
+  font-size: 11.9px;
+}
+.metro .shortcut.mini {
+  padding: 0px 6px;
+  font-size: 10.5px;
+}
+.metro .shortcut [class*="icon-"] {
+  display: block;
+  margin: 10px;
+  font-size: 1.5em;
+}
+.metro .shortcut small {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 2px 4px;
+  min-height: 10px;
+  min-width: 10px;
+  text-align: center;
+  vertical-align: middle;
+  font-family: 'Segoe UI Semibold_', 'Open Sans Bold', Verdana, Arial, Helvetica, sans-serif;
+}
+.metro .shortcut:hover {
+  border-color: #e51400;
+}
+.metro .shortcut.link {
+  border: 1px #2e92cf solid;
+  text-decoration: none !important;
+}
+.metro .shortcut.link:hover {
+  border-bottom-width: 2px;
+}
+.metro a.shortcut {
+  padding: 12px 0;
+}
+.metro a.shortcut:hover {
+  color: inherit;
+}
+.metro .button-set:before,
+.metro .button-set:after {
+  display: table;
+  content: "";
+}
+.metro .button-set:after {
+  clear: both;
+}
+.metro .button-set .button,
+.metro .button-set button {
+  display: block;
+  float: left;
+  margin: 0;
+  margin-right: 2px;
+}
+.metro .button-set .button.active,
+.metro .button-set button.active {
+  background-color: #555555;
+  color: #ffffff;
+}
+.metro .button-set.no-spaces button,
+.metro .button-set.no-spaces .button {
+  margin-right: 0 !important;
+}
+.metro .button-set.no-spaces button:active,
+.metro .button-set.no-spaces .button:active {
+  background-color: #1d1d1d;
+  color: #ffffff;
+  top: auto;
+  left: auto;
+}
+.metro .button-set.transparent .button,
+.metro .button-set.transparent button {
+  background-color: transparent;
+}
+.metro .button-set.transparent .button.active,
+.metro .button-set.transparent button.active {
+  background-color: #555555;
+  color: #ffffff;
+}
+.metro .button:active {
+  background-color: #1d1d1d !important;
+  color: #ffffff !important;
+  border-color: transparent;
+}
+.metro .button.large,
+.metro button.large {
+  padding: 11px 19px;
+  font-size: 17.5px;
+}
+.metro .button.small,
+.metro button.small {
+  padding: 2px 10px;
+  font-size: 11.9px;
+}
+.metro .button.mini,
+.metro button.mini {
+  padding: 0px 6px;
+  font-size: 10.5px;
+}
+.metro .breadcrumbs {
+  margin: 0.2em;
+}
+.metro .breadcrumbs ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  width: 100%;
+}
+.metro .breadcrumbs ul li {
+  float: left;
+  margin: 0 .2em 0 1em;
+}
+.metro .breadcrumbs ul li:first-child {
+  margin-left: 0 !important;
+}
+.metro .breadcrumbs ul li:first-child a:before {
+  content: normal;
+}
+.metro .breadcrumbs ul li:last-child {
+  background: none;
+}
+.metro .breadcrumbs ul li:last-child a {
+  color: #1d1d1d;
+}
+.metro .breadcrumbs ul li:last-child:after,
+.metro .breadcrumbs ul li:last-child:before {
+  content: normal;
+}
+.metro .breadcrumbs ul a {
+  background: #d9d9d9;
+  padding: .3em 1em;
+  float: left;
+  text-decoration: none;
+  color: #2e92cf;
+  position: relative;
+}
+.metro .breadcrumbs ul a:hover {
+  background: #1ba1e2;
+  color: #ffffff;
+}
+.metro .breadcrumbs ul a:hover:before {
+  border-color: #1ba1e2 #1ba1e2 #1ba1e2 transparent;
+}
+.metro .breadcrumbs ul a:hover:after {
+  border-left-color: #1ba1e2;
+}
+.metro .breadcrumbs ul a:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  margin-top: -1.5em;
+  border-width: 1.5em 0 1.5em 1em;
+  border-style: solid;
+  border-color: #d9d9d9 #d9d9d9 #d9d9d9 transparent;
+  left: -1em;
+  margin-left: 1px;
+}
+.metro .breadcrumbs ul a:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  margin-top: -1.5em;
+  border-top: 1.5em solid transparent;
+  border-bottom: 1.5em solid transparent;
+  border-left: 1em solid #d9d9d9;
+  right: -1em;
+  margin-right: 1px;
+}
+.metro .breadcrumbs ul .active,
+.metro .breadcrumbs ul .active:hover {
+  background: none;
+}
+.metro .breadcrumbs ul .active a,
+.metro .breadcrumbs ul .active:hover a {
+  color: #1d1d1d;
+}
+.metro .breadcrumbs ul .active:hover a {
+  color: #ffffff;
+}
+.metro .breadcrumbs ul .active:after,
+.metro .breadcrumbs ul .active:before {
+  content: normal;
+}
+.metro .breadcrumbs.small li {
+  margin: 0 .2em 0 .8em;
+}
+.metro .breadcrumbs.small a {
+  padding: .2em 1em;
+  font-size: 11.9px;
+}
+.metro .breadcrumbs.mini li {
+  margin: 0 .2em 0 .6em;
+}
+.metro .breadcrumbs.mini a {
+  padding: .1em 1em;
+  font-size: 10.5px;
+}
+.metro form {
+  margin: 0 0 14pt;
+}
+.metro fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.metro legend {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin-bottom: 14pt;
+  font-size: 16.5pt;
+  line-height: 28pt;
+  color: #333333;
+  border: 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+.metro legend small {
+  font-size: 10.5pt;
+  color: #999999;
+}
+.metro label {
+  display: block;
+  margin: 5px 0;
+}
+.metro .input-control.checkbox,
+.metro .input-control.radio,
+.metro .input-control.switch,
+.metro .input-control.text,
+.metro .input-control.password,
+.metro .input-control.select,
+.metro .input-control.textarea {
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  margin-bottom: 7pt;
+}
+.metro .input-control.checkbox input[type="checkbox"],
+.metro .input-control.radio input[type="checkbox"],
+.metro .input-control.checkbox input[type="radio"],
+.metro .input-control.radio input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+.metro .input-control.checkbox input[type="checkbox"]:focus ~ .check,
+.metro .input-control.radio input[type="checkbox"]:focus ~ .check,
+.metro .input-control.checkbox input[type="radio"]:focus ~ .check,
+.metro .input-control.radio input[type="radio"]:focus ~ .check {
+  outline: 1px #999999 dotted !important;
+}
+.metro .input-control.checkbox .caption,
+.metro .input-control.radio .caption {
+  margin: 0 5px;
+}
+.metro .input-control.checkbox .check,
+.metro .input-control.radio .check {
+  width: 20px;
+  height: 20px;
+  background-color: #ffffff;
+  border: 2px #d9d9d9 solid;
+  padding: 0;
+  margin: 0 5px 0 0;
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+}
+.metro .input-control.checkbox.text-left .check,
+.metro .input-control.radio.text-left .check {
+  margin: 0 0 0 5px;
+}
+.metro .input-control.checkbox:hover .check,
+.metro .input-control.radio:hover .check {
+  border-color: #919191;
+}
+.metro .input-control.checkbox .check:active,
+.metro .input-control.radio .check:active {
+  border-color: #1e1e1e;
+}
+.metro .input-control.checkbox .check:focus,
+.metro .input-control.radio .check:focus {
+  border-color: #919191;
+}
+.metro .input-control.checkbox .check:after,
+.metro .input-control.radio .check:after {
+  position: absolute;
+  font-family: metroSysIcons;
+  font-size: 9pt;
+  line-height: 9pt;
+}
+.metro .input-control.checkbox input[type="checkbox"]:checked ~ .check:after,
+.metro .input-control.radio input[type="checkbox"]:checked ~ .check:after,
+.metro .input-control.checkbox input[type="radio"]:checked ~ .check:after,
+.metro .input-control.radio input[type="radio"]:checked ~ .check:after {
+  content: "\e003";
+  margin: 2px;
+  top: 0;
+  color: #1d1d1d;
+}
+.metro .input-control.checkbox input[type="checkbox"]:disabled ~ .check,
+.metro .input-control.radio input[type="checkbox"]:disabled ~ .check,
+.metro .input-control.checkbox input[type="radio"]:disabled ~ .check,
+.metro .input-control.radio input[type="radio"]:disabled ~ .check {
+  border-color: #d9d9d9;
+  background-color: #e6e6e6;
+}
+.metro .input-control.checkbox input[type="checkbox"]:disabled ~ .check:after,
+.metro .input-control.radio input[type="checkbox"]:disabled ~ .check:after,
+.metro .input-control.checkbox input[type="radio"]:disabled ~ .check:after,
+.metro .input-control.radio input[type="radio"]:disabled ~ .check:after {
+  color: #8a8a8a;
+}
+.metro .input-control.checkbox input[data-show="intermediate"] ~ .check:after,
+.metro .input-control.radio input[data-show="intermediate"] ~ .check:after,
+.metro .input-control.checkbox input[data-show="intermediate"]:checked ~ .check:after,
+.metro .input-control.radio input[data-show="intermediate"]:checked ~ .check:after {
+  display: block;
+  content: "" !important;
+  width: 10px;
+  height: 10px;
+  background-color: #1d1d1d;
+  margin: 3px;
+}
+.metro .input-control.checkbox input[data-show="intermediate"]:disabled ~ .check:after,
+.metro .input-control.radio input[data-show="intermediate"]:disabled ~ .check:after {
+  background-color: #8a8a8a;
+}
+.metro .input-control.radio .check {
+  border-radius: 50%;
+}
+.metro .input-control.radio.default-style input[type="radio"]:checked ~ .check:after {
+  display: block;
+  content: "" !important;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #1d1d1d;
+  margin: 3px;
+}
+.metro .input-control.radio.default-style input[type="radio"]:checked:disabled ~ .check:after {
+  background-color: #8a8a8a;
+}
+.metro .input-control.switch input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+.metro .input-control.switch .caption {
+  margin: 0 5px;
+}
+.metro .input-control.switch .check {
+  position: relative;
+  width: 45px;
+  height: 18px;
+  outline: 2px #a6a6a6 solid;
+  border: 1px #fff solid;
+  cursor: pointer;
+  background: #A6A6A6;
+  z-index: 1;
+  display: inline-block;
+  vertical-align: middle;
+}
+.metro .input-control.switch .check:after {
+  position: absolute;
+  left: -1px;
+  top: -1px;
+  display: block;
+  content: "";
+  width: 9px;
+  height: 16px;
+  outline: 2px #333 solid;
+  border: 1px #333 solid;
+  cursor: pointer;
+  background: #333;
+  z-index: 2;
+}
+.metro .input-control.switch input[type="checkbox"]:focus ~ .check,
+.metro .input-control.switch input[type="radio"]:focus ~ .check {
+  outline: 1px #999999 dotted !important;
+}
+.metro .input-control.switch input[type="checkbox"]:checked ~ .check {
+  background: #008287;
+}
+.metro .input-control.switch input[type="checkbox"]:checked ~ .check:after {
+  left: auto;
+  right: -1px;
+}
+.metro .input-control.switch input[type="checkbox"]:disabled ~ .check {
+  background-color: #e6e6e6;
+  border-color: #ffffff;
+}
+.metro .input-control.switch input[type="checkbox"]:disabled ~ .check:after {
+  background-color: #8a8a8a;
+  outline-color: #8a8a8a;
+  border-color: #8a8a8a;
+}
+.metro .input-control.text,
+.metro .input-control.password,
+.metro .input-control.file,
+.metro .input-control.email,
+.metro .input-control.tel,
+.metro .input-control.number {
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  background-color: #fff;
+  outline: 0;
+  height: 34px;
+  width: 100%;
+}
+.metro .input-control.text .btn-clear,
+.metro .input-control.password .btn-clear,
+.metro .input-control.file .btn-clear,
+.metro .input-control.email .btn-clear,
+.metro .input-control.tel .btn-clear,
+.metro .input-control.number .btn-clear,
+.metro .input-control.text .btn-reveal,
+.metro .input-control.password .btn-reveal,
+.metro .input-control.file .btn-reveal,
+.metro .input-control.email .btn-reveal,
+.metro .input-control.tel .btn-reveal,
+.metro .input-control.number .btn-reveal,
+.metro .input-control.text .btn-date,
+.metro .input-control.password .btn-date,
+.metro .input-control.file .btn-date,
+.metro .input-control.email .btn-date,
+.metro .input-control.tel .btn-date,
+.metro .input-control.number .btn-date,
+.metro .input-control.text .btn-file,
+.metro .input-control.password .btn-file,
+.metro .input-control.file .btn-file,
+.metro .input-control.email .btn-file,
+.metro .input-control.tel .btn-file,
+.metro .input-control.number .btn-file,
+.metro .input-control.text .btn-search,
+.metro .input-control.password .btn-search,
+.metro .input-control.file .btn-search,
+.metro .input-control.email .btn-search,
+.metro .input-control.tel .btn-search,
+.metro .input-control.number .btn-search {
+  background-color: #F0F0F0;
+  position: absolute;
+  top: 5px;
+  z-index: 2;
+  border: 0;
+  right: 4px;
+  width: 24px;
+  height: 24px;
+  min-height: 1px;
+  min-width: 1px;
+  padding: 0;
+  margin: 0;
+  display: none;
+}
+.metro .input-control.text .btn-clear:after,
+.metro .input-control.password .btn-clear:after,
+.metro .input-control.file .btn-clear:after,
+.metro .input-control.email .btn-clear:after,
+.metro .input-control.tel .btn-clear:after,
+.metro .input-control.number .btn-clear:after,
+.metro .input-control.text .btn-reveal:after,
+.metro .input-control.password .btn-reveal:after,
+.metro .input-control.file .btn-reveal:after,
+.metro .input-control.email .btn-reveal:after,
+.metro .input-control.tel .btn-reveal:after,
+.metro .input-control.number .btn-reveal:after,
+.metro .input-control.text .btn-date:after,
+.metro .input-control.password .btn-date:after,
+.metro .input-control.file .btn-date:after,
+.metro .input-control.email .btn-date:after,
+.metro .input-control.tel .btn-date:after,
+.metro .input-control.number .btn-date:after,
+.metro .input-control.text .btn-file:after,
+.metro .input-control.password .btn-file:after,
+.metro .input-control.file .btn-file:after,
+.metro .input-control.email .btn-file:after,
+.metro .input-control.tel .btn-file:after,
+.metro .input-control.number .btn-file:after,
+.metro .input-control.text .btn-search:after,
+.metro .input-control.password .btn-search:after,
+.metro .input-control.file .btn-search:after,
+.metro .input-control.email .btn-search:after,
+.metro .input-control.tel .btn-search:after,
+.metro .input-control.number .btn-search:after {
+  font-family: metroSysIcons;
+  font-size: 1em;
+}
+.metro .input-control.text .btn-clear:not(:disabled):active,
+.metro .input-control.password .btn-clear:not(:disabled):active,
+.metro .input-control.file .btn-clear:not(:disabled):active,
+.metro .input-control.email .btn-clear:not(:disabled):active,
+.metro .input-control.tel .btn-clear:not(:disabled):active,
+.metro .input-control.number .btn-clear:not(:disabled):active,
+.metro .input-control.text .btn-reveal:not(:disabled):active,
+.metro .input-control.password .btn-reveal:not(:disabled):active,
+.metro .input-control.file .btn-reveal:not(:disabled):active,
+.metro .input-control.email .btn-reveal:not(:disabled):active,
+.metro .input-control.tel .btn-reveal:not(:disabled):active,
+.metro .input-control.number .btn-reveal:not(:disabled):active,
+.metro .input-control.text .btn-date:not(:disabled):active,
+.metro .input-control.password .btn-date:not(:disabled):active,
+.metro .input-control.file .btn-date:not(:disabled):active,
+.metro .input-control.email .btn-date:not(:disabled):active,
+.metro .input-control.tel .btn-date:not(:disabled):active,
+.metro .input-control.number .btn-date:not(:disabled):active,
+.metro .input-control.text .btn-file:not(:disabled):active,
+.metro .input-control.password .btn-file:not(:disabled):active,
+.metro .input-control.file .btn-file:not(:disabled):active,
+.metro .input-control.email .btn-file:not(:disabled):active,
+.metro .input-control.tel .btn-file:not(:disabled):active,
+.metro .input-control.number .btn-file:not(:disabled):active,
+.metro .input-control.text .btn-search:not(:disabled):active,
+.metro .input-control.password .btn-search:not(:disabled):active,
+.metro .input-control.file .btn-search:not(:disabled):active,
+.metro .input-control.email .btn-search:not(:disabled):active,
+.metro .input-control.tel .btn-search:not(:disabled):active,
+.metro .input-control.number .btn-search:not(:disabled):active {
+  background-color: #1d1d1d;
+  color: #ffffff;
+}
+.metro .input-control.text .btn-clear:active,
+.metro .input-control.password .btn-clear:active,
+.metro .input-control.file .btn-clear:active,
+.metro .input-control.email .btn-clear:active,
+.metro .input-control.tel .btn-clear:active,
+.metro .input-control.number .btn-clear:active,
+.metro .input-control.text .btn-reveal:active,
+.metro .input-control.password .btn-reveal:active,
+.metro .input-control.file .btn-reveal:active,
+.metro .input-control.email .btn-reveal:active,
+.metro .input-control.tel .btn-reveal:active,
+.metro .input-control.number .btn-reveal:active,
+.metro .input-control.text .btn-date:active,
+.metro .input-control.password .btn-date:active,
+.metro .input-control.file .btn-date:active,
+.metro .input-control.email .btn-date:active,
+.metro .input-control.tel .btn-date:active,
+.metro .input-control.number .btn-date:active,
+.metro .input-control.text .btn-file:active,
+.metro .input-control.password .btn-file:active,
+.metro .input-control.file .btn-file:active,
+.metro .input-control.email .btn-file:active,
+.metro .input-control.tel .btn-file:active,
+.metro .input-control.number .btn-file:active,
+.metro .input-control.text .btn-search:active,
+.metro .input-control.password .btn-search:active,
+.metro .input-control.file .btn-search:active,
+.metro .input-control.email .btn-search:active,
+.metro .input-control.tel .btn-search:active,
+.metro .input-control.number .btn-search:active {
+  left: auto;
+}
+.metro .input-control.text .btn-clear:focus,
+.metro .input-control.password .btn-clear:focus,
+.metro .input-control.file .btn-clear:focus,
+.metro .input-control.email .btn-clear:focus,
+.metro .input-control.tel .btn-clear:focus,
+.metro .input-control.number .btn-clear:focus,
+.metro .input-control.text .btn-reveal:focus,
+.metro .input-control.password .btn-reveal:focus,
+.metro .input-control.file .btn-reveal:focus,
+.metro .input-control.email .btn-reveal:focus,
+.metro .input-control.tel .btn-reveal:focus,
+.metro .input-control.number .btn-reveal:focus,
+.metro .input-control.text .btn-date:focus,
+.metro .input-control.password .btn-date:focus,
+.metro .input-control.file .btn-date:focus,
+.metro .input-control.email .btn-date:focus,
+.metro .input-control.tel .btn-date:focus,
+.metro .input-control.number .btn-date:focus,
+.metro .input-control.text .btn-file:focus,
+.metro .input-control.password .btn-file:focus,
+.metro .input-control.file .btn-file:focus,
+.metro .input-control.email .btn-file:focus,
+.metro .input-control.tel .btn-file:focus,
+.metro .input-control.number .btn-file:focus,
+.metro .input-control.text .btn-search:focus,
+.metro .input-control.password .btn-search:focus,
+.metro .input-control.file .btn-search:focus,
+.metro .input-control.email .btn-search:focus,
+.metro .input-control.tel .btn-search:focus,
+.metro .input-control.number .btn-search:focus {
+  outline: 1px #ccc dotted ;
+}
+.metro .input-control.text input:focus ~ .btn-clear,
+.metro .input-control.password input:focus ~ .btn-clear,
+.metro .input-control.file input:focus ~ .btn-clear,
+.metro .input-control.email input:focus ~ .btn-clear,
+.metro .input-control.tel input:focus ~ .btn-clear,
+.metro .input-control.number input:focus ~ .btn-clear,
+.metro .input-control.text input:focus ~ .btn-reveal,
+.metro .input-control.password input:focus ~ .btn-reveal,
+.metro .input-control.file input:focus ~ .btn-reveal,
+.metro .input-control.email input:focus ~ .btn-reveal,
+.metro .input-control.tel input:focus ~ .btn-reveal,
+.metro .input-control.number input:focus ~ .btn-reveal {
+  display: block;
+}
+.metro .input-control.text input:not(:focus) ~ .btn-clear:active,
+.metro .input-control.password input:not(:focus) ~ .btn-clear:active,
+.metro .input-control.file input:not(:focus) ~ .btn-clear:active,
+.metro .input-control.email input:not(:focus) ~ .btn-clear:active,
+.metro .input-control.tel input:not(:focus) ~ .btn-clear:active,
+.metro .input-control.number input:not(:focus) ~ .btn-clear:active,
+.metro .input-control.text input:not(:focus) ~ .btn-reveal:active,
+.metro .input-control.password input:not(:focus) ~ .btn-reveal:active,
+.metro .input-control.file input:not(:focus) ~ .btn-reveal:active,
+.metro .input-control.email input:not(:focus) ~ .btn-reveal:active,
+.metro .input-control.tel input:not(:focus) ~ .btn-reveal:active,
+.metro .input-control.number input:not(:focus) ~ .btn-reveal:active {
+  display: block;
+}
+.metro .input-control.text .btn-clear:after,
+.metro .input-control.password .btn-clear:after,
+.metro .input-control.file .btn-clear:after,
+.metro .input-control.email .btn-clear:after,
+.metro .input-control.tel .btn-clear:after,
+.metro .input-control.number .btn-clear:after {
+  content: "\e00d";
+}
+.metro .input-control.text .btn-reveal:after,
+.metro .input-control.password .btn-reveal:after,
+.metro .input-control.file .btn-reveal:after,
+.metro .input-control.email .btn-reveal:after,
+.metro .input-control.tel .btn-reveal:after,
+.metro .input-control.number .btn-reveal:after {
+  content: "\e007";
+}
+.metro .input-control.text .btn-search:after,
+.metro .input-control.password .btn-search:after,
+.metro .input-control.file .btn-search:after,
+.metro .input-control.email .btn-search:after,
+.metro .input-control.tel .btn-search:after,
+.metro .input-control.number .btn-search:after {
+  content: "\e00e";
+}
+.metro .input-control.text .btn-date:after,
+.metro .input-control.password .btn-date:after,
+.metro .input-control.file .btn-date:after,
+.metro .input-control.email .btn-date:after,
+.metro .input-control.tel .btn-date:after,
+.metro .input-control.number .btn-date:after {
+  content: "\e013";
+}
+.metro .input-control.text .btn-file:after,
+.metro .input-control.password .btn-file:after,
+.metro .input-control.file .btn-file:after,
+.metro .input-control.email .btn-file:after,
+.metro .input-control.tel .btn-file:after,
+.metro .input-control.number .btn-file:after {
+  content: "\e008";
+}
+.metro .input-control.text .btn-search,
+.metro .input-control.password .btn-search,
+.metro .input-control.file .btn-search,
+.metro .input-control.email .btn-search,
+.metro .input-control.tel .btn-search,
+.metro .input-control.number .btn-search {
+  display: block;
+}
+.metro .input-control.text .btn-date,
+.metro .input-control.password .btn-date,
+.metro .input-control.file .btn-date,
+.metro .input-control.email .btn-date,
+.metro .input-control.tel .btn-date,
+.metro .input-control.number .btn-date {
+  display: block;
+}
+.metro .input-control.text .btn-file,
+.metro .input-control.password .btn-file,
+.metro .input-control.file .btn-file,
+.metro .input-control.email .btn-file,
+.metro .input-control.tel .btn-file,
+.metro .input-control.number .btn-file {
+  display: block;
+}
+.metro .input-control.text [class*="btn-"],
+.metro .input-control.password [class*="btn-"],
+.metro .input-control.file [class*="btn-"],
+.metro .input-control.email [class*="btn-"],
+.metro .input-control.tel [class*="btn-"],
+.metro .input-control.number [class*="btn-"] {
+  background-color: transparent;
+}
+.metro .input-control.text input::-ms-reveal,
+.metro .input-control.password input::-ms-reveal,
+.metro .input-control.file input::-ms-reveal,
+.metro .input-control.email input::-ms-reveal,
+.metro .input-control.tel input::-ms-reveal,
+.metro .input-control.number input::-ms-reveal,
+.metro .input-control.text input::-ms-clear,
+.metro .input-control.password input::-ms-clear,
+.metro .input-control.file input::-ms-clear,
+.metro .input-control.email input::-ms-clear,
+.metro .input-control.tel input::-ms-clear,
+.metro .input-control.number input::-ms-clear {
+  display: none;
+}
+.metro .input-control.text input,
+.metro .input-control.password input,
+.metro .input-control.file input,
+.metro .input-control.email input,
+.metro .input-control.tel input,
+.metro .input-control.number input {
+  border: 1px #d9d9d9 solid;
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+  z-index: 1;
+  -webkit-appearance: none;
+}
+.metro .input-control.text input:focus,
+.metro .input-control.password input:focus,
+.metro .input-control.file input:focus,
+.metro .input-control.email input:focus,
+.metro .input-control.tel input:focus,
+.metro .input-control.number input:focus {
+  outline: 0;
+  border-color: #919191;
+}
+.metro .input-control.text input:disabled,
+.metro .input-control.password input:disabled,
+.metro .input-control.file input:disabled,
+.metro .input-control.email input:disabled,
+.metro .input-control.tel input:disabled,
+.metro .input-control.number input:disabled {
+  padding-right: 5px;
+}
+.metro .input-control.text input:disabled ~ .btn-clear,
+.metro .input-control.password input:disabled ~ .btn-clear,
+.metro .input-control.file input:disabled ~ .btn-clear,
+.metro .input-control.email input:disabled ~ .btn-clear,
+.metro .input-control.tel input:disabled ~ .btn-clear,
+.metro .input-control.number input:disabled ~ .btn-clear,
+.metro .input-control.text input:disabled ~ .btn-reveal,
+.metro .input-control.password input:disabled ~ .btn-reveal,
+.metro .input-control.file input:disabled ~ .btn-reveal,
+.metro .input-control.email input:disabled ~ .btn-reveal,
+.metro .input-control.tel input:disabled ~ .btn-reveal,
+.metro .input-control.number input:disabled ~ .btn-reveal {
+  display: none;
+}
+.metro .input-control.text input::-moz-placeholder,
+.metro .input-control.password input::-moz-placeholder,
+.metro .input-control.file input::-moz-placeholder,
+.metro .input-control.email input::-moz-placeholder,
+.metro .input-control.tel input::-moz-placeholder,
+.metro .input-control.number input::-moz-placeholder {
+  color: #999999;
+}
+.metro .input-control.text input::-webkit-input-placeholder,
+.metro .input-control.password input::-webkit-input-placeholder,
+.metro .input-control.file input::-webkit-input-placeholder,
+.metro .input-control.email input::-webkit-input-placeholder,
+.metro .input-control.tel input::-webkit-input-placeholder,
+.metro .input-control.number input::-webkit-input-placeholder {
+  color: #999999;
+}
+.metro .input-control.select,
+.metro .input-control.textarea {
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  width: 100%;
+}
+.metro .input-control.select select,
+.metro .input-control.textarea select,
+.metro .input-control.select textarea,
+.metro .input-control.textarea textarea {
+  border: 1px #d9d9d9 solid;
+  width: 100%;
+  padding: 5px;
+}
+.metro .input-control.select select:focus,
+.metro .input-control.textarea select:focus,
+.metro .input-control.select textarea:focus,
+.metro .input-control.textarea textarea:focus {
+  outline: 0;
+  border-color: #919191;
+}
+.metro .input-control.select select:disabled,
+.metro .input-control.textarea select:disabled,
+.metro .input-control.select textarea:disabled,
+.metro .input-control.textarea textarea:disabled {
+  padding-right: 5px;
+}
+.metro .input-control.select textarea,
+.metro .input-control.textarea textarea {
+  min-height: 100px;
+}
+.metro .input-control.text.warning-state input,
+.metro .input-control.password.warning-state input,
+.metro .input-control.select.warning-state input,
+.metro .input-control.textarea.warning-state input,
+.metro .input-control.file.warning-state input,
+.metro .input-control.email.warning-state input,
+.metro .input-control.tel.warning-state input,
+.metro .input-control.number.warning-state input,
+.metro .input-control.text.warning-state select,
+.metro .input-control.password.warning-state select,
+.metro .input-control.select.warning-state select,
+.metro .input-control.textarea.warning-state select,
+.metro .input-control.file.warning-state select,
+.metro .input-control.email.warning-state select,
+.metro .input-control.tel.warning-state select,
+.metro .input-control.number.warning-state select,
+.metro .input-control.text.warning-state textarea,
+.metro .input-control.password.warning-state textarea,
+.metro .input-control.select.warning-state textarea,
+.metro .input-control.textarea.warning-state textarea,
+.metro .input-control.file.warning-state textarea,
+.metro .input-control.email.warning-state textarea,
+.metro .input-control.tel.warning-state textarea,
+.metro .input-control.number.warning-state textarea {
+  border-color: #fa6800;
+}
+.metro .input-control.text.error-state input,
+.metro .input-control.password.error-state input,
+.metro .input-control.select.error-state input,
+.metro .input-control.textarea.error-state input,
+.metro .input-control.file.error-state input,
+.metro .input-control.email.error-state input,
+.metro .input-control.tel.error-state input,
+.metro .input-control.number.error-state input,
+.metro .input-control.text.error-state select,
+.metro .input-control.password.error-state select,
+.metro .input-control.select.error-state select,
+.metro .input-control.textarea.error-state select,
+.metro .input-control.file.error-state select,
+.metro .input-control.email.error-state select,
+.metro .input-control.tel.error-state select,
+.metro .input-control.number.error-state select,
+.metro .input-control.text.error-state textarea,
+.metro .input-control.password.error-state textarea,
+.metro .input-control.select.error-state textarea,
+.metro .input-control.textarea.error-state textarea,
+.metro .input-control.file.error-state textarea,
+.metro .input-control.email.error-state textarea,
+.metro .input-control.tel.error-state textarea,
+.metro .input-control.number.error-state textarea {
+  border-color: #e51400;
+}
+.metro .input-control.text.info-state input,
+.metro .input-control.password.info-state input,
+.metro .input-control.select.info-state input,
+.metro .input-control.textarea.info-state input,
+.metro .input-control.file.info-state input,
+.metro .input-control.email.info-state input,
+.metro .input-control.tel.info-state input,
+.metro .input-control.number.info-state input,
+.metro .input-control.text.info-state select,
+.metro .input-control.password.info-state select,
+.metro .input-control.select.info-state select,
+.metro .input-control.textarea.info-state select,
+.metro .input-control.file.info-state select,
+.metro .input-control.email.info-state select,
+.metro .input-control.tel.info-state select,
+.metro .input-control.number.info-state select,
+.metro .input-control.text.info-state textarea,
+.metro .input-control.password.info-state textarea,
+.metro .input-control.select.info-state textarea,
+.metro .input-control.textarea.info-state textarea,
+.metro .input-control.file.info-state textarea,
+.metro .input-control.email.info-state textarea,
+.metro .input-control.tel.info-state textarea,
+.metro .input-control.number.info-state textarea {
+  border-color: #4390df;
+}
+.metro .input-control.text.success-state input,
+.metro .input-control.password.success-state input,
+.metro .input-control.select.success-state input,
+.metro .input-control.textarea.success-state input,
+.metro .input-control.file.success-state input,
+.metro .input-control.email.success-state input,
+.metro .input-control.tel.success-state input,
+.metro .input-control.number.success-state input,
+.metro .input-control.text.success-state select,
+.metro .input-control.password.success-state select,
+.metro .input-control.select.success-state select,
+.metro .input-control.textarea.success-state select,
+.metro .input-control.file.success-state select,
+.metro .input-control.email.success-state select,
+.metro .input-control.tel.success-state select,
+.metro .input-control.number.success-state select,
+.metro .input-control.text.success-state textarea,
+.metro .input-control.password.success-state textarea,
+.metro .input-control.select.success-state textarea,
+.metro .input-control.textarea.success-state textarea,
+.metro .input-control.file.success-state textarea,
+.metro .input-control.email.success-state textarea,
+.metro .input-control.tel.success-state textarea,
+.metro .input-control.number.success-state textarea {
+  border-color: #60a917;
+}
+.metro .input-control.text input[data-state="warning"],
+.metro .input-control.password input[data-state="warning"],
+.metro .input-control.select input[data-state="warning"],
+.metro .input-control.textarea input[data-state="warning"],
+.metro .input-control.file input[data-state="warning"],
+.metro .input-control.email input[data-state="warning"],
+.metro .input-control.tel input[data-state="warning"],
+.metro .input-control.number input[data-state="warning"] {
+  border-color: #fa6800;
+}
+.metro .input-control.text input[data-state="error"],
+.metro .input-control.password input[data-state="error"],
+.metro .input-control.select input[data-state="error"],
+.metro .input-control.textarea input[data-state="error"],
+.metro .input-control.file input[data-state="error"],
+.metro .input-control.email input[data-state="error"],
+.metro .input-control.tel input[data-state="error"],
+.metro .input-control.number input[data-state="error"] {
+  border-color: #e51400;
+}
+.metro .input-control.text input[data-state="info"],
+.metro .input-control.password input[data-state="info"],
+.metro .input-control.select input[data-state="info"],
+.metro .input-control.textarea input[data-state="info"],
+.metro .input-control.file input[data-state="info"],
+.metro .input-control.email input[data-state="info"],
+.metro .input-control.tel input[data-state="info"],
+.metro .input-control.number input[data-state="info"] {
+  border-color: #4390df;
+}
+.metro .input-control.text input[data-state="success"],
+.metro .input-control.password input[data-state="success"],
+.metro .input-control.select input[data-state="success"],
+.metro .input-control.textarea input[data-state="success"],
+.metro .input-control.file input[data-state="success"],
+.metro .input-control.email input[data-state="success"],
+.metro .input-control.tel input[data-state="success"],
+.metro .input-control.number input[data-state="success"] {
+  border-color: #60a917;
+}
+.metro .input-control.text[class*="span"],
+.metro .input-control.password[class*="span"],
+.metro .input-control.select[class*="span"],
+.metro .input-control.textarea[class*="span"],
+.metro .input-control.file[class*="span"],
+.metro .input-control.email[class*="span"],
+.metro .input-control.tel[class*="span"],
+.metro .input-control.number[class*="span"] {
+  margin-left: 0;
+}
+.metro .input-control.file {
+  overflow: hidden;
+}
+.metro .input-control.file input[type="file"] {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  bottom: 0;
+  right: 0;
+}
+.metro input[type="button"],
+.metro input[type="submit"],
+.metro input[type="reset"] {
+  padding: 4px 12px;
+  text-align: center;
+  vertical-align: middle !important;
+  background-color: #d9d9d9;
+  border: 1px transparent solid;
+  color: #222222;
+  border-radius: 0;
+  cursor: pointer;
+  display: inline-block;
+  outline: none;
+  font-family: 'Segoe UI Light_', 'Open Sans Light', Verdana, Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  margin: auto;
+}
+.metro input[type="button"].default,
+.metro input[type="submit"].default,
+.metro input[type="reset"].default {
+  background-color: #008287;
+  color: #fff;
+}
+.metro input[type="button"]:focus,
+.metro input[type="submit"]:focus,
+.metro input[type="reset"]:focus {
+  outline: 0;
+  border: 1px #353535 dotted;
+}
+.metro input[type="button"]:disabled,
+.metro input[type="submit"]:disabled,
+.metro input[type="reset"]:disabled,
+.metro input[type="button"].disabled,
+.metro input[type="submit"].disabled,
+.metro input[type="reset"].disabled {
+  background-color: #eaeaea !important;
+  color: #bebebe !important;
+  cursor: not-allowed !important;
+}
+.metro input[type="button"] *,
+.metro input[type="submit"] *,
+.metro input[type="reset"] * {
+  color: inherit;
+}
+.metro input[type="button"] *:hover,
+.metro input[type="submit"] *:hover,
+.metro input[type="reset"] *:hover {
+  color: inherit;
+}
+.metro input[type="button"].primary,
+.metro input[type="submit"].primary,
+.metro input[type="reset"].primary {
+  background-color: #16499a !important;
+  color: #ffffff !important;
+}
+.metro input[type="button"].info,
+.metro input[type="submit"].info,
+.metro input[type="reset"].info {
+  background-color: #4390df !important;
+  color: #ffffff !important;
+}
+.metro input[type="button"].success,
+.metro input[type="submit"].success,
+.metro input[type="reset"].success {
+  background-color: #60a917 !important;
+  color: #ffffff !important;
+}
+.metro input[type="button"].warning,
+.metro input[type="submit"].warning,
+.metro input[type="reset"].warning {
+  background-color: #fa6800 !important;
+  color: #ffffff !important;
+}
+.metro input[type="button"].danger,
+.metro input[type="submit"].danger,
+.metro input[type="reset"].danger {
+  background-color: #9a1616 !important;
+  color: #ffffff !important;
+}
+.metro input[type="button"].inverse,
+.metro input[type="submit"].inverse,
+.metro input[type="reset"].inverse {
+  background-color: #1d1d1d !important;
+  color: #ffffff !important;
+}
+.metro input[type="button"].link,
+.metro input[type="submit"].link,
+.metro input[type="reset"].link {
+  background-color: transparent !important;
+  color: #2e92cf !important;
+}
+.metro input[type="button"].link:hover,
+.metro input[type="submit"].link:hover,
+.metro input[type="reset"].link:hover {
+  text-decoration: underline;
+}
+.metro input[type="button"].link:disabled,
+.metro input[type="submit"].link:disabled,
+.metro input[type="reset"].link:disabled,
+.metro input[type="button"].link.disabled,
+.metro input[type="submit"].link.disabled,
+.metro input[type="reset"].link.disabled {
+  background-color: transparent !important;
+  color: #bebebe !important;
+  cursor: not-allowed !important;
+}
+.metro input[type="button"].link [class*="icon-"],
+.metro input[type="submit"].link [class*="icon-"],
+.metro input[type="reset"].link [class*="icon-"] {
+  text-decoration: none !important;
+}
+.metro input[type="button"]:active,
+.metro input[type="submit"]:active,
+.metro input[type="reset"]:active {
+  background-color: #1d1d1d !important;
+  color: #ffffff !important;
+  border-color: transparent;
+}
+.metro input[type="button"].large,
+.metro input[type="submit"].large,
+.metro input[type="reset"].large {
+  padding: 11px 19px;
+  font-size: 17.5px;
+}
+.metro input[type="button"].small,
+.metro input[type="submit"].small,
+.metro input[type="reset"].small {
+  padding: 2px 10px;
+  font-size: 11.9px;
+}
+.metro input[type="button"].mini,
+.metro input[type="submit"].mini,
+.metro input[type="reset"].mini {
+  padding: 0px 6px;
+  font-size: 10.5px;
+}
+.metro input[type=number]::-webkit-inner-spin-button,
+.metro input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.metro img {
+  max-width: 100%;
+}
+.metro img.rounded,
+.metro img.cycle,
+.metro img.polaroid {
+  background-color: #ffffff;
+  border: 1px #eaeaea solid;
+}
+.metro img.rounded {
+  border-radius: 10px;
+}
+.metro img.cycle {
+  border-radius: 50%;
+}
+.metro img.polaroid {
+  padding: 10px;
+}
+.metro .image-container {
+  position: relative;
+  padding: 0;
+  background-color: #333333;
+  width: 240px;
+  overflow: hidden;
+}
+.metro .image-container.full-size {
+  width: 100%;
+}
+.metro .image-container img {
+  margin: 0;
+  width: 100%;
+  height: auto;
+}
+.metro .image-container > .overlay,
+.metro .image-container > .overlay-fluid {
+  position: absolute;
+  width: 100%;
+  height: 55px;
+  overflow: hidden;
+  background-color: #1e1e1e;
+  padding: 5px 10px;
+  opacity: .8;
+  bottom: 0;
+  font-size: 8pt;
+  color: #fff;
+}
+.metro .image-container > .overlay-fluid {
+  bottom: -55px;
+  font-size: 8pt;
+  color: #fff;
+}
+.metro .image-container:hover .overlay-fluid {
+  -webkit-transform: translate(0, -55px);
+  -ms-transform: translate(0, -55px);
+  -o-transform: translate(0, -55px);
+  -moz-transform: translate(0, -55px);
+  transform: translate(0, -55px);
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.metro .image-container.selected {
+  border: 4px #4390df solid;
+}
+.metro .image-container.selected:after {
+  position: absolute;
+  display: block;
+  border-top: 28px solid #4390df;
+  border-left: 28px solid transparent;
+  right: 0;
+  content: "";
+  top: 0;
+  z-index: 101;
+}
+.metro .image-container.selected:before {
+  position: absolute;
+  display: block;
+  content: "\e003";
+  color: #fff;
+  right: 0;
+  font-family: 'metroSysIcons';
+  font-size: 9pt;
+  font-weight: normal;
+  z-index: 102;
+  top: 0;
+}
+.metro #menu .init {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.metro #menu .item-vertical {
+  display: block;
+  margin: 10px 0;
+  padding: 0;
+  vertical-align: baseline;
+  position: relative;
+  font-family: 'Segoe UI_', 'Open Sans', Verdana, Arial, Helvetica, sans-serif;
+}
+.metro #menu .item-horizontal {
+  display: inline-block;
+  margin: 0 15px;
+  padding: 0;
+  vertical-align: baseline;
+  position: relative;
+  font-family: 'Segoe UI_', 'Open Sans', Verdana, Arial, Helvetica, sans-serif;
+}
+.metro .vertical-menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.metro .vertical-menu li {
+  display: block;
+  margin: 10px 0;
+  padding: 0;
+  vertical-align: baseline;
+  position: relative;
+  font-family: 'Segoe UI_', 'Open Sans', Verdana, Arial, Helvetica, sans-serif;
+}
+.metro .vertical-menu li a {
+  display: block;
+  text-decoration: none;
+  font-family: 'Segoe UI Light_', 'Open Sans Light', Verdana, Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.00em;
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+  letter-spacing: 0.01em;
+  color: #000000;
+  line-height: 2.2rem;
+  font-size: 2.2rem;
+  color: inherit;
+}
+.metro .vertical-menu li.title {
+  font-family: 'Segoe UI Light_', 'Open Sans Light', Verdana, Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  color: #000000;
+  letter-spacing: 0.00em;
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+  letter-spacing: 0.01em;
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+.metro .vertical-menu.compact a {
+  font-weight: normal;
+  font-size: 10.5pt;
+  line-height: 12pt;
+  color: inherit;
+}
+.metro .vertical-menu.compact li.title {
+  margin-bottom: 10px;
+  font-family: 'Segoe UI Semibold_', 'Open Sans Bold', Verdana, Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: #000000;
+  font-size: 1.6rem;
+  line-height: 1.6rem;
+  letter-spacing: 0.02em;
+}
+.metro .vertical-menu ul.secondary {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  margin-left: 15px;
+}
+.metro .vertical-menu ul.secondary li a {
+  font-family: 'Segoe UI Semibold_', 'Open Sans Bold', Verdana, Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: #000000;
+  font-size: 1.6rem;
+  line-height: 1.6rem;
+  letter-spacing: 0.02em;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1.4rem;
+  color: inherit;
+}
+.metro .horizontal-menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  padding: 0px;
+}
+.metro .horizontal-menu li {
+  display: inline-block;
+  margin: 0 15px;
+  padding: 0;
+  vertical-align: baseline;
+  position: relative;
+  font-family: 'Segoe UI_', 'Open Sans', Verdana, Arial, Helvetica, sans-serif;
+}
+.metro .horizontal-menu li a {
+  display: inline-block;
+  text-decoration: none;
+  font-family: 'Segoe UI Light_', 'Open Sans Light', Verdana, Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.00em;
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+  letter-spacing: 0.01em;
+  color: #000000;
+  line-height: 2.2rem;
+  font-size: 2.2rem;
+  color: inherit;
+  padding: 5px;
+}
+.metro .horizontal-menu li a:hover {
+  background: inherit;
+}
+.metro .horizontal-menu.compact li {
+  margin-left: 5px;
+}
+.metro .horizontal-menu.compact a {
+  font-weight: normal;
+  font-size: 10.5pt;
+  color: inherit;
+}
+.metro .horizontal-menu.compact .dropdown-toggle:after {
+  bottom: 2px;
+}
+.metro .horizontal-menu li:first-child {
+  margin-left: 0px;
+}
+.metro .horizontal-menu li:hover > .dropdown-menu[data-show="hover"] {
+  display: block;
+}
+.metro .side-menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: relative;
+  background: #ffffff;
+  min-width: 200px;
+  width: auto;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+.metro .side-menu li {
+  display: block;
+  margin: 10px 0;
+  padding: 0;
+  vertical-align: baseline;
+  position: relative;
+  font-family: 'Segoe UI_', 'Open Sans', Verdana, Arial, Helvetica, sans-serif;
+}
+.metro .side-menu li a {
+  display: block;
+  text-decoration: none;
+  font-family: 'Segoe UI Light_', 'Open Sans Light', Verdana, Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.00em;
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+  letter-spacing: 0.01em;
+  color: #000000;
+  line-height: 2.2rem;
+  font-size: 2.2rem;
+  color: inherit;
+}
+.metro .side-menu li.title {
+  font-family: 'Segoe UI Light_', 'Open Sans Light', Verdana, Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  color: #000000;
+  letter-spacing: 0.00em;
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+  letter-spacing: 0.01em;
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+.metro .side-menu.compact a {
+  font-weight: normal;
+  font-size: 10.5pt;
+  line-height: 12pt;
+  color: inherit;
+}
+.metro .side-menu.compact li.title {
+  margin-bottom: 10px;
+  font-family: 'Segoe UI Semibold_', 'Open Sans Bold', Verdana, Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: #000000;
+  font-size: 1.6rem;
+  line-height: 1.6rem;
+  letter-spacing: 0.02em;
+}
+.metro .side-menu ul.secondary {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  margin-left: 15px;
+}
+.metro .side-menu ul.secondary li a {
+  font-family: 'Segoe UI Semibold_', 'Open Sans Bold', Verdana, Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: #000000;
+  font-size: 1.6rem;
+  line-height: 1.6rem;
+  letter-spacing: 0.02em;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1.4rem;
+  color: inherit;
+}
+.metro .side-menu li {
+  margin: 5px 0 0;
+  width: 100%;
+}
+.metro .side-menu li:last-child {
+  margin-bottom: 5px;
+}
+.metro .side-menu a {
+  padding: 8px 20px !important;
+  color: inherit;
+  font-size: 15px !important;
+  line-height: 14px !important;
+}
+.metro .side-menu li:hover {
+  background: #1ba1e2;
+  color: #ffffff;
+}
+.metro .side-menu .divider {
+  padding: 0;
+  height: 1px;
+  margin: 9px 1px;
+  overflow: hidden;
+  background-color: #e5e5e5;
+}
+.metro .side-menu .divider:hover {
+  background: #e5e5e5;
+}
+.metro .side-menu .dropdown-menu {
+  left: 100%;
+  top: -10%;
+}
+.metro .side-menu.left .dropdown-menu {
+  left: -100%;
+}
+.metro .side-menu > li:hover > .dropdown-menu[data-show="hover"] {
+  display: block;
+}
+.metro .side-menu > li > a.dropdown-toggle:after {
+  font-family: metroSysIcons;
+  font-size: .8em;
+  content: "\e156";
+  left: 85%;
+  top: .75em;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+.metro .side-menu.text-right li {
+  text-align: right;
+}
+.metro .dropdown-menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: absolute;
+  display: none;
+  z-index: 1000;
+  background: #ffffff;
+  min-width: 220px;
+  width: auto;
+  border: 1px solid #dcddde;
+}
+.metro .dropdown-menu li {
+  display: block;
+  margin: 10px 0;
+  padding: 0;
+  vertical-align: baseline;
+  position: relative;
+  font-family: 'Segoe UI_', 'Open Sans', Verdana, Arial, Helvetica, sans-serif;
+}
+.metro .dropdown-menu li a {
+  display: block;
+  text-decoration: none;
+  font-family: 'Segoe UI Light_', 'Open Sans Light', Verdana, Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.00em;
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+  letter-spacing: 0.01em;
+  color: #000000;
+  line-height: 2.2rem;
+  font-size: 2.2rem;
+  color: inherit;
+}
+.metro .dropdown-menu li.title {
+  font-family: 'Segoe UI Light_', 'Open Sans Light', Verdana, Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  color: #000000;
+  letter-spacing: 0.00em;
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+  letter-spacing: 0.01em;
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+.metro .dropdown-menu.compact a {
+  font-weight: normal;
+  font-size: 10.5pt;
+  line-height: 12pt;
+  color: inherit;
+}
+.metro .dropdown-menu.compact li.title {
+  margin-bottom: 10px;
+  font-family: 'Segoe UI Semibold_', 'Open Sans Bold', Verdana, Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: #000000;
+  font-size: 1.6rem;
+  line-height: 1.6rem;
+  letter-spacing: 0.02em;
+}
+.metro .dropdown-menu ul.secondary {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  margin-left: 15px;
+}
+.metro .dropdown-menu ul.secondary li a {
+  font-family: 'Segoe UI Semibold_', 'Open Sans Bold', Verdana, Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: #000000;
+  font-size: 1.6rem;
+  line-height: 1.6rem;
+  letter-spacing: 0.02em;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1.4rem;
+  color: inherit;
+}
+.metro .dropdown-menu.shadow {
+  box-shadow: 3px 3px 0 rgba(236, 236, 236, 0.7);
+}
+.metro .dropdown-menu li {
+  margin: 5px 0 0;
+  width: 100%;
+  border: 1px transparent solid;
+}
+.metro .dropdown-menu li:last-child {
+  margin-bottom: 5px;
+}
+.metro .dropdown-menu li.disabled,
+.metro .dropdown-menu li.disabled:hover {
+  cursor: default !important;
+  background: transparent !important;
+  color: #eeeeee;
+}
+.metro .dropdown-menu li.disabled a,
+.metro .dropdown-menu li.disabled:hover a {
+  color: inherit;
+  cursor: inherit;
+  background: inherit;
+}
+.metro .dropdown-menu a {
+  padding: 8px 32px !important;
+  color: inherit;
+  font-size: 15px !important;
+  line-height: 14px !important;
+  cursor: pointer;
+}
+.metro .dropdown-menu li:hover {
+  background: #edf4fc;
+  border-color: #a8d2fd;
+}
+.metro .dropdown-menu li.checked a:before,
+.metro .dropdown-menu li.checked-partial a:before,
+.metro .dropdown-menu li.unchecked a:before {
+  font-family: metroSysIcons;
+  position: absolute;
+  left: 10px;
+  content: "\e004";
+}
+.metro .dropdown-menu li.checked-partial a:before {
+  content: "\e005";
+}
+.metro .dropdown-menu li.unchecked a:before {
+  content: "\e005";
+}
+.metro .dropdown-menu.place-right {
+  right: -15px;
+  left: auto;
+}
+.metro .dropdown-menu .divider {
+  padding: 0;
+  height: 1px;
+  margin: 9px 1px;
+  overflow: hidden;
+  background-color: #e5e5e5;
+  border-width: 0;
+}
+.metro .dropdown-menu .divider:hover {
+  background: #e5e5e5;
+}
+.metro .dropdown-menu.open {
+  display: block !important;
+}
+.metro .dropdown-menu .dropdown-menu {
+  left: 100%;
+  top: -10%;
+}
+.metro .dropdown-menu > li:hover > .dropdown-menu[data-show="hover"] {
+  display: block;
+}
+.metro .dropdown-menu > li > a.dropdown-toggle:after {
+  font-family: metroSysIcons;
+  font-size: .7em;
+  content: "\e001";
+  left: 90%;
+  top: 50%;
+  margin-top: -1.4em;
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+.metro .dropdown-menu.drop-left {
+  left: -100%;
+}
+.metro .dropdown-menu.drop-up {
+  top: auto;
+  bottom: 0;
+}
+.metro .dropdown-menu .menu-title {
+  background-color: #f6f7f8;
+  font-size: 12px;
+  line-height: 14px;
+  padding: 4px 8px;
+  border: 0;
+  border-bottom: 1px #dcddde solid;
+  border-top: 1px #dcddde solid;
+  color: #646464;
+}
+.metro .dropdown-menu .menu-title:first-child {
+  margin: 0;
+  border-top-width: 0;
+}
+.metro .dropdown-menu .menu-title:first-child:hover {
+  border-top-width: 0;
+}
+.metro .dropdown-menu .menu-title:hover {
+  background-color: #f6f7f8;
+  cursor: default;
+  border: 0;
+  border-bottom: 1px #dcddde solid;
+  border-top: 1px #dcddde solid;
+}
+.metro .dropdown-menu.inverse {
+  border: 2px #3b3b3b solid;
+}
+.metro .dropdown-menu.inverse li {
+  border: 0;
+}
+.metro .dropdown-menu.inverse li a {
+  padding: 9px 32px !important;
+}
+.metro .dropdown-menu.inverse li:hover {
+  border: 0;
+  background-color: #e5e5e5;
+}
+.metro .dropdown-menu.inverse .menu-title:hover {
+  background-color: #f6f7f8;
+}
+.metro .dropdown-menu.inverse .divider {
+  margin-left: 0;
+  margin-right: 0;
+}
+.metro .dropdown-menu.dark {
+  background-color: #333333;
+  border: 2px #333333 solid;
+  color: #ffffff;
+}
+.metro .dropdown-menu.dark.opacity {
+  background-color: rgba(61, 61, 61, 0.9);
+}
+.metro .dropdown-menu.dark li {
+  border: 0;
+  color: inherit;
+}
+.metro .dropdown-menu.dark li a {
+  padding: 9px 32px !important;
+  color: inherit;
+}
+.metro .dropdown-menu.dark li.disabled,
+.metro .dropdown-menu.dark li.disabled:hover {
+  cursor: default !important;
+  background: transparent !important;
+  color: #555555;
+}
+.metro .dropdown-menu.dark li.disabled a,
+.metro .dropdown-menu.dark li.disabled:hover a {
+  color: inherit;
+  cursor: inherit;
+  background: inherit;
+}
+.metro .dropdown-menu.dark li:hover {
+  border: 0;
+  background-color: #201a1a;
+  color: #ffffff;
+}
+.metro .dropdown-menu.dark .menu-title {
+  background-color: #3b3b3b;
+}
+.metro .dropdown-menu.dark .menu-title:hover {
+  background-color: #3b3b3b;
+}
+.metro .dropdown-menu.dark .divider {
+  margin-left: 0;
+  margin-right: 0;
+  background-color: #555555;
+}
+.metro .dropdown-menu.dark .divider:hover {
+  background: #555555;
+}
+.metro .dropdown-toggle {
+  padding-right: 20px !important;
+}
+.metro .dropdown-toggle:after {
+  position: absolute;
+  margin-left: .25em;
+  bottom: 0;
+  font-family: metroSysIcons;
+  font-size: .7em;
+  content: '\e001';
+}
+.metro .dropdown-toggle.no-marker:after {
+  content: "";
+}
+.metro .dropdown-toggle.without-icon:after {
+  content: "" !important;
+}
+.metro .contextmenu {
+  z-index: 1000;
+  position: absolute;
+  background-color: #FFFFFF;
+  border: 2.5px solid #2a2a2a;
+  padding: 2px;
+}
+.metro .contextmenu .item:active {
+  background-color: #000000;
+  color: #ffffff;
+}
+.metro .contextmenu .item:hover {
+  background-color: #dedede;
+}
+.metro .contextmenu .item {
+  background-color: #FFFFFF;
+  width: auto;
+  padding: 12px;
+  margin: -2px;
+}
+.metro .navigation-bar,
+.metro .navbar {
+  width: 100%;
+  display: block;
+  /*background-colorvigation-bar-content .b*/
+  background-color: #ffcc00;
+  color: #ffffff;
+}
+.metro .navigation-bar .navigation-bar-content,
+.metro .navbar .navigation-bar-content,
+.metro .navigation-bar .navbar-content,
+.metro .navbar .navbar-content {
+  background-color: inherit;
+  color: inherit;
+  display: block;
+}
+.metro .navigation-bar .navigation-bar-content .element,
+.metro .navbar .navigation-bar-content .element,
+.metro .navigation-bar .navbar-content .element,
+.metro .navbar .navbar-content .element,
+.metro .navigation-bar .navigation-bar-content .element-divider,
+.metro .navbar .navigation-bar-content .element-divider,
+.metro .navigation-bar .navbar-content .element-divider,
+.metro .navbar .navbar-content .element-divider {
+  display: block;
+  float: left;
+  background-color: inherit;
+  position: relative;
+  height: 45px;
+}
+.metro .navigation-bar .navigation-bar-content .element.place-right,
+.metro .navbar .navigation-bar-content .element.place-right,
+.metro .navigation-bar .navbar-content .element.place-right,
+.metro .navbar .navbar-content .element.place-right,
+.metro .navigation-bar .navigation-bar-content .element-divider.place-right,
+.metro .navbar .navigation-bar-content .element-divider.place-right,
+.metro .navigation-bar .navbar-content .element-divider.place-right,
+.metro .navbar .navbar-content .element-divider.place-right {
+  float: right;
+}
+.metro .navigation-bar .navigation-bar-content .element,
+.metro .navbar .navigation-bar-content .element,
+.metro .navigation-bar .navbar-content .element,
+.metro .navbar .navbar-content .element {
+  padding: 15px;
+  line-height: 15px;
+  color: inherit;
+  font-family: 'Segoe UI Light_', 'Open Sans Light', Verdana, Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  position: relative;
+}
+.metro .navigation-bar .navigation-bar-content .element:hover,
+.metro .navbar .navigation-bar-content .element:hover,
+.metro .navigation-bar .navbar-content .element:hover,
+.metro .navbar .navbar-content .element:hover {
+  background-color: #00aafd;
+}
+.metro .navigation-bar .navigation-bar-content .element > a.dropdown-toggle,
+.metro .navbar .navigation-bar-content .element > a.dropdown-toggle,
+.metro .navigation-bar .navbar-content .element > a.dropdown-toggle,
+.metro .navbar .navbar-content .element > a.dropdown-toggle {
+  color: inherit;
+  position: relative;
+  padding-right: 5px !important;
+  margin-right: 5px;
+}
+.metro .navigation-bar .navigation-bar-content .element > a.dropdown-toggle:after,
+.metro .navbar .navigation-bar-content .element > a.dropdown-toggle:after,
+.metro .navigation-bar .navbar-content .element > a.dropdown-toggle:after,
+.metro .navbar .navbar-content .element > a.dropdown-toggle:after {
+  position: absolute;
+  left: 100%;
+  margin-left: 0;
+}
+.metro .navigation-bar .navigation-bar-content .element > .dropdown-menu,
+.metro .navbar .navigation-bar-content .element > .dropdown-menu,
+.metro .navigation-bar .navbar-content .element > .dropdown-menu,
+.metro .navbar .navbar-content .element > .dropdown-menu {
+  top: 100%;
+  left: 0;
+}
+.metro .navigation-bar .navigation-bar-content .element > .dropdown-menu.place-right,
+.metro .navbar .navigation-bar-content .element > .dropdown-menu.place-right,
+.metro .navigation-bar .navbar-content .element > .dropdown-menu.place-right,
+.metro .navbar .navbar-content .element > .dropdown-menu.place-right {
+  right: 0;
+  left: auto;
+}
+.metro .navigation-bar .navigation-bar-content .element-divider,
+.metro .navbar .navigation-bar-content .element-divider,
+.metro .navigation-bar .navbar-content .element-divider,
+.metro .navbar .navbar-content .element-divider {
+  padding: 15px 0;
+  line-height: 15px;
+  width: 1px !important;
+  border-left: 1px #ccc solid;
+  opacity: .3;
+  position: relative;
+}
+.metro .navigation-bar .navigation-bar-content .element-divider:before,
+.metro .navbar .navigation-bar-content .element-divider:before,
+.metro .navigation-bar .navbar-content .element-divider:before,
+.metro .navbar .navbar-content .element-divider:before {
+  content: "|";
+  visibility: hidden;
+}
+.metro .navigation-bar-content .brand,
+.metro .navbar-content .brand {
+  font-size: 18px;
+}
+.metro .navigation-bar-content form,
+.metro .navbar-content form {
+  margin: 0;
+  padding-bottom: 0 !important;
+  position: relative;
+}
+.metro .navigation-bar-content .element .input-control.text,
+.metro .navbar-content .element .input-control.text,
+.metro .navigation-bar-content .element .input-control.password,
+.metro .navbar-content .element .input-control.password {
+  width: auto;
+  height: auto;
+  position: relative;
+  margin: 0;
+  top: -6px;
+}
+.metro .navigation-bar-content .element .input-control.text [class*='btn-'],
+.metro .navbar-content .element .input-control.text [class*='btn-'],
+.metro .navigation-bar-content .element .input-control.password [class*='btn-'],
+.metro .navbar-content .element .input-control.password [class*='btn-'] {
+  top: 2px;
+  right: 2px;
+}
+.metro .navigation-bar-content .element .input-control.text input[type='text'],
+.metro .navbar-content .element .input-control.text input[type='text'],
+.metro .navigation-bar-content .element .input-control.password input[type='text'],
+.metro .navbar-content .element .input-control.password input[type='text'] {
+  font-size: 12px;
+}
+.metro .navigation-bar-content .input-control.checkbox,
+.metro .navbar-content .input-control.checkbox,
+.metro .navigation-bar-content .input-control.radio,
+.metro .navbar-content .input-control.radio {
+  position: relative;
+  margin: 0;
+  top: -6px;
+}
+.metro .navigation-bar-content .button,
+.metro .navbar-content .button,
+.metro .navigation-bar-content .image-button,
+.metro .navbar-content .image-button {
+  background-color: transparent;
+}
+.metro .navigation-bar-content .button,
+.metro .navbar-content .button {
+  margin-top: -14px;
+  background-color: inherit;
+}
+.metro .navigation-bar-content .image-button,
+.metro .navbar-content .image-button {
+  padding-right: 40px;
+  padding-left: 5px;
+  background-color: inherit;
+}
+.metro .navigation-bar-content .image-button:active,
+.metro .navbar-content .image-button:active {
+  left: auto;
+  right: auto;
+  top: auto;
+}
+.metro .navigation-bar-content .image-button img,
+.metro .navbar-content .image-button img {
+  width: 40px;
+  height: 40px;
+  margin-top: 2.5px;
+}
+.metro .navigation-bar-content .image-button.image-left,
+.metro .navbar-content .image-button.image-left {
+  padding-right: 5px;
+  padding-left: 40px;
+}
+.metro .navigation-bar-content [class*="icon-"],
+.metro .navbar-content [class*="icon-"] {
+  font-size: 16px !important;
+}
+.metro .input-element,
+.metro .element-input {
+  padding-bottom: 0 !important;
+}
+.metro .input-element:hover,
+.metro .element-input:hover {
+  background-color: inherit !important;
+}
+.metro .navigation-bar .element-menu,
+.metro .navbar .element-menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: inherit;
+}
+.metro .navigation-bar .element-menu > li,
+.metro .navbar .element-menu > li {
+  display: block;
+  float: left;
+  position: relative;
+  color: inherit;
+}
+.metro .navigation-bar .element-menu > li > a,
+.metro .navbar .element-menu > li > a {
+  display: block;
+  float: left;
+  width: 100%;
+  padding: 15px;
+  line-height: 15px;
+  color: inherit;
+  font-family: 'Segoe UI Light_', 'Open Sans Light', Verdana, Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+.metro .navigation-bar .element-menu > li > a.dropdown-toggle,
+.metro .navbar .element-menu > li > a.dropdown-toggle {
+  color: inherit;
+  position: relative;
+}
+.metro .navigation-bar .element-menu > li > a.dropdown-toggle:after,
+.metro .navbar .element-menu > li > a.dropdown-toggle:after {
+  position: absolute;
+  left: 95%;
+  top: 50%;
+  margin-left: -12px;
+  margin-top: -5px;
+}
+.metro .navigation-bar .element-menu > li > .dropdown-menu,
+.metro .navbar .element-menu > li > .dropdown-menu {
+  top: 100%;
+  left: 0;
+}
+.metro .navigation-bar .element-menu > li > .dropdown-menu.place-right,
+.metro .navbar .element-menu > li > .dropdown-menu.place-right {
+  right: 0;
+  left: auto;
+}
+.metro .navigation-bar .element-menu > li:hover,
+.metro .navbar .element-menu > li:hover {
+  background-color: #00aafd;
+}
+.metro .navigation-bar .element-menu.drop-up li > .dropdown-menu,
+.metro .navbar .element-menu.drop-up li > .dropdown-menu {
+  top: auto;
+  bottom: 45px;
+}
+.metro .navigation-bar .element-menu.drop-up li > .dropdown-menu .dropdown-menu,
+.metro .navbar .element-menu.drop-up li > .dropdown-menu .dropdown-menu {
+  bottom: 0;
+}
+.metro .navigation-bar .pull-menu,
+.metro .navbar .pull-menu {
+  display: none;
+  float: right !important;
+  color: #fff;
+  cursor: pointer;
+  font: 1.8em sans-serif;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 45px;
+  width: 40px;
+  line-height: 20px;
+  margin: 0;
+}
+.metro .navigation-bar .pull-menu:before,
+.metro .navbar .pull-menu:before {
+  content: "\2261";
+  position: absolute;
+  font-size: 20pt;
+  top: 10px;
+  left: 10px;
+}
+.metro .navigation-bar .pull-menu input[type="checkbox"],
+.metro .navbar .pull-menu input[type="checkbox"] {
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+.metro .navigation-bar-content:before,
+.metro .navbar-content:before,
+.metro .navigation-bar-content:after,
+.metro .navbar-content:after {
+  display: table;
+  content: "";
+}
+.metro .navigation-bar-content:after,
+.metro .navbar-content:after {
+  clear: both;
+}
+.metro .navigation-bar.fixed-top,
+.metro .navbar.fixed-top,
+.metro .navigation-bar.fixed-bottom,
+.metro .navbar.fixed-bottom {
+  position: fixed;
+  z-index: 1030;
+  left: 0;
+}
+.metro .navigation-bar.fixed-top,
+.metro .navbar.fixed-top {
+  top: 0;
+  bottom: auto;
+}
+.metro .navigation-bar.fixed-bottom,
+.metro .navbar.fixed-bottom {
+  bottom: 0;
+  top: auto;
+}
+.metro .navigation-bar.dark {
+  background-color: #333333;
+}
+.metro .navigation-bar.dark .element-menu > li > a {
+  color: #ffffff;
+}
+.metro .navigation-bar.dark .element:hover,
+.metro .navigation-bar.dark .element-menu > li:hover {
+  background-color: #201a1a;
+}
+.metro .navigation-bar.light {
+  background-color: #eeeeee;
+  color: #555555;
+}
+.metro .navigation-bar.light .element:hover,
+.metro .navigation-bar.light .element-menu > li:hover {
+  background-color: #999999;
+  color: #ffffff;
+}
+.metro .navigation-bar.light .pull-menu {
+  color: #1d1d1d;
+}
+.metro .navigation-bar.white {
+  background-color: #ffffff;
+  color: #555555;
+}
+.metro .navigation-bar.white .element:hover,
+.metro .navigation-bar.white .element-menu > li:hover {
+  background-color: #00aff0;
+  color: #ffffff;
+}
+.metro .navigation-bar.white .pull-menu {
+  color: #1d1d1d;
+}
+
+.metro .ribbed-black {
+  background-color: #000000 !important;
+  background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -ms-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 40px 40px;
+}
+.metro .ribbed-white {
+  background-color: #ffffff !important;
+  background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -ms-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 40px 40px;
+}
+.metro .ribbed-lime {
+  background-color: #a4c400 !important;
+  background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -ms-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 40px 40px;
+}
+.metro .ribbed-green {
+  background-color: #60a917 !important;
+  background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -ms-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 40px 40px;
+}
+.metro .ribbed-emerald {
+  background-color: #008a00 !important;
+  background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -ms-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 40px 40px;
+}
+.metro .ribbed-teal {
+  background-color: #00aba9 !important;
+  background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -ms-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 40px 40px;
+}
+.metro .ribbed-cyan {
+  background-color: #1ba1e2 !important;
+  background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -ms-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 40px 40px;
+}
+.metro .ribbed-cobalt {
+  background-color: #0050ef !important;
+  background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -ms-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 40px 40px;
+}
+.metro .ribbed-indigo {
+  background-color: #6a00ff !important;
+  background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -ms-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 40px 40px;
+}
+.metro .ribbed-violet {
+  background-color: #aa00ff !important;
+  background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -ms-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 40px 40px;
+}
+.metro .ribbed-pink {
+  background-color: #dc4fad !important;
+  background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -ms-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 40px 40px;
+}
+.metro .ribbed-magenta {
+  background-color: #d80073 !important;
+  background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -ms-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 40px 40px;
+}
+.metro .ribbed-crimson {
+  background-color: #a20025 !important;
+  background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -ms-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 40px 40px;
+}
+.metro .ribbed-red {
+  background-color: #e51400 !important;
+  background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -ms-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 40px 40px;
+}
+.metro .ribbed-orange {
+  background-color: #fa6800 !important;
+  background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -ms-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 40px 40px;
+}
+.metro .ribbed-amber {
+  background-color: #f0a30a !important;
+  background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -ms-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 40px 40px;
+}
+.metro .ribbed-yellow {
+  background-color: #e3c800 !important;
+  background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -ms-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 40px 40px;
+}
+.metro .ribbed-brown {
+  background-color: #825a2c !important;
+  background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -ms-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 40px 40px;
+}
+.metro .ribbed-olive {
+  background-color: #6d8764 !important;
+  background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -ms-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 40px 40px;
+}
+.metro .ribbed-steel {
+  background-color: #647687 !important;
+  background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -ms-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 40px 40px;
+}
+.metro .ribbed-mauve {
+  background-color: #76608a !important;
+  background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -ms-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 40px 40px;
+}
+.metro .ribbed-taupe {
+  background-color: #87794e !important;
+  background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -ms-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 40px 40px;
+}
+.metro .ribbed-dark {
+  background-color: #1d1d1d !important;
+  background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -ms-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 40px 40px;
+}
+.metro .ribbed-darkBrown {
+  background-color: #63362f !important;
+  background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -ms-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 40px 40px;
+}
+.metro .ribbed-darkCrimson {
+  background-color: #640024 !important;
+  background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -ms-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 40px 40px;
+}
+.metro .ribbed-darkMagenta {
+  background-color: #81003c !important;
+  background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -ms-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 40px 40px;
+}
+.metro .ribbed-darkIndigo {
+  background-color: #4b0096 !important;
+  background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -ms-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 40px 40px;
+}
+.metro .ribbed-darkCyan {
+  background-color: #1b6eae !important;
+  background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -ms-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 40px 40px;
+}
+.metro .ribbed-darkCobalt {
+  background-color: #00356a !important;
+  background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -ms-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 40px 40px;
+}
+.metro .ribbed-darkTeal {
+  background-color: #004050 !important;
+  background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -ms-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 40px 40px;
+}
+.metro .ribbed-darkEmerald {
+  background-color: #003e00 !important;
+  background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -ms-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 40px 40px;
+}
+.metro .ribbed-darkGreen {
+  background-color: #128023 !important;
+  background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -ms-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 40px 40px;
+}
+.metro .ribbed-darkOrange {
+  background-color: #bf5a15 !important;
+  background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -ms-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 40px 40px;
+}
+.metro .ribbed-darkRed {
+  background-color: #9a1616 !important;
+  background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -ms-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 40px 40px;
+}
+.metro .ribbed-darkPink {
+  background-color: #9a165a !important;
+  background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -ms-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 40px 40px;
+}
+.metro .ribbed-darkViolet {
+  background-color: #57169a !important;
+  background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -ms-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 40px 40px;
+}
+.metro .ribbed-darkBlue {
+  background-color: #16499a !important;
+  background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -ms-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 40px 40px;
+}
+.metro .ribbed-lightTeal {
+  background-color: #45fffd !important;
+  background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -ms-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 40px 40px;
+}
+.metro .ribbed-lightOlive {
+  background-color: #78aa1c !important;
+  background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -ms-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 40px 40px;
+}
+.metro .ribbed-lightOrange {
+  background-color: #c29008 !important;
+  background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -ms-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 40px 40px;
+}
+.metro .ribbed-lightPink {
+  background-color: #f472d0 !important;
+  background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -ms-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 40px 40px;
+}
+.metro .ribbed-lightRed {
+  background-color: #ff2d19 !important;
+  background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -ms-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 40px 40px;
+}
+.metro .ribbed-lightGreen {
+  background-color: #7ad61d !important;
+  background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -ms-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 40px 40px;
+}
+.metro .ribbed-grayed {
+  background-color: #585858 !important;
+  background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -ms-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 40px 40px;
+}
+.metro .ribbed-grayDarker {
+  background-color: #222222 !important;
+  background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -ms-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 40px 40px;
+}
+.metro .ribbed-gray {
+  background-color: #555555 !important;
+  background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -ms-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 40px 40px;
+}
+.metro .ribbed-grayLight {
+  background-color: #999999 !important;
+  background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -ms-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 40px 40px;
+}
+.metro .ribbed-grayLighter {
+  background-color: #eeeeee !important;
+  background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -ms-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 40px 40px;
+}
+.metro .ribbed-blue {
+  background-color: #00aff0 !important;
+  background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -ms-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 40px 40px;
+}

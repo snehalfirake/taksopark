@@ -1,0 +1,81 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Dispatcher.master.cs" Inherits="Taksopark.WebForms.Dispatcher.Dispatcher" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+
+    <title>Dispatcher</title>
+    <link href="Fonts/Quicksand.css" rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="Styles/Styles.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="menu/css/simple_menu.css" />
+
+    <link href="Styles/metro/metro-bootstrap.css" rel="stylesheet" />
+    <link href="Styles/metro/iconFont.css" rel="stylesheet" />
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+    <script type="text/javascript" src="contact_form/js/jquery.tools.js"></script>
+    <script type="text/javascript" src="contact_form/js/jquery.uniform.min.js"></script>
+    <script type="text/javascript" src="contact_form/js/main.js"></script>
+    <script src="js/jquery.tools.min.js" type="text/javascript"></script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <%--Header--%>
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <div class="header">
+            <div class="centerMenuDiv">
+                <div class="leftMenuImage">
+                    <img src="/Images/Admin/logo.png" />
+                </div>
+                <div class="longTitle">
+                    <asp:ContentPlaceHolder ID="contentMenu" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+                <div class="userLoginDiv" id="userLogin" runat="server">
+                </div>
+                <div class="buttonLogOut">
+                    <asp:Button Text="Sign Out" class="icon-exit" runat="server" href="#" onclick="Unnamed_Click" Width="80" Height="30" CssClass="fontFamilyStandart"></asp:Button>
+                </div>
+                <div class="lastMenuDiv"></div>
+            </div>
+
+            <%--<div id="site_title">
+                <a href="Home.aspx">
+                    <img src="/Images/Admin/logo.png" />
+                </a>
+            </div>--%>
+
+
+            <%--<ol id="menu">
+              <li class="active_menu_item">
+                    <asp:HyperLink runat="server" NavigateUrl="~/WebForms/Order.aspx" Text="Orders" />
+               </li>
+            </ol>--%>
+            
+            <%--<div class="menuDiv">
+                <span class="centerSpan">Orders</span>
+            </div>--%>
+        </div>
+
+        <%--End Header--%>
+
+        <div>
+            <asp:ContentPlaceHolder ID="Content" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <%--Footer--%>
+
+        <div id="footer">
+            <small>© Copyright 2014, A-Team</small>
+        </div>
+
+        <%--End Footer--%>
+    </form>
+</body>
+</html>

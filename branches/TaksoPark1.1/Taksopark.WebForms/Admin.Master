@@ -1,0 +1,65 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="Taksopark.WebForms.WebForms.Admin" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Admin panel</title>
+    <%--<link href="Styles/Admin/AdminStyles.css" rel="stylesheet" />--%>
+    <link href="Styles/Admin/simple_menu.css" rel="stylesheet" />
+    <link href="Styles/Admin/style.css" rel="stylesheet" />
+    <script src="Scripts/jquery.min.js"></script>
+    <link href="Styles/metro/metro-bootstrap.css" rel="stylesheet" />
+    <link href="Styles/metro/iconFont.css" rel="stylesheet" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="header">
+            <div class="centerMenuDiv">
+                <div class="leftMenuImage">
+                    <img src="/Images/Admin/logo.png" />
+                </div>
+                <div class="longTitle">
+                    Lviv Taxi: Admin Console
+                </div>
+                <div class="userLoginDiv" id="userLogin" runat="server">
+                </div>
+                <div class="buttonLogOut">
+                    <asp:Button Text="Sign Out" EnableTheming="false" class="icon-exit" runat="server" href="#" onclick="Unnamed_Click" Width="80" Height="30" CssClass="fontFamilyStandart"></asp:Button>
+                </div>
+                <div class="lastMenuDiv"></div>
+            </div>
+            
+            <ol id="menu">
+                <li class="active_menu_item">
+                    <asp:HyperLink runat="server" NavigateUrl="~/WebForms/Users.aspx" Text="Users">
+                    </asp:HyperLink>
+                    <%--<ol>
+                        <li><a href="Users.aspx">Show All Users</a></li>
+                        <li><a href="AddUser.aspx">Add New User</a></li>
+                        <li><a href="EditUser.aspx">Edit User</a></li>
+                    </ol>--%>
+                </li>
+                <li><asp:HyperLink runat="server" NavigateUrl="~/WebForms/Operators.aspx" Text="Operators">
+                    </asp:HyperLink></li>
+                <li><asp:HyperLink runat="server" NavigateUrl="~/WebForms/TaxiDrivers.aspx" Text="Taxi drivers">
+                    </asp:HyperLink></li>
+            </ol>
+        </div>
+        
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <div id="container">
+            <div>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+        <div id="footer">
+            <small>© Copyright 2014, A-Team</small>
+        </div>
+    </form>
+</body>
+</html>

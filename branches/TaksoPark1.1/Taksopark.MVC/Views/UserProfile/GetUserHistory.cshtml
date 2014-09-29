@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Taksopark.MVC.Models.RequestModel>
+
+@{
+    ViewBag.Title = "GetUserHistory";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table" style="margin-bottom: 240px">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RequesTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StartPoint)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FinishPoint)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.RequesTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PhoneNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StartPoint)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FinishPoint)
+        </td>
+        <td>
+            @Html.ActionLink("Details", "GetRequestDetails", new {id = item.RequestId}) 
+        </td>
+    </tr>
+}
+
+</table>

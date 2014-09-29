@@ -1,0 +1,36 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+ .logostyle{
+     position: absolute; 
+     color: #696969; 
+     font-size: 39px;
+      font-weight: bold;
+      height: 61px;
+      vertical-align: middle;
+      display: table-cell;
+      background-color: #ffffff;
+      line-height: 61px;
+      top: 0px;
+      left: 90px;
+        } 
+ .decnone {
+     text-decoration: none;
+ }       
+        
+
