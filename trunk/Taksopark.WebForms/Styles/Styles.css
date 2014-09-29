@@ -486,6 +486,9 @@ font-size:38px;
 font-style: normal;
 font-weight: normal;
 }
+.fontFamilyStandart{
+    font-family: Arial, Helvetica, sans-serif;
+}
 .lastMenuDiv{
     clear:both;
 }

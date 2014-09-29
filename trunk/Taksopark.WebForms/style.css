@@ -7,7 +7,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     outline: 0;
     font-weight: inherit;
     font-style: inherit;
-    font-family: inherit;
+    font-family: Arial, Helvetica, sans-serif;
     vertical-align: baseline;
 }
 
@@ -2352,7 +2352,9 @@ div.dark_rounded #pp_full_res .pp_inline, div.dark_square #pp_full_res .pp_inlin
     float: left;
     border-top: 2px solid #000;
 }
-
+.fontFamilyStandart{
+    font-family: Arial, Helvetica, sans-serif;
+}
 .centerSpan2{
     vertical-align:bottom !important;
     padding: 50px;
