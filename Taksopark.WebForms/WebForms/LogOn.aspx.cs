@@ -18,29 +18,38 @@ namespace Taksopark.WebForms.WebForms
 
         protected void LogOn_Click(object sender, EventArgs e)
         {
-            var userBl = HttpContext.Current.Application.GetContainer().Resolve<IUserBl>();
-            var login = Request["txtUserName"];
-            var password = Request["txtUserPass"];
-            var user = userBl.GetUserByLoginAndPassword(login, password);
-            if (user.UserName != null)
+            if (Page.IsValid)
             {
-                if (user.Role == (int) RolesEnum.Operator || user.Role == (int) RolesEnum.Admin)
+                
+
+                var userBl = HttpContext.Current.Application.GetContainer().Resolve<IUserBl>();
+                var login = Request["txtUserName"];
+                var password = Request["txtUserPass"];
+                var user = userBl.GetUserByLoginAndPassword(login, password);
+                if (user.UserName != null)
                 {
-                    FormsAuthentication.SetAuthCookie(user.Login, false);
-                    IPrincipal principal = HttpContext.Current.User;
-                    var userName = principal.Identity.Name;
-                    IIdentity identity = new GenericIdentity(userName);
-                    var role = user.Role;
-                    string[] roles = new[] { role.ToString() };
-                    HttpContext.Current.User = new GenericPrincipal(identity, roles);
-                    if (user.Role == (int)RolesEnum.Operator)
+                    if (user.Role == (int) RolesEnum.Operator || user.Role == (int) RolesEnum.Admin)
                     {
-                        Response.Redirect("Order.aspx");
+                        FormsAuthentication.SetAuthCookie(user.Login, false);
+                        IPrincipal principal = HttpContext.Current.User;
+                        var userName = principal.Identity.Name;
+                        IIdentity identity = new GenericIdentity(userName);
+                        var role = user.Role;
+                        string[] roles = new[] {role.ToString()};
+                        HttpContext.Current.User = new GenericPrincipal(identity, roles);
+                        if (user.Role == (int) RolesEnum.Operator)
+                        {
+                            Response.Redirect("Order.aspx");
+                        }
+                        else if (user.Role == (int) RolesEnum.Admin)
+                        {
+                            Response.Redirect("Users.aspx");
+                        }
                     }
-                    else if (user.Role == (int)RolesEnum.Admin)
-                    {
-                        Response.Redirect("Users.aspx");
-                    }
+                }
+                else
+                {
+                    CustomValidator1.IsValid = false;
                 }
             }
         }
