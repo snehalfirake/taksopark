@@ -4,9 +4,15 @@
 <asp:Content ID="heasContent" runat="server" ContentPlaceHolderID="head">
     <%--<meta http-equiv="refresh" content="10"/>--%>
 </asp:Content>
+<asp:Content ID="content3" ContentPlaceHolderID="contentMenu" runat="server">
+    <div class="menuDiv">
+        <span class="centerSpan">Orders</span>
+    </div> 
+</asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="Content" runat="server">
     <div id="container">
-        <asp:Timer runat="server" ID="timerToRefreshOrders" Interval="10000" OnTick="timerToRefreshOrders_Tick"></asp:Timer>
+        <asp:Timer runat="server" ID="timerToRefreshOrders" Interval="20000" OnTick="timerToRefreshOrders_Tick"></asp:Timer>
         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
             <ContentTemplate>
                 <div class="one">
@@ -27,7 +33,7 @@
                     <br />
                 </div>
                 <br />
-                <div align="center">
+                <div align="center" class="centerTableFixedSize">
                     <uc:OrdersTable runat="server" ID="OrdersTable" DataSourceID="ordersDataSource" />
                 </div>
             </ContentTemplate>

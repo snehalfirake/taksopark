@@ -2,11 +2,22 @@
 
 <%@ Register Src="~/UserControls/Dispatcher/OrderInfo.ascx" TagPrefix="uc1" TagName="OrderInfo" %>
 
+<asp:Content ID="content3" ContentPlaceHolderID="contentMenu" runat="server">
+    <div class="menuDiv">
+        <span class="centerSpan">Order details</span>
+        
+    </div>
+    <span class="right">
+            <asp:HyperLink runat="server" Text="Back to dashboard" CssClass="btn btn-s-md" BackColor="Black" 
+                ForeColor="White" NavigateUrl="~/WebForms/Order.aspx" />
+        </span>
+</asp:Content>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="Content" runat="server">
     <div id="container">
         <div class="one-half">
             <div class="heading_bg">
-                <h2>Order details</h2>
+                <h2>Details</h2>
             </div>
             <uc1:OrderInfo runat="server" ID="orderInfo" />
             <%--<asp:DetailsView runat="server" ID="detailsView1" AutoGenerateRows="false">
@@ -110,7 +121,15 @@
             </div>
 
             <iframe width="465" height="350" src="http://maps.google.no/maps?f=q&amp;source=s_q&amp;hl=no&amp;geocode=&amp;q=Lypneva,+F%C3%B8rde&amp;aq=0&amp;oq=hafstadvegen+35&amp;sll=61.143235,9.09668&amp;sspn=17.454113,57.084961&amp;ie=UTF8&amp;hq=&amp;hnear=Hafstadvegen+35,+6800+F%C3%B8rde,+Sogn+og+Fjordane&amp;t=m&amp;z=14&amp;iwloc=A&amp;ll=49.8347675,24.0027365&amp;output=embed"></iframe>
-
+            <br />
+            <br />
+        </div>
+        
+        <div class="one bottomLine">
+            <span class="right">
+                <asp:HyperLink runat="server" Text="Back to dashboard" CssClass="btn btn-s-md" BackColor="Black" 
+                    ForeColor="White" NavigateUrl="~/WebForms/Order.aspx" />
+            </span>
         </div>
     </div>
 

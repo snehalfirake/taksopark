@@ -63,11 +63,17 @@
                     <img src="/Images/Admin/logo.png" />
                 </a>
             </div>
-            <ol id="menu">
-                <li class="active_menu_item">
+            <%--<ol id="menu">
+              <li class="active_menu_item">
                     <asp:HyperLink runat="server" NavigateUrl="~/WebForms/Order.aspx" Text="Orders" />
-                </li>
-            </ol>
+               </li>
+            </ol>--%>
+            <asp:ContentPlaceHolder ID="contentMenu" runat="server">
+
+            </asp:ContentPlaceHolder>
+            <%--<div class="menuDiv">
+                <span class="centerSpan">Orders</span>
+            </div>--%>
         </div>
 
         <%--End Header--%>

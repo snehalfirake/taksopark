@@ -8,7 +8,7 @@
         PageSize="20"
         OnPageIndexChanging="gridViewOrders_PageIndexChanging" 
         AutoGenerateColumns="false"
-        DataSourceID="ordersDataSource" CssClass="gvMain tableOrders" ShowHeaderWhenEmpty="true">
+        DataSourceID="ordersDataSource" CssClass="gvMain tableOrders centerTableFixedSize" ShowHeaderWhenEmpty="true">
         <EmptyDataTemplate>
             <img src="../Images/Admin/NoDataAvailable.png" />
         </EmptyDataTemplate>
