@@ -155,7 +155,7 @@ namespace Taksopark.WebForms.Dispatcher
             var driver = operatorBL.GetUserById((int)request.DriverId);
             UserBl userBL = HttpContext.Current.Application.GetContainer().Resolve<UserBl>();
 
-            driver.Status = Convert.ToInt32(status);
+            driver.Status = (int)Enum.Parse(typeof(DriverStatusEnum), status);//Convert.ToInt32(status);
 
             userBL.UpdateUser(driver);
         }

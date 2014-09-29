@@ -1,9 +1,12 @@
 ﻿<%@ Page Title="Dispatcher: Order List" Language="C#" MasterPageFile="~/Dispatcher.Master" AutoEventWireup="true" CodeBehind="Order.aspx.cs" Inherits="Taksopark.WebForms.Dispatcher.Order" %>
 
 <%@ Register Src="~/UserControls/OrdersTable.ascx" TagPrefix="uc" TagName="OrdersTable" %>
-
+<asp:Content ID="heasContent" runat="server" ContentPlaceHolderID="head">
+    <%--<meta http-equiv="refresh" content="10"/>--%>
+</asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Content" runat="server">
     <div id="container">
+        <asp:Timer runat="server" ID="timerToRefreshOrders" Interval="10000" OnTick="timerToRefreshOrders_Tick"></asp:Timer>
         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
             <ContentTemplate>
                 <div class="one">
@@ -28,6 +31,9 @@
                     <uc:OrdersTable runat="server" ID="OrdersTable" DataSourceID="ordersDataSource" />
                 </div>
             </ContentTemplate>
+            <Triggers>
+                <asp:AsyncPostBackTrigger ControlID="timerToRefreshOrders" EventName="Tick" />
+            </Triggers>
         </asp:UpdatePanel>
     </div>
     <asp:ObjectDataSource runat="server" ID="ordersDataSource" TypeName="Taksopark.WebForms.Dispatcher.Order"
