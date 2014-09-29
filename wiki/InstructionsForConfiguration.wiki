@@ -16,8 +16,8 @@ P.S. You don't need to deploy the database localy on your PC as it's already loc
 <li>Install Microsoft SQL Server and SQL Management Studio 2008/2012/2014</li>
 <li>To configure the database use one of the following options:
 <ul>
-<li>Execute the script https://code.google.com/p/taksopark/source/browse/trunk/DBFiles/CreateLocalDB.sql</li>
-<li>Use backup file(MSS 2012) https://code.google.com/p/taksopark/source/browse/trunk/DBFiles/TaxiServiseDB.bak</li>
+<li>Execute the script https://taksopark.googlecode.com/svn/trunk/DBFiles/CreateLocalDB.zip</li>
+<li>Use backup file(MSS 2012) https://taksopark.googlecode.com/svn/trunk/DBFiles/TaxiServiseDB.bak</li>
 </ul>
 </li>
 </ol>
