@@ -16,3 +16,21 @@ textarea {
     max-width: 280px;
 }
 
+ .logostyle{
+     position: absolute; 
+     color: #696969; 
+     font-size: 39px;
+      font-weight: bold;
+      height: 61px;
+      vertical-align: middle;
+      display: table-cell;
+      background-color: #ffffff;
+      line-height: 61px;
+      top: 0px;
+      left: 90px;
+        } 
+ .decnone {
+     text-decoration: none;
+ }       
+        
+
