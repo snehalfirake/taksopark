@@ -37,7 +37,7 @@
                             <span class="element-divider"></span>
 
                             <div class="element place-right">
-                                <a class="icon-exit" href="#"></a>
+                                <asp:Button Text="Sign Out" class="icon-exit" runat="server" href="#" onclick="Unnamed_Click"></asp:Button>
                             </div>
                             <span class="element-divider place-right"></span>
                             <button class="element image-button image-left place-right">

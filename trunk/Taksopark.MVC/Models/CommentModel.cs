@@ -10,8 +10,8 @@ namespace Taksopark.MVC.Models
     {
         public int Id { get; set; }
         [Required]
-        public string RequestPath { get; set; }
         public string CommentText { get; set; }
         public int RequestId { get; set; }
+        public int CreatorId { get; set; }
     }
 }
