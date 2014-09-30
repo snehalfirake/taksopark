@@ -51,8 +51,10 @@
     <Compile Include="BLContainerBootstraper.cs" />
     <Compile Include="Interfaces\IAdminBl.cs" />
     <Compile Include="Interfaces\IOperatorBl.cs" />
+    <Compile Include="Interfaces\IOrderCostCalcStrategy.cs" />
     <Compile Include="Interfaces\IUserBL.cs" />
     <Compile Include="OperatorBl.cs" />
+    <Compile Include="OrderCostCalcStrategy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserBl.cs" />
   </ItemGroup>
