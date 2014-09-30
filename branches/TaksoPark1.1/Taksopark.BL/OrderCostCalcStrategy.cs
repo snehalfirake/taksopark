@@ -10,13 +10,12 @@ namespace Taksopark.BL
     public class OrderCostCalcStrategy : IOrderCostCalcStrategy
     {
         private const decimal ORDER_COST = 15m;
-        private const decimal MIN_DISTANSE = 2m;
-        private const decimal MIN_DISTANSE_COST = 3m;
+        private const decimal MIN_DISTANCE = 2m;
+        private const decimal MIN_DISTANCE_COST = 3m;
 
         public decimal CalcCost(decimal distance, bool isTracking, decimal? animalWeight, bool isHaulage)
         {
-
-            #region Validatioin
+            #region Validation
 
             if (distance <= 0)
             {
@@ -25,14 +24,19 @@ namespace Taksopark.BL
             if (animalWeight.HasValue && (animalWeight.Value <= 0 || animalWeight.Value > 70))
             {
                 throw new ArgumentException("Animal weight has to be > 0 and <= 70");
-            } 
+            }
+            if ((isTracking && animalWeight.HasValue) || (isTracking && isHaulage) || 
+                (animalWeight.HasValue && isHaulage))
+            {
+                throw new ArgumentException("Only one additional parameter may be defined");
+            }
 
             #endregion
 
             decimal cost;
-            if (distance < MIN_DISTANSE)
+            if (distance < MIN_DISTANCE)
             {
-                cost = MIN_DISTANSE_COST + ORDER_COST;
+                cost = MIN_DISTANCE_COST + ORDER_COST;
             }
             else
             {
@@ -52,6 +56,10 @@ namespace Taksopark.BL
                 {
                     cost += 50;
                 }
+            }
+            if (isHaulage == true)
+            {
+                cost = (50 * distance) + ORDER_COST;
             }
 
             return cost;
