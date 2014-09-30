@@ -116,9 +116,9 @@ namespace Taksopark.BL
             }
         }
 
-        public decimal GetEstimatedCost(decimal distance)
+        public decimal GetEstimatedCost(decimal distance, bool isTracking, decimal? animalWeight, bool isHaulage)
         {
-            return this._orderCostCalcStrategy.CalcCost(distance, false, null, false);
+            return this._orderCostCalcStrategy.CalcCost(distance, isTracking, animalWeight, isHaulage);
         }
     }
 }

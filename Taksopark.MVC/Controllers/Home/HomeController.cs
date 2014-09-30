@@ -92,7 +92,7 @@ namespace Taksopark.MVC.Controllers.Home
         [HttpPost]
         public ActionResult CalcEstimatedCost(decimal distance, bool isTracking, decimal? animalWeight, bool isHaulage)
         {
-            decimal cost = this._userBl.GetEstimatedCost(distance);
+            decimal cost = this._userBl.GetEstimatedCost(distance, isTracking, animalWeight, isHaulage);
             return Json(new
                 {
                     EstimatedCost = cost
