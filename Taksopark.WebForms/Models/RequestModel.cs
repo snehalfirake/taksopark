@@ -119,6 +119,11 @@ namespace Taksopark.WebForms.Models
             //return String.Format("{0} {1} {2}", RequesTime.Day, months[RequesTime.Month - 1], RequesTime.Year, subtract.Days);
         }
 
+        public string EstimatedPrice
+        {
+            get { return string.Format("{0} grn",this.Price); }
+        }
+
         //private string[] months = { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
 
         public override string ToString()

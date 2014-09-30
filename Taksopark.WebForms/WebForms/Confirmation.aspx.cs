@@ -36,7 +36,7 @@ namespace Taksopark.WebForms.Dispatcher
 
         private void UpdateOrderButtons()
         {
-            if (request.Status == (int) RequestStatusEnum.Active)
+            if (request.Status == (int)RequestStatusEnum.Active)
             {
                 confirmButton.Enabled = true;
                 rejectButton.Enabled = true;
@@ -46,7 +46,7 @@ namespace Taksopark.WebForms.Dispatcher
                 rejectButton.CssClass = "btn btn-s-md btn-danger";
                 closeButton.CssClass = "btn btn-s-md btn-white disabled";
             }
-            else if (request.Status == (int) RequestStatusEnum.InProgress)
+            else if (request.Status == (int)RequestStatusEnum.InProgress)
             {
                 confirmButton.Enabled = false;
                 rejectButton.Enabled = true;
@@ -56,7 +56,7 @@ namespace Taksopark.WebForms.Dispatcher
                 rejectButton.CssClass = "btn btn-s-md btn-danger";
                 closeButton.CssClass = "btn btn-s-md btn-success";
             }
-            else if (request.Status == (int) RequestStatusEnum.Rejected)
+            else if (request.Status == (int)RequestStatusEnum.Rejected)
             {
                 confirmButton.Enabled = true;
                 rejectButton.Enabled = false;
@@ -66,7 +66,7 @@ namespace Taksopark.WebForms.Dispatcher
                 rejectButton.CssClass = "btn btn-s-md btn-white disabled";
                 closeButton.CssClass = "btn btn-s-md btn-white disabled";
             }
-            else if (request.Status == (int) RequestStatusEnum.Closed)
+            else if (request.Status == (int)RequestStatusEnum.Closed)
             {
                 confirmButton.Enabled = false;
                 rejectButton.Enabled = false;
