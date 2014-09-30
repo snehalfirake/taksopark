@@ -21,18 +21,6 @@
             <div class="heading_bg">
                 <h2>Details</h2>
             </div>
-            <uc1:OrderInfo runat="server" ID="orderInfo" />
-            <%--<asp:DetailsView runat="server" ID="detailsView1" AutoGenerateRows="false">
-                <Fields>
-                    <asp:BoundField DataField="id" HeaderText="Id" />
-                    <asp:BoundField DataField="RequesTime" HeaderText="Created At" />
-                    <asp:BoundField DataField="phoneNumber" HeaderText="Phone" />
-                    <asp:BoundField DataField="startPoint" HeaderText="Start Point" />
-                    <asp:BoundField DataField="finishPoint" HeaderText="Destination Point" />
-                    <asp:BoundField DataField="status" HeaderText="Status" />
-                </Fields>
-            </asp:DetailsView>--%>
-
             <asp:FormView runat="server" ID="formView">
                 <ItemTemplate>
                     <table>
@@ -82,6 +70,14 @@
                             </td>
                             <td>
                                 <%# Eval("FinishPoint") %>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>Estimated Price</b>
+                            </td>
+                            <td>
+                                <%# Eval("EstimatedPrice") %>
                             </td>
                         </tr>
                         <tr>
