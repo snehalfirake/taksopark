@@ -12,7 +12,6 @@
         $("#dtBox").DateTimePicker();
     });
 </script>
-
 <script src="/Scripts/app-scripts/date-time-picker.js"></script>
 <script src="/Scripts/app-scripts/DateTimePicker.js"></script>
 <script src="//code.jquery.com/jquery-1.10.2.js"></script>
@@ -1620,7 +1619,7 @@
 <div class="clear"></div>
 <div class="inner-map-div" style="margin-bottom: 250px;">
     <div id="order-dialog" title="Сonfirmation">
-        <div id="cover" class="cover"></div>
+        <div id="cover"></div>
         <div class="message"><span class="color1">Do</span> you want to submit the order?</div>
         <br />
         <div>
@@ -1638,6 +1637,13 @@
                 <label><span class="color1">P</span>hone:</label>
                 <br />
                 <input type="text" id="dialogPhoneId" readonly="true" style="border: none; width: 120px;" />
+            </div>
+            <br />
+            <br />
+            <div style="float: left; margin-right: 3px;">
+                <label><span class="color1">F</span>orward time:</label>
+                <br />
+                <input type="text" id="dialogForwardTimeId" readonly="true" style="border: none; width: 120px;" />
             </div>
         </div>
     </div>

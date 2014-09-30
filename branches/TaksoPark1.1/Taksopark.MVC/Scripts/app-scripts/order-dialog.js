@@ -56,23 +56,29 @@
                 width: 74,
                 click: function () {
                     $(this).dialog("close");
-                    window.location.reload(true);
+                    $(this).dialog('reload');
                 }
             }]
     });
 
     $("#orderTaxiButtonId").on("click", function () {
-        $("#cover").removeClass('cover');
-        $("#cover").addClass('cover');
         var placeFrom = $("#placeFromTextBoxId").val();
         var placeTo = $("#placeToTextBoxId").val();
         var phone = $("#phoneTextBoxId").val();
+        var time = $("#date-time").val();
 
         if ((!($("#placeFromTextBoxId").val() == "") && (!$("#placeToTextBoxId").val() == "") && (!$("#phoneTextBoxId").val() == ""))) {
             $("#order-dialog").dialog("open");
+            $(".message").html("<span class='color1'>Do</span> <span style='color: black;'>you want to submit the order?</span>");
+            $('.ui-dialog-buttonpane').find('button:first').css('visibility', 'visible');
+            $(":button:contains('Ok')").text('Reject');
+            $("#cover").toggleClass("cover");
+            $("#order-dialog").css({ 'z-index': 20 });
+            $("#cover").css({ 'z-index': 40 });
             $("#dialogFromId").val(placeFrom);
             $("#dialogToId").val(placeTo);
             $("#dialogPhoneId").val(phone);
+            $("#dialogForwardTimeId").val(time);
         } else {
             $(this).dialog("close");
         }
