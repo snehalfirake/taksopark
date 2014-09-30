@@ -17,5 +17,7 @@ namespace Taksopark.BL.Interfaces
         User GetUserByLoginAndPassword(string login, string password);
         User GetUserByLogin(string login);
         Request GetRequestById(int id);
+
+        decimal GetEstimatedCost(decimal distance);
     }
 }

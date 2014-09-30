@@ -89,6 +89,16 @@ namespace Taksopark.MVC.Controllers.Home
             }
         }
 
+        [HttpPost]
+        public ActionResult CalcEstimatedCost(decimal distance, bool isTracking, decimal? animalWeight, bool isHaulage)
+        {
+            decimal cost = this._userBl.GetEstimatedCost(distance);
+            return Json(new
+                {
+                    EstimatedCost = cost
+                });
+        }
+
         private bool IsOrderValid(string @from, string to, string phone)
         {
             var placeFromToReg =

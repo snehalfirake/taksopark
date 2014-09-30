@@ -9,10 +9,12 @@ namespace Taksopark.BL
     public class UserBl : IUserBl
     {
         private readonly ISqlConnectionFactory _appConfigConnection;
+        private readonly IOrderCostCalcStrategy _orderCostCalcStrategy;
 
-        public UserBl(ISqlConnectionFactory appConfigConnection)
+        public UserBl(ISqlConnectionFactory appConfigConnection, IOrderCostCalcStrategy orderCostCalcStrategy)
         {
             _appConfigConnection = appConfigConnection;
+            _orderCostCalcStrategy = orderCostCalcStrategy;
         }
         public int CreateRequest(DAL.Models.Request request)
         {
@@ -112,6 +114,11 @@ namespace Taksopark.BL
             {
                 return uow.RequestRepository.GetAllRequests().ToList();
             }
+        }
+
+        public decimal GetEstimatedCost(decimal distance)
+        {
+            return this._orderCostCalcStrategy.CalcCost(distance, false, null, false);
         }
     }
 }
