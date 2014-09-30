@@ -23,20 +23,31 @@ namespace Taksopark.WebForms.Dispatcher
         {
             if (!IsPostBack)
             {
-                GetDrivers();
                 SetRequest();
             }
         }
 
         protected void Page_PreRender(object sender, EventArgs e)
         {
-            UpdateOrderButtons();
+            bool driversAvaliable = GetDrivers();
+
+            UpdateOrderButtons(driversAvaliable);
             SetRequest();
         }
 
-        private void UpdateOrderButtons()
+        private void UpdateOrderButtons(bool driversAvaliable)
         {
-            if (request.Status == (int)RequestStatusEnum.Active)
+            if (!driversAvaliable)
+            {
+                confirmButton.Enabled = false;
+                rejectButton.Enabled = false;
+                closeButton.Enabled = false;
+
+                confirmButton.CssClass = "btn btn-s-md btn-disabled";
+                rejectButton.CssClass = "btn btn-s-md btn-disabled";
+                closeButton.CssClass = "btn btn-s-md btn-white disabled";
+            }
+            else if (request.Status == (int)RequestStatusEnum.Active)
             {
                 confirmButton.Enabled = true;
                 rejectButton.Enabled = true;
@@ -82,14 +93,22 @@ namespace Taksopark.WebForms.Dispatcher
             }
         }
 
-        private void GetDrivers()
+        private bool GetDrivers()
         {
             IAdminBl adminBl = HttpContext.Current.Application.GetContainer().Resolve<IAdminBl>();
 
-            driversDropDownList.DataSource = adminBl.GetAllDriversByStatus((int)Enum.Parse(typeof(DriverStatusEnum), "Free"));
+            var drivers = adminBl.GetAllDriversByStatus((int)Enum.Parse(typeof(DriverStatusEnum), "Free"));
+            driversDropDownList.DataSource = drivers;
             driversDropDownList.DataValueField = "Id";
             driversDropDownList.DataTextField = "DriverInfo";
             driversDropDownList.DataBind();
+
+            if (drivers.Count < 1)
+            {
+                return false;
+            }
+
+            return true;
         }
 
         private static Request request;

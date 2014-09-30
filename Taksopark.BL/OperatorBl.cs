@@ -30,6 +30,7 @@ namespace Taksopark.BL
         public void UpdateRequest(Request request)
         {
             var oldRequest = this.GetRequestById(request.Id);
+
             if ((oldRequest.Status == (int)RequestStatusEnum.Active && request.Status == (int)RequestStatusEnum.Closed)
                 || (oldRequest.Status == (int)RequestStatusEnum.InProgress && request.Status == (int)RequestStatusEnum.Active)
                 || (oldRequest.Status == (int)RequestStatusEnum.Rejected && request.Status == (int)RequestStatusEnum.Active)
