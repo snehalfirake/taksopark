@@ -3,7 +3,7 @@
         width: 590,
         resizable: false,
         autoOpen: false,
-        position: ["center", "center"],
+        position: ["top", "center"],
         buttons: [
         {
             text: "Order",
@@ -35,6 +35,10 @@
                             $("#placeFromTextBoxId").val("");
                             $("#placeToTextBoxId").val("");
                             $("#phoneTextBoxId").val("");
+                            $("#date-time").val("");
+                            $('input:radio[name=service]').prop("checked", false);
+                            $("#ExtendedOrderFormId").slideUp(400);
+                            $("#ExtendedFormOpenButtonId").text("Extended \u25BC");
                         } else {
                             $('.ui-dialog-buttonpane').find('button:first').css('visibility', 'hidden');
                             $(":button:contains('Reject')").text('Close');
@@ -56,7 +60,7 @@
                 width: 74,
                 click: function () {
                     $(this).dialog("close");
-                    $(this).dialog('reload');
+                    
                 }
             }]
     });
@@ -70,6 +74,13 @@
 
         if ((!($("#placeFromTextBoxId").val() == "") && (!$("#placeToTextBoxId").val() == "") && (!$("#phoneTextBoxId").val() == ""))) {
             $("#order-dialog").dialog("open");
+            if ((time == "") && (serviceVal == undefined)) {
+                $("#AdditionalOrderId").css("display", "none");
+                $("#line").css("display", "none");
+            } else {
+                $("#AdditionalOrderId").css("display", "inline");
+                $("#line").css("display", "block");
+            }
             $(".message").html("<span class='color1'>Do</span> <span style='color: black;'>you want to submit the order?</span>");
             $('.ui-dialog-buttonpane').find('button:first').css('visibility', 'visible');
             $(":button:contains('Ok')").text('Reject');
