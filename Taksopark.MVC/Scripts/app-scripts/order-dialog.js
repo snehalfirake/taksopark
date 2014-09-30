@@ -66,6 +66,7 @@
         var placeTo = $("#placeToTextBoxId").val();
         var phone = $("#phoneTextBoxId").val();
         var time = $("#date-time").val();
+        var serviceVal= $('input:radio[name=service]:checked').val();
 
         if ((!($("#placeFromTextBoxId").val() == "") && (!$("#placeToTextBoxId").val() == "") && (!$("#phoneTextBoxId").val() == ""))) {
             $("#order-dialog").dialog("open");
@@ -78,7 +79,18 @@
             $("#dialogFromId").val(placeFrom);
             $("#dialogToId").val(placeTo);
             $("#dialogPhoneId").val(phone);
-            $("#dialogForwardTimeId").val(time);
+            if (time != "") {
+                $("#dialogForwardTimeId").val(time);
+            } else {
+                $("#dialogForwardTimeId").val("-||-");
+            }
+            if (serviceVal != undefined) {
+                $("#dialogServiceId").val(serviceVal);
+            } else {
+                $("#dialogServiceId").val("-||-");
+            }
+
+
         } else {
             $(this).dialog("close");
         }
