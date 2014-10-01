@@ -9,9 +9,15 @@ namespace Taksopark.BL
 {
     public class OrderCostCalcStrategy : IOrderCostCalcStrategy
     {
-        private const decimal ORDER_COST = 15m;
-        private const decimal MIN_DISTANCE = 2m;
-        private const decimal MIN_DISTANCE_COST = 3m;
+        public const decimal ORDER_COST = 15m;
+        public const decimal MIN_DISTANCE = 2m;
+        public const decimal MIN_DISTANCE_COST = 3m;
+        public const decimal ONE_KILOMETER_COST = 3m;
+        public const decimal TRACKING_COEFFICIENT = 2m;
+        public const decimal AVERAGE_ANIMAL_WEIGHT = 20m;
+        public const decimal MIN_ANIMAL_WEIGHT_COST = 30m;
+        public const decimal MAX_ANIMAL_WEIGHT_COST = 50m;
+        public const decimal ONE_KILOMETER_HAULAGE_COST = 30m;
 
         public decimal CalcCost(decimal distance, bool isTracking, decimal? animalWeight, bool isHaulage)
         {
@@ -40,28 +46,27 @@ namespace Taksopark.BL
             }
             else
             {
-                cost = (3 * distance) + ORDER_COST;
+                cost = (ONE_KILOMETER_COST * distance) + ORDER_COST;
             }
             if (isTracking == true)
             {
-                cost *= 2;
+                cost *= TRACKING_COEFFICIENT;
             }
             if (animalWeight.HasValue)
             {
-                if (animalWeight.Value < 20)
+                if (animalWeight.Value < AVERAGE_ANIMAL_WEIGHT)
                 {
-                    cost += 30;
+                    cost += MIN_ANIMAL_WEIGHT_COST;
                 }
                 else
                 {
-                    cost += 50;
+                    cost += MAX_ANIMAL_WEIGHT_COST;
                 }
             }
             if (isHaulage == true)
             {
-                cost = (30 * distance) + ORDER_COST;
+                cost = (ONE_KILOMETER_HAULAGE_COST * distance) + ORDER_COST;
             }
-
             return cost;
         }
     }
