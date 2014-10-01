@@ -117,21 +117,11 @@ namespace Taksopark.WebForms.Dispatcher
         {
             var operatorBl = HttpContext.Current.Application.GetContainer().Resolve<IOperatorBl>();
             request = operatorBl.GetRequestById(Convert.ToInt32(Request.QueryString["id"]));
-
+            var s = request;
             var info = new RequestModel(request);
 
             formView.DataSource = new List<Request>() { info };
             formView.DataBind();
-        }
-
-        public Request GetRequest(object id)
-        {
-            //var operatorBl = HttpContext.Current.Application.GetContainer().Resolve<IOperatorBl>();
-            //request = operatorBl.GetRequestById(Convert.ToInt32(id));
-
-            //return request;
-
-            return null;
         }
 
         private void UpdateRequestStatus(int status)
