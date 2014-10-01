@@ -27,7 +27,7 @@
                         phone: txtphone,
                         date: txtdate,
                         service: checked_radio,
-                        estimatedCost: estimatedPrice
+                        estimatedCost: parseInt(estimatedPrice)
                     },
                     success: function (data) {
                         if (data.RequestId) {
@@ -64,8 +64,7 @@
                 height: 34,
                 width: 74,
                 click: function () {
-                    $(this).dialog("close");
-                    
+                    $(this).dialog("close");                
                 }
             }]
     });

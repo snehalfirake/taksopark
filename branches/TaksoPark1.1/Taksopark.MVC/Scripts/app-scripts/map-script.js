@@ -9,7 +9,6 @@ function OrderTaxi() {
     var directionDisplay;
     var map;
     _this.initialize = function () {
-
         console.log("mapScript.js-initialize");
         directionsDisplay = new google.maps.DirectionsRenderer();
         var lviv = new google.maps.LatLng(49.8382112, 24.0294017);
@@ -20,43 +19,52 @@ function OrderTaxi() {
         };
         map = new google.maps.Map(document.getElementById("TaxiMap1"), myOptions);
         directionsDisplay.setMap(map);
-
+        
         $("#showTheWayButtonId").click(function () {
             _this.calcRoute({
                 success: function (data) {
-                    _this.updateEstimatedCost(data.distance);
+                    _this.updateEstimatedCost(data.estimatedDistance);
                 }
             });
         });
     };
 
-   
-    $("#placeFromTextBoxId, #placeToTextBoxId, #AnimalWeightId, #HaulageRadioId, #TrackingRadioId").change(function () {
-      _this.updateEstimatedCost();
-    });
-
-
-    _this.updateEstimatedCost = function (distance) {
+    _this.updateEstimatedCost = function (estimatedDistance) {
+        console.log("updateEstimatedCost() estimatedDistance = " + estimatedDistance);
         $.ajax({
             url: "/Home/CalcEstimatedCost",
             type: "POST",
             cache: false,
             datatype: "json",
             data: {
-                distance: 20, //distance,
+                distance: parseInt(estimatedDistance),
                 isTracking: $("#TrackingRadioId").is(':checked') ? true : false,
                 animalWeight: $("#AnimalWeightId").val(),
                 isHaulage: $("#HaulageRadioId").is(':checked') ? true : false
             },
             success: function (data) {
-                $("#price").text(data.EstimatedCost);
-                $("#dialogCostId").val(data.EstimatedCost);
+                $("#price").text(data.EstimatedCost.toFixed(2));
+                $("#dialogCostId").val(data.EstimatedCost.toFixed(2));
             },
             error: function () {
                 alert("error");
             }
         });
     };
+   
+    $("#placeFromTextBoxId, #placeToTextBoxId, #AnimalWeightId, #HaulageRadioId, #TrackingRadioId").change(function () {
+        _this.calcRoute({
+            success: function (data) {
+                _this.updateEstimatedCost(data.estimatedDistance);
+            }
+        });
+    });
+
+    //$("#placeToTextBoxId").change(function() {
+    //   _this.calcRoute();
+    //});
+
+   
     var directionsService = new google.maps.DirectionsService();
 
     _this.calcRoute = function (settings) {
@@ -78,8 +86,10 @@ function OrderTaxi() {
                 directionsDisplay.setDirections(response);
                 if (typeof (settings.success) === 'function') {
                     var dist = parseFloat(response.routes[0].legs[0].distance.value / 1000);
+                    console.log("calcRoute() dist = " + dist);
+                    $("#distance").text(dist);
                     settings.success({
-                        distance: dist
+                        estimatedDistance: dist
                     });
                 }
                 
