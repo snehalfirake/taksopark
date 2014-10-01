@@ -117,7 +117,7 @@ namespace Taksopark.BL.Test
         public void TestCalcCost_9()
         {
             IOrderCostCalcStrategy strategy = new OrderCostCalcStrategy();
-            decimal expected = 515m;
+            decimal expected = 315m;
             decimal actual = strategy.CalcCost(10m, false, null, true);
             Assert.AreEqual(expected, actual);
         }
