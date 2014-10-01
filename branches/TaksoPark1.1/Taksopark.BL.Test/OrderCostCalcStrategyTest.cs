@@ -7,6 +7,8 @@ namespace Taksopark.BL.Test
     [TestClass]
     public class OrderCostCalcStrategyTest
     {
+        #region Validation Tests
+
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
         public void TestCalcCost_Validation_1()
@@ -49,6 +51,88 @@ namespace Taksopark.BL.Test
             IOrderCostCalcStrategy strategy = new OrderCostCalcStrategy();
             strategy.CalcCost(3, false, 10, true);
         }
+
+        #endregion
+
+        #region Constants checking
+
+        [TestMethod]
+        public void TestCheckConstant_1()
+        {
+            IOrderCostCalcStrategy strategy = new OrderCostCalcStrategy();
+            decimal expected = 15m;
+            decimal actual = OrderCostCalcStrategy.ORDER_COST;
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void TestCheckConstant_2()
+        {
+            IOrderCostCalcStrategy strategy = new OrderCostCalcStrategy();
+            decimal expected = 2m;
+            decimal actual = OrderCostCalcStrategy.MIN_DISTANCE;
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void TestCheckConstant_3()
+        {
+            IOrderCostCalcStrategy strategy = new OrderCostCalcStrategy();
+            decimal expected = 3m;
+            decimal actual = OrderCostCalcStrategy.MIN_DISTANCE_COST;
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void TestCheckConstant_4()
+        {
+            IOrderCostCalcStrategy strategy = new OrderCostCalcStrategy();
+            decimal expected = 3m;
+            decimal actual = OrderCostCalcStrategy.ONE_KILOMETER_COST;
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void TestCheckConstant_5()
+        {
+            IOrderCostCalcStrategy strategy = new OrderCostCalcStrategy();
+            decimal expected = 2m;
+            decimal actual = OrderCostCalcStrategy.TRACKING_COEFFICIENT;
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void TestCheckConstant_6()
+        {
+            IOrderCostCalcStrategy strategy = new OrderCostCalcStrategy();
+            decimal expected = 20m;
+            decimal actual = OrderCostCalcStrategy.AVERAGE_ANIMAL_WEIGHT;
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void TestCheckConstant_7()
+        {
+            IOrderCostCalcStrategy strategy = new OrderCostCalcStrategy();
+            decimal expected = 30m;
+            decimal actual = OrderCostCalcStrategy.MIN_ANIMAL_WEIGHT_COST;
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void TestCheckConstant_8()
+        {
+            IOrderCostCalcStrategy strategy = new OrderCostCalcStrategy();
+            decimal expected = 50m;
+            decimal actual = OrderCostCalcStrategy.MAX_ANIMAL_WEIGHT_COST;
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void TestCheckConstant_9()
+        {
+            IOrderCostCalcStrategy strategy = new OrderCostCalcStrategy();
+            decimal expected = 30m;
+            decimal actual = OrderCostCalcStrategy.ONE_KILOMETER_HAULAGE_COST;
+            Assert.AreEqual(expected, actual);
+        }
+
+        #endregion
+
+        #region Functionality Tests
+
         [TestMethod]
         public void TestCalcCost_1()
         {
@@ -121,5 +205,7 @@ namespace Taksopark.BL.Test
             decimal actual = strategy.CalcCost(10m, false, null, true);
             Assert.AreEqual(expected, actual);
         }
+
+        #endregion
     }
 }
