@@ -13,7 +13,7 @@ create table [Request]
 	[FinishPoint] nvarchar(512),
 	[OperatorId] int,
 	[DriverId] int,
-	[Price] int not null,
+	[Price] numeric(18,4) not null,
 	[Additional] nvarchar(2048)
 )
 

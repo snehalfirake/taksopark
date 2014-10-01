@@ -548,7 +548,7 @@ CREATE PROCEDURE sp_CreateRequest
    @FinishPoint nvarchar(512),
    @OperatorId int,
    @DriverId int,
-   @Price int,
+   @Price numeric(18,4),
    @Additional nvarchar(2048),
    @RequestId int = NULL OUTPUT
 AS
@@ -684,7 +684,7 @@ CREATE PROCEDURE sp_UpdateRequest
     @FinishPoint nvarchar(512),
     @RequestId int,
     @DriverId int,
-    @Price int,
+    @Price numeric(18,4),
     @OperatorId int,
     @Additional nvarchar(2048)
 AS

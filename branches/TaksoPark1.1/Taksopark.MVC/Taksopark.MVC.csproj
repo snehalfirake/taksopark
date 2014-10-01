@@ -148,7 +148,6 @@
     <Content Include="Scripts\app-scripts\ajax-form-submit.js" />
     <Content Include="Scripts\app-scripts\auto-complite.js" />
     <Content Include="Scripts\app-scripts\camera.js" />
-    <Content Include="Scripts\app-scripts\date-time-picker.js" />
     <Content Include="Scripts\app-scripts\DateTimePicker.js" />
     <Content Include="Scripts\app-scripts\jquery-2.1.1.js" />
     <Content Include="Scripts\app-scripts\jquery-2.1.1.min.js" />

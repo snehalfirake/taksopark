@@ -12,18 +12,23 @@ $(document).ready(function () {
             $('input:radio[name=service]').prop("checked", false);
         } else {
             $("#ExtendedOrderFormId").slideDown(400);
+                $("#AnimalWeightId").css("visibility","hidden");
             $("#ExtendedFormOpenButtonId").text("Extended \u25B2");
         }
         });
     $("#dtBox").DateTimePicker();
 
     $("input[@name='service'][value='With animals']").change(function () {
-            $("#AnimalWeightId").css("visibility", "visible");
+        $("#AnimalWeightId").css("visibility", "visible");
     });
+
     $("input[@name='service'][value='Tracking']").change(function () {
-            $("#AnimalWeightId").css("visibility", "hidden");
+        $("#AnimalWeightId").css("visibility", "hidden");
+        $("#AnimalWeightId").val("");
     });
+
     $("input[@name='service'][value='Haulage']").change(function () {
-            $("#AnimalWeightId").css("visibility", "hidden");
+        $("#AnimalWeightId").css("visibility", "hidden");
+        $("#AnimalWeightId").val("");
     });
 });
