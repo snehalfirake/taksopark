@@ -89,6 +89,14 @@
                                 <asp:Label runat="server" Text='<%# ((Taksopark.DAL.Enums.RequestStatusEnum)Eval("Status")).ToString() %>' />
                             </td>
                         </tr>
+                        <tr style='<%# Eval("Visibility") %>'>
+                            <td>
+                                <b>Additional</b>
+                            </td>
+                            <td>
+                                <%# Eval("Additional") %>
+                            </td>
+                        </tr>
                     </table>
                 </ItemTemplate>
             </asp:FormView>
