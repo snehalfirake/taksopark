@@ -59,7 +59,7 @@ namespace Taksopark.BL
             }
             if (isHaulage == true)
             {
-                cost = (50 * distance) + ORDER_COST;
+                cost = (30 * distance) + ORDER_COST;
             }
 
             return cost;
