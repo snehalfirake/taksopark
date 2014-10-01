@@ -45,7 +45,7 @@ namespace Taksopark.MVC.Controllers.Home
         }
 
         [HttpPost]
-        public JsonResult OrderTaxi(string from, string to, string phone, string date, string service)
+        public JsonResult OrderTaxi(string from, string to, string phone, string date, string service, decimal? estimatedCost)
         {
             if (IsOrderValid(from, to, phone))
             {
@@ -74,6 +74,7 @@ namespace Taksopark.MVC.Controllers.Home
                     request.RequesTime = DateTime.Parse(date);
                 }
                 request.Additional = service;
+                request.Price = estimatedCost;
                 int requestId = _userBl.CreateRequest(request);
                 return Json(new
                 {

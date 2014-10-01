@@ -14,6 +14,7 @@
                 var txtplaceTo = $("#placeToTextBoxId").val();
                 var txtphone = $("#phoneTextBoxId").val();
                 var txtdate = $("#date-time").val();
+                var estimatedPrice = $("#price").text();
                 var checked_radio = $('input:radio[name=service]:checked').val();
                 $.ajax({
                     url: "/Home/OrderTaxi",
@@ -25,7 +26,8 @@
                         to: txtplaceTo,
                         phone: txtphone,
                         date: txtdate,
-                        service: checked_radio
+                        service: checked_radio,
+                        estimatedCost: estimatedPrice
                     },
                     success: function (data) {
                         if (data.RequestId) {
@@ -36,6 +38,9 @@
                             $("#placeToTextBoxId").val("");
                             $("#phoneTextBoxId").val("");
                             $("#date-time").val("");
+                            $("#price").text("0");
+                            $("#AnimalWeightId").val("");
+                            $("#AnimalWeightId").css("visibility", "hidden");
                             $('input:radio[name=service]').prop("checked", false);
                             $("#ExtendedOrderFormId").slideUp(400);
                             $("#ExtendedFormOpenButtonId").text("Extended \u25BC");
@@ -93,12 +98,12 @@
             if (time != "") {
                 $("#dialogForwardTimeId").val(time);
             } else {
-                $("#dialogForwardTimeId").val("-||-");
+                $("#dialogForwardTimeId").val("----");
             }
             if (serviceVal != undefined) {
                 $("#dialogServiceId").val(serviceVal);
             } else {
-                $("#dialogServiceId").val("-||-");
+                $("#dialogServiceId").val("----");
             }
 
 
