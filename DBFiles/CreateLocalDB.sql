@@ -264,6 +264,28 @@ GO
 -----------------------------------------------------------------------------------------------
 USE [TaxiServiseDB]
 GO
+IF ( OBJECT_ID('sp_GetAllCommentsByRequestId') IS NOT NULL ) 
+   DROP PROCEDURE dbo.sp_GetAllCommentsByRequestId
+GO
+
+CREATE PROCEDURE sp_GetAllCommentsByRequestId
+	@RequestId int
+AS
+BEGIN
+    SET NOCOUNT ON 
+	SELECT 
+		[ID],
+		[CreatorId],
+		[RequestId],
+		[CommentText]
+	FROM dbo.Coments
+	WHERE
+		[RequestId] = 	@RequestId
+END
+GO
+-----------------------------------------------------------------------------------------------
+USE [TaxiServiseDB]
+GO
 IF ( OBJECT_ID('sp_GetAllDrivers') IS NOT NULL ) 
    DROP PROCEDURE dbo.sp_GetAllDrivers
 GO
