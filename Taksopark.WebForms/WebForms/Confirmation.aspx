@@ -134,10 +134,10 @@
             <br />
     </div>
 
-    <asp:ObjectDataSource runat="server" ID="ordersDataSource" TypeName="Taksopark.WebForms.Dispatcher.Confirmation" SelectMethod="GetRequest">
+    <%--<asp:ObjectDataSource runat="server" ID="ordersDataSource" TypeName="Taksopark.WebForms.Dispatcher.Confirmation" SelectMethod="GetRequest">
         <SelectParameters>
             <asp:QueryStringParameter Name="id" QueryStringField="id" />
         </SelectParameters>
-    </asp:ObjectDataSource>
+    </asp:ObjectDataSource>--%>
 
 </asp:Content>

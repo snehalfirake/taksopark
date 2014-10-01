@@ -118,16 +118,10 @@ namespace Taksopark.WebForms.Dispatcher
             var operatorBl = HttpContext.Current.Application.GetContainer().Resolve<IOperatorBl>();
             request = operatorBl.GetRequestById(Convert.ToInt32(Request.QueryString["id"]));
 
-            //detailsView1.DataSource = new List<Request>() { request };
-            //detailsView1.DataBind();
-
             var info = new RequestModel(request);
 
             formView.DataSource = new List<Request>() { info };
             formView.DataBind();
-
-            //orderInfo.DataSource1 = new List<Request>() { request };
-            //orderInfo.DataBind();
         }
 
         public Request GetRequest(object id)
