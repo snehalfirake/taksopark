@@ -121,7 +121,7 @@ namespace Taksopark.WebForms.Models
 
         public string EstimatedPrice
         {
-            get { return string.Format("{0} UAH",this.Price); }
+            get { return this.Price.Value.ToString("0.00") + " UAH"; }
         }
 
         //private string[] months = { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
