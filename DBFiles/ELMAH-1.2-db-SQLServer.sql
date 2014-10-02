@@ -140,8 +140,6 @@ AS
         [ELMAH_Error]
     WHERE
         [ErrorId] = @ErrorId
-    AND
-        [Application] = @Application
 
 GO
 SET QUOTED_IDENTIFIER OFF 
@@ -174,8 +172,7 @@ AS
         @TotalCount = COUNT(1) 
     FROM 
         [ELMAH_Error]
-    WHERE 
-        [Application] = @Application
+
 
     -- Get the ID of the first error for the requested page
 
@@ -191,8 +188,6 @@ AS
             @FirstSequence = [Sequence]
         FROM 
             [ELMAH_Error]
-        WHERE   
-            [Application] = @Application
         ORDER BY 
             [TimeUtc] DESC, 
             [Sequence] DESC
@@ -223,8 +218,6 @@ AS
     FROM 
         [ELMAH_Error] error
     WHERE
-        [Application] = @Application
-    AND
         [TimeUtc] <= @FirstTimeUTC
     AND 
         [Sequence] <= @FirstSequence

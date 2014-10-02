@@ -80,7 +80,8 @@ namespace Taksopark.MVC.Controllers
                     PhoneNumber = request.PhoneNumber,
                     FinishPoint = request.FinishPoint,
                     StartPoint = request.StartPoint,
-                    RequesTime = request.RequesTime
+                    RequesTime = request.RequesTime,
+                    Price = request.Price
                 };
                 switch (request.Status)
                 {
@@ -120,6 +121,7 @@ namespace Taksopark.MVC.Controllers
                 StartPoint = request.StartPoint,
                 PhoneNumber = request.PhoneNumber,
                 RequesTime = request.RequesTime,
+                Price = request.Price
             };
             switch (request.Status)
             {
@@ -157,6 +159,7 @@ namespace Taksopark.MVC.Controllers
                 StartPoint = request.StartPoint,
                 PhoneNumber = request.PhoneNumber,
                 RequesTime = request.RequesTime,
+                Price = request.Price
             };
             switch (request.Status)
             {
@@ -205,6 +208,7 @@ namespace Taksopark.MVC.Controllers
                     StartPoint = requestModel.StartPoint,
                     PhoneNumber = requestModel.PhoneNumber,
                     RequesTime = requestModel.RequesTime,
+                    Price = requestModel.Price,
                     Id = requestModel.RequestId
                 };
                 switch (requestModel.Status)

@@ -37,14 +37,23 @@ namespace Taksopark.WebForms.WebForms
                         var role = user.Role;
                         string[] roles = new[] {role.ToString()};
                         HttpContext.Current.User = new GenericPrincipal(identity, roles);
-                        if (user.Role == (int) RolesEnum.Operator)
+                        var redirectUrl = FormsAuthentication.GetRedirectUrl(userName, false);
+                        if (redirectUrl == "/default.aspx")
                         {
-                            Response.Redirect("Order.aspx");
+                            if (user.Role == (int)RolesEnum.Operator)
+                            {
+                                Response.Redirect("Order.aspx");
+                            }
+                            else if (user.Role == (int)RolesEnum.Admin)
+                            {
+                                Response.Redirect("Users.aspx");
+                            }
                         }
-                        else if (user.Role == (int) RolesEnum.Admin)
+                        else
                         {
-                            Response.Redirect("Users.aspx");
+                            Response.Redirect(FormsAuthentication.GetRedirectUrl(userName, true));
                         }
+                     
                     }
                 }
                 else

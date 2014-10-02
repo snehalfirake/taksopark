@@ -134,6 +134,7 @@
     <Content Include="Content\Layout\About.css" />
     <Content Include="Content\Layout\adipoli.css" />
     <Content Include="Content\Layout\camera.css" />
+    <Content Include="Content\Layout\comment-style.css" />
     <Content Include="Content\Layout\DateTimePicker.css" />
     <Content Include="Content\Layout\error-style.css" />
     <Content Include="Content\Layout\font-awesome.css" />
