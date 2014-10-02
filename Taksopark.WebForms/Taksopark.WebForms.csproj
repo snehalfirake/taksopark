@@ -101,6 +101,7 @@
     <Content Include="Images\StatusImages\Closed.png" />
     <Content Include="Images\StatusImages\InProgress.png" />
     <Content Include="Images\StatusImages\Rejected.png" />
+    <Content Include="Scripts\ShowDriversOnMap.js" />
     <Content Include="style.css" />
     <Content Include="Styles\Admin\LogOn.css" />
     <Content Include="Styles\app.v1.js" />

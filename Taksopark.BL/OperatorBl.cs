@@ -84,5 +84,13 @@ namespace Taksopark.BL
                 return requestList.ToList();
             }
         }
+        public List<Driver> GetAllDriversByStatus(int status)
+        {
+            using (var uow = new UnitOfWork(_appConfigConnection))
+            {
+                var drivers = uow.DriverRepository.GetAllDriversByStatus(status);
+                return drivers.ToList();
+            }
+        }
     }
 }
