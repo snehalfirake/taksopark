@@ -13,5 +13,6 @@ namespace Taksopark.MVC.Models
         public string Status { get; set; }
         public string StartPoint { get; set; }
         public string FinishPoint { get; set; }
+        public decimal? Price { get; set; }
     }
 }
