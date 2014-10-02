@@ -80,6 +80,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\TaxiServiseDB.mdf" />
+    <Content Include="App_Data\TaxiServiseDB_log.ldf">
+      <DependentUpon>TaxiServiseDB.mdf</DependentUpon>
+    </Content>
     <Content Include="App_Themes\Main\Main.skin" />
     <Content Include="FutureStyle\css\app.v1.css" />
     <Content Include="FutureStyle\css\app.v1.js" />
@@ -359,9 +363,7 @@
       <DependentUpon>Users.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Taksopark.BL\Taksopark.BL.csproj">
       <Project>{e539054c-b886-4d6c-9c06-d0bb1202777f}</Project>

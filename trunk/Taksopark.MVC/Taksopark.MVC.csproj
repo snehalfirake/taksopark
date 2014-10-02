@@ -112,9 +112,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\TaxiServiceDB.mdf" />
-    <Content Include="App_Data\TaxiServiceDB_log.ldf">
-      <DependentUpon>TaxiServiceDB.mdf</DependentUpon>
+    <Content Include="App_Data\TaxiServiseDB.mdf" />
+    <Content Include="App_Data\TaxiServiseDB_log.ldf">
+      <DependentUpon>TaxiServiseDB.mdf</DependentUpon>
     </Content>
     <Content Include="Content\auto-complite\auto-complite-style.css" />
     <Content Include="Content\bootstrap.css" />
@@ -158,7 +158,6 @@
     <Content Include="Scripts\app-scripts\js-image-slider.js" />
     <Content Include="Scripts\app-scripts\map-script.js" />
     <Content Include="Scripts\app-scripts\order-dialog.js" />
-    <Content Include="Scripts\app-scripts\radioButton-script.js" />
     <Content Include="Scripts\app-scripts\ready.js" />
     <Content Include="Scripts\app-scripts\userinfo-script.js" />
     <Content Include="Scripts\bootstrap.js" />
