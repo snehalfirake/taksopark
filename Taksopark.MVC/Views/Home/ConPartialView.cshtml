@@ -1627,17 +1627,22 @@
             <div style="float: left; margin-right: 3px;">
                 <label><span class="color1">F</span>rom:</label>
                 <br />
-                <input type="text" id="dialogFromId" readonly="true" style="border: none; width: 180px;" />
+                <input type="text" id="dialogFromId" readonly="true" class="bordernone1" />
             </div>
             <div style="float: left; margin-right: 3px;">
                 <label><span class="color1">T</span>o:</label>
                 <br />
-                <input type="text" id="dialogToId" readonly="true" style="border: none; width: 180px;" />
+                <input type="text" id="dialogToId" readonly="true" class="bordernone1" />
             </div>
             <div style="float: left; margin-right: 3px;">
                 <label><span class="color1">P</span>hone:</label>
                 <br />
-                <input type="text" id="dialogPhoneId" readonly="true" style="border: none; width: 120px;" />
+                <input type="text" id="dialogPhoneId" readonly="true" class="bordernone2" />
+            </div>
+            <div style="float: left; margin-right: 3px;">
+                <label><span class="color1">C</span>ost:</label>
+                <br />
+                <input type="text" id="dialogCostId" readonly="true" class="bordernone3"/>
             </div>
             <br />
             <br />
@@ -1649,17 +1654,12 @@
                 <div style="float: left; margin-right: 3px;">
                     <label><span class="color1">F</span>orward time:</label>
                     <br />
-                    <input type="text" id="dialogForwardTimeId" readonly="true" style="border: none; width: 179px;" />
+                    <input type="text" id="dialogForwardTimeId" readonly="true" class="bordernone" />
                 </div>
                 <div style="float: left; margin-right: 3px;">
                     <label><span class="color1">S</span>ervice:</label>
                     <br />
-                    <input type="text" id="dialogServiceId" readonly="true" style="border: none; width: 179px;" />
-                </div>
-                <div style="float: left; margin-right: 3px;">
-                    <label><span class="color1">C</span>ost:</label>
-                    <br />
-                    <input type="text" id="dialogCostId" readonly="true" style="border: none; width: 145px;" />
+                    <input type="text" id="dialogServiceId" readonly="true" class="bordernone" />
                 </div>
             </div>
         </div>
@@ -1680,32 +1680,32 @@
             <input type="text" id="phoneTextBoxId" class="textBoxValidationClass" name="phoneTextBoxId" placeholder="Phone:" />
         </div>
         <div id="orderTaxiButtonHolderId">
-            <button id="ExtendedFormOpenButtonId" type="button" class="abutton" style="height: 34px;">Extended &#9660</button>
-            <button type="button" id="orderTaxiButtonId" class="abutton" style="height: 34px;">OrderTaxi</button>
+            <button id="ExtendedFormOpenButtonId" type="button" class="abutton buttonheight">Extended &#9660</button>
+            <button type="button" id="orderTaxiButtonId" class="abutton buttonheight">OrderTaxi</button>
         </div>
         <br />
     </div>
     <br />
     <div id="showTheWayHolderId">
-        <div id="ExtendedOrderFormId" style="text-align: center; border: 1px solid #cccccc; margin-right: 2px; margin-bottom: 25px; margin-top: 10px; padding: 15px; display: none;">
-            <span style="font-size: 19px;"><span class="color1">Extended</span> order</span>
+        <div id="ExtendedOrderFormId">
+            <span class="spanfontsize"><span class="color1">Extended</span> order</span>
             <hr style="border-top: #a6c9e2;">
-            <input type="text" data-field="datetime" name="date-time" id="date-time" placeholder="Date and time:" style="height: 30px; width: 280px; border: 1px solid #cccccc; padding-left: 12px;">
+            <input type="text" data-field="datetime" name="date-time" id="date-time" placeholder="Date and time:">
             <div id="dtBox"></div>        
-            <label style="font-size: 18px; font-weight: normal;"> <input type="radio" id="TrackingRadioId" name="service" value="Tracking" style="margin-left: 55px;" /> <span class="color1">T</span>racking</label>
-            <label style="font-size: 18px; font-weight: normal;"> <input type="radio" id="HaulageRadioId" name="service" value="Haulage" style="margin-left: 55px;" /> <span class="color1">H</span>aulage</label>
-            <label style="font-size: 18px; font-weight: normal;"> <input type="radio" id="AnimalsRadioId" name="service" value="With animals" style="margin-left: 25px;" /> <span class="color1">W</span>ith animals</label>
-            <input type="text" id="AnimalWeightId" placeholder="Animal weigth" style="height: 30px; width: 280px; border: 1px solid #cccccc; padding-left: 12px; width: 130px; margin-left: 15px; " />
+            <label class="labelstyle"> <input type="radio" id="TrackingRadioId" name="service" value="Tracking" style="margin-left: 55px;" /> <span class="color1">T</span>racking</label>
+            <label class="labelstyle"> <input type="radio" id="HaulageRadioId" name="service" value="Haulage" style="margin-left: 55px;" /> <span class="color1">H</span>aulage</label>
+            <label class="labelstyle"> <input type="radio" id="AnimalsRadioId" name="service" value="With animals" style="margin-left: 25px;" /> <span class="color1">W</span>ith animals</label>
+            <input type="text" id="AnimalWeightId" placeholder="Animal weigth" />
         </div>
-        <span style="font-size: 19px;"><span class="color1">Location</span> on map</span>
+        <span class="spanfontsize"><span class="color1">Location</span> on map</span>
         <div style="float: right">
             <label for="distance" style="font-size: 17px;"><span class="color1">D</span>istance (km): </label>
             <label for="distance" id="distance" style="margin-right: 70px; font-size: 17px;">0</label>
 
-            <label for="price" style="font-size: 17px;"><span class="color1" style="font-size: 19px; font-weight: normal">E</span>stimated Price (UAH): </label>
+            <label for="price" style="font-size: 17px;"><span class="color1 labelstyle">E</span>stimated Price (UAH): </label>
             <label for="price" id="price" style="margin-right: 50px; font-size: 17px;">0</label>
             <button id="showTheWayButtonId" class="abutton">Show the Way</button>
         </div>
     </div>
-    <div id="TaxiMap1" style="width: 95%; height: 88%"></div>
+    <div id="TaxiMap1"></div>
 </div>
