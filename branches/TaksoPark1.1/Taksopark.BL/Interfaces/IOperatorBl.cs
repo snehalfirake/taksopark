@@ -12,5 +12,6 @@ namespace Taksopark.BL.Interfaces
         User GetUserById(int id);
         List<Request> GetAllRequestsByStatus(int status);
         List<Driver> GetAllDriversByStatus(int status);
+        List<Driver> GetAllDriversByDriverStatus(int driverStatus);
     }
 }
