@@ -18,5 +18,6 @@ namespace Taksopark.BL.Interfaces
         User GetUserByLogin(string login);
         Request GetRequestById(int id);
         decimal GetEstimatedCost(decimal distance, bool isTracking, decimal? animalWeight, bool isHaulage);
+        List<Comment> GetAllCommentsByRequestId(int requestId);
     }
 }

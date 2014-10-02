@@ -16,7 +16,7 @@ namespace Taksopark.BL
             _appConfigConnection = appConfigConnection;
             _orderCostCalcStrategy = orderCostCalcStrategy;
         }
-        public int CreateRequest(DAL.Models.Request request)
+        public int CreateRequest(Request request)
         {
             using (var uow = new UnitOfWork(_appConfigConnection))
             {
@@ -119,6 +119,15 @@ namespace Taksopark.BL
         public decimal GetEstimatedCost(decimal distance, bool isTracking, decimal? animalWeight, bool isHaulage)
         {
             return this._orderCostCalcStrategy.CalcCost(distance, isTracking, animalWeight, isHaulage);
+        }
+
+
+        public List<Comment> GetAllCommentsByRequestId(int requestId)
+        {
+            using (var uow = new UnitOfWork(_appConfigConnection))
+            {
+                return uow.CommentRepository.GetAllCommentsByRequestId(requestId).ToList();
+            }
         }
     }
 }

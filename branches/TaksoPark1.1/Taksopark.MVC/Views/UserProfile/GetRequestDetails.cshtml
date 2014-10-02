@@ -66,6 +66,13 @@
                 }
             </div>
         </div>
+        @{
+            Html.RenderAction("GetCommentsList", new { requestId = Model.RequestId });
+        }
+        ;
+        @*@{
+            Html.RenderPartial("CommentsList", new { requestId = Model.RequestId });
+        }*@
     </div>
 }
 

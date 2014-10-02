@@ -24,11 +24,6 @@ namespace Taksopark.MVC.Controllers
         [HttpGet]
         public ActionResult GetUserProfile()
         {
-
-            //if (Session["UserLogin"] == null)
-            //{
-            //    return RedirectToAction("Index", "Home");
-            //}
             var user = _userBl.GetUserByLogin(User.Identity.Name);
             var editProfileModel = new EditProfileModel
             {
@@ -269,6 +264,25 @@ namespace Taksopark.MVC.Controllers
                 return RedirectToAction("GetRequestDetails" + "/" + Convert.ToString(commentModel.RequestId), "UserProfile");
             }
             return View(commentModel);
+        }
+
+        //[HttpGet]
+        public ActionResult GetCommentsList(int requestId)
+        {
+            var commentList = new List<CommentModel>();
+            var comments = _userBl.GetAllCommentsByRequestId(requestId);
+            foreach (var comment in comments)
+            {
+                var commentModel = new CommentModel()
+                {
+                    Id = comment.Id,
+                    CommentText = comment.CommentText,
+                    RequestId = comment.RequestId,
+                    CreatorId = comment.CreatorId
+                };
+                commentList.Add(commentModel);
+            }
+            return View(commentList);
         }
     }
 }
