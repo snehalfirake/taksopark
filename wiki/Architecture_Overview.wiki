@@ -1,2 +1,2 @@
 <h1><p align="center">Architecture Overview</p></h1>
-<p align="left"><img src="https://pp.vk.me/c624722/v624722811/30ca/Bga06x-Vd08.jpg" alt="Діаграма класів"></img> </p>
+<p align="left"><img src="https://pp.vk.me/c623922/v623922811/53d6/nX19PfwirLM.jpg" alt="Діаграма класів"></img> </p>
