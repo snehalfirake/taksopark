@@ -30,6 +30,7 @@ namespace Taksopark.BL
         public void UpdateRequest(Request request)
         {
             var oldRequest = this.GetRequestById(request.Id);
+
             if ((oldRequest.Status == (int)RequestStatusEnum.Active && request.Status == (int)RequestStatusEnum.Closed)
                 || (oldRequest.Status == (int)RequestStatusEnum.InProgress && request.Status == (int)RequestStatusEnum.Active)
                 || (oldRequest.Status == (int)RequestStatusEnum.Rejected && request.Status == (int)RequestStatusEnum.Active)
@@ -81,6 +82,22 @@ namespace Taksopark.BL
             {
                 var requestList = uow.RequestRepository.GetAllRequestsByStatus(status);
                 return requestList.ToList();
+            }
+        }
+        public List<Driver> GetAllDriversByStatus(int status)
+        {
+            using (var uow = new UnitOfWork(_appConfigConnection))
+            {
+                var drivers = uow.DriverRepository.GetAllDriversByStatus(status);
+                return drivers.ToList();
+            }
+        }
+        public List<Driver> GetAllDriversByDriverStatus(int driverStatus)
+        {
+            using (var uow = new UnitOfWork(_appConfigConnection))
+            {
+                var drivers = uow.DriverRepository.GetAllDriversByDriverStatus(driverStatus);
+                return drivers.ToList();
             }
         }
     }

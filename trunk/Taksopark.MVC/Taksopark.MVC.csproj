@@ -42,6 +42,9 @@
     <Reference Include="Antlr3.Runtime">
       <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="Elmah">
+      <HintPath>..\packages\elmah.corelibrary.1.2.2\lib\Elmah.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Practices.Unity, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -121,7 +124,6 @@
     <Content Include="Content\Image\arrow_l.gif" />
     <Content Include="Content\Image\arrow_r.gif" />
     <Content Include="Content\Image\camera-loader.gif" />
-    <Content Include="Content\Image\logo.bmp" />
     <Content Include="Content\Image\Pause.png" />
     <Content Include="Content\Image\prevnext.png" />
     <Content Include="Content\Image\slide.jpeg" />
@@ -131,6 +133,7 @@
     <Content Include="Content\Layout\About.css" />
     <Content Include="Content\Layout\adipoli.css" />
     <Content Include="Content\Layout\camera.css" />
+    <Content Include="Content\Layout\comment-style.css" />
     <Content Include="Content\Layout\DateTimePicker.css" />
     <Content Include="Content\Layout\error-style.css" />
     <Content Include="Content\Layout\font-awesome.css" />
@@ -149,13 +152,13 @@
     <Content Include="Scripts\app-scripts\ajax-form-submit.js" />
     <Content Include="Scripts\app-scripts\auto-complite.js" />
     <Content Include="Scripts\app-scripts\camera.js" />
-    <Content Include="Scripts\app-scripts\date-time-picker.js" />
     <Content Include="Scripts\app-scripts\DateTimePicker.js" />
     <Content Include="Scripts\app-scripts\jquery-2.1.1.js" />
     <Content Include="Scripts\app-scripts\jquery-2.1.1.min.js" />
     <Content Include="Scripts\app-scripts\js-image-slider.js" />
     <Content Include="Scripts\app-scripts\map-script.js" />
     <Content Include="Scripts\app-scripts\order-dialog.js" />
+    <Content Include="Scripts\app-scripts\radioButton-script.js" />
     <Content Include="Scripts\app-scripts\ready.js" />
     <Content Include="Scripts\app-scripts\userinfo-script.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -227,6 +230,7 @@
     <Content Include="Views\UserProfile\GetRequestDetails.cshtml" />
     <Content Include="Views\UserProfile\EditRequest.cshtml" />
     <Content Include="Views\UserProfile\AddComent.cshtml" />
+    <Content Include="Views\UserProfile\GetCommentsList.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

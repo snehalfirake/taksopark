@@ -13,13 +13,22 @@ namespace Taksopark.WebForms.Dispatcher {
     public partial class Confirmation {
         
         /// <summary>
-        /// orderInfo control.
+        /// rptMarkers control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Taksopark.WebForms.UserControls.Dispatcher.OrderInfo orderInfo;
+        protected global::System.Web.UI.WebControls.Repeater rptMarkers;
+        
+        /// <summary>
+        /// UpdatePanel1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
         
         /// <summary>
         /// formView control.
@@ -65,14 +74,5 @@ namespace Taksopark.WebForms.Dispatcher {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button closeButton;
-        
-        /// <summary>
-        /// ordersDataSource control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource ordersDataSource;
     }
 }

@@ -1,9 +1,9 @@
 ﻿var query = $(function () {
     $("#order-dialog").dialog({
-        width: 590,
+        width: 610,
         resizable: false,
         autoOpen: false,
-        position: ["center", "center"],
+        position: ["top", "center"],
         buttons: [
         {
             text: "Order",
@@ -14,6 +14,7 @@
                 var txtplaceTo = $("#placeToTextBoxId").val();
                 var txtphone = $("#phoneTextBoxId").val();
                 var txtdate = $("#date-time").val();
+                var estimatedPrice = $("#price").text();
                 var checked_radio = $('input:radio[name=service]:checked').val();
                 $.ajax({
                     url: "/Home/OrderTaxi",
@@ -25,7 +26,8 @@
                         to: txtplaceTo,
                         phone: txtphone,
                         date: txtdate,
-                        service: checked_radio
+                        service: checked_radio,
+                        estimatedCost: parseInt(estimatedPrice)
                     },
                     success: function (data) {
                         if (data.RequestId) {
@@ -35,6 +37,13 @@
                             $("#placeFromTextBoxId").val("");
                             $("#placeToTextBoxId").val("");
                             $("#phoneTextBoxId").val("");
+                            $("#date-time").val("");
+                            $("#price").text("0");
+                            $("#AnimalWeightId").val("");
+                            $("#AnimalWeightId").css("visibility", "hidden");
+                            $('input:radio[name=service]').prop("checked", false);
+                            $("#ExtendedOrderFormId").slideUp(400);
+                            $("#ExtendedFormOpenButtonId").text("Extended \u25BC");
                         } else {
                             $('.ui-dialog-buttonpane').find('button:first').css('visibility', 'hidden');
                             $(":button:contains('Reject')").text('Close');
@@ -46,7 +55,6 @@
                         $("#order-dialog").html("<span style='color:red;'>Something wrong! Please try again</span>");
                         $(":button:contains('Reject')").text('Close');
                     }
-
                 });
             },
         },
@@ -56,23 +64,45 @@
                 width: 74,
                 click: function () {
                     $(this).dialog("close");
-                    window.location.reload(true);
                 }
             }]
     });
 
     $("#orderTaxiButtonId").on("click", function () {
-        $("#cover").removeClass('cover');
-        $("#cover").addClass('cover');
         var placeFrom = $("#placeFromTextBoxId").val();
         var placeTo = $("#placeToTextBoxId").val();
         var phone = $("#phoneTextBoxId").val();
+        var time = $("#date-time").val();
+        var serviceVal = $('input:radio[name=service]:checked').val();
 
         if ((!($("#placeFromTextBoxId").val() == "") && (!$("#placeToTextBoxId").val() == "") && (!$("#phoneTextBoxId").val() == ""))) {
             $("#order-dialog").dialog("open");
+            if ((time == "") && (serviceVal == undefined)) {
+                $("#AdditionalOrderId").css("display", "none");
+                $("#line").css("display", "none");
+            } else {
+                $("#AdditionalOrderId").css("display", "inline");
+                $("#line").css("display", "block");
+            }
+            $(".message").html("<span class='color1'>Do</span> <span style='color: black;'>you want to submit the order?</span>");
+            $('.ui-dialog-buttonpane').find('button:first').css('visibility', 'visible');
+            $(":button:contains('Ok')").text('Reject');
+            $("#cover").toggleClass("cover");
+            $("#order-dialog").css({ 'z-index': 20 });
+            $("#cover").css({ 'z-index': 40 });
             $("#dialogFromId").val(placeFrom);
             $("#dialogToId").val(placeTo);
             $("#dialogPhoneId").val(phone);
+            if (time != "") {
+                $("#dialogForwardTimeId").val(time);
+            } else {
+                $("#dialogForwardTimeId").val("----");
+            }
+            if (serviceVal != undefined) {
+                $("#dialogServiceId").val(serviceVal);
+            } else {
+                $("#dialogServiceId").val("----");
+            }
         } else {
             $(this).dialog("close");
         }

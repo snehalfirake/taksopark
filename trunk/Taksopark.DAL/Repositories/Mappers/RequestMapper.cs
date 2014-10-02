@@ -29,8 +29,8 @@ namespace Taksopark.DAL.Repositories.Mappers
                 ? (int?) record["DriverId"]
                 : default(int?);
             request.Price = record.IsDBNull(record.GetOrdinal("Price")) == false
-               ? (int?)record["Price"]
-               : default(int?);
+               ? (decimal?)record["Price"]
+               : default(decimal?);
             request.Additional = record.IsDBNull(record.GetOrdinal("Additional")) == false
                ? (string)record["Additional"]
                : default(string);

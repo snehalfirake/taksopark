@@ -38,6 +38,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Elmah">
+      <HintPath>..\packages\elmah.corelibrary.1.2.2\lib\Elmah.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Practices.Unity, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -97,6 +100,7 @@
     <Content Include="Images\StatusImages\Closed.png" />
     <Content Include="Images\StatusImages\InProgress.png" />
     <Content Include="Images\StatusImages\Rejected.png" />
+    <Content Include="Scripts\ShowDriversOnMap.js" />
     <Content Include="style.css" />
     <Content Include="Styles\Admin\LogOn.css" />
     <Content Include="Styles\app.v1.js" />
@@ -357,8 +361,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Styles\NewFolder1\" />
-    <Folder Include="UserControls\Dispatcher\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Taksopark.BL\Taksopark.BL.csproj">

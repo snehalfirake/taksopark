@@ -1,0 +1,20 @@
+﻿.commnet-class {
+    border:1px solid; 
+    margin-bottom: 5px; 
+    border-color: #cccccc;; 
+    height: 80px; 
+    width: 100%;
+    background-color:#FEF9ED;
+    font-weight:bold;
+    font-style:italic;
+    color: steelblue;
+    vertical-align: middle;
+    display: inline-table;
+    padding-left: 20px;
+}
+
+.dispay-span {
+    vertical-align: middle;
+    display:table-cell;
+    right: 6px;
+}

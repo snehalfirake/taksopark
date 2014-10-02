@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.UI.WebControls;
 using Taksopark.DAL.Enums;
 using Taksopark.DAL.Models;
 
@@ -21,6 +22,7 @@ namespace Taksopark.WebForms.Models
             this.StartPoint = request.StartPoint;
             this.FinishPoint = request.FinishPoint;
             this.Status = request.Status;
+            this.Additional = request.Additional;
         }
 
         public string StatusIconUrl
@@ -117,6 +119,24 @@ namespace Taksopark.WebForms.Models
 
             return String.Format("{0} days ago", subtract.Days);
             //return String.Format("{0} {1} {2}", RequesTime.Day, months[RequesTime.Month - 1], RequesTime.Year, subtract.Days);
+        }
+
+        public string Visibility
+        {
+            get
+            {
+                if (this.Additional == null)
+                {
+                    return "display:none";
+                }
+
+                return string.Empty;
+            }
+        }
+
+        public string EstimatedPrice
+        {
+            get { return this.Price.Value.ToString("0.00") + " UAH"; }
         }
 
         //private string[] months = { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };

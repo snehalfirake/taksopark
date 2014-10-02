@@ -9,12 +9,14 @@ namespace Taksopark.BL
     public class UserBl : IUserBl
     {
         private readonly ISqlConnectionFactory _appConfigConnection;
+        private readonly IOrderCostCalcStrategy _orderCostCalcStrategy;
 
-        public UserBl(ISqlConnectionFactory appConfigConnection)
+        public UserBl(ISqlConnectionFactory appConfigConnection, IOrderCostCalcStrategy orderCostCalcStrategy)
         {
             _appConfigConnection = appConfigConnection;
+            _orderCostCalcStrategy = orderCostCalcStrategy;
         }
-        public int CreateRequest(DAL.Models.Request request)
+        public int CreateRequest(Request request)
         {
             using (var uow = new UnitOfWork(_appConfigConnection))
             {
@@ -111,6 +113,20 @@ namespace Taksopark.BL
             using (var uow = new UnitOfWork(_appConfigConnection))
             {
                 return uow.RequestRepository.GetAllRequests().ToList();
+            }
+        }
+
+        public decimal GetEstimatedCost(decimal distance, bool isTracking, decimal? animalWeight, bool isHaulage)
+        {
+            return this._orderCostCalcStrategy.CalcCost(distance, isTracking, animalWeight, isHaulage);
+        }
+
+
+        public List<Comment> GetAllCommentsByRequestId(int requestId)
+        {
+            using (var uow = new UnitOfWork(_appConfigConnection))
+            {
+                return uow.CommentRepository.GetAllCommentsByRequestId(requestId).ToList();
             }
         }
     }

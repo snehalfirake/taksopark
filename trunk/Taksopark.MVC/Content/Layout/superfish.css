@@ -2,7 +2,7 @@
 .menu_block  {
 	z-index: 999;
 	position: relative;
-	background: url(../images/menu_bg.png) 0 0 repeat-x #d8d8db;
+	background-color: #d8d8db;
 	padding: 12px 0 11px;
 }
 
