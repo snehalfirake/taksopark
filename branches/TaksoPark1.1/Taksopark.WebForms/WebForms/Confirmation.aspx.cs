@@ -24,6 +24,8 @@ namespace Taksopark.WebForms.Dispatcher
             if (!IsPostBack)
             {
                 SetRequest();
+                rptMarkers.DataSource = GetAllFreeDrivers();
+                rptMarkers.DataBind();
             }
         }
 
@@ -158,9 +160,10 @@ namespace Taksopark.WebForms.Dispatcher
             var driver = operatorBL.GetUserById((int)request.DriverId);
             UserBl userBL = HttpContext.Current.Application.GetContainer().Resolve<UserBl>();
 
-            driver.Status = (int)Enum.Parse(typeof(DriverStatusEnum), status);//Convert.ToInt32(status);
+            driver.DriverStatus = (int)Enum.Parse(typeof(DriverStatusEnum), status);//Convert.ToInt32(status);
 
             userBL.UpdateUser(driver);
+            driversDropDownList.DataBind();
         }
 
         protected void ComfirmButton_Click(object sender, EventArgs e)
@@ -181,6 +184,18 @@ namespace Taksopark.WebForms.Dispatcher
         {
             UpdateRequestStatus((int) RequestStatusEnum.Closed, Convert.ToInt32(driversDropDownList.SelectedValue), false);
             UpdateDriver("Free");
+        }
+
+        protected void driversDropDownList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "ShowDriversOnMap", "alert('qqq');", true);
+        }
+
+        private List<Driver> GetAllFreeDrivers()
+        {
+            IOperatorBl operatorBl = HttpContext.Current.Application.GetContainer().Resolve<IOperatorBl>();
+            var AllFreeOperators = operatorBl.GetAllDriversByStatus((int)DriverStatusEnum.Free);
+            return AllFreeOperators;
         }
     }
 }
