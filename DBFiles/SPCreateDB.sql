@@ -161,6 +161,28 @@ GO
 -----------------------------------------------------------------------------------------------
 USE [TaxiServiseDB]
 GO
+IF ( OBJECT_ID('sp_GetAllCommentsByRequestId') IS NOT NULL ) 
+   DROP PROCEDURE dbo.sp_GetAllCommentsByRequestId
+GO
+
+CREATE PROCEDURE sp_GetAllCommentsByRequestId
+	@RequestId int
+AS
+BEGIN
+    SET NOCOUNT ON 
+	SELECT 
+		[ID],
+		[CreatorId],
+		[RequestId],
+		[CommentText]
+	FROM dbo.Coments
+	WHERE
+		[RequestId] = 	@RequestId
+END
+GO
+-----------------------------------------------------------------------------------------------
+USE [TaxiServiseDB]
+GO
 IF ( OBJECT_ID('sp_GetAllDrivers') IS NOT NULL ) 
    DROP PROCEDURE dbo.sp_GetAllDrivers
 GO
@@ -526,7 +548,7 @@ CREATE PROCEDURE sp_CreateRequest
    @FinishPoint nvarchar(512),
    @OperatorId int,
    @DriverId int,
-   @Price int,
+   @Price numeric(18,4),
    @Additional nvarchar(2048),
    @RequestId int = NULL OUTPUT
 AS
@@ -662,7 +684,7 @@ CREATE PROCEDURE sp_UpdateRequest
     @FinishPoint nvarchar(512),
     @RequestId int,
     @DriverId int,
-    @Price int,
+    @Price numeric(18,4),
     @OperatorId int,
     @Additional nvarchar(2048)
 AS

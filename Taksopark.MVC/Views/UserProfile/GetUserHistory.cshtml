@@ -22,6 +22,9 @@
         <th>
             @Html.DisplayNameFor(model => model.FinishPoint)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
         <th></th>
     </tr>
 
@@ -41,6 +44,9 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.FinishPoint)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
         </td>
         <td>
             @Html.ActionLink("Details", "GetRequestDetails", new {id = item.RequestId}) 

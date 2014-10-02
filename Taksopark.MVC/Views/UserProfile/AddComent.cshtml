@@ -1,0 +1,34 @@
+﻿@model Taksopark.MVC.Models.CommentModel
+
+@{
+    ViewBag.Title = "AddComent";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <hr />
+        @Html.HiddenFor(model => model.RequestId)
+        @Html.HiddenFor(model => model.CreatorId)
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @*@Html.LabelFor(model => model.CommentText, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            @Html.LabelFor(model => model.CommentText, "Add comment")
+            <p></p>
+            <div class="col-md-10">
+                <textarea style="max-width:1000px" cols="100" rows="10"  name="CommentText"></textarea>
+                @Html.ValidationMessageFor(model => model.CommentText, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <p></p>
+        <div class="form-group" style="float: left">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" name="AddComent" style="" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}

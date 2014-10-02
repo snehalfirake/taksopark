@@ -72,5 +72,24 @@ namespace Taksopark.DAL.Repositories
             }
         }
 
+
+        public IEnumerable<Comment> GetAllCommentsByRequestId(int id)
+        {
+            using (var command = new SqlCommand("sp_GetAllCommentsByRequestId", _connection))
+            {
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@RequestId", id);
+                var commentList = new List<Comment>();
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        var comment = CommentMapper.Map(reader);
+                        commentList.Add(comment);
+                    }
+                }
+                return commentList;
+            };
+        }
     }
 }

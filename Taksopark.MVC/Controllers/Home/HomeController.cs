@@ -45,7 +45,7 @@ namespace Taksopark.MVC.Controllers.Home
         }
 
         [HttpPost]
-        public JsonResult OrderTaxi(string from, string to, string phone, string date, string service)
+        public JsonResult OrderTaxi(string from, string to, string phone, string date, string service, decimal? estimatedCost)
         {
             if (IsOrderValid(from, to, phone))
             {
@@ -74,6 +74,7 @@ namespace Taksopark.MVC.Controllers.Home
                     request.RequesTime = DateTime.Parse(date);
                 }
                 request.Additional = service;
+                request.Price = estimatedCost;
                 int requestId = _userBl.CreateRequest(request);
                 return Json(new
                 {
@@ -87,6 +88,16 @@ namespace Taksopark.MVC.Controllers.Home
                     ValidationError = "The spacified order is invalid"
                 });
             }
+        }
+
+        [HttpPost]
+        public ActionResult CalcEstimatedCost(decimal distance, bool isTracking, decimal? animalWeight, bool isHaulage)
+        {
+            decimal cost = this._userBl.GetEstimatedCost(distance, isTracking, animalWeight, isHaulage);
+            return Json(new
+                {
+                    EstimatedCost = cost
+                });
         }
 
         private bool IsOrderValid(string @from, string to, string phone)

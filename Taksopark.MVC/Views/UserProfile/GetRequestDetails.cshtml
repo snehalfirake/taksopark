@@ -49,6 +49,13 @@
                 @Html.DisplayFor(model => model.FinishPoint)
             </div>
         </div>
+        
+        <div class="form-group">
+            @Html.LabelFor(model => model.Price, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DisplayFor(model => model.Price)
+            </div>
+        </div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
@@ -62,10 +69,17 @@
                 }
                 @if (Model.Status == "Closed" || Model.Status == "Rejected")
                 {
-                    <button onclick="@Url.Action("Add Comment", "AddComent", new { id = Model.RequestId })" class="abutton pulse width2" style="text-decoration: none;">@Html.ActionLink("Comment", "AddComent", new { id = Model.RequestId })</button>
+                    <button onclick="@Url.Action("Add Comment", "AddComent", new { id = Model.RequestId })" class="abutton pulse width2" style="text-decoration: none;">@Html.ActionLink("AddComment", "AddComent", new { id = Model.RequestId })</button>
                 }
             </div>
         </div>
+        @{
+            Html.RenderAction("GetCommentsList", new { requestId = Model.RequestId });
+        }
+        ;
+        @*@{
+            Html.RenderPartial("CommentsList", new { requestId = Model.RequestId });
+        }*@
     </div>
 }
 

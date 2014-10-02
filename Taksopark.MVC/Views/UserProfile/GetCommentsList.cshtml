@@ -1,0 +1,18 @@
+﻿@model IEnumerable<Taksopark.MVC.Models.CommentModel>
+@{
+    Layout = null;
+}
+<link href="/Content/Layout/comment-style.css" rel="stylesheet" type="text/css" />
+
+<table class="table">
+
+@foreach (var item in Model) {
+    <tr>
+        <div class="commnet-class">
+            @*<span class="dispay-span">@Html.DisplayFor(modelItem => item.CommentText)</span>*@
+            <span class="dispay-span">@item.CommentText</span>
+        </div>
+    </tr>
+}
+
+</table>

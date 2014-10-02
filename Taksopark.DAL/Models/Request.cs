@@ -13,7 +13,7 @@ namespace Taksopark.DAL.Models
         public int Status { get; set; }
         public string StartPoint { get; set; }
         public string FinishPoint { get; set; }
-        public int? Price { get; set; }
+        public decimal? Price { get; set; }
         public string Additional { get; set; }
     }
 }
