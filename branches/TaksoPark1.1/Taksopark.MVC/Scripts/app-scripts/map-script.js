@@ -36,7 +36,7 @@ function OrderTaxi() {
             cache: false,
             datatype: "json",
             data: {
-                distance: Math.round(estimatedDistance),
+                distance: Math.ceil(estimatedDistance),
                 isTracking: $("#TrackingRadioId").is(':checked') ? true : false,
                 animalWeight: $("#AnimalWeightId").val(),
                 isHaulage: $("#HaulageRadioId").is(':checked') ? true : false

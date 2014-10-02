@@ -1,6 +1,6 @@
 ﻿var query = $(function () {
     $("#order-dialog").dialog({
-        width: 590,
+        width: 610,
         resizable: false,
         autoOpen: false,
         position: ["top", "center"],
@@ -55,7 +55,6 @@
                         $("#order-dialog").html("<span style='color:red;'>Something wrong! Please try again</span>");
                         $(":button:contains('Reject')").text('Close');
                     }
-
                 });
             },
         },
@@ -64,7 +63,7 @@
                 height: 34,
                 width: 74,
                 click: function () {
-                    $(this).dialog("close");                
+                    $(this).dialog("close");
                 }
             }]
     });
@@ -74,7 +73,7 @@
         var placeTo = $("#placeToTextBoxId").val();
         var phone = $("#phoneTextBoxId").val();
         var time = $("#date-time").val();
-        var serviceVal= $('input:radio[name=service]:checked').val();
+        var serviceVal = $('input:radio[name=service]:checked').val();
 
         if ((!($("#placeFromTextBoxId").val() == "") && (!$("#placeToTextBoxId").val() == "") && (!$("#phoneTextBoxId").val() == ""))) {
             $("#order-dialog").dialog("open");
@@ -104,8 +103,6 @@
             } else {
                 $("#dialogServiceId").val("----");
             }
-
-
         } else {
             $(this).dialog("close");
         }

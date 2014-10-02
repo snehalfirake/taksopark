@@ -4,8 +4,7 @@ $(document).ready(function () {
     
     $('#ExtendedFormOpenButtonId').click(function () {
         var $extendedOrderPanel = $("#ExtendedOrderFormId");
-        if ($extendedOrderPanel.is(":visible")) {
-            
+        if ($extendedOrderPanel.is(":visible")) {     
             $("#ExtendedOrderFormId").slideUp(400);
             $("#ExtendedFormOpenButtonId").text("Extended \u25BC");
             $("#date-time").val("");
@@ -18,16 +17,16 @@ $(document).ready(function () {
         });
     $("#dtBox").DateTimePicker();
 
-    $("input[@name='service'][value='With animals']").change(function () {
+    $("input[@name='service'][value='With animals']").click(function () {
         $("#AnimalWeightId").css("visibility", "visible");
     });
 
-    $("input[@name='service'][value='Tracking']").change(function () {
+    $("input[@name='service'][value='Tracking']").click(function () {
         $("#AnimalWeightId").css("visibility", "hidden");
         $("#AnimalWeightId").val("");
     });
 
-    $("input[@name='service'][value='Haulage']").change(function () {
+    $("input[@name='service'][value='Haulage']").click(function () {
         $("#AnimalWeightId").css("visibility", "hidden");
         $("#AnimalWeightId").val("");
     });

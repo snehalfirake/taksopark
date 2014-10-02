@@ -85,3 +85,72 @@
     display: block;
     opacity: 2;
 }
+
+.labelstyle {
+    font-size: 19px;
+    font-weight: normal;
+}
+
+.labelmarginleft {
+    margin-left: 55px;
+}
+
+#AnimalWeightId{
+    height: 30px;
+    width: 280px;
+    border: 1px solid #cccccc;
+    padding-left: 12px;
+    width: 130px;
+    margin-left: 15px;
+}
+
+#ExtendedOrderFormId {
+    text-align: center;
+    border: 1px solid #cccccc;
+    margin-right: 2px;
+    margin-bottom: 25px;
+    margin-top: 10px;
+    padding: 15px;
+    display: none;
+}
+
+#TaxiMap1 {
+     width: 95%;
+    height: 88%;
+}
+
+.buttonheight {
+    height: 34px;
+}
+
+#date-time {
+    height: 30px;
+    width: 280px;
+    border: 1px solid #cccccc;
+    padding-left: 12px;
+}
+
+.bordernone {
+    border: none;
+    width: 179px;
+}
+
+.bordernone1 {
+    border: none;
+    width: 180px;
+}
+
+.bordernone2 {
+   border: none; 
+   width: 120px;
+}
+
+.bordernone3 {
+    border: none;
+    width: 70px;
+}
+
+.spanfontsize {
+    font-size: 19px;
+}
+
