@@ -43,7 +43,7 @@ namespace Taksopark.DAL.Repositories
         }
 
         /// <summary>
-        /// Get drivers by satus
+        /// Get drivers by status
         /// </summary>
         /// <param name="status"></param>
         /// <returns></returns>
@@ -54,6 +54,31 @@ namespace Taksopark.DAL.Repositories
             {
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.AddWithValue("@Status", status);
+                var driver = new Driver();
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        driver = DriverMapper.Map(reader);
+                        driverList.Add(driver);
+                    }
+                }
+                return driverList;
+            }
+        }
+
+        /// <summary>
+        /// Get drivers by driver status
+        /// </summary>
+        /// <param name="driverStatus"></param>
+        /// <returns></returns>
+        public IEnumerable<Driver> GetAllDriversByDriverStatus(int driverStatus)
+        {
+            var driverList = new List<Driver>();
+            using (var command = new SqlCommand("sp_GetAllDriversByDriverStatus", _connection))
+            {
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@DriverStatus", driverStatus);
                 var driver = new Driver();
                 using (var reader = command.ExecuteReader())
                 {

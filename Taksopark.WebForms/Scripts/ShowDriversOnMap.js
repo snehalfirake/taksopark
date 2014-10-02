@@ -1,4 +1,5 @@
 ﻿window.onload = function () {
+    console.log('window.onload');
     showFreeTaxiDrivers();
 }
 
@@ -17,6 +18,7 @@ function showFreeTaxiDrivers() {
         }
     }
     if (typeof (lat) != undefined && typeof (lng) != undefined) {
+        console.log('not undefined');
         var mapOptions = {
             center: new google.maps.LatLng(lat, lng),
             zoom: 13,
@@ -52,6 +54,7 @@ function showFreeTaxiDrivers() {
             //})(marker, data);
         }      
     } else {
+        console.log('undefined');
         var infoWindowEmptyMap = new google.maps.infoWindow();
         var lviv = new google.maps.LatLng(49.8382112, 24.0294017);
         var myOptions = {

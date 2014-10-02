@@ -156,7 +156,7 @@
                         <h2>Taxi on Map</h2>
                     </div>
 
-                    <div style="width: 465px; height: 350px;" id="driverMap"><iframe width="465" height="350" src="http://maps.google.no/maps?f=q&amp;source=s_q&amp;hl=no&amp;geocode=&amp;q=Lypneva,+F%C3%B8rde&amp;aq=0&amp;oq=hafstadvegen+35&amp;sll=61.143235,9.09668&amp;sspn=17.454113,57.084961&amp;ie=UTF8&amp;hq=&amp;hnear=Hafstadvegen+35,+6800+F%C3%B8rde,+Sogn+og+Fjordane&amp;t=m&amp;z=14&amp;iwloc=A&amp;ll=49.8347675,24.0027365&amp;output=embed"></iframe></div>
+                    <div style="width: 465px; height: 350px;" id="driverMap"></div>
                     
                     <br />
                     <br />
