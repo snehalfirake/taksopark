@@ -27,15 +27,6 @@
 </asp:Content>
 
 <asp:Content ID="content3" ContentPlaceHolderID="contentMenu" runat="server">
-    <%-- <div class="menuDiv">
-        <span class="centerSpan">Order details</span>
-        
-    </div>
-    <span class="right">
-        <br />
-        <asp:HyperLink runat="server" Text="Back to dashboard" CssClass="btn btn-s-md" BackColor="Black"
-            ForeColor="White" NavigateUrl="~/WebForms/Order.aspx" />
-    </span>--%>
     Order details
 </asp:Content>
 
@@ -45,6 +36,14 @@
 
 
             <div id="container">
+
+                <div class="one">
+                    <span class="right">
+                        <br />
+                        <asp:HyperLink runat="server" Text="Back to dashboard" CssClass="btn btn-s-md" BackColor="RoyalBlue"
+                            ForeColor="White" NavigateUrl="~/WebForms/Order.aspx" />
+                    </span>
+                </div>
                 <div class="one-half">
                     <div class="heading_bg">
                         <h2>Details</h2>
@@ -165,7 +164,7 @@
                 <div class="one bottomLine">
                     <span class="right">
                         <br />
-                        <asp:HyperLink runat="server" Text="Back to dashboard" CssClass="btn btn-s-md" BackColor="Black"
+                        <asp:HyperLink runat="server" Text="Back to dashboard" CssClass="btn btn-s-md" BackColor="RoyalBlue"
                             ForeColor="White" NavigateUrl="~/WebForms/Order.aspx" />
                     </span>
                 </div>
@@ -174,9 +173,4 @@
             </div>
         </ContentTemplate>
     </asp:UpdatePanel>
-    <%--<asp:ObjectDataSource runat="server" ID="ordersDataSource" TypeName="Taksopark.WebForms.Dispatcher.Confirmation" SelectMethod="GetRequest">
-        <SelectParameters>
-            <asp:QueryStringParameter Name="id" QueryStringField="id" />
-        </SelectParameters>
-    </asp:ObjectDataSource>--%>
 </asp:Content>

@@ -1,7 +1,13 @@
 ﻿window.onload = function () {
-    console.log('window.onload');
+    //console.log('window.onload');
     showFreeTaxiDrivers();
 }
+
+function load() {
+    //console.log('load()')
+    Sys.WebForms.PageRequestManager.getInstance().add_endRequest(showFreeTaxiDrivers);
+}
+
 
 function showFreeTaxiDrivers() {
     var centerPosition = document.getElementById("Content_driversDropDownList");
@@ -9,16 +15,17 @@ function showFreeTaxiDrivers() {
     var lat;
     var lng;
     for (var i = 0; i < markers.length; i++) {
+        //console.log(markers.length);
         if (centerPosition.value == markers[i].id) {
             lat = markers[i].lat;
             lng = markers[i].lng;
-            console.log(lat);
-            console.log(lng);
+            //console.log(lat);
+            //console.log(lng);
             break;
         }
     }
     if (typeof (lat) != undefined && typeof (lng) != undefined) {
-        console.log('not undefined');
+        //console.log('not undefined');
         var mapOptions = {
             center: new google.maps.LatLng(lat, lng),
             zoom: 13,

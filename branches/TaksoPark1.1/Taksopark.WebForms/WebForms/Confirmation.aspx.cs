@@ -239,8 +239,8 @@ namespace Taksopark.WebForms.Dispatcher
         private List<Driver> GetAllFreeDrivers()
         {
             IOperatorBl operatorBl = HttpContext.Current.Application.GetContainer().Resolve<IOperatorBl>();
-            var AllFreeOperators = operatorBl.GetAllDriversByDriverStatus((int)DriverStatusEnum.Free);
-            return AllFreeOperators;
+            var AllFreeTaxiDrivers = operatorBl.GetAllDriversByDriverStatus((int)DriverStatusEnum.Free);
+            return AllFreeTaxiDrivers;
         }
     }
 }
