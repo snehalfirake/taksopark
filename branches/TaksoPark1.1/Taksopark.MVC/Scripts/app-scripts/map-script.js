@@ -23,21 +23,20 @@ function OrderTaxi() {
         $("#showTheWayButtonId").click(function () {
             _this.calcRoute({
                 success: function (data) {
-                    _this.updateEstimatedCost(data.estimatedDistance);
+                    _this.updateEstimatedCost(estimatedDistance);
                 }
             });
         });
     };
 
     _this.updateEstimatedCost = function (estimatedDistance) {
-        console.log("updateEstimatedCost() estimatedDistance = " + estimatedDistance);
         $.ajax({
             url: "/Home/CalcEstimatedCost",
             type: "POST",
             cache: false,
             datatype: "json",
             data: {
-                distance: parseInt(estimatedDistance),
+                distance: Math.round(estimatedDistance),
                 isTracking: $("#TrackingRadioId").is(':checked') ? true : false,
                 animalWeight: $("#AnimalWeightId").val(),
                 isHaulage: $("#HaulageRadioId").is(':checked') ? true : false
